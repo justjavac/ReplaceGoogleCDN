@@ -1,6 +1,8 @@
 Replace Google CDN
 ==================
 
+从 Chrome Web Store 安装：https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice
+
 - [360网站卫士常用前端公共库CDN服务](http://libs.useso.com)
 
 > 由于众所周知的原因，只需替换一个域名就可以继续使用Google提供的前端公共库了。
@@ -14,4 +16,3 @@ Replace Google CDN
 虽然大部分程序员喜欢以吐槽360的方式来提升自己的B格。
 但是我希望你不要因为 360 而放弃使用这个插件。
 
-目前此插件还未通过审核，因此你只能在开发模式下使用，具体使用方法可以百度一下。
