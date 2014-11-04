@@ -16,7 +16,8 @@ https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbl
 
 经网友提醒 360 的不支持 https，于是改成[中科大](http://lug.ustc.edu.cn)的。
 
-此插件包括两部分。
+此插件包括三部分。
 
 1. `ajax.googleapis.com` - 前端公共库
 2. `fonts.googleapis.com` - 免费字体库
+3. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源
