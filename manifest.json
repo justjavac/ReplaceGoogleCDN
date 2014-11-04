@@ -1,11 +1,11 @@
 {
     "name": "Replace Google CDN",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "manifest_version": 2,
     "icons": {
       "128": "icons/128.png"
     },
-    "description": "将 Google CDN 替换为国内的（360）。",
+    "description": "将 Google CDN 替换为国内中科大的。",
     "background": {
         "scripts": ["js/background.js"]
     },
