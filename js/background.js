@@ -1,6 +1,6 @@
 chrome.webRequest.onBeforeRequest.addListener(
     function(request) {
-        var url = request.url.replace('googleapis', 'useso');
+        var url = request.url.replace('googleapis\.com', 'lug\.ustc\.edu\.cn');
         return {redirectUrl: url};
     },
     {
