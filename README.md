@@ -12,10 +12,9 @@ https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbl
 
 于是，我写了这个插件，将 Google 的 CDN 替换成国内的。
 
-- [360网站卫士常用前端公共库CDN服务](http://libs.useso.com)
+本来我使用的是 360 提供的。[360网站卫士常用前端公共库CDN服务](http://libs.useso.com)
 
-虽然大部分程序员喜欢以吐槽360的方式来提升自己的B格。
-但是我希望你不要因为 360 而放弃使用这个插件。
+经网友提醒 360 的不支持 https，于是改成[中科大](http://lug.ustc.edu.cn)的。
 
 此插件包括两部分。
 
