@@ -1,14 +1,6 @@
 Replace Google CDN
 ==================
 
-安装方法（Google被墙了上不去）：
-
-> 1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压。
-> 2. 打开Chrome，输入: chrome://extensions/
-> 3. 勾选Developer Mode
-> 4. 选择Load unpacked extension...然后定位到刚才解压的文件夹，确定
-> 5. 这就安装好了，去掉Developer Mode勾选。
-
 Chrome Web Store 安装地址：  
 https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice
 
