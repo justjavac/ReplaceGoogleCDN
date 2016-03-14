@@ -21,3 +21,11 @@ https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbl
 1. `ajax.googleapis.com` - 前端公共库
 2. `fonts.googleapis.com` - 免费字体库
 3. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源
+
+安装方法（Google被墙了上不去）：
+ 
+1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压。
+2. 打开Chrome，输入: chrome://extensions/
+3. 勾选Developer Mode
+4. 选择Load unpacked extension...然后定位到刚才解压的文件夹，确定
+5. 这就安装好了，去掉Developer Mode勾选。
