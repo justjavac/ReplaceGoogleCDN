@@ -5,7 +5,7 @@
     "icons": {
       "128": "icons/128.png"
     },
-    "description": "将 Google CDN 替换为国内中科大的。",
+    "description": "Replace Google CDN with USTC CDN.",
     "background": {
         "scripts": ["js/background.js"]
     },

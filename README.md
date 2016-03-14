@@ -1,10 +1,14 @@
 Replace Google CDN
 ==================
 
-安装方法（Google被墙了上不去）：
+Firfox安装方法：
 
-> 1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压。
-> 2. 打开Chrome，输入: chrome://extensions/
+> 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压，将`ReplaceGoogleCDN_Firfox.xpi`拖入firfox浏览器，在左上角弹出的窗口中选择安装(install)即可。
+
+Chrome安装方法（Google被墙了上不去）：
+
+> 1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压，找到`chrome`子目录
+> 2. 打开Chrome，输入: `chrome://extensions/`
 > 3. 勾选Developer Mode
 > 4. 选择Load unpacked extension...然后定位到刚才解压的文件夹，确定
 > 5. 这就安装好了，去掉Developer Mode勾选。
