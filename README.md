@@ -1,11 +1,12 @@
 Replace Google CDN
 ==================
 
-Firfox安装方法：
+** Firfox安装方法：**
 
-> 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压，将`ReplaceGoogleCDN_Firfox.xpi`拖入firfox浏览器，在左上角弹出的窗口中选择安装(install)即可。
+> 插件地址1：[https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/](https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/)
+> 插件地址2：[https://addons.mozilla.org/en-US/firefox/addon/google-cdn-replace/](https://addons.mozilla.org/en-US/firefox/addon/google-cdn-replace/)
 
-Chrome安装方法（Google被墙了上不去）：
+** Chrome安装方法（Google被墙了上不去）：**
 
 > 1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压，找到`chrome`子目录
 > 2. 打开Chrome，输入: `chrome://extensions/`
@@ -13,7 +14,7 @@ Chrome安装方法（Google被墙了上不去）：
 > 4. 选择Load unpacked extension...然后定位到刚才解压的文件夹，确定
 > 5. 这就安装好了，去掉Developer Mode勾选。
 
-Chrome Web Store 安装地址：  
+** Chrome Web Store 安装地址：**
 https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice
 
 > 由于众所周知的原因，只需替换一个域名就可以继续使用Google提供的前端公共库了。
