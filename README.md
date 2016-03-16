@@ -1,9 +1,6 @@
 Replace Google CDN
 ==================
 
-Chrome Web Store 安装地址：  
-https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice
-
 > 由于众所周知的原因，只需替换一个域名就可以继续使用Google提供的前端公共库了。
 > 同样，通过script标记引用这些资源，让网站访问速度瞬间提速吧骚年！
 
@@ -22,10 +19,20 @@ https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbl
 2. `fonts.googleapis.com` - 免费字体库
 3. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源
 
-安装方法（Google被墙了上不去）：
- 
-1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压。
-2. 打开Chrome，输入: chrome://extensions/
-3. 勾选Developer Mode
-4. 选择Load unpacked extension...然后定位到刚才解压的文件夹，确定
-5. 这就安装好了，去掉Developer Mode勾选。
+Firfox安装方法：
+
+> 插件地址1：[https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/](https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/)
+
+> 插件地址2：[https://addons.mozilla.org/en-US/firefox/addon/google-cdn-replace/](https://addons.mozilla.org/en-US/firefox/addon/google-cdn-replace/)
+
+Chrome安装方法（Google被墙了上不去）：
+
+> 1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压，找到`chrome`子目录
+> 2. 打开Chrome，输入: `chrome://extensions/`
+> 3. 勾选Developer Mode
+> 4. 选择Load unpacked extension...然后定位到刚才解压的文件夹，确定
+> 5. 这就安装好了，去掉Developer Mode勾选。
+
+Chrome Web Store 安装地址：
+
+https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice
