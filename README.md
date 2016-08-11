@@ -1,6 +1,10 @@
 Replace Google CDN
 ==================
 
+[![](https://img.shields.io/github/issues/justjavac/ReplaceGoogleCDN.svg)](https://github.com/justjavac/ReplaceGoogleCDN/issues) [![](https://img.shields.io/github/release/justjavac/ReplaceGoogleCDN.svg)](https://github.com/justjavac/ReplaceGoogleCDN/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/justjavac/ReplaceGoogleCDN/total.svg)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kpampjmfiopfpkkepbllemkibefkiice.svg)](https://chrome.google.com/webstore/detail/kpampjmfiopfpkkepbllemkibefkiice)
+
 > 由于众所周知的原因，只需替换一个域名就可以继续使用Google提供的前端公共库了。
 > 同样，通过script标记引用这些资源，让网站访问速度瞬间提速吧骚年！
 
