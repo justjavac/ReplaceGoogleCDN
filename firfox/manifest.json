@@ -15,7 +15,7 @@
         "scripts": ["js/background.js"]
     },
     "permissions": [
-        "webRequest", "webRequestBlocking", "<all_urls>"
+        "webRequest", "webRequestBlocking", "http://*/*", "https://*/*"
     ],
     "author": "https://github.com/justjavac",
     "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN"
