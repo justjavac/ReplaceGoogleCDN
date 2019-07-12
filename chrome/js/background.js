@@ -8,6 +8,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     {
         urls: [
             "*://ajax.googleapis.com/*",
+            "*://fonts.googleapis.com/*",
             "*://themes.googleusercontent.com/*",
             "*://www.google.com/recaptcha/*"
         ]
