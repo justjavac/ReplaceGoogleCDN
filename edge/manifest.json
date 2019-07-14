@@ -1,0 +1,24 @@
+{
+    "name": "Replace Google CDN",
+    "version": "0.4.0",
+    "manifest_version": 2,
+    "icons": {
+        "128": "icons/128.png"
+    },
+    "description": "Replace Google CDN with USTC CDN.",
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "author": "https://github.com/justjavac",
+    "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
+    }
+}
