@@ -37,6 +37,3 @@ Chrome安装方法（Google被墙了上不去）：
 > 4. 选择Load unpacked extension...然后定位到刚才解压的文件夹里面的 chrome 目录，确定
 > 5. 这就安装好了，去掉Developer Mode勾选。
 
-Chrome Web Store 安装地址：
-
-https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice
