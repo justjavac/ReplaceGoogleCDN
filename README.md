@@ -27,8 +27,6 @@ Firfox安装方法：
 
 > 插件地址1：[https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/](https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/)
 
-> 插件地址2：[https://addons.mozilla.org/en-US/firefox/addon/google-cdn-replace/](https://addons.mozilla.org/en-US/firefox/addon/google-cdn-replace/)
-
 Chrome安装方法（Google被墙了上不去）：
 
 > 1. 下载[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip)然后解压，找到`chrome`子目录
