@@ -18,14 +18,14 @@ Replace Google CDN
 
 ## 原理
 
-目前国内 CDN 使用的[中科大](http://lug.ustc.edu.cn)源。
-
 此插件/扩展包括：
 
 1. `ajax.googleapis.com` - 前端公共库
 1. `fonts.googleapis.com` - 免费字体库
 1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源
+1. `fonts.gstatic.com` - 免费字体库
 1. `www.google.com/recaptcha` - Google 图像验证库
+1. `secure.gravatar.com` - gravatar 头像
 
 ## 安装
 
