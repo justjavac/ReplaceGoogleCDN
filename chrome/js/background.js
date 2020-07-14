@@ -3,6 +3,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         var url = request.url.replace('http://', 'https://')
         url = url.replace('googleapis.com', 'proxy.ustclug.org');
         url = url.replace('themes.googleusercontent.com', 'google-themes.lug.ustc.edu.cn');
+        url = url.replace('fonts.gstatic.com', 'fonts-gstatic.lug.ustc.edu.cn');
         url = url.replace('www.google.com/recaptcha/','www.recaptcha.net/recaptcha/');
         return {redirectUrl: url};
     },
@@ -10,6 +11,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         urls: [
             "*://ajax.googleapis.com/*",
             "*://themes.googleusercontent.com/*",
+            "*://fonts.gstatic.com/*",
             "*://www.google.com/recaptcha/*"
         ]
     },
