@@ -1,11 +1,11 @@
 {
     "name": "Replace Google CDN",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "manifest_version": 2,
     "icons": {
       "128": "icons/128.png"
     },
-    "description": "Replace Google CDN with USTC CDN.",
+    "description": "将 Google CDN 替换为国内镜像",
     "background": {
         "scripts": ["js/background.js"]
     },
