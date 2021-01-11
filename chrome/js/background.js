@@ -35,6 +35,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         url = url.replace('fonts.gstatic.com', 'gstatic.loli.net');
         url = url.replace('www.google.com/recaptcha/', 'www.recaptcha.net/recaptcha/');
         url = url.replace('secure.gravatar.com', 'gravatar.loli.net');
+        url = url.replace('maxcdn.bootstrapcdn.com/bootstrap/','cdn.bootcdn.net/ajax/libs/twitter-bootstrap/');
         return { redirectUrl: url };
     },
     {
@@ -45,6 +46,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             "*://fonts.gstatic.com/*",
             "*://www.google.com/recaptcha/*",
             "*://secure.gravatar.com/*",
+            "*://maxcdn.bootstrapcdn.com/bootstrap/*",
         ]
     },
     ["blocking"]
