@@ -5,13 +5,16 @@ chrome.webRequest.onBeforeRequest.addListener(
         url = url.replace('themes.googleusercontent.com', 'google-themes.lug.ustc.edu.cn');
         url = url.replace('www.google.com/recaptcha/','www.recaptcha.net/recaptcha/');
         url = url.replace('maxcdn.bootstrapcdn.com/bootstrap/','cdn.bootcdn.net/ajax/libs/twitter-bootstrap/');
+        url = url.replace('code.jquery.com/jquery-', 'ajax.aspnetcdn.com/ajax/jQuery/jquery-');
+
         return {redirectUrl: url};
     },
     {
         urls: [
             "*://ajax.googleapis.com/*",
             "*://themes.googleusercontent.com/*",
-            "*://maxcdn.bootstrapcdn.com/bootstrap/*"
+            "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+            "*://code.jquery.com/*"
         ]
     },
     ["blocking"]
