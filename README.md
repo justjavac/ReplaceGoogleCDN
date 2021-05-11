@@ -33,6 +33,7 @@ Replace Google CDN
 
 - [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
 - [Firfox](https://addons.mozilla.org/en-US/firefox/addon/replace-google-cdn/)
+- [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
 
 ### 手动安装
 
