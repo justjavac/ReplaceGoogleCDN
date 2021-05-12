@@ -25,9 +25,17 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 chrome.webRequest.onBeforeRequest.addListener(
     function (details) {
-        if (tabinfo.get(details.tabId)) {
-            return details.url;
-        }
+        // Comment out these lines
+        // The returned data is NOT a webRequest.BlockingResponse type data, will cause error on Chrome Version 87 88 90
+        // see https://github.com/justjavac/ReplaceGoogleCDN/issues/64#issuecomment-839610913
+        // see https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest
+        
+        // If we need to deal with the CSP, we must return the right data type but not simple a url string.
+
+        // if (tabinfo.get(details.tabId)) {
+        //     return details.url;
+        // }
+        
         let url = details.url.replace('http://', 'https://')
         url = url.replace('ajax.googleapis.com', 'ajax.loli.net');
         url = url.replace('fonts.googleapis.com', 'fonts.loli.net');
