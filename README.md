@@ -19,12 +19,13 @@
 
 此插件/扩展可以将以下的 cdn 资源替换为国内的：
 
-1. `ajax.googleapis.com` - 前端公共库
-1. `fonts.googleapis.com` - 免费字体库
-1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源
-1. `fonts.gstatic.com` - 免费字体库
-1. `www.google.com/recaptcha` - Google 图像验证库
-1. `secure.gravatar.com` - gravatar 头像
+1. `ajax.googleapis.com` - 前端公共库，替换为 `ajax.loli.net`
+1. `fonts.googleapis.com` - 免费字体库，替换为 `fonts.loli.net`
+1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源，替换为 `themes.loli.net`
+1. `fonts.gstatic.com` - 免费字体库，替换为 `gstatic.loli.net`
+1. `www.google.com/recaptcha` - Google 图像验证库，替换为 `www.recaptcha.net/recaptcha`
+1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
+1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为 `cdn.bootcdn.net/ajax/libs/twitter-bootstrap`
 
 ## 效果
 
