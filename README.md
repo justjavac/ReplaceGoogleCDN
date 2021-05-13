@@ -17,7 +17,7 @@
 
 ## 原理
 
-此插件/扩展包括：
+此插件/扩展可以将以下的 cdn 资源替换为国内的：
 
 1. `ajax.googleapis.com` - 前端公共库
 1. `fonts.googleapis.com` - 免费字体库
