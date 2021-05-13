@@ -30,7 +30,7 @@
 
 安装扩展/插件后访问 <https://stackoverflow.com/questions> 页面：
 
-![](screen-sof.png)
+![](./screen-sof.png)
 
 第一行是 jquery.min.js 的原始请求 `https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js`，被拦截并替换，返回的状态码为 307 Internal Redirect，耗时 26ms。第三行是 jquery.min.js 被替换后的请求，33kB，耗时 95ms。
 
