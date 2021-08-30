@@ -49,6 +49,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "www.recaptcha.net/recaptcha/"
     );
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
+    url = url.replace("www.gravatar.com", "gravatar.loli.net");
     url = url.replace(
       "maxcdn.bootstrapcdn.com/bootstrap/",
       "cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
