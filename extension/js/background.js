@@ -64,6 +64,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://fonts.gstatic.com/*",
       "*://www.google.com/recaptcha/*",
       "*://secure.gravatar.com/*",
+      "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
     ],
   },
