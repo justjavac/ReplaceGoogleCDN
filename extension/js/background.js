@@ -5,6 +5,18 @@
 const tabinfo = new Map();
 
 /**
+ * 扫描响应头，是否含有 Content-Security-Policy
+ * @param {chrome.webRequest.HttpHeader[]} headers
+ * @returns {boolean}
+ */
+function hasCSP(headers = []) {
+    return headers.some(
+        (x) => x.name.toLowerCase() === "content-security-policy"
+    );
+}
+
+
+/**
  * 需要去除的响应头
  * @type {string[]}
  */
@@ -19,26 +31,19 @@ const removeHeaders=[
     'x-permitted-cross-domain-policies',
     'x-content-type-options',
     'x-frame-options',
-    'Permissions-Policy',
+    'permissions-policy',
     'timing-allow-origin'
 ];
-/**
- * 扫描响应头，是否含有 Content-Security-Policy
- * @param {chrome.webRequest.HttpHeader[]} headers
- * @returns {boolean}
- */
-function hasCSP(headers = []) {
-  return headers.some(
-    (x) => x.name.toLowerCase() === "content-security-policy"
-  );
-}
 
 /**
  * 移除CSP
- * 参考
+ * 参考文档：
  *   1、 https://developer.chrome.com/docs/extensions/reference/webRequest/#event-onHeadersReceived
- *   2、 Arrow_Function 箭头函数
- *   3、 return {responseHeaders: details.responseHeaders};
+ *   2、  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/trusted_types_on_webui.md
+ *   3、 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
+ *   4、 Arrow_Function 箭头函数
+ *   5、 返回新的新的响应头： return {responseHeaders: details.responseHeaders};
+ *   6、Chrome 新增的可信类型（Trusted types）暂时不知道怎么解决
  *
  */
 
@@ -99,6 +104,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "maxcdn.bootstrapcdn.com/bootstrap/",
       "cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
     );
+
     return { redirectUrl: url };
   },
   {
