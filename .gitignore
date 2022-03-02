@@ -1,2 +1,5 @@
 node_modules
 extension.zip
+.idea/
+.DS_Store
+Thumbs.db

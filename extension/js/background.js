@@ -5,6 +5,24 @@
 const tabinfo = new Map();
 
 /**
+ * 需要去除的响应头
+ * @type {string[]}
+ */
+const removeHeaders=[
+    'content-security-policy',
+    'content-security-policy-report-only',
+    'expect-ct',
+    'report-to',
+    'x-content-security-policy',
+    'x-webkit-csp',
+    'x-xss-protection',
+    'x-permitted-cross-domain-policies',
+    'x-content-type-options',
+    'x-frame-options',
+    'Permissions-Policy',
+    'timing-allow-origin'
+];
+/**
  * 扫描响应头，是否含有 Content-Security-Policy
  * @param {chrome.webRequest.HttpHeader[]} headers
  * @returns {boolean}
@@ -15,15 +33,42 @@ function hasCSP(headers = []) {
   );
 }
 
+/**
+ * 移除CSP
+ * 参考
+ *   1、 https://developer.chrome.com/docs/extensions/reference/webRequest/#event-onHeadersReceived
+ *   2、 Arrow_Function 箭头函数
+ *   3、 return {responseHeaders: details.responseHeaders};
+ *
+ */
+
 chrome.webRequest.onHeadersReceived.addListener(
-  function (details) {
-    tabinfo.set(details.tabId, hasCSP(details.responseHeaders));
+    details=>{
+         newResponseHeaders:details.responseHeaders.filter(
+            header =>!removeHeaders.includes(header.name.toLowerCase())
+        )
   },
   {
-    urls: ["<all_urls>"],
-    types: ["main_frame"],
+//    urls: ["<all_urls>"],
+    //需要移除CSP自己添加url
+    urls: [
+        "*://ajax.googleapis.com/*",
+        "*://fonts.googleapis.com/*",
+        "*://themes.googleusercontent.com/*",
+        "*://fonts.gstatic.com/*",
+        "*://www.google.com/recaptcha/*",
+        "*://secure.gravatar.com/*",
+        "*://www.gravatar.com/*",
+        "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+        '*://api.github.com/*',
+        '*://www.gstatic.com/*',
+        '*://stackoverflow.com/*',
+        '*://translate.googleapis.com/*',
+        "*://developers.redhat.com/*"
+    ],
+    types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]
   },
-  ["responseHeaders"]
+    ["blocking", 'responseHeaders']
 );
 
 chrome.webRequest.onBeforeRequest.addListener(
@@ -65,7 +110,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://www.google.com/recaptcha/*",
       "*://secure.gravatar.com/*",
       "*://www.gravatar.com/*",
-      "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+      "*://maxcdn.bootstrapcdn.com/bootstrap/*"
     ],
   },
   ["blocking"]
