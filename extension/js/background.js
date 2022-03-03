@@ -17,10 +17,10 @@ function hasCSP(headers = []) {
 
 
 /**
- * 需要去除的响应头
+ * 响应头里CSP相关的选项
  * @type {string[]}
  */
-const removeHeaders=[
+const removeCSP=[
     'content-security-policy',
     'content-security-policy-report-only',
     'expect-ct',
@@ -43,15 +43,18 @@ const removeHeaders=[
  *   3、 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
  *   4、 Arrow_Function 箭头函数
  *   5、 返回新的新的响应头： return {responseHeaders: details.responseHeaders};
- *   6、Chrome 新增的可信类型（Trusted types）暂时不知道怎么解决
+ *   6、Chrome 新增的可信类型（Trusted types），暂时不知道怎么解决
  *
  */
 
 chrome.webRequest.onHeadersReceived.addListener(
-    details=>{
-         newResponseHeaders:details.responseHeaders.filter(
-            header =>!removeHeaders.includes(header.name.toLowerCase())
-        )
+    (details)=>{
+        tabinfo.set(details.tabId, hasCSP(details.responseHeaders)); //暂时不知道什么地方用到
+        return {
+            responseHeaders:details.responseHeaders.filter(
+                header =>!removeCSP.includes(header.name.toLowerCase())
+            )
+        };
   },
   {
 //    urls: ["<all_urls>"],
@@ -61,19 +64,20 @@ chrome.webRequest.onHeadersReceived.addListener(
         "*://fonts.googleapis.com/*",
         "*://themes.googleusercontent.com/*",
         "*://fonts.gstatic.com/*",
-        "*://www.google.com/recaptcha/*",
+        "*://*.google.com/*",
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
-        "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+        "*://maxcdn.bootstrapcdn.com/*",
         '*://api.github.com/*',
         '*://www.gstatic.com/*',
         '*://stackoverflow.com/*',
         '*://translate.googleapis.com/*',
-        "*://developers.redhat.com/*"
+        "*://developers.redhat.com/*",
+        "*://cloud-soft.xieyaokun.com/*"
     ],
     types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]
   },
-    ["blocking", 'responseHeaders']
+  ["blocking", 'responseHeaders']
 );
 
 chrome.webRequest.onBeforeRequest.addListener(
@@ -104,7 +108,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       "maxcdn.bootstrapcdn.com/bootstrap/",
       "cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
     );
-
     return { redirectUrl: url };
   },
   {
@@ -116,7 +119,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://www.google.com/recaptcha/*",
       "*://secure.gravatar.com/*",
       "*://www.gravatar.com/*",
-      "*://maxcdn.bootstrapcdn.com/bootstrap/*"
+      "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+
     ],
   },
   ["blocking"]
