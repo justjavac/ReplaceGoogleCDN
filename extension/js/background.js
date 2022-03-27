@@ -80,6 +80,15 @@ chrome.webRequest.onHeadersReceived.addListener(
   ["blocking", 'responseHeaders']
 );
 
+//Open Source urls
+let opensource_gogole_urls=[
+    "*://*.chromium.org/*", //Chromium ChromiumOS GN
+    "*://*.googlesource.com/*", //Chromium
+    "*://summerofcode.withgoogle.com/*",
+    "https://cs.opensource.google/*", //Google Open Source
+    "https://opensource.googleblog.com/*",
+    "https://opensource.google/*",
+]
 /**
  *   使用自己架设nginx服务，替换地址
  *
@@ -125,7 +134,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     // }
 
     // 使用nginx架设的服务地址替换
-    // return {redirectUrl: use_nginx_proxy(details)};
+    // return {redirectUrl: use_nginx_proxy(details,'.proxy.domain.com')};
 
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
@@ -154,8 +163,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-       // "*://*.chromium.org/*",
-       // "*://*.googlesource.com/*"
+        //...opensource_gogole_urls
     ],
   },
   ["blocking"]
