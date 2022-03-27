@@ -3,3 +3,7 @@ extension.zip
 .idea/
 .DS_Store
 Thumbs.db
+server/nginx.conf
+server/tls/*
+!server/tls/.gitkeep
+

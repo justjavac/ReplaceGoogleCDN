@@ -80,6 +80,37 @@ chrome.webRequest.onHeadersReceived.addListener(
   ["blocking", 'responseHeaders']
 );
 
+/**
+ *   使用自己架设nginx服务，替换地址
+ *
+ *   容器运行 nginx 脚本位于server 目录
+ *   备注： domain.com   请更换为自己的域名
+ *
+ *   测试案例 查看chromium 源码
+ *   https://gerrit.googlesource.com/gerrit
+ *   https://www.chromium.org
+ *   https://chromium.googlesource.com/
+ *   https://source.chromium.org/chromium
+ * @param details
+ * @param proxy_provider  # 请更换为自己的域名
+ * @returns {string}
+ *
+ */
+let use_nginx_proxy=(details,proxy_provider='.proxy.domain.com')=>{
+    // 主要是和 nginx 配合使用
+    let url = details.url.replace('http://', 'https://')
+    // 代理服务提供者 需要支持泛域名
+    // let proxy_provider = '.proxy.domain.com'
+    let middle_builder = new URL(url);
+    // 中文域名编码转换 punycode标准编码: punycode('点')= 'xn--3px'
+    //替换点. 为了正则表达式好区分
+    let host = middle_builder.host.replace(/\./g, '_xn--3px_');
+    //计算符号点的个数
+    let dot_nums = middle_builder.host.match(/\./g).length
+    let query_string = middle_builder.pathname + middle_builder.search
+    return  "https://" + dot_nums + '_' + host + proxy_provider + query_string;
+}
+
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     // Comment out these lines
@@ -92,6 +123,9 @@ chrome.webRequest.onBeforeRequest.addListener(
     // if (tabinfo.get(details.tabId)) {
     //     return details.url;
     // }
+
+    // 使用nginx架设的服务地址替换
+    // return {redirectUrl: use_nginx_proxy(details)};
 
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
@@ -112,15 +146,16 @@ chrome.webRequest.onBeforeRequest.addListener(
   },
   {
     urls: [
-      "*://ajax.googleapis.com/*",
-      "*://fonts.googleapis.com/*",
-      "*://themes.googleusercontent.com/*",
-      "*://fonts.gstatic.com/*",
-      "*://www.google.com/recaptcha/*",
-      "*://secure.gravatar.com/*",
-      "*://www.gravatar.com/*",
-      "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-
+        "*://ajax.googleapis.com/*",
+        "*://fonts.googleapis.com/*",
+        "*://themes.googleusercontent.com/*",
+        "*://fonts.gstatic.com/*",
+        "*://www.google.com/recaptcha/*",
+        "*://secure.gravatar.com/*",
+        "*://www.gravatar.com/*",
+        "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+       // "*://*.chromium.org/*",
+       // "*://*.googlesource.com/*"
     ],
   },
   ["blocking"]
