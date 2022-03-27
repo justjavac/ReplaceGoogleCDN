@@ -164,14 +164,15 @@ chrome.webRequest.onBeforeRequest.addListener(
     //     return details.url;
     // }
 
-    //方法一： 使用nginx架设的服务地址替换
+    //方法一： 使用nginx架设的服务地址替换 (支持N个域名)
     // return {redirectUrl: use_nginx_proxy(details,'.proxy.domain.com')};
-    //方法二：
+    //方法二： 支持指定数目的域名
+     /*
     let des_url;
     if ((des_url = repace_cdn_urls(details))) {
       return {redirectUrl: des_url};
     }
-
+    */
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
     url = url.replace("fonts.googleapis.com", "fonts.loli.net");
