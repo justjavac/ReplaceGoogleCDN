@@ -90,7 +90,7 @@ let opensource_gogole_urls=[
     "https://opensource.google/*",
 ]
 /**
- *   使用自己架设nginx服务，替换地址
+ *   使用自己架设的 nginx服务，替换CDN地址
  *
  *   容器运行 nginx 脚本位于 server 目录
  *   备注： domain.com   请更换为自己的域名
