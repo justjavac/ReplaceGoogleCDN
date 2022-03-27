@@ -20,7 +20,7 @@ function hasCSP(headers = []) {
  * 响应头里CSP相关的选项
  * @type {string[]}
  */
-const removeCSP=[
+const remove_csp_item=[
     'content-security-policy',
     'content-security-policy-report-only',
     'expect-ct',
@@ -34,7 +34,26 @@ const removeCSP=[
     'permissions-policy',
     'timing-allow-origin'
 ];
-
+/**
+ * 需要移除CSP的URL
+ * @type {string[]}
+ */
+const remove_cps_urls=[
+    "*://ajax.googleapis.com/*",
+    "*://fonts.googleapis.com/*",
+    "*://themes.googleusercontent.com/*",
+    "*://fonts.gstatic.com/*",
+    "*://*.google.com/*",
+    "*://secure.gravatar.com/*",
+    "*://www.gravatar.com/*",
+    "*://maxcdn.bootstrapcdn.com/*",
+    '*://api.github.com/*',
+    '*://www.gstatic.com/*',
+    '*://stackoverflow.com/*',
+    '*://translate.googleapis.com/*',
+    "*://developers.redhat.com/*",
+    "*://cloud-soft.xieyaokun.com/*"
+]
 /**
  * 移除CSP
  * 参考文档：
@@ -52,7 +71,7 @@ chrome.webRequest.onHeadersReceived.addListener(
         tabinfo.set(details.tabId, hasCSP(details.responseHeaders)); //暂时不知道什么地方用到
         return {
             responseHeaders:details.responseHeaders.filter(
-                header =>!removeCSP.includes(header.name.toLowerCase())
+                header =>!remove_csp_item.includes(header.name.toLowerCase())
             )
         };
   },
@@ -60,20 +79,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 //    urls: ["<all_urls>"],
     //需要移除CSP自己添加url
     urls: [
-        "*://ajax.googleapis.com/*",
-        "*://fonts.googleapis.com/*",
-        "*://themes.googleusercontent.com/*",
-        "*://fonts.gstatic.com/*",
-        "*://*.google.com/*",
-        "*://secure.gravatar.com/*",
-        "*://www.gravatar.com/*",
-        "*://maxcdn.bootstrapcdn.com/*",
-        '*://api.github.com/*',
-        '*://www.gstatic.com/*',
-        '*://stackoverflow.com/*',
-        '*://translate.googleapis.com/*',
-        "*://developers.redhat.com/*",
-        "*://cloud-soft.xieyaokun.com/*"
+        ...remove_cps_urls
     ],
     types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]
   },
@@ -81,7 +87,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 );
 
 //Open Source urls
-let opensource_gogole_urls=[
+let opensource_goole_urls=[
     "*://*.chromium.org/*", //Chromium ChromiumOS GN
     "*://*.googlesource.com/*", //Chromium
     "*://summerofcode.withgoogle.com/*",
@@ -106,7 +112,7 @@ let opensource_gogole_urls=[
  * @returns {string}
  *
  */
-let use_nginx_proxy=(details,proxy_provider='.proxy.domain.com')=>{
+let use_nginx_proxy=(details,proxy_provider)=>{
     // 主要是和 nginx 配合使用
     let url = details.url.replace('http://', 'https://')
     // 代理服务提供者 需要支持泛域名
@@ -164,7 +170,10 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-        //...opensource_gogole_urls
+        /*
+        ...opensource_goole_urls
+
+         */
     ],
   },
   ["blocking"]
