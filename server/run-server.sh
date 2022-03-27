@@ -8,7 +8,7 @@ cd "${__DIR__}"
 
 docker run --rm  \
 --name nginx-proxy-server \
--p 8081:80 \
+-p 80:80 \
 -p 443:443 \
 -v "${__DIR__}"/nginx-ok.conf:/etc/nginx/nginx.conf \
 -v "${__DIR__}"/custom-proxy-header.item:/etc/nginx/conf.d/custom-proxy-header.item \

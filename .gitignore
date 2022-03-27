@@ -4,6 +4,7 @@ extension.zip
 .DS_Store
 Thumbs.db
 server/nginx.conf
+server/conf.d
 server/tls/*
 !server/tls/.gitkeep
 
