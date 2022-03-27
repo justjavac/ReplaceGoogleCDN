@@ -112,19 +112,43 @@ let opensource_goole_urls=[
  * @returns {string}
  *
  */
-let use_nginx_proxy=(details,proxy_provider)=>{
+let use_nginx_proxy = (details, proxy_provider) => {
     // 主要是和 nginx 配合使用
     let url = details.url.replace('http://', 'https://')
     // 代理服务提供者 需要支持泛域名
     // let proxy_provider = '.proxy.domain.com'
     let middle_builder = new URL(url);
     // 中文域名编码转换 punycode标准编码: punycode('点')= 'xn--3px'
-    //替换点. 为了正则表达式好区分
+    //替换点. 为了正则表达式好区分 _xn--3px_仅仅是分隔符号，可以自己定义分隔符号
     let host = middle_builder.host.replace(/\./g, '_xn--3px_');
     //计算符号点的个数
     let dot_nums = middle_builder.host.match(/\./g).length
     let query_string = middle_builder.pathname + middle_builder.search
-    return  "https://" + dot_nums + '_' + host + proxy_provider + query_string;
+    return "https://" + dot_nums + '_' + host + proxy_provider + query_string;
+}
+
+let suffix_doman = '.proxy.domain.com'
+let need_replace_cdn_urls = [
+    'ajax.googleapis.com',
+    'fonts.googleapis.com',
+    'themes.googleusercontent.com',
+    'fonts.gstatic.com',
+    'ssl.gstatic.com',
+    'www.gstatic.com',
+    'secure.gravatar.com',
+    'maxcdn.bootstrapcdn.com'
+]
+let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
+    return "https://" + currentValue.replace(/\./g, '-') + suffix_doman
+})
+let repace_cdn_urls = (details) => {
+    let url_obj = new URL(details.url);
+    let query_string = url_obj.pathname + url_obj.search
+    let element_postion = need_replace_cdn_urls.indexOf(url_obj.hostname);
+    if (element_postion !== -1) {
+        return cdn_urls[element_postion] + query_string;
+    }
+    return null;
 }
 
 chrome.webRequest.onBeforeRequest.addListener(
@@ -140,8 +164,13 @@ chrome.webRequest.onBeforeRequest.addListener(
     //     return details.url;
     // }
 
-    // 使用nginx架设的服务地址替换
+    //方法一： 使用nginx架设的服务地址替换
     // return {redirectUrl: use_nginx_proxy(details,'.proxy.domain.com')};
+    //方法二：
+    let des_url;
+    if ((des_url = repace_cdn_urls(details))) {
+      return {redirectUrl: des_url};
+    }
 
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");

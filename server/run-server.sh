@@ -5,7 +5,12 @@ __DIR__=$(cd "$(dirname "$0")";pwd)
 cd "${__DIR__}"
 
 # tls 目录存放 https 证书
-
+{
+  docker stop nginx-proxy-server
+} ||
+{
+  echo $?
+}
 docker run --rm  \
 --name nginx-proxy-server \
 -p 80:80 \
