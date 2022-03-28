@@ -165,12 +165,15 @@ chrome.webRequest.onBeforeRequest.addListener(
     // }
 
     //方法一： 使用nginx架设的服务地址替换 (支持N个域名)
-    // return {redirectUrl: use_nginx_proxy(details,'.proxy.domain.com')};
+      /*
+      return {redirectUrl: use_nginx_proxy(details,suffix_doman)};
+      */
+
     //方法二： 支持指定数目的域名
      /*
     let des_url;
     if ((des_url = repace_cdn_urls(details))) {
-      return {redirectUrl: des_url};
+     return {redirectUrl: des_url};
     }
     */
     let url = details.url.replace("http://", "https://");
@@ -200,10 +203,10 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-        /*
-        ...opensource_goole_urls
-
-         */
+   /*
+        ...opensource_goole_urls,
+        "*://apis.google.com/*",
+   */
     ],
   },
   ["blocking"]
