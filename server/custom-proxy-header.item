@@ -1,0 +1,37 @@
+set $cors_origin "*";
+set $allow_credentials "true";
+
+set $origin_is_exists 0;
+
+if ( $http_origin = "null" ){
+    set $origin_is_exists 1;
+}
+
+if ( $http_origin != '' ){
+    set $origin_is_exists 1;
+}
+
+if ($origin_is_exists = 1) {
+    set $cors_origin $http_origin;
+}
+
+if ( $request_uri ~* .(eot|ttf|woff|svg|otf|woff2)$ )
+{
+    set $cors_origin "*";
+}
+
+set $custom_headers 'Authorization,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,authorization,accept-ranges,content-length,content-type,date,server,last-modified,etag,access-control-allow-credentials,access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,access-control-expose-headers,content-security-policy,content-security-policy-report-only,referrer-policy,Strict-Transport-Security';
+
+add_header Access-Control-Allow-Origin $cors_origin always;
+add_header Access-Control-Allow-Methods 'GET,HEAD,POST,PUT,DELETE,CONNECT,OPTIONS,TRACE,PATCH' always;
+add_header Access-Control-Allow-Credentials $allow_credentials always;
+
+add_header 'Access-Control-Allow-Headers' "$custom_headers";
+add_header 'Access-Control-Expose-Headers' "$custom_headers";
+#   预检请求处理
+if ( $request_method = "OPTIONS" ) {
+    return 204;
+}
+
+
+

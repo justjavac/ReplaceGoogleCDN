@@ -20,7 +20,7 @@ function hasCSP(headers = []) {
  * 响应头里CSP相关的选项
  * @type {string[]}
  */
-const removeCSP=[
+const remove_csp_item=[
     'content-security-policy',
     'content-security-policy-report-only',
     'expect-ct',
@@ -34,7 +34,26 @@ const removeCSP=[
     'permissions-policy',
     'timing-allow-origin'
 ];
-
+/**
+ * 需要移除CSP的URL
+ * @type {string[]}
+ */
+const remove_cps_urls=[
+    "*://ajax.googleapis.com/*",
+    "*://fonts.googleapis.com/*",
+    "*://themes.googleusercontent.com/*",
+    "*://fonts.gstatic.com/*",
+    "*://*.google.com/*",
+    "*://secure.gravatar.com/*",
+    "*://www.gravatar.com/*",
+    "*://maxcdn.bootstrapcdn.com/*",
+    '*://api.github.com/*',
+    '*://www.gstatic.com/*',
+    '*://stackoverflow.com/*',
+    '*://translate.googleapis.com/*',
+    "*://developers.redhat.com/*",
+    "*://cloud-soft.xieyaokun.com/*"
+]
 /**
  * 移除CSP
  * 参考文档：
@@ -52,7 +71,7 @@ chrome.webRequest.onHeadersReceived.addListener(
         tabinfo.set(details.tabId, hasCSP(details.responseHeaders)); //暂时不知道什么地方用到
         return {
             responseHeaders:details.responseHeaders.filter(
-                header =>!removeCSP.includes(header.name.toLowerCase())
+                header =>!remove_csp_item.includes(header.name.toLowerCase())
             )
         };
   },
@@ -60,25 +79,77 @@ chrome.webRequest.onHeadersReceived.addListener(
 //    urls: ["<all_urls>"],
     //需要移除CSP自己添加url
     urls: [
-        "*://ajax.googleapis.com/*",
-        "*://fonts.googleapis.com/*",
-        "*://themes.googleusercontent.com/*",
-        "*://fonts.gstatic.com/*",
-        "*://*.google.com/*",
-        "*://secure.gravatar.com/*",
-        "*://www.gravatar.com/*",
-        "*://maxcdn.bootstrapcdn.com/*",
-        '*://api.github.com/*',
-        '*://www.gstatic.com/*',
-        '*://stackoverflow.com/*',
-        '*://translate.googleapis.com/*',
-        "*://developers.redhat.com/*",
-        "*://cloud-soft.xieyaokun.com/*"
+        ...remove_cps_urls
     ],
     types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]
   },
   ["blocking", 'responseHeaders']
 );
+
+//Open Source urls
+let opensource_goole_urls=[
+    "*://*.chromium.org/*", //Chromium ChromiumOS GN
+    "*://*.googlesource.com/*", //Chromium
+    "*://summerofcode.withgoogle.com/*",
+    "https://cs.opensource.google/*", //Google Open Source
+    "https://opensource.googleblog.com/*",
+    "https://opensource.google/*",
+]
+/**
+ *   使用自己架设的 nginx服务，替换CDN地址
+ *
+ *   容器运行 nginx 脚本位于 server 目录
+ *   备注： domain.com   请更换为自己的域名
+ *
+ *   测试案例 查看chromium 源码
+ *   https://gerrit.googlesource.com/gerrit
+ *   https://www.chromium.org
+ *   https://chromium.googlesource.com/
+ *   https://source.chromium.org/chromium
+ *   https://cs.opensource.google/
+ * @param details
+ * @param proxy_provider  # 请更换为自己的域名
+ * @returns {string}
+ *
+ */
+let use_nginx_proxy = (details, proxy_provider) => {
+    // 主要是和 nginx 配合使用
+    let url = details.url.replace('http://', 'https://')
+    // 代理服务提供者 需要支持泛域名
+    // let proxy_provider = '.proxy.domain.com'
+    let middle_builder = new URL(url);
+    // 中文域名编码转换 punycode标准编码: punycode('点')= 'xn--3px'
+    //替换点. 为了正则表达式好区分 _xn--3px_仅仅是分隔符号，可以自己定义分隔符号
+    let host = middle_builder.host.replace(/\./g, '_xn--3px_');
+    //计算符号点的个数
+    let dot_nums = middle_builder.host.match(/\./g).length
+    let query_string = middle_builder.pathname + middle_builder.search
+    return "https://" + dot_nums + '_' + host + proxy_provider + query_string;
+}
+
+let suffix_doman = '.proxy.domain.com'
+let need_replace_cdn_urls = [
+    'ajax.googleapis.com',
+    'fonts.googleapis.com',
+    'themes.googleusercontent.com',
+    'fonts.gstatic.com',
+    'ssl.gstatic.com',
+    'www.gstatic.com',
+    'secure.gravatar.com',
+    'maxcdn.bootstrapcdn.com'
+]
+let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
+    return "https://" + currentValue.replace(/\./g, '-') + suffix_doman
+})
+let repace_cdn_urls = (details) => {
+    let url_obj = new URL(details.url);
+    let query_string = url_obj.pathname + url_obj.search
+    let element_postion = need_replace_cdn_urls.indexOf(url_obj.hostname);
+    if (element_postion !== -1) {
+        return cdn_urls[element_postion] + query_string;
+    }
+    return null;
+}
 
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
@@ -93,6 +164,18 @@ chrome.webRequest.onBeforeRequest.addListener(
     //     return details.url;
     // }
 
+    //方法一： 使用nginx架设的服务地址替换 (支持N个域名)
+      /*
+      return {redirectUrl: use_nginx_proxy(details,suffix_doman)};
+      */
+
+    //方法二： 支持指定数目的域名
+     /*
+    let des_url;
+    if ((des_url = repace_cdn_urls(details))) {
+     return {redirectUrl: des_url};
+    }
+    */
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
     url = url.replace("fonts.googleapis.com", "fonts.loli.net");
@@ -112,15 +195,18 @@ chrome.webRequest.onBeforeRequest.addListener(
   },
   {
     urls: [
-      "*://ajax.googleapis.com/*",
-      "*://fonts.googleapis.com/*",
-      "*://themes.googleusercontent.com/*",
-      "*://fonts.gstatic.com/*",
-      "*://www.google.com/recaptcha/*",
-      "*://secure.gravatar.com/*",
-      "*://www.gravatar.com/*",
-      "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-
+        "*://ajax.googleapis.com/*",
+        "*://fonts.googleapis.com/*",
+        "*://themes.googleusercontent.com/*",
+        "*://fonts.gstatic.com/*",
+        "*://www.google.com/recaptcha/*",
+        "*://secure.gravatar.com/*",
+        "*://www.gravatar.com/*",
+        "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+   /*
+        ...opensource_goole_urls,
+        "*://apis.google.com/*",
+   */
     ],
   },
   ["blocking"]
