@@ -8,3 +8,4 @@ server/conf.d
 server/tls/*
 !server/tls/.gitkeep
 _metadata/
+extension/_metadata

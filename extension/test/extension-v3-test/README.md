@@ -56,11 +56,10 @@ sh  startup-local-test-web-server.sh
                 "path": "rules/rules_1.json"
             },
             {
-            "id": "ruleset_2",
-            "enabled": true,
-            "path": "test/extension-v3-test/rules_test.json"
+                "id": "ruleset_2",
+                "enabled": true,
+                "path": "test/extension-v3-test/rules_test.json"
             }
-
         ]
     },
 
