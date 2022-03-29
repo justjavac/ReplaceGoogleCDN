@@ -95,6 +95,12 @@ let opensource_goole_urls=[
     "https://opensource.googleblog.com/*",
     "https://opensource.google/*",
 ]
+
+let test_urls=[
+    ...opensource_goole_urls, //数组
+    "*://*.google.com/*",  //测试域名
+    "*://github.com/*",    //测试域名
+]
 /**
  *   使用自己架设的 nginx服务，替换CDN地址
  *
@@ -136,7 +142,9 @@ let need_replace_cdn_urls = [
     'ssl.gstatic.com',
     'www.gstatic.com',
     'secure.gravatar.com',
-    'maxcdn.bootstrapcdn.com'
+    'maxcdn.bootstrapcdn.com',
+    'github.com',
+    'www.google.com'
 ]
 let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
     return "https://" + currentValue.replace(/\./g, '-') + suffix_doman
@@ -164,18 +172,26 @@ chrome.webRequest.onBeforeRequest.addListener(
     //     return details.url;
     // }
 
-    //方法一： 使用nginx架设的服务地址替换 (支持N个域名)
+    // 方法一： 支持特定域名替换
+    // 测试例子：打开 https://github.com (仅用于学习技术)
+    // https://github-com.proxy.xiaoshuogeng.com/
+    /*
+     let des_url;
+     if ((des_url = replace_cdn_urls(details))) {
+        return {redirectUrl: des_url};
+     }
+     */
+
+
+     // 方法二： 使用nginx架设的服务地址替换 (支持N个域名)
+     // 测试例子：打开 https://ww.google.com (仅用于学习技术)
+     // https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
       /*
+
       return {redirectUrl: use_nginx_proxy(details,suffix_doman)};
+
       */
 
-    //方法二： 支持指定数目的域名
-     /*
-    let des_url;
-    if ((des_url = replace_cdn_urls(details))) {
-     return {redirectUrl: des_url};
-    }
-    */
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
     url = url.replace("fonts.googleapis.com", "fonts.loli.net");
@@ -203,10 +219,8 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-   /*
-        ...opensource_goole_urls,
-        "*://apis.google.com/*",
-   */
+        // ...test_urls // 测试
+
     ],
   },
   ["blocking"]
