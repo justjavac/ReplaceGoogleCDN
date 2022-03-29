@@ -1,48 +1,7 @@
-
-## manifest host_permissions 例子
-```javascript
-{
-    "host_permissions": [ //指定地址写法
-         "*://ajax.googleapis.com/*",
-         "*://fonts.googleapis.com/*",
-         "*://themes.googleusercontent.com/*",
-         "*://fonts.gstatic.com/*",
-         "*://ssl.gstatic.com/*",
-         "*://www.gstatic.com/*",
-         "*://secure.gravatar.com/*",
-         "*://maxcdn.bootstrapcdn.com/*",
-    ], 
-    "host_permissions": [ //所有地址写法,最省事
-         "*://*.google.com/*",
-        "*://*/*",
-        "<all_urls>"
-    ]
-}
-```
-```javascript
-
-[
-     "ajax.googleapis.com",
-     "fonts.googleapis.com",
-     "themes.googleusercontent.com",
-     "fonts.gstatic.com",
-     "www.google.com",
-     "secure.gravatar.com",
-     "maxcdn.bootstrapcdn.com"
-]
-```
+## chromium extension v3 
 
 
-
-
-###  本地启动 web server 
-```shell
-
-sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
-
-```
-
-### 修改 manifest.json 文件测试配置,结果如下：
+# 修改 manifest.json 文件测试配置,结果如下：
 ```text 
 
 ## manifeset.json 参考 declarative_net_request 配置
@@ -106,5 +65,46 @@ sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
     "enabled": true,
     "path": "test/extension-v3-test/rules_block_1.json"
 }
+
+```
+
+## manifest host_permissions 例子
+```javascript
+{
+    "host_permissions": [ //指定地址写法
+         "*://ajax.googleapis.com/*",
+         "*://fonts.googleapis.com/*",
+         "*://themes.googleusercontent.com/*",
+         "*://fonts.gstatic.com/*",
+         "*://ssl.gstatic.com/*",
+         "*://www.gstatic.com/*",
+         "*://secure.gravatar.com/*",
+         "*://maxcdn.bootstrapcdn.com/*",
+    ], 
+    "host_permissions": [ //所有地址写法,最省事
+         "*://*.google.com/*",
+        "*://*/*",
+        "<all_urls>"
+    ]
+}
+```
+```javascript
+
+[
+     "ajax.googleapis.com",
+     "fonts.googleapis.com",
+     "themes.googleusercontent.com",
+     "fonts.gstatic.com",
+     "www.google.com",
+     "secure.gravatar.com",
+     "maxcdn.bootstrapcdn.com"
+]
+```
+
+
+###  本地启动 web server
+```shell
+
+sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
 
 ```
