@@ -52,7 +52,7 @@ const remove_cps_urls=[
     '*://stackoverflow.com/*',
     '*://translate.googleapis.com/*',
     "*://developers.redhat.com/*",
-    "*://cloud-soft.xieyaokun.com/*"
+//    "*://cloud-soft.xieyaokun.com/*"
 ]
 /**
  * 移除CSP
@@ -96,6 +96,7 @@ let opensource_goole_urls=[
     "https://opensource.google/*",
 ]
 
+// 测试域名组
 let test_urls=[
     ...opensource_goole_urls, //数组
     "*://*.google.com/*",  //测试域名
@@ -133,7 +134,9 @@ let use_nginx_proxy = (details, proxy_provider) => {
     return "https://" + dot_nums + '_' + host + proxy_provider + query_string;
 }
 
-let suffix_doman = '.proxy.domain.com'
+//你的支持泛解析的域名
+let suffix_domain = '.proxy.domain.com'
+
 let need_replace_cdn_urls = [
     'ajax.googleapis.com',
     'fonts.googleapis.com',
@@ -143,11 +146,11 @@ let need_replace_cdn_urls = [
     'www.gstatic.com',
     'secure.gravatar.com',
     'maxcdn.bootstrapcdn.com',
-//    'github.com',
-//    'www.google.com'
+    'github.com',
+    'www.google.com'
 ]
 let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
-    return "https://" + currentValue.replace(/\./g, '-') + suffix_doman
+    return "https://" + currentValue.replace(/\./g, '-') + suffix_domain
 })
 let replace_cdn_urls = (details) => {
     let url_obj = new URL(details.url);
@@ -175,12 +178,15 @@ chrome.webRequest.onBeforeRequest.addListener(
     // 方法一： 支持特定域名替换
     // 测试例子：打开 https://github.com (仅用于学习技术)
     // https://github-com.proxy.xiaoshuogeng.com/
-    /*
+     /*
+
      let des_url;
      if ((des_url = replace_cdn_urls(details))) {
         return {redirectUrl: des_url};
      }
-     */
+
+
+      */
 
 
      // 方法二： 使用nginx架设的服务动态地址替换
@@ -188,7 +194,7 @@ chrome.webRequest.onBeforeRequest.addListener(
      // https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
       /*
 
-      return {redirectUrl: use_nginx_proxy(details,suffix_doman)};
+      return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
 
       */
 
