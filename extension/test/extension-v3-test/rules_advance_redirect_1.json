@@ -10,7 +10,7 @@
     },
     "condition": {
       "isUrlFilter" : false,
-      "urlFilter": "*.proxy.domain.com",
+      "urlFilter": "*.proxy.xiaoshuogeng.com",
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
         "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
@@ -29,7 +29,8 @@
     "condition": {
       "regexFilter": "^https://(\\w+?)\\.(\\w+?)/(.*?)",
       "requestDomains":[
-        "github.com"
+        "github.com",
+        "example.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
@@ -50,6 +51,14 @@
     "condition": {
       "regexFilter": "^https://(\\w+?)\\.(\\w+?)\\.(\\w+?)/(.*?)",
       "requestDomains":[
+        "ajax.googleapis.com",
+        "fonts.googleapis.com",
+        "themes.googleusercontent.com",
+        "fonts.gstatic.com",
+        "ssl.gstatic.com",
+        "www.gstatic.com",
+        "secure.gravatar.com",
+        "maxcdn.bootstrapcdn.com",
         "www.google.com"
       ],
       "resourceTypes": [

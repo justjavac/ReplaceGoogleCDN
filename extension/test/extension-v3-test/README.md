@@ -32,14 +32,7 @@
 ]
 ```
 
-## 测试步骤
-1. 修改 extension/manifest.json 文件 启用测试配置
-2. 更新浏览器扩展
-3. 浏览器打开地址： https://stackoverflow.com/questions
-4. 也可以启动本地测试
-5. 启动 本地 web server：   sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
-6. 浏览器打开地址： http://127.0.0.1:8001
-7. 打开浏览嚣控制台 网络面板查看网址结果
+
 
 
 ###  本地启动 web server 
@@ -52,20 +45,66 @@ sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
 ### 修改 manifest.json 文件测试配置,结果如下：
 ```text 
 
+## manifeset.json 参考 declarative_net_request 配置
+```json 
     "declarative_net_request" : {
         "rule_resources" : [
             {
-                "id": "ruleset_1",
+                "id": "ruleset_redirect_1",
                 "enabled": true,
-                "path": "rules/rules_1.json"
+                "path": "rules/rules_redirect_1.json"
             },
             {
-                "id": "ruleset_2",
+                "id": "ruleset_remove_header_1",
                 "enabled": true,
-                "path": "test/extension-v3-test/rules_test.json"
+                "path": "rules/rules_remove_header_1.json"
+            },
+            {
+                "id": "ruleset_block_header_1",
+                "enabled": true,
+                "path": "test/extension-v3-test/rules_block_1.json"
+            },{
+                "id": "ruleset_advance_redirect_2",
+                "enabled": true,
+                "path": "test/extension-v3-test/rules_advance_redirect_2.json"
             }
         ]
     },
 
+```
+
+## manifest.json  declarative_net_reques 高级配置示例
+### 匹配指定域名
+> github.com  -> github-com.proxy.domain.com
+> 真实测试地址： github.com  ->  https://github-com.proxy.xiaoshuogeng.com/
+```json
+
+{
+    "id": "ruleset_advance_redirect_1",
+    "enabled": true,
+    "path": "test/extension-v3-test/rules_advance_redirect_1.json"
+}
+
+```
+## 匹配指定域名
+> www.google.com   ->    https://2_www_xn--3px_google_xn--3px_com.proxy.domain.com/
+>真实测试地址 www.google.com   ->    https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
+
+```json
+{
+    "id": "ruleset_advance_redirect_2",
+    "enabled": true,
+    "path": "test/extension-v3-test/rules_advance_redirect_2.json"
+}
+```
+
+### 阻止指定域名
+```json
+
+{
+    "id": "ruleset_block_header_1",
+    "enabled": true,
+    "path": "test/extension-v3-test/rules_block_1.json"
+}
 
 ```

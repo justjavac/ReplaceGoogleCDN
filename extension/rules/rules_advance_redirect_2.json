@@ -10,7 +10,7 @@
     },
     "condition": {
       "isUrlFilter" : false,
-      "urlFilter": "*.proxy.xiaoshuogeng.com",
+      "urlFilter": "*.proxy.domain.com",
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
         "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
@@ -23,17 +23,17 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://1_\\1_xn--3px_\\2.proxy.xiaoshuogeng.com/\\3"
+        "regexSubstitution": "https://1_\\1_xn--3px_\\2.proxy.domain.com/\\3"
       }
     },
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "requireCapturing": true,
       "excludedInitiatorDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "excludedRequestDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
@@ -54,10 +54,10 @@
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "excludedInitiatorDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "excludedRequestDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
@@ -78,10 +78,10 @@
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "excludedInitiatorDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "excludedRequestDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
@@ -102,10 +102,10 @@
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "excludedInitiatorDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "excludedRequestDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
@@ -126,10 +126,10 @@
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "excludedInitiatorDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "excludedRequestDomains":[
-        "proxy.domain"
+        "proxy.domain.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
