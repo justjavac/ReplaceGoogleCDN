@@ -24,11 +24,6 @@
                 "id": "ruleset_1",
                 "enabled": true,
                 "path": "rules/rules_1.json"
-            },
-            {
-            "id": "ruleset_2",
-            "enabled": true,
-            "path": "test/extension-v3-test/rules_test.json"
             }
 
         ]
