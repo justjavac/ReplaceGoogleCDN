@@ -143,8 +143,8 @@ let need_replace_cdn_urls = [
     'www.gstatic.com',
     'secure.gravatar.com',
     'maxcdn.bootstrapcdn.com',
-    'github.com',
-    'www.google.com'
+//    'github.com',
+//    'www.google.com'
 ]
 let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
     return "https://" + currentValue.replace(/\./g, '-') + suffix_doman
@@ -183,7 +183,7 @@ chrome.webRequest.onBeforeRequest.addListener(
      */
 
 
-     // 方法二： 使用nginx架设的服务地址替换 (支持N个域名)
+     // 方法二： 使用nginx架设的服务动态地址替换
      // 测试例子：打开 https://ww.google.com (仅用于学习技术)
      // https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
       /*
