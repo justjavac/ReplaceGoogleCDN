@@ -1,0 +1,68 @@
+
+## manifest host_permissions 例子
+```javascript
+{
+    "host_permissions": [ //指定地址写法
+         "*://ajax.googleapis.com/*",
+         "*://fonts.googleapis.com/*",
+         "*://themes.googleusercontent.com/*",
+         "*://fonts.gstatic.com/*",
+         "*://ssl.gstatic.com/*",
+         "*://www.gstatic.com/*",
+         "*://secure.gravatar.com/*",
+         "*://maxcdn.bootstrapcdn.com/*",
+    ], 
+    "host_permissions": [ //所有地址写法
+         "*://*.google.com/*",
+        "*://*/*",
+        "<all_urls>"
+    ]
+}
+```
+```javascript
+
+[
+     "ajax.googleapis.com",
+     "fonts.googleapis.com",
+     "themes.googleusercontent.com",
+     "fonts.gstatic.com",
+     "www.google.com",
+     "secure.gravatar.com",
+     "maxcdn.bootstrapcdn.com"
+]
+```
+
+## 测试 
+1. 启动 本地 web server
+2. 浏览器打开 http://127.0.0.1:8001
+3. 修改 extension/manifest.json 文件 启用测试配置
+4. 打开浏览嚣控制台 网络面板查看结果
+
+###  本地启动 web server 
+```shell
+
+sh  startup-local-test-web-server.sh
+
+```
+
+### 修改 manifest.json 文件测试配置,结果如下：
+```text 
+
+    "declarative_net_request" : {
+        "rule_resources" : [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules/rules_1.json"
+            },
+            {
+            "id": "ruleset_2",
+            "enabled": true,
+            "path": "test/extension-v3-test/rules_test.json"
+            }
+
+        ]
+    },
+
+
+```

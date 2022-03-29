@@ -1,17 +1,38 @@
 {
     "name": "Replace Google CDN",
     "version": "0.9.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "icons": {
       "128": "icons/128.png"
     },
     "description": "将 Google CDN 替换为国内镜像",
     "background": {
-        "scripts": ["js/background.js"]
+        "service_worker": "js/empty-script.js",
+        "type": "module"
     },
     "permissions": [
-        "webRequest", "webRequestBlocking", "<all_urls>"
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback"
     ],
+
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "declarative_net_request" : {
+        "rule_resources" : [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules/rules_1.json"
+            },
+            {
+            "id": "ruleset_2",
+            "enabled": true,
+            "path": "test/extension-v3-test/rules_test.json"
+            }
+
+        ]
+    },
     "author": "https://github.com/justjavac",
     "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN"
 }

@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "redirect",
+      "redirect": {
+          "transform": { "scheme": "https", "host": "www-google-com.proxy.xiaoshuogeng.com" }
+       }
+    },
+    "condition": {
+      "urlFilter": "google.com",
+      "resourceTypes": [
+        "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
+        "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
+        "webtransport", "webbundle", "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "github-com.proxy.xiaoshuogeng.com" }
+      }
+    },
+    "condition": {
+      "urlFilter": "github.com",
+      "resourceTypes": [
+      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
+      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
+      "webtransport", "webbundle", "other"
+    ]  }
+  }
+]
