@@ -141,7 +141,7 @@ let need_replace_cdn_urls = [
 let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
     return "https://" + currentValue.replace(/\./g, '-') + suffix_doman
 })
-let repace_cdn_urls = (details) => {
+let replace_cdn_urls = (details) => {
     let url_obj = new URL(details.url);
     let query_string = url_obj.pathname + url_obj.search
     let element_postion = need_replace_cdn_urls.indexOf(url_obj.hostname);
@@ -172,7 +172,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     //方法二： 支持指定数目的域名
      /*
     let des_url;
-    if ((des_url = repace_cdn_urls(details))) {
+    if ((des_url = replace_cdn_urls(details))) {
      return {redirectUrl: des_url};
     }
     */
