@@ -219,7 +219,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-        // ...test_urls // 测试
+        // ...test_urls // 测试用例
 
     ],
   },
