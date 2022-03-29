@@ -12,6 +12,7 @@
     },
     "permissions": [
         "declarativeNetRequest",
+        "declarativeNetRequestWithHostAccess",
         "declarativeNetRequestFeedback"
     ],
     "host_permissions": [
@@ -20,9 +21,19 @@
     "declarative_net_request" : {
         "rule_resources" : [
             {
-                "id": "ruleset_1",
+                "id": "ruleset_redirect_1",
                 "enabled": true,
-                "path": "rules/rules_1.json"
+                "path": "rules/rules_redirect_1.json"
+            },
+            {
+                "id": "ruleset_remove_header_1",
+                "enabled": true,
+                "path": "rules/rules_remove_header_1.json"
+            },
+            {
+                "id": "ruleset_append_header_1",
+                "enabled": true,
+                "path": "rules/rules_append_header_1.json"
             }
         ]
     },
