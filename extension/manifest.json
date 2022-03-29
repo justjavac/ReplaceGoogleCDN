@@ -14,7 +14,6 @@
         "declarativeNetRequest",
         "declarativeNetRequestFeedback"
     ],
-
     "host_permissions": [
         "<all_urls>"
     ],
@@ -25,7 +24,6 @@
                 "enabled": true,
                 "path": "rules/rules_1.json"
             }
-
         ]
     },
     "author": "https://github.com/justjavac",

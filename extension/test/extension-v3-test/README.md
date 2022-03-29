@@ -12,7 +12,7 @@
          "*://secure.gravatar.com/*",
          "*://maxcdn.bootstrapcdn.com/*",
     ], 
-    "host_permissions": [ //所有地址写法
+    "host_permissions": [ //所有地址写法,最省事
          "*://*.google.com/*",
         "*://*/*",
         "<all_urls>"
@@ -32,16 +32,20 @@
 ]
 ```
 
-## 测试 
-1. 启动 本地 web server
-2. 浏览器打开 http://127.0.0.1:8001
-3. 修改 extension/manifest.json 文件 启用测试配置
-4. 打开浏览嚣控制台 网络面板查看结果
+## 测试步骤
+1. 修改 extension/manifest.json 文件 启用测试配置
+2. 更新浏览器扩展
+3. 浏览器打开地址： https://stackoverflow.com/questions
+4. 也可以启动本地测试
+5. 启动 本地 web server：   sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
+6. 浏览器打开地址： http://127.0.0.1:8001
+7. 打开浏览嚣控制台 网络面板查看网址结果
+
 
 ###  本地启动 web server 
 ```shell
 
-sh  startup-local-test-web-server.sh
+sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
 
 ```
 
