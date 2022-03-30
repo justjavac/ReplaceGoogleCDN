@@ -11,7 +11,14 @@ cd ${__DIR__}
 kernel_name=$(uname -s)
 echo "$kernel_name"
 
-get_latest_version()
+
+
+chrome_linux="https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots"
+chrome_mac="https://download-chromium.appspot.com/dl/Mac?type=snapshots"
+chrome_win="https://download-chromium.appspot.com/dl/Win_x64?type=snapshots"
+
+
+get_latest_version_use_proxy()
 {
   export http_proxy=http://127.0.0.1:8015
   export https_proxy=http://127.0.0.1:8015
@@ -28,34 +35,38 @@ get_latest_version()
 
   echo "latest revision is $REVISION"
 
-  if [ -d $REVISION ] ; then
-    echo "already have latest version"
-    # exit
-  fi
-  unset http_proxy;
-  unset https_proxy;
+
+    chrome_linux="https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/$REVISION/chrome-linux.zip"
+    chrome_mac="https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/$REVISION/chrome-mac.zip"
+    chrome_win="https://commondatastorage.googleapis.com/chromium-browser-snapshots/Win_x64/$REVISION/chrome-win.zip"
+
+    #clean old 版本
+    test -f chrome-linux.zip &&  rm -f chrome-linux.zip
+    test -d chrome-linux     &&  rm -rf chrome-linux
+    test -f chrome-mac.zip   &&  rm -f chrome-mac.zip
+    test -d chrome-mac       &&  rm -rf chrome-mac
+    test -f chrome-win.zip   &&  rm -f chrome-win.zip
+    test -d chrome-win       &&  rm -rf chrome-win
+    echo $?
 }
 
 
 
-# 最新版本
-chrome_linux="https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots"
-chrome_mac="https://download-chromium.appspot.com/dl/Mac?type=snapshots"
-chrome_win="https://download-chromium.appspot.com/dl/Win_x64?type=snapshots"
+get_version()
+{
+  # 最新版本
+   REVISION=985270
 
-REVISION=985270
-# 最新版本 ok
-chrome_linux="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F$REVISION%2Fchrome-linux.zip?alt=media"
-chrome_mac="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Mac%2F$REVISION%2Fchrome-mac.zip?alt=media"
-chrome_win="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Win_x64%2F$REVISION%2Fchrome-win.zip?alt=media"
+  # taobao chromium mirror 并不实时同步，落后一些时间，最新版本落后一些时间
+  chrome_linux="https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Linux_x64/$REVISION/chrome-linux.zip"
+  chrome_mac="https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac/$REVISION/chrome-mac.zip"
+  chrome_win="https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Win_x64/$REVISION/chrome-win.zip"
+}
 
 
 
-# taobao chromium mirror 并不实时同步，落后一些时间，最新版本落后一些时间
-chrome_linux="https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Linux_x64/$REVISION/chrome-linux.zip"
-chrome_mac="https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac/$REVISION/chrome-mac.zip"
-chrome_win="https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Win_x64/$REVISION/chrome-win.zip"
-
+download()
+{
 
 if test "$kernel_name" = "Linux"; then
   {
@@ -84,6 +95,7 @@ elif test "$kernel_name" = "Darwin"; then
   }
 else
   {
+     #  请使用git bash 执行
      # =MINGW64_NT
       if [ ! -f chrome-win.zip ]
       then
@@ -92,3 +104,25 @@ else
       fi
   }
 fi
+echo $?
+unset http_proxy;
+unset https_proxy;
+}
+
+
+
+
+set +u
+force_latest_flag=$1
+set -u
+if  [ "$force_latest_flag" -eq 1  ]
+then
+{
+   get_latest_version_use_proxy
+} else {
+  get_version
+}
+fi
+
+echo $chrome_linux
+download
