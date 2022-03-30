@@ -1,0 +1,47 @@
+{
+  "name": "script inject extension",
+  "version": "0.1.2",
+  "manifest_version": 3,
+  "description": "inject js ",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle",
+      "css": [
+        "my-styles.css"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src *;  object-src 'self';script-src 'self'  ; script-src-elem  'self' ;",
+    "sandbox": "sandbox allow-scripts; script-src 'self' ;script-src-elem  'self'",
+    "isolated_world": "script-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "main.js"
+      ],
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "extension_ids": []
+    }
+  ]
+}

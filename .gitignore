@@ -9,3 +9,9 @@ server/tls/*
 !server/tls/.gitkeep
 _metadata/
 extension/_metadata
+extension/test/chromium-tools/chrome-linux
+extension/test/chromium-tools/chrome-linux.zip
+extension/test/chromium-tools/chrome-mac
+extension/test/chromium-tools/chrome-mac.zip
+extension/test/chromium-tools/chrome-win
+extension/test/chromium-tools/chrome-win.zip
