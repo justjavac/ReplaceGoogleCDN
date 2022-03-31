@@ -10,3 +10,9 @@
 #  http://127.0.0.1:9222/json/new?{url}
 import request
 
+# https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
+
+# https://docs.google.com/document/d/1rlqcp8nk-ZQvldNJWdbaMbwfDbJoOXvahPCDoPGOwhQ/edit#
+
+# https://chromedevtools.github.io/devtools-protocol/tot/Runtime/
+# Runtime.callFunctionOn()  Runtime.evaluate()  Runtime.runScript()

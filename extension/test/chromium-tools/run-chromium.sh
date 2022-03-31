@@ -29,11 +29,13 @@ if test "$kernel_name" = "Linux"; then
     export GOOGLE_API_KEY="no"
     export GOOGLE_DEFAULT_CLIENT_ID="no"
     export GOOGLE_DEFAULT_CLIENT_SECRET="no"
-    chrome_setup_cmd="chrome-linux/chrome --user-data-dir=$dir --remote-debugging-port=9221  --auto-open-devtools-for-tabs --enable-remote-extensions --enable-extensions  --load-extension=$extension_dir,$inject_js_extension_dir"
+
+    chrome_setup_cmd="chrome-linux/chrome --user-data-dir=$dir --start-maximized --lang=en  --remote-debugging-port=9221  --auto-open-devtools-for-tabs --enable-remote-extensions --enable-extensions  --load-extension=$extension_dir,$inject_js_extension_dir"
+    $($chrome_setup_cmd   https://stackoverflow.com/questions )
 
     echo "browser open  chrome://extensions/"
     echo "browser open  chrome://version/ "
-    $($chrome_setup_cmd  --new-tab "about:blank" )
+    # $($chrome_setup_cmd  --new-tab "about:blank" )
 
 
   }
@@ -49,7 +51,7 @@ elif test "$kernel_name" = "Darwin"; then
     export GOOGLE_API_KEY="no"
     export GOOGLE_DEFAULT_CLIENT_ID="no"
     export GOOGLE_DEFAULT_CLIENT_SECRET="no"
-    chrome_setup_cmd="chrome-linux/chrome --user-data-dir=$dir --remote-debugging-port=9221  --auto-open-devtools-for-tabs --enable-remote-extensions --enable-extensions  --load-extension=$extension_dir,$inject_js_extension_dir"
+    chrome_setup_cmd="chrome-linux/chrome --user-data-dir=$dir --start-maximized --remote-debugging-port=9221  --auto-open-devtools-for-tabs --enable-remote-extensions --enable-extensions  --load-extension=$extension_dir,$inject_js_extension_dir"
 
     echo "browser open  chrome://extensions/"
     echo "browser open  chrome://version/ "

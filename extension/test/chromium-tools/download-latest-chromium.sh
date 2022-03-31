@@ -108,14 +108,10 @@ echo $?
 unset http_proxy;
 unset https_proxy;
 }
-
-
-
-
-
-force_latest_flag=$1
-
-if  [[ "$force_latest_flag" -eq 1  ]]
+set +u
+force_download_flag=$1;
+set -u
+if  [[ -n $force_download_flag  ]] && [[ $1 -eq  1 ]]
 then
 {
    get_latest_version_use_proxy

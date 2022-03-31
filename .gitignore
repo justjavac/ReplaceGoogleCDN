@@ -15,3 +15,5 @@ extension/test/chromium-tools/chrome-mac
 extension/test/chromium-tools/chrome-mac.zip
 extension/test/chromium-tools/chrome-win
 extension/test/chromium-tools/chrome-win.zip
+extension/test/chromium-tools/chrome-remote-interface-test-tool/node_modules
+extension/test/chromium-tools/chrome-remote-interface-test-tool/package.json

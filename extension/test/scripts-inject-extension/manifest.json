@@ -5,14 +5,21 @@
   "description": "inject js ",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "tabs",
+    "webNavigation",
+    "contentSettings"
   ],
+  "incognito": "split",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "content_scripts": [
     {
       "matches": [
+        "https://*/*",
+        "http://*/*",
         "<all_urls>"
       ],
       "run_at": "document_idle",
@@ -28,20 +35,29 @@
     "<all_urls>"
   ],
   "content_security_policy": {
-    "extension_pages": "default-src *;  object-src 'self';script-src 'self'  ; script-src-elem  'self' ;",
+    "extension_pages": "default-src *;  object-src 'self' ;script-src  'self'  ; script-src-elem  'self' ;style-src 'unsafe-inline' ",
     "sandbox": "sandbox allow-scripts; script-src 'self' ;script-src-elem  'self'",
     "isolated_world": "script-src 'self'"
   },
   "web_accessible_resources": [
     {
       "resources": [
-        "main.js"
+        "content-script2.js",
+        "inject.js"
       ],
       "matches": [
-        "https://*/*",
-        "http://*/*"
+        "<all_urls>"
       ],
+      "use_dynamic_url": true,
       "extension_ids": []
     }
-  ]
+  ],
+  "commands":{
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      }
+    }
+  }
 }
