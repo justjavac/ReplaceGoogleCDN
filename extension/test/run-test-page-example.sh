@@ -12,7 +12,10 @@ cd ${__DIR__}
 curl http://127.0.0.1:9222/json/new?chrome://version/
 curl http://127.0.0.1:9222/json/new?chrome://extensions/
 curl http://127.0.0.1:9222/json/new?chrome://chrome-urls
-curl http://127.0.0.1:9222/json/new?https://github.com
+
+curl htt://127.0.0.1:9222/json/new?http://127.0.0.1:8001
+
+curl htt://127.0.0.1:9222/json/new?https://github.com
 curl http://127.0.0.1:9222/json/new?https://www.google.com
 curl http://127.0.0.1:9222/json/new?https://www.baidu.com
 curl http://127.0.0.1:9222/json/new?https://www.qq.com
