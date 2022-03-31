@@ -6,6 +6,15 @@ __DIR__=$(cd "$(dirname "$0")";pwd)
 echo ${__DIR__}
 pwd
 
+# shell 实现多行注释
+
+:<<EOF
+
+利用反向代理，全球实现任意地方都能访问你们本地的chrome调试接口
+
+SSL 隧道 保证安全
+
+EOF
 
 
 tls_base_dir=${__DIR__}/../../../server/tls
@@ -34,7 +43,7 @@ cert=$cert,key=$key,cafile=$cafile,\
 openssl-min-proto-version=TLS1.3,openssl-max-proto-version=TLS1.3,\
 snihost=$snihost,commonname=$commonname,\
 compress=auto,\
-intervall=20,keepalive,retry=3,fork tcp:0.0.0.0:9222,crlf
+intervall=20,keepalive,retry=3,fork tcp:localhost:9222,crlf
 
 socat -d -d -d   ssl:$server:2001,\
 reuseaddr,reuseport,\
