@@ -11,7 +11,10 @@ cd ${__DIR__}
 kernel_name=$(uname -s)
 echo "$kernel_name"
 
+:<<EOF
 
+   运行 chromium 浏览器
+EOF
 
 if test "$kernel_name" = "Linux"; then
   {

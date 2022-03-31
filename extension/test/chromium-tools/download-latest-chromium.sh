@@ -11,6 +11,11 @@ cd ${__DIR__}
 kernel_name=$(uname -s)
 echo "$kernel_name"
 
+:<<EOF
+  下载chromium 浏览器
+
+
+EOF
 
 
 chrome_linux="https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots"

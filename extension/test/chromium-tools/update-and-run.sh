@@ -8,7 +8,10 @@ __DIR__=$(
 cd ${__DIR__}
 
 
+:<<EOF
+   运行 chromium 浏览器
 
+EOF
 
 ## 加载最新chromium 版本
 ## 首次下载chromium 浏览器，存储在当前脚本目录
