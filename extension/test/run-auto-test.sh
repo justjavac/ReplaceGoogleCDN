@@ -8,6 +8,9 @@ __DIR__=$(
 cd ${__DIR__}
 
 
+# 自动化测试脚本
+
+
 # 启动 本场 web 服务
 
 gnome-terminal --window  -- sh "${__DIR__}/extension-v3-test/startup-local-test-web-server.sh" &&

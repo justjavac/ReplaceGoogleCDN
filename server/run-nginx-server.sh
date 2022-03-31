@@ -11,12 +11,13 @@ cd "${__DIR__}"
 {
   echo $?
 }
+
 docker run --rm  \
 --name nginx-proxy-server \
 -p 80:80 \
 -p 443:443 \
--v "${__DIR__}"/nginx-ok.conf:/etc/nginx/nginx.conf \
--v "${__DIR__}"/custom-proxy-header.item:/etc/nginx/conf.d/custom-proxy-header.item \
--v "${__DIR__}"/hidden_proxy_headers.item:/etc/nginx/conf.d/hidden_proxy_headers.item \
+-p 8029:8029 \
+-v "${__DIR__}"/etc/nginx/nginx.conf:/etc/nginx/nginx.conf \
+-v "${__DIR__}"/etc/nginx/conf.d/:/etc/nginx/conf.d/ \
 -v "${__DIR__}"/tls:/tls/ \
 nginx:alpine

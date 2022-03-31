@@ -20,8 +20,8 @@ chrome_win="https://download-chromium.appspot.com/dl/Win_x64?type=snapshots"
 
 get_latest_version_use_proxy()
 {
-  export http_proxy=http://127.0.0.1:8015
-  export https_proxy=http://127.0.0.1:8015
+  export http_proxy=http://127.0.0.1:8016
+  export https_proxy=http://127.0.0.1:8016
 
   # Download Chromium
   ## https://www.chromium.org/getting-involved/download-chromium/#downloading-old-builds-of-chrome-chromium
@@ -112,10 +112,10 @@ unset https_proxy;
 
 
 
-set +u
+
 force_latest_flag=$1
-set -u
-if  [ "$force_latest_flag" -eq 1  ]
+
+if  [[ "$force_latest_flag" -eq 1  ]]
 then
 {
    get_latest_version_use_proxy

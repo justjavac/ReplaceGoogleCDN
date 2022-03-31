@@ -17,8 +17,10 @@ if test "$kernel_name" = "Linux"; then
   {
 
     test -d /tmp/chromium-tools-user-data || mkdir /tmp/chromium-tools-user-data
+    rm -rf /tmp/chromium-tools-user-data/*
 
     dir=/tmp/chromium-tools-user-data
+
     #linux
     echo 'linux'
 
@@ -31,7 +33,7 @@ if test "$kernel_name" = "Linux"; then
 
     echo "browser open  chrome://extensions/"
     echo "browser open  chrome://version/ "
-    $($chrome_setup_cmd    https://stackoverflow.com/questions --new-tab "about:blank" )
+    $($chrome_setup_cmd  --new-tab "about:blank" )
 
 
   }
@@ -41,6 +43,8 @@ elif test "$kernel_name" = "Darwin"; then
     extension_dir=${__DIR__}/../../
     inject_js_extension_dir=${__DIR__}/../scripts-inject-extension/
     test -d /tmp/chromium-tools-user-data || mkdir /tmp/chromium-tools-user-data
+    rm -rf /tmp/chromium-tools-user-data/*
+
     dir=/tmp/chromium-tools-user-data
     export GOOGLE_API_KEY="no"
     export GOOGLE_DEFAULT_CLIENT_ID="no"
@@ -49,7 +53,7 @@ elif test "$kernel_name" = "Darwin"; then
 
     echo "browser open  chrome://extensions/"
     echo "browser open  chrome://version/ "
-    $($chrome_setup_cmd    https://stackoverflow.com/questions --new-tab "about:blank" )
+    $($chrome_setup_cmd    https://stackoverflow.com/questions  )
 
   }
 else
