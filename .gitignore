@@ -7,4 +7,5 @@ server/nginx.conf
 server/conf.d
 server/tls/*
 !server/tls/.gitkeep
+server/*
 
