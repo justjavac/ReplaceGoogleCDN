@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>test chrome manifest v3</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noarchive">
+    <meta http-equiv="cache-control" content="no-transform"/>
+    <meta http-equiv="cache-control" content="no-siteapp"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"/>
+    <noscript>
+         请启用javascript 功能
+    </noscript>
+    <style>
+       body {
+          font-family: Roboto Mono;
+       }
+        </style>
+</head>
+<body>
+<h1>测试  chromium  extensions manifest v3</h1>
+<h2>           </h2>
+<h2>请打开dev-tools 测试控制台查看结果</h2>
+<h2>加载的CSS javascript 如下列表</h2>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let plugins = Array.from(navigator.plugins);
+    console.log(plugins)
+
+    window.performance.getEntries().map(x => {
+        //console.log(x)
+        console.log(x.entryType, x.name, x.type, x.initiatorType, x.nextHopProtocol)
+
+    });
+    let element=document.createDocumentFragment();
+    let ul=document.createElement('ul');
+    element.appendChild(ul);
+    let  list=''
+    Array.from(window.performance.getEntriesByType("resource")).map(
+        function (x) {//遍历
+            console.log(x)
+            if (x.initiatorType === "script" || x.initiatorType === 'link' ) {
+                list  +=`<li>${x.initiatorType}:  ${x.name}</li>`
+            }
+      }
+    );
+    ul.innerHTML=list;
+    document.body.append(element);
+</script>
+<script type="module">
+    // 使用 ES6 模块加载JS
+    import app from  'https://cloud-soft.xieyaokun.com/js/index.js'
+    app();
+</script>
+</body>
+</html>
