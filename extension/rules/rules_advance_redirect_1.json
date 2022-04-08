@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {"header":"x-custom-token","operation":"set","value": "2aed78a8-af8d-11ec-b3bd-879f7464e58a"}
+      ]
+    },
+    "condition": {
+      "isUrlFilter" : false,
+      "urlFilter": "*.proxy.domain.com",
+      "requestDomains":[
+        "proxy.domain.com"
+      ],
+      "resourceTypes": [
+        "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
+        "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
+        "webtransport", "webbundle", "other"
+      ] }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://\\1-\\2.proxy.domain.com/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://(\\w+?)\\.(\\w+?)/(.*?)",
+      "requestDomains":[
+        "github.com",
+        "example.com"
+      ],
+      "resourceTypes": [
+        "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
+        "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
+        "webtransport", "webbundle", "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://\\1-\\2-\\3.proxy.domain.com/\\4"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://(\\w+?)\\.(\\w+?)\\.(\\w+?)/(.*?)",
+      "requestDomains":[
+        "ajax.googleapis.com",
+        "fonts.googleapis.com",
+        "themes.googleusercontent.com",
+        "fonts.gstatic.com",
+        "ssl.gstatic.com",
+        "www.gstatic.com",
+        "secure.gravatar.com",
+        "maxcdn.bootstrapcdn.com",
+        "www.google.com"
+      ],
+      "resourceTypes": [
+        "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
+        "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
+        "webtransport", "webbundle", "other"
+      ]
+    }
+  }
+]
