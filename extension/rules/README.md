@@ -42,7 +42,9 @@
 ```
 
 ### 指定匹配域名
+
 > github.com  ->  https://github-com.proxy.domain.com
+
 ```json
 
 {
