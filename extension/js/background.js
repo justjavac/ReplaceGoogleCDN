@@ -134,9 +134,9 @@ let use_nginx_proxy = (details, proxy_provider) => {
     return "https://" + dot_nums + '_' + host + proxy_provider + query_string;
 }
 
-//你的支持泛解析的域名
+// 你的支持泛解析的域名
 let suffix_domain = '.proxy.domain.com'
-
+// 指定匹配域名
 let need_replace_cdn_urls = [
     'ajax.googleapis.com',
     'fonts.googleapis.com',
@@ -210,8 +210,8 @@ chrome.webRequest.onBeforeRequest.addListener(
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
     url = url.replace(
-      "maxcdn.bootstrapcdn.com/bootstrap/",
-      "cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
+      /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
+      "cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
     );
     return { redirectUrl: url };
   },
