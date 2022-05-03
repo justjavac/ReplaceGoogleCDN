@@ -9,3 +9,5 @@ server/tls/*
 !server/tls/.gitkeep
 server/*
 extension/_metadata/
+extension/test/extension-v3-test/_metadata/
+

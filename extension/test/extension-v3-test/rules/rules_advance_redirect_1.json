@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "priority": 2,
+    "priority": 1000,
+    "note": "符合条件的请求都添加一个认证 token ，用于阻止滥用",
     "action": {
       "type": "modifyHeaders",
       "requestHeaders": [
-        {"header":"x-custom-token","operation":"set","value": "2aed78a8-af8d-11ec-b3bd-879f7464e58a"}
+        {"header":"auth_token","operation":"set","value": "0952b106-b62a-11ec-af11-e712a9f18bd9"}
       ]
     },
     "condition": {
@@ -19,7 +20,7 @@
   },
   {
     "id": 2,
-    "priority": 1,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -29,8 +30,13 @@
     "condition": {
       "regexFilter": "^https://(\\w+?)\\.(\\w+?)/(.*?)",
       "requestDomains":[
-        "github.com",
-        "example.com"
+        "github.com"
+      ],
+      "excludedInitiatorDomains":[
+        "proxy.xiaoshuogeng.com"
+      ],
+      "excludedRequestDomains":[
+        "proxy.xiaoshuogeng.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
@@ -41,7 +47,7 @@
   },
   {
     "id": 3,
-    "priority": 1,
+    "priority": 99,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -58,8 +64,10 @@
         "ssl.gstatic.com",
         "www.gstatic.com",
         "secure.gravatar.com",
-        "maxcdn.bootstrapcdn.com",
-        "www.google.com"
+        "maxcdn.bootstrapcdn.com"
+      ],
+      "excludedRequestDomains":[
+        "proxy.xiaoshuogeng.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",

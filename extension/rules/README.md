@@ -1,5 +1,22 @@
 # manifest.json  declarative_net_reques 配置示例
 
+## 网络拨测工具  测试 公共 CDN 静态资源库 区域可用性
+1. [网络拨测工具](https://zijian.aliyun.com/detect/http)
+2. [网站诊断分析工具](https://zijian.aliyun.com/)
+
+
+## 公共 CDN 静态资源库
+
+1. [360 奇舞团](https://cdn.baomitu.com/)
+2. [又拍云](http://jscdn.upai.com/)
+3. [BootCDN](https://www.bootcdn.cn/)
+4. [字节跳动静态资源公共库](http://cdn.bytedance.com/)
+5. [Microsoft Ajax Content Delivery Network](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview)
+6. [jsdelivr](https://www.jsdelivr.com/)
+7. [unpkg](https://unpkg.com/)
+8. [cloudflare ](https://cdnjs.com/)
+9. [google libraries](https://developers.google.com/speed/libraries)
+
 
 
 ## 高级玩法
@@ -75,3 +92,5 @@
 }
 
 ```
+
+

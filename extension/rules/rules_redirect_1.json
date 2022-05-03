@@ -112,7 +112,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution" : "cdn.jsdelivr.net/npm/bootstrap@\\1/dist/\\2"
+        "regexSubstitution" : "lib.baomitu.com/twitter-bootstrap/\\1/\\2"
       }
     },
     "condition": {

@@ -211,7 +211,8 @@ chrome.webRequest.onBeforeRequest.addListener(
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
     url = url.replace(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
-      "cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
+      //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
+      "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
     return { redirectUrl: url };
   },
