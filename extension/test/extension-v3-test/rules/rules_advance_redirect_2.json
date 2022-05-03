@@ -31,8 +31,7 @@
       "regexFilter": "^https://([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "requireCapturing": true,
       "requestDomains":[
-        "you-get.org",
-        "youtube.com"
+        "you-get.org"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
