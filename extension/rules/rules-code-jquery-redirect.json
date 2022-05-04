@@ -1,6 +1,6 @@
 [
   {
-    "id": 3,
+    "id": 1,
     "priority": 99,
     "action": {
       "type": "redirect",
@@ -10,6 +10,26 @@
     },
     "condition": {
       "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains":[
+        "code.jquery.com"
+      ],
+      "resourceTypes": [
+        "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
+        "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
+        "webtransport", "webbundle", "other"
+      ] }
+  },
+  {
+    "id": 2,
+    "priority": 99,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "code.jquery.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains":[
         "code.jquery.com"
       ],
