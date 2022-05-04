@@ -3,13 +3,13 @@
 
 ## CHANGELOG for 0.10.2 
 ### 变更
->1. 新增脚本 `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
->2. 新增脚本 `sw.js` 小工具中 `self-define-browser-editor.js` 浏览器当作记事本使用 
->3. 新增脚本 `sw.js` 小工具中 `tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
->4. 新增脚本 `sw.js` 小工具中 `tools/myscript-tools.js` 查看网页引入的所有域名
+>1. 新增test service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
+>2. 新增test service-worker `sw.js` 小工具中 `self-define-browser-editor.js` 浏览器当作记事本使用 
+>3. 新增test service-worker `sw.js` 小工具中 `tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
+>4. 新增test service-worker `sw.js` 小工具中 `tools/myscript-tools.js` 查看网页引入的所有域名
 >5. 新增 `code.query.com` jquery 地址替换  
 >6. 解决 0.10.1 版本中 `第10,11条不能共用问题`
->7. 解决  0.10.1 版本中 高级玩法错误配置 `"excludedInitiatorDomains":[]`
+>7. 删除  0.10.1 版本中 高级玩法excludedInitiatorDomains错误配置 位于 `rules/rules_advance_redirect_2.json :  "excludedInitiatorDomains":[] `
 
 
 
