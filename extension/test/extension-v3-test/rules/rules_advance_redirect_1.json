@@ -2,7 +2,7 @@
   {
     "id": 1,
     "priority": 1000,
-    "note": "符合条件的请求都添加一个认证 token ，用于阻止滥用",
+    "note": "符合条件的请求都添加一个认证 token ，用于阻止滥用，没有权限认证，一定会被滥用",
     "action": {
       "type": "modifyHeaders",
       "requestHeaders": [
@@ -31,9 +31,6 @@
       "regexFilter": "^https://(\\w+?)\\.(\\w+?)/(.*?)",
       "requestDomains":[
         "github.com"
-      ],
-      "excludedInitiatorDomains":[
-        "proxy.xiaoshuogeng.com"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"

@@ -2,6 +2,7 @@
   {
     "id": 1,
     "priority": 2,
+    "note": "符合条件的请求都添加一个认证 token ，用于阻止滥用，没有权限认证，一定会被滥用",
     "action": {
       "type": "modifyHeaders",
       "requestHeaders": [
@@ -61,8 +62,7 @@
         "ssl.gstatic.com",
         "www.gstatic.com",
         "secure.gravatar.com",
-        "maxcdn.bootstrapcdn.com",
-        "www.google.com"
+        "maxcdn.bootstrapcdn.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",

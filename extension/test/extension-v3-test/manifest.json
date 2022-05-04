@@ -3,10 +3,22 @@
     "version": "0.10.0",
     "manifest_version": 3,
     "description": "Replace CDN Test",
+    "background": {
+        "service_worker": "js/sw.js",
+        "type": "module"
+    },
+    "web_accessible_resources": [{
+        "resources": ["js/*","css/*"],
+        "matches": [],
+        "extension_ids": []
+    }],
     "permissions": [
         "declarativeNetRequest",
         "declarativeNetRequestWithHostAccess",
-        "declarativeNetRequestFeedback"
+        "declarativeNetRequestFeedback",
+        "storage",
+        "activeTab",
+        "scripting"
     ],
     "host_permissions": [
         "<all_urls>"

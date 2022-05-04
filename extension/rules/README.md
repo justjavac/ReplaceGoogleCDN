@@ -60,7 +60,7 @@
 
 ### 指定匹配域名
 
-> github.com  ->  https://github-com.proxy.domain.com
+> https://github.com  ->  https://github-com.proxy.domain.com
 
 ```json
 
@@ -72,7 +72,8 @@
 
 ```
 ## 动态匹配域名
-> www.google.com   ->    https://2_www_xn--3px_google_xn--3px_com.proxy.domain.com/
+
+> https://www.chromium.org/   ->    https://2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com/
 
 ```json
 {
