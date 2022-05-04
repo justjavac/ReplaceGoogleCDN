@@ -10,7 +10,7 @@
 >5. 新增 `code.query.com` jquery 地址替换  
 >6. 解决 0.10.1 版本中 `第10,11条不能共用问题`
 >7. 删除  0.10.1 版本中 高级玩法excludedInitiatorDomains错误配置 位于 `rules/rules_advance_redirect_2.json :  "excludedInitiatorDomains":[] `
-
+>8. maxcdn.bootstrapcdn.com 替换为 lib.baomitu.com
 
 
 ## CHANGELOG for 0.10.1 新增适配 chromium manifest v3版本
