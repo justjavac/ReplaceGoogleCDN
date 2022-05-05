@@ -2,6 +2,7 @@
   {
     "id": 1,
     "priority": 2,
+    "note": "符合条件的请求都添加一个认证 token ，用于阻止滥用，没有权限认证，一定会被滥用",
     "action": {
       "type": "modifyHeaders",
       "requestHeaders": [
@@ -19,7 +20,7 @@
   },
   {
     "id": 2,
-    "priority": 1,
+    "priority": 200,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -29,8 +30,8 @@
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "requireCapturing": true,
-      "excludedInitiatorDomains":[
-        "proxy.xiaoshuogeng.com"
+      "requestDomains":[
+        "you-get.org"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
@@ -44,7 +45,7 @@
   },
   {
     "id": 3,
-    "priority": 1,
+    "priority": 300,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -53,8 +54,13 @@
     },
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
-      "excludedInitiatorDomains":[
-        "proxy.xiaoshuogeng.com"
+      "requestDomains":[
+        "chromium.org",
+        "www.gravatar.com",
+        "ssl.gstatic.com",
+        "cs.opensource.google",
+        "googlesource.com",
+        "apis.google.com"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
@@ -68,7 +74,7 @@
   },
   {
     "id": 4,
-    "priority": 1,
+    "priority": 400,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -77,8 +83,8 @@
     },
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
-      "excludedInitiatorDomains":[
-        "proxy.xiaoshuogeng.com"
+      "requestDomains":[
+        "grimoireoss-pa.clients6.google.com"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
@@ -92,7 +98,7 @@
   },
   {
     "id": 5,
-    "priority": 1,
+    "priority": 500,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -101,8 +107,8 @@
     },
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
-      "excludedInitiatorDomains":[
-        "proxy.xiaoshuogeng.com"
+      "requestDomains":[
+        "google.com"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
@@ -116,7 +122,7 @@
   },
   {
     "id": 6,
-    "priority": 10,
+    "priority": 600,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -125,8 +131,8 @@
     },
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
-      "excludedInitiatorDomains":[
-        "proxy.xiaoshuogeng.com"
+      "requestDomains":[
+        "google.com"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"

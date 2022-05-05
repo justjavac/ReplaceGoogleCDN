@@ -32,5 +32,3 @@ if ((des_url = repace_cdn_urls(details))) {
      return {redirectUrl: des_url};
 }
 */
-
-//
