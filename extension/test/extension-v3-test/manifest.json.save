@@ -23,7 +23,8 @@
     "host_permissions": [
         "<all_urls>",
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "*://*/*"
     ],
     "declarative_net_request" : {
         "rule_resources" : [
