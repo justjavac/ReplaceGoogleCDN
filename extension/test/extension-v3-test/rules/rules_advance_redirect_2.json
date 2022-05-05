@@ -31,7 +31,8 @@
       "regexFilter": "^https://([\\w|-]+?)\\.(\\w+?)/(.*?)",
       "requireCapturing": true,
       "requestDomains":[
-        "you-get.org"
+        "you-get.org",
+        "opensource.google"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
@@ -60,7 +61,11 @@
         "ssl.gstatic.com",
         "cs.opensource.google",
         "googlesource.com",
-        "apis.google.com"
+        "googlesource.com",
+        "apis.google.com",
+        "opensource.googleblog.com",
+        "opensource.googleblog.com",
+        "summerofcode.withgoogle.com"
       ],
       "excludedRequestDomains":[
         "proxy.xiaoshuogeng.com"
