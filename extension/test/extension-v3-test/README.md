@@ -1,5 +1,5 @@
 ## chromium extension v3 
-
+> 一个完整的 测试
 
 # 修改 manifest.json 文件测试配置,结果如下：
 ```text 

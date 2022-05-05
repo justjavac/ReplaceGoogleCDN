@@ -26,6 +26,11 @@
                 "path": "rules/rules_redirect_1.json"
             },
             {
+                "id": "ruleset_jquery_redirect_1",
+                "enabled": true,
+                "path": "rules/rules-code-jquery-redirect.json"
+            },
+            {
                 "id": "ruleset_remove_header_1",
                 "enabled": true,
                 "path": "rules/rules_remove_header_1.json"
