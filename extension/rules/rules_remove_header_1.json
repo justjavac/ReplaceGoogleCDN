@@ -31,7 +31,8 @@
         "www.gstatic.com",
         "secure.gravatar.com",
         "www.gravatar.com",
-        "maxcdn.bootstrapcdn.com"
+        "maxcdn.bootstrapcdn.com",
+        "githubusercontent.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
