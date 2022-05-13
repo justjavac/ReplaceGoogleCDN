@@ -11,7 +11,7 @@ jobs:
       - name: Zip Extension
         run: npm run build
       - name: Browser Plugin Publish
-        uses: plasmo-corp/bpp@v0.0.0
+        uses: PlasmoHQ/bpp@v2
         with:
           artifact: "extension.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
