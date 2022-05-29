@@ -1,6 +1,6 @@
 # manifest.json  declarative_net_reques 配置示例
 
-## 网络拨测工具  测试 公共 CDN 静态资源库 区域可用性
+## 网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)
 1. [网络拨测工具](https://zijian.aliyun.com/detect/http)
 2. [网站诊断分析工具](https://zijian.aliyun.com/)
 
@@ -17,9 +17,14 @@
 9. [cloudflare ](https://cdnjs.com/)
 10. [google libraries](https://developers.google.com/speed/libraries)
 11. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
+
 ```text
-ajax.googleapis.com             ajax.proxy.ustclug.org
-themes.googleusercontent.com	google-themes.proxy.ustclug.org
+
+ajax.googleapis.com  
+ajax.proxy.ustclug.org
+themes.googleusercontent.com
+google-themes.proxy.ustclug.org
+
 ```
 
 ## 高级玩法
