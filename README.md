@@ -71,3 +71,6 @@ Chrome 安装方法（Google 被墙了上不去）：
 > 3. 勾选 Developer Mode
 > 4. 选择 Load unpacked extension... 然后定位到刚才解压的文件夹里面的 extension 目录，确定
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
+
+
+## [功能变更记录 CHANGELOG-0.10.x](CHANGELOG-0.10.x.md)
