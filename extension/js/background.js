@@ -17,11 +17,7 @@ function hasCSP(headers = []) {
 
 
 /**
-<<<<<<< HEAD
  * 响应头里CSP相关的选项
-=======
- * 需要去除的响应头
->>>>>>> bbb7fe8 (新增参考文档)
  * @type {string[]}
  */
 const remove_csp_item=[
@@ -186,10 +182,11 @@ chrome.webRequest.onBeforeRequest.addListener(
     //     return details.url;
     // }
 
+
+/*
     // 方法一： 支持特定域名替换
     // 测试例子：打开 https://github.com (仅用于学习技术)
     // https://github-com.proxy.xiaoshuogeng.com/
-     /*
 
      let des_url;
      if ((des_url = replace_cdn_urls(details))) {
@@ -197,17 +194,16 @@ chrome.webRequest.onBeforeRequest.addListener(
      }
 
 
-      */
+*/
 
+/*
+           // 方法二： 使用nginx架设的服务动态地址替换
+           // 测试例子：打开 https://www.google.com (仅用于学习技术)
+           // https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
 
-     // 方法二： 使用nginx架设的服务动态地址替换
-     // 测试例子：打开 https://ww.google.com (仅用于学习技术)
-     // https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
-      /*
+            return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
 
-      return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
-
-      */
+*/
 
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
