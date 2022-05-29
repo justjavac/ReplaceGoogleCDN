@@ -11,3 +11,4 @@ server/*
 extension/_metadata/
 extension/test/extension-v3-test/_metadata/
 extension/test/chromium-tools/
+

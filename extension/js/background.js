@@ -85,14 +85,14 @@ chrome.webRequest.onHeadersReceived.addListener(
   },
   {
 //    urls: ["<all_urls>"],
-    //需要移除CSP自己添加url
     urls: [
-        ...remove_cps_urls,
+        ...remove_cps_urls,//需要移除CSP自己添加url
     ],
     types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]
   },
   ["blocking", 'responseHeaders']
 );
+
 
 //Open Source urls
 let opensource_goole_urls=[
@@ -113,7 +113,7 @@ let test_urls=[
 /**
  *   使用自己架设的 nginx服务，替换CDN地址
  *
- *   容器运行 nginx 脚本位于 server 目录
+
  *   备注： domain.com   请更换为自己的域名
  *
  *   测试案例 查看chromium 源码
@@ -122,28 +122,36 @@ let test_urls=[
  *   https://chromium.googlesource.com/
  *   https://source.chromium.org/chromium
  *   https://cs.opensource.google/
+
  * @param details
  * @param proxy_provider  # 请更换为自己的域名
  * @returns {string}
  *
  */
-let use_nginx_proxy = (details, proxy_provider) => {
+
+
+let use_nginx_proxy=(details,proxy_provider='.proxy.domain.com')=>{
+
     // 主要是和 nginx 配合使用
     let url = details.url.replace('http://', 'https://')
     // 代理服务提供者 需要支持泛域名
     // let proxy_provider = '.proxy.domain.com'
     let middle_builder = new URL(url);
+
     // 中文域名编码转换 punycode标准编码: punycode('点') = 'xn--3px'
     //替换点. 为了正则表达式好区分 _xn--3px_仅仅是分隔符号，可以自己定义分隔符号
+
     let host = middle_builder.host.replace(/\./g, '_xn--3px_');
     //计算符号点的个数
     let dot_nums = middle_builder.host.match(/\./g).length
     let query_string = middle_builder.pathname + middle_builder.search
+
     return "https://" + dot_nums + '_' + host + proxy_provider + query_string;
 }
 
 // 你的支持泛解析的域名
 let suffix_domain = '.proxy.domain.com'
+
 // 指定匹配域名
 let need_replace_cdn_urls = [
     'ajax.googleapis.com',
@@ -184,6 +192,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     // }
 
 
+
 /*
     // 方法一： 支持特定域名替换
     // 测试例子：打开 https://github.com (仅用于学习技术)
@@ -194,8 +203,8 @@ chrome.webRequest.onBeforeRequest.addListener(
         return {redirectUrl: des_url};
      }
 
-
 */
+
 
 /*
            // 方法二： 使用nginx架设的服务动态地址替换
@@ -205,6 +214,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
 
 */
+
 
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
@@ -235,7 +245,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://secure.gravatar.com/*",
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
-        // ...test_urls // 测试用例
+        // ...test_urls   // 测试用例
     ],
   },
   ["blocking"]
