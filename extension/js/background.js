@@ -95,7 +95,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 
 //Open Source urls
-let opensource_gogole_urls=[
+let opensource_google_urls=[
     "*://*.chromium.org/*", //Chromium ChromiumOS GN
     "*://*.googlesource.com/*", //Chromium
     "*://summerofcode.withgoogle.com/*",
@@ -107,7 +107,7 @@ let opensource_gogole_urls=[
 
 // 测试域名组
 let test_urls=[
-    ...opensource_goole_urls, //数组
+    ...opensource_google_urls, //数组
     "*://*.google.com/*",  //测试域名
     "*://github.com/*",    //测试域名
 ]
@@ -132,7 +132,7 @@ let test_urls=[
  */
 
 
-let use_nginx_proxy=(details,proxy_provider='.proxy.domain.com')=>{
+let use_nginx_proxy=(details,proxy_provider)=>{
 
     // 主要是和 nginx 配合使用
     let url = details.url.replace('http://', 'https://')
