@@ -34,11 +34,6 @@
                 "id": "ruleset_remove_header_1",
                 "enabled": true,
                 "path": "rules/rules_remove_header_1.json"
-            },
-            {
-                "id": "ruleset_cdn_cloudflare_1",
-                "enabled": true,
-                "path": "rules/rules-cdnjs-cloudflare-com-redirect.json"
             }
         ]
     },
