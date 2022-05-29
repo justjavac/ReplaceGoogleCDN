@@ -20,6 +20,7 @@ function hasCSP(headers = []) {
  * 响应头里CSP相关的选项
  * @type {string[]}
  */
+
 const remove_csp_item=[
     'content-security-policy',
     'content-security-policy-report-only',
@@ -69,7 +70,7 @@ const remove_cps_urls=[
  *   3、 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
  *   4、 Arrow_Function 箭头函数
  *   5、 返回新的新的响应头： return {responseHeaders: details.responseHeaders};
- *   6、Chrome 新增的可信类型（Trusted types）暂时不知道怎么解决
+ *   6、Chrome 新增的可信类型（Trusted types），暂时不知道怎么解决
  *
  */
 
@@ -86,7 +87,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 //    urls: ["<all_urls>"],
     //需要移除CSP自己添加url
     urls: [
-        ...remove_cps_urls
+        ...remove_cps_urls,
     ],
     types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]
   },
@@ -132,7 +133,7 @@ let use_nginx_proxy = (details, proxy_provider) => {
     // 代理服务提供者 需要支持泛域名
     // let proxy_provider = '.proxy.domain.com'
     let middle_builder = new URL(url);
-    // 中文域名编码转换 punycode标准编码: punycode('点')= 'xn--3px'
+    // 中文域名编码转换 punycode标准编码: punycode('点') = 'xn--3px'
     //替换点. 为了正则表达式好区分 _xn--3px_仅仅是分隔符号，可以自己定义分隔符号
     let host = middle_builder.host.replace(/\./g, '_xn--3px_');
     //计算符号点的个数
@@ -222,7 +223,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
-
     return { redirectUrl: url };
   },
   {
@@ -236,7 +236,6 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
         // ...test_urls // 测试用例
-
     ],
   },
   ["blocking"]
