@@ -32,6 +32,8 @@
       "requireCapturing": true,
       "requestDomains":[
         "you-get.org",
+        "opensource.google",
+        "chromium.org",
         "opensource.google"
       ],
       "excludedRequestDomains":[

@@ -3,7 +3,7 @@
 ## CHANGELOG for 0.10.3
 ### 变更
 >1. 新增 公共 CDN 静态资源库 中科大 `rules/README.md`
->2. 屏蔽 `content-security-policy`功能，新增4个屏蔽选项 ` ["cross-origin-embedder-policy","operation", "cross-origin-opener-policy","operation", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
+>2. 屏蔽 `content-security-policy`功能，新增4个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
 >3. 新增新增 移除`CSP`的请求地址  `githubusercontent.com`
 >4. test 环境修改功能：  github.com 地址替换后 PAJX 报错,  添加解决方案 `js/content-scripts/github.js` 
 >5. test 环境新增功能：  自定义规则第一版雏形 `index.html`

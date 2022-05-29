@@ -17,7 +17,11 @@ function hasCSP(headers = []) {
 
 
 /**
+<<<<<<< HEAD
  * 响应头里CSP相关的选项
+=======
+ * 需要去除的响应头
+>>>>>>> bbb7fe8 (新增参考文档)
  * @type {string[]}
  */
 const remove_csp_item=[
@@ -32,8 +36,13 @@ const remove_csp_item=[
     'x-content-type-options',
     'x-frame-options',
     'permissions-policy',
-    'timing-allow-origin'
+    'timing-allow-origin',
+    "cross-origin-embedder-policy",
+    "cross-origin-opener-policy",
+    "cross-origin-opener-policy-report-only",
+    "cross-origin-embedder-policy-report-only"
 ];
+
 /**
  * 需要移除CSP的URL
  * @type {string[]}
@@ -52,8 +61,10 @@ const remove_cps_urls=[
     '*://stackoverflow.com/*',
     '*://translate.googleapis.com/*',
     "*://developers.redhat.com/*",
-//    "*://cloud-soft.xieyaokun.com/*"
+    "*://githubusercontent.com/*",
+
 ]
+
 /**
  * 移除CSP
  * 参考文档：
@@ -62,7 +73,7 @@ const remove_cps_urls=[
  *   3、 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
  *   4、 Arrow_Function 箭头函数
  *   5、 返回新的新的响应头： return {responseHeaders: details.responseHeaders};
- *   6、Chrome 新增的可信类型（Trusted types），暂时不知道怎么解决
+ *   6、Chrome 新增的可信类型（Trusted types）暂时不知道怎么解决
  *
  */
 
@@ -215,6 +226,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
+
     return { redirectUrl: url };
   },
   {
