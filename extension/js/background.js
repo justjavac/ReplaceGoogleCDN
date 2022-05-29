@@ -95,7 +95,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 
 //Open Source urls
-let opensource_goole_urls=[
+let opensource_gogole_urls=[
     "*://*.chromium.org/*", //Chromium ChromiumOS GN
     "*://*.googlesource.com/*", //Chromium
     "*://summerofcode.withgoogle.com/*",
@@ -104,12 +104,14 @@ let opensource_goole_urls=[
     "https://opensource.google/*",
 ]
 
+
 // 测试域名组
 let test_urls=[
     ...opensource_goole_urls, //数组
     "*://*.google.com/*",  //测试域名
     "*://github.com/*",    //测试域名
 ]
+
 /**
  *   使用自己架设的 nginx服务，替换CDN地址
  *
@@ -193,6 +195,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 
 
+
 /*
     // 方法一： 支持特定域名替换
     // 测试例子：打开 https://github.com (仅用于学习技术)
@@ -214,6 +217,7 @@ chrome.webRequest.onBeforeRequest.addListener(
             return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
 
 */
+
 
 
     let url = details.url.replace("http://", "https://");
@@ -246,6 +250,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         "*://www.gravatar.com/*",
         "*://maxcdn.bootstrapcdn.com/bootstrap/*",
         // ...test_urls   // 测试用例
+
     ],
   },
   ["blocking"]
