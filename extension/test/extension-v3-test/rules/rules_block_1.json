@@ -6,7 +6,8 @@
     "condition": {
       "urlFilter": "*",
       "requestDomains":[
-        "collector.github.com"
+        "collector.github.com",
+        "www.google-analytics.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
