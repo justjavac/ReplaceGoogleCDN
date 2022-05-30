@@ -1,11 +1,8 @@
 ## chromium extension v3 
 > 一个完整的 测试例子
 
-# 修改 manifest.json 文件测试配置,结果如下：
-```text 
-
 ## manifeset.json 参考 declarative_net_request 配置
-```json 
+```
     
     "declarative_net_request" : {
         "rule_resources" : [
@@ -36,9 +33,11 @@
 
 ## manifest.json  declarative_net_reques 高级配置示例
 ### 匹配指定域名
-> github.com  -> github-com.proxy.domain.com
+> `github.com`  -> `github-com.proxy.domain.com`
 
-> 真实测试地址： github.com  ->  https://github-com.proxy.xiaoshuogeng.com/
+> 真实测试地址： `https://github.com/`  ->  `https://github-com.proxy.xiaoshuogeng.com/`
+
+1. [尝试 github.com  ](https://github.com/)
 ```json
 
 {
@@ -49,9 +48,12 @@
 
 ```
 ## 动态匹配域名
-> www.chromium.org   ->    https://2_www_xn--3px_chromium_xn--3px_org.proxy..domain.com/
+> `www.chromium.org`   ->    `https://`2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com`
 
->真实测试地址 https://www.chromium.org/   ->    https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
+> 真实测试地址 `https://chromium.googlesource.com/chromium/tools/depot_tools.git`   ->    `https://2_chromium_xn--3px_googlesource_xn--3px_com.proxy.xiaoshuogeng.com/chromium/tools/depot_tools.git`
+
+1. [尝试 chromium   ](https://chromium.googlesource.com/chromium/src/+/main/docs/linux/build_instructions.md)
+2. [尝试 open source software development](https://summerofcode.withgoogle.com/programs/2022/organizations)
 
 ```json
 {
@@ -61,7 +63,7 @@
 }
 ```
 
-### 阻止指定域名 
+### 阻止指定域名 (拦截请求)
 ```json
 
 {
@@ -73,7 +75,7 @@
 ```
 
 ## manifest host_permissions 例子
-```javascript
+```
 {
     "host_permissions": [ //指定地址写法
          "*://ajax.googleapis.com/*",
