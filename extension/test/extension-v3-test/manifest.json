@@ -7,10 +7,20 @@
         "service_worker": "js/sw.js",
         "type": "module"
     },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://github-com.proxy.xiaoshuogeng.com/*"
+            ],
+            "run_at": "document_end",
+            "js": ["js/content-scripts/github.js"]
+        }
+    ],
     "web_accessible_resources": [{
-        "resources": ["js/*","css/*"],
-        "matches": [],
-        "extension_ids": []
+        "resources": ["js/*","css/*","*.html"],
+        "matches": ["*://*/*"],
+        "extension_ids": [],
+         "use_dynamic_url": true
     }],
     "permissions": [
         "declarativeNetRequest",
@@ -18,11 +28,24 @@
         "declarativeNetRequestFeedback",
         "storage",
         "activeTab",
-        "scripting"
+        "scripting",
+        "tabs"
     ],
     "host_permissions": [
+        "http://*/*",
+        "https://*/*",
         "<all_urls>"
     ],
+    "action":{
+        "default_popup": "action.html",
+        "default_title": "自定义规则第一版雏形"
+    },
+    "sandbox": {
+        "pages": [
+            "action.html",
+            "index.html"
+        ]
+    },
     "declarative_net_request" : {
         "rule_resources" : [
             {

@@ -16,12 +16,16 @@
         {"header":"x-content-type-options","operation":"remove"},
         {"header":"x-frame-options","operation":"remove"},
         {"header":"permissions-policy","operation":"remove"},
-        {"header":"timing-allow-origin","operation":"remove"}
+        {"header":"timing-allow-origin","operation":"remove"},
+        {"header":"cross-origin-embedder-policy","operation":"remove"},
+        {"header":"cross-origin-opener-policy","operation":"remove"},
+        {"header":"cross-origin-opener-policy-report-only","operation":"remove"},
+        {"header":"cross-origin-embedder-policy-report-only","operation":"remove"}
       ]
     },
     "condition": {
       "isUrlFilter" : false,
-      "urlFilter": "*.com",
+      "urlFilter": "*",
       "requestDomains":[
         "ajax.googleapis.com",
         "fonts.googleapis.com",
@@ -31,7 +35,8 @@
         "www.gstatic.com",
         "secure.gravatar.com",
         "www.gravatar.com",
-        "maxcdn.bootstrapcdn.com"
+        "maxcdn.bootstrapcdn.com",
+        "githubusercontent.com"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
