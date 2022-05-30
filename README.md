@@ -73,4 +73,4 @@ Chrome 安装方法（Google 被墙了上不去）：
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
 
 
-## [功能变更记录 CHANGELOG-0.10.x](CHANGELOG-0.10.x.md)
+## [功能变更记录 `CHANGELOG-0.10.x`](CHANGELOG-0.10.x.md)

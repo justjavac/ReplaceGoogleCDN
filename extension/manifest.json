@@ -1,6 +1,6 @@
 {
     "name": "Replace Google CDN",
-    "version": "0.10.0",
+    "version": "0.10.4",
     "manifest_version": 3,
     "icons": {
       "128": "icons/128.png"
@@ -24,6 +24,11 @@
                 "id": "ruleset_redirect_1",
                 "enabled": true,
                 "path": "rules/rules_redirect_1.json"
+            },
+            {
+                "id": "ruleset_redirect_1_extra",
+                "enabled": true,
+                "path": "rules/rules_redirect_1_extra.json"
             },
             {
                 "id": "ruleset_jquery_redirect_1",

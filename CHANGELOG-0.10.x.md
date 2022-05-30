@@ -2,23 +2,32 @@
 
 ## [一个完整的 测试例子 请看 `extension/test/extension-v3-test` 目录](https://github.com/justjavac/ReplaceGoogleCDN/tree/master/extension/test/extension-v3-test)
 
+## CHANGELOG for 0.10.4
+### 变更
+>1. 修复 www.google.com/recaptcha/ 无法显示问题,通过新增 `extension/rules/rules_redirect_1_extra.json`实现
+>2. test 用例 修改README.md 描述
+
+
+
+
+
 ## CHANGELOG for 0.10.3
 ### 变更
 >1. 新增 公共 CDN 静态资源库 中科大 `rules/README.md`
 >2. 修改屏蔽 `content-security-policy`功能，新增4个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
 >3. 新增 移除`CSP`的请求地址  `githubusercontent.com`
 >4. 新增 `cdnjs.cloudflare.com` 替换规则 `rules-cdnjs-cloudflare-com-redirect.json`,默认未启用
->5. test 环境 修改功能：  github.com 地址替换后 PAJX 报错,  添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js` 
->6. test 环境 新增功能：  自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
+>5. test 用例 修改功能：  github.com 地址替换后 PAJX 报错,  添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js` 
+>6. test 用例 新增功能：  自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
 
 
 
 ## CHANGELOG for 0.10.2 
 ### 变更
->1. test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
->2. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用 
->3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
->4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 查看网页引入的所有域名
+>1. test 用例 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
+>2. test 用例 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用 
+>3. test 用例 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
+>4. test 用例 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 查看网页引入的所有域名
 >5. 新增 `code.query.com` jquery 地址替换  
 >6. 解决  0.10.1  版本中 `第9 , 10条不能共用问题`
 >7. 删除  0.10.1  版本中 高级玩法 `excludedInitiatorDomains`错误配置 位于 `rules/rules_advance_redirect_2.json :  "excludedInitiatorDomains":[] `
