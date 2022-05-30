@@ -1,6 +1,7 @@
 # CHANGELOG
 
-## [一个完整的 测试例子 请看 `extension/test/extension-v3-test` 目录](/extension/test/extension-v3-test/)
+## [测试例子](/extension/test/README.md)
+## [一个完整的 测试环境例子 `extension/test/extension-v3-test` ](/extension/test/extension-v3-test/README.md)
 
 ## CHANGELOG for 0.10.4
 ### 变更
