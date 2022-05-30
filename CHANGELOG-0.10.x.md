@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [一个完整的 测试例子 请看 `extension/test/extension-v3-test` 目录](https://github.com/justjavac/ReplaceGoogleCDN/tree/master/extension/test/extension-v3-test)
+## [一个完整的 测试例子 请看 `extension/test/extension-v3-test` 目录](/extension/test/extension-v3-test/)
 
 ## CHANGELOG for 0.10.4
 ### 变更
