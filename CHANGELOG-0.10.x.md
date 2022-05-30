@@ -4,11 +4,9 @@
 
 ## CHANGELOG for 0.10.4
 ### 变更
->1. 修复 www.google.com/recaptcha/ 无法显示问题,通过新增 `extension/rules/rules_redirect_1_extra.json`实现
->2. test 用例 修改README.md 描述
-
-
-
+>1. 修复 `www.google.com/recaptcha/` 无法显示问题,通过新增 `extension/rules/rules_redirect_1_extra.json`实现
+>2. test 用例： 修改`extension/test/extension-v3-test/README.md` 描述
+>3. 格式化文件： `extension/rules/rules_redirect_1.json`
 
 
 ## CHANGELOG for 0.10.3

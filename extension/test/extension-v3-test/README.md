@@ -3,8 +3,8 @@
 
 ## manifeset.json 参考 declarative_net_request 配置
 ```json
-   
-    "declarative_net_request" : {
+ {
+    "declarative_net_request" :{
         "rule_resources" : [
             {
                 "id": "remove-header",
@@ -28,6 +28,7 @@
             }
         ]
     }
+}
 
 ```
 
@@ -101,9 +102,11 @@
 ```
 
 
-###  本地启动 web server
+##  本地启动 web server
 ```shell
 
 sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
 
 ```
+
+
