@@ -5,76 +5,164 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "ajax.loli.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "ajax.loli.net"
+        }
       }
     },
     "condition": {
       "urlFilter": "ajax.googleapis.com",
       "resourceTypes": [
-        "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-        "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-        "webtransport", "webbundle", "other"
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
       ]
     }
-  } ,
+  },
   {
     "id": 2,
     "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "fonts.loli.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "fonts.loli.net"
+        }
       }
     },
-    "condition": { "urlFilter": "fonts.googleapis.com", "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
-  } ,
+    "condition": {
+      "urlFilter": "fonts.googleapis.com",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
   {
     "id": 3,
     "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "themes.loli.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "themes.loli.net"
+        }
       }
     },
-    "condition": { "urlFilter": "themes.googleusercontent.com", "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
-  } ,
+    "condition": {
+      "urlFilter": "themes.googleusercontent.com",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
   {
     "id": 4,
     "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "gstatic.loli.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "gstatic.loli.net"
+        }
       }
     },
-    "condition": { "urlFilter": "fonts.gstatic.com", "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
-  }, {
+    "condition": {
+      "urlFilter": "fonts.gstatic.com",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
     "id": 5,
-    "priority": 1,
+    "priority": 998,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "www.recaptcha.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "www.recaptcha.net"
+        }
       }
     },
-    "condition": { "urlFilter": "www.google.com/recaptcha/", "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
+    "condition": {
+      "urlFilter": "www.google.com/recaptcha/",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   },
   {
     "id": 6,
@@ -82,14 +170,32 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "gravatar.loli.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "gravatar.loli.net"
+        }
       }
     },
-    "condition": { "urlFilter": "secure.gravatar.com", "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
+    "condition": {
+      "urlFilter": "secure.gravatar.com",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   },
   {
     "id": 7,
@@ -97,14 +203,32 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "gravatar.loli.net" }
+        "transform": {
+          "scheme": "https",
+          "host": "gravatar.loli.net"
+        }
       }
     },
-    "condition": { "urlFilter": "www.gravatar.com", "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
+    "condition": {
+      "urlFilter": "www.gravatar.com",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   },
   {
     "id": 8,
@@ -112,15 +236,28 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution" : "lib.baomitu.com/twitter-bootstrap/\\1/\\2"
+        "regexSubstitution": "lib.baomitu.com/twitter-bootstrap/\\1/\\2"
       }
     },
     "condition": {
       "regexFilter": "maxcdn.bootstrapcdn.com/bootstrap/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "resourceTypes": [
-      "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
-      "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket",
-      "webtransport", "webbundle", "other"
-    ] }
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   }
 ]

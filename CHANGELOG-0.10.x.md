@@ -1,6 +1,15 @@
 # CHANGELOG
 
-## [一个完整的 测试例子 请看 `extension/test/extension-v3-test` 目录](https://github.com/justjavac/ReplaceGoogleCDN/tree/master/extension/test/extension-v3-test)
+## [测试用例](/extension/test/README.md)
+## [一个完整的 测试环境例子 `extension/test/extension-v3-test` ](/extension/test/extension-v3-test/README.md)
+
+## CHANGELOG for 0.10.4
+### 变更
+>1. 修复 `www.google.com/recaptcha/` 无法显示问题； 通过新增 `extension/rules/rules_redirect_1_extra.json`实现
+>2. test 环境 修改： `extension/test/extension-v3-test/README.md` 描述
+>3. 格式化文件： `extension/rules/rules_redirect_1.json`
+>4. 修复 `https://pub.dev/` 无法地址重定向；通过移除`pub.dev`的响应头`content-security-policy`实现
+>5. test 用例 新增 `extension/test/README.md` 测试用例记录
 
 ## CHANGELOG for 0.10.3
 ### 变更
