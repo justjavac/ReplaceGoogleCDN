@@ -36,7 +36,8 @@
         "secure.gravatar.com",
         "www.gravatar.com",
         "maxcdn.bootstrapcdn.com",
-        "githubusercontent.com"
+        "githubusercontent.com",
+        "pub.dev"
       ],
       "resourceTypes": [
         "main_frame", "sub_frame", "stylesheet", "script", "image", "font",
