@@ -17,6 +17,7 @@
 9. [cloudflare ](https://cdnjs.com/)
 10. [google libraries](https://developers.google.com/speed/libraries)
 11. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
+12. [七牛静态库](http://staticfile.org/)
 
 ```text
 
