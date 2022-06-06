@@ -1,7 +1,7 @@
 ## chromium extension v3 
 > 一个完整的 测试例子
 
-## manifeset.json 参考 declarative_net_request 配置
+## 一：manifest.json  declarative_net_reques 高级配置示例
 ```json
  {
     "declarative_net_request" :{
@@ -32,8 +32,8 @@
 
 ```
 
-## manifest.json  declarative_net_reques 高级配置示例
-### 匹配指定域名
+
+## 二：匹配指定域名
 
 > `github.com`  -> `github-com.proxy.domain.com`
 
@@ -50,7 +50,7 @@
 }
 
 ```
-## 动态匹配域名
+## 三：动态匹配域名：
 
 > `www.chromium.org`   ->    `https://`2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com`
 
@@ -68,7 +68,7 @@
 }
 ```
 
-### 阻止指定域名 (拦截请求)
+## 四：阻止指定域名 (拦截请求)
 
 ```json
 
@@ -80,7 +80,7 @@
 
 ```
 
-## manifest host_permissions 例子
+## 五：manifest host_permissions 例子
 ```
 {
     "host_permissions": [ //指定地址写法
@@ -102,7 +102,7 @@
 ```
 
 
-##  本地启动 web server
+##  六：本地启动 web server
 ```shell
 
 sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
