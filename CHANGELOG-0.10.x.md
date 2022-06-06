@@ -8,6 +8,7 @@
 >2. 新增 `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用
 >3. 新增 公共 CDN 静态资源库 极客族公共加速服务 `https://cdn.geekzu.org/cached.html`
 >4. 新增 公共 CDN 静态资源库 七牛静态库 `http://staticfile.org/`
+>5. 新增 通过国内镜像 克隆本项目源代码
 
 ## CHANGELOG for 0.10.4
 ### 变更
