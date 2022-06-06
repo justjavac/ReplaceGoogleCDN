@@ -46,7 +46,7 @@
 {
     "id": "ruleset_advance_redirect_1",
     "enabled": true,
-    "path": "test/extension-v3-test/rules_advance_redirect_1.json"
+    "path": "rules/rules_advance_redirect_1.json"
 }
 
 ```
@@ -64,7 +64,7 @@
 {
     "id": "ruleset_advance_redirect_2",
     "enabled": true,
-    "path": "test/extension-v3-test/rules_advance_redirect_2.json"
+    "path": "rules/rules_advance_redirect_2.json"
 }
 ```
 
@@ -75,7 +75,7 @@
 {
     "id": "ruleset_block_header_1",
     "enabled": true,
-    "path": "test/extension-v3-test/rules_block_1.json"
+    "path": "rules/rules_block_1.json"
 }
 
 ```
