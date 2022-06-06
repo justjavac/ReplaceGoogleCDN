@@ -80,12 +80,12 @@ Chrome 安装方法（Google 被墙了上不去）：
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
 
 
-###  手动安装  (来自国内镜像) 克隆源代码以后， 步骤如上：	:point_up_2:
+###  手动安装  (来自国内镜像) 克隆源代码以后， 步骤如上：	:point_up_2:	:point_up_2:	:point_up_2:
 ```shell 
 # 克隆源代码
 git clone -b master https://gitee.com/mirrors/replacegooglecdn.git --depth=1 --progress 
 
-# update source code  更新源代码
+# 更新源代码
 
 git -C replacegooglecdn pull  --depth=1 --progress  --rebase=true
 
