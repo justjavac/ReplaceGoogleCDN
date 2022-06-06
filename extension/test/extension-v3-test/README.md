@@ -110,3 +110,5 @@ sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
 ```
 
 
+## 七： 参考文档
+1. [extensions declare_permissions ](https://developer.chrome.com/docs/extensions/mv3/declare_permissions/)
