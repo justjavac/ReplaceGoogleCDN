@@ -42,8 +42,13 @@
             },
             {
                 "id": "ruleset_domain_replace_1",
-                "enabled": true,
+                "enabled": false,
                 "path": "rules/rules-domain-replace.json"
+            },
+            {
+                "id": "ruleset_cdn-jsdelivr-net_replace",
+                "enabled": true,
+                "path": "rules/rules-cdn-jsdelivr-net-redirect.json"
             }
         ]
     },

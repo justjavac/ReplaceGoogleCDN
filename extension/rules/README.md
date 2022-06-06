@@ -16,8 +16,9 @@
 8. [unpkg](https://unpkg.com/)
 9. [cloudflare ](https://cdnjs.com/)
 10. [google libraries](https://developers.google.com/speed/libraries)
-11. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
-12. [七牛静态库](http://staticfile.org/)
+11. [七牛静态库](http://staticfile.org/)
+12. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
+13. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
 ```text
 
@@ -86,7 +87,7 @@ google-themes.proxy.ustclug.org
 }
 
 ```
-## 动态匹配域名
+### 动态匹配域名
 
 > https://www.chromium.org/   ->    https://2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com/
 
@@ -98,7 +99,7 @@ google-themes.proxy.ustclug.org
 }
 ```
 
-### 阻止指定域名
+### 阻止指定域名 (拦截请求)
 ```json
 
 {
@@ -109,4 +110,12 @@ google-themes.proxy.ustclug.org
 
 ```
 
+
+### 修改 http 请求头或者响应头
+```json
+{
+  "id": "ruleset_remove_header_1",
+  "enabled": true,
+  "path": "rules/rules_remove_header_1.json"
+}
 
