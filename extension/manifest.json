@@ -1,6 +1,6 @@
 {
     "name": "Replace Google CDN",
-    "version": "0.10.4",
+    "version": "0.10.5",
     "manifest_version": 3,
     "icons": {
       "128": "icons/128.png"
@@ -39,6 +39,16 @@
                 "id": "ruleset_remove_header_1",
                 "enabled": true,
                 "path": "rules/rules_remove_header_1.json"
+            },
+            {
+                "id": "ruleset_domain_replace_1",
+                "enabled": false,
+                "path": "rules/rules-domain-replace.json"
+            },
+            {
+                "id": "ruleset_cdn-jsdelivr-net_replace",
+                "enabled": true,
+                "path": "rules/rules-cdn-jsdelivr-net-redirect.json"
             }
         ]
     },
