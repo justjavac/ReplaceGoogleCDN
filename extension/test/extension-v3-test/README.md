@@ -1,7 +1,7 @@
 ## chromium extension v3 
 > 一个完整的 测试例子
 
-## manifeset.json 参考 declarative_net_request 配置
+## 一：manifest.json  declarative_net_reques 高级配置示例
 ```json
  {
     "declarative_net_request" :{
@@ -32,8 +32,8 @@
 
 ```
 
-## manifest.json  declarative_net_reques 高级配置示例
-### 匹配指定域名
+
+## 二：匹配指定域名
 
 > `github.com`  -> `github-com.proxy.domain.com`
 
@@ -46,11 +46,11 @@
 {
     "id": "ruleset_advance_redirect_1",
     "enabled": true,
-    "path": "test/extension-v3-test/rules_advance_redirect_1.json"
+    "path": "rules/rules_advance_redirect_1.json"
 }
 
 ```
-## 动态匹配域名
+## 三：动态匹配域名：
 
 > `www.chromium.org`   ->    `https://`2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com`
 
@@ -64,23 +64,23 @@
 {
     "id": "ruleset_advance_redirect_2",
     "enabled": true,
-    "path": "test/extension-v3-test/rules_advance_redirect_2.json"
+    "path": "rules/rules_advance_redirect_2.json"
 }
 ```
 
-### 阻止指定域名 (拦截请求)
+## 四：阻止指定域名 (拦截请求)
 
 ```json
 
 {
     "id": "ruleset_block_header_1",
     "enabled": true,
-    "path": "test/extension-v3-test/rules_block_1.json"
+    "path": "rules/rules_block_1.json"
 }
 
 ```
 
-## manifest host_permissions 例子
+## 五：manifest host_permissions 例子
 ```
 {
     "host_permissions": [ //指定地址写法
@@ -102,7 +102,7 @@
 ```
 
 
-##  本地启动 web server
+##  六：本地启动 web server
 ```shell
 
 sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
@@ -110,3 +110,5 @@ sh  extension/test/extension-v3-test/startup-local-test-web-server.sh
 ```
 
 
+## 七： 参考文档
+1. [extensions declare_permissions ](https://developer.chrome.com/docs/extensions/mv3/declare_permissions/)

@@ -27,9 +27,12 @@
 1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
 1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为 `lib.baomitu.com/twitter-bootstrap/`
 1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为 `lib.baomitu.com/jquery/$verson/$suffix`
-1. `cdnjs.cloudflare.com` - cdnjs 替换为 `cdnjs.loli.net`  默认未启用
+1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net`   默认未启用,  需要请自行打开
+1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
 
 ## 功能变更记录[`CHANGELOG-0.10.x`](CHANGELOG-0.10.x.md)
+
+## [可用 公共 CDN 静态资源库 和 网络拨测工具](extension/rules/README.md)
 
 ## 效果
 
@@ -77,3 +80,13 @@ Chrome 安装方法（Google 被墙了上不去）：
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
 
 
+###  手动安装  (来自国内镜像) 克隆源代码以后， 步骤如上：	:point_up_2:	:point_up_2:	:point_up_2:
+```shell 
+# 克隆源代码
+git clone -b master https://gitee.com/mirrors/replacegooglecdn.git --depth=1 --progress 
+
+# 更新源代码
+
+git -C replacegooglecdn pull  --depth=1 --progress  --rebase=true
+
+``````

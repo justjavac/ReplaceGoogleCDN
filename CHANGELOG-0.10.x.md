@@ -3,6 +3,13 @@
 ## [测试用例](/extension/test/README.md)
 ## [一个完整的 测试环境例子 `extension/test/extension-v3-test` ](/extension/test/extension-v3-test/README.md)
 
+## CHANGELOG for 0.10.5
+>1. 新增 `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
+>2. 新增 `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用
+>3. 新增 公共 CDN 静态资源库 极客族公共加速服务 `https://cdn.geekzu.org/cached.html`
+>4. 新增 公共 CDN 静态资源库 七牛静态库 `http://staticfile.org/`
+>5. 新增 通过国内镜像 克隆本项目源代码
+
 ## CHANGELOG for 0.10.4
 ### 变更
 >1. 修复 `www.google.com/recaptcha/` 无法显示问题； 通过新增 `extension/rules/rules_redirect_1_extra.json`实现
