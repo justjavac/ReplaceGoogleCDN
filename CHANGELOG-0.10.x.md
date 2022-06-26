@@ -6,7 +6,7 @@
 ## CHANGELOG for 0.10.6
 > 1. 重新启用对firefox 的支持, 启用的扩展位于 `extension-v2` 目录
 > 2. 移除目录 `extension/test/extension-v3-test`
-> 3. 衍生新仓库 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test)
+> 3. 移除的目录衍生新仓库 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test)
 
 
 ## CHANGELOG for 0.10.5
