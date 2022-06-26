@@ -57,7 +57,8 @@ const remove_cps_urls = [
   "*://stackoverflow.com/*",
   "*://translate.googleapis.com/*",
   "*://developers.redhat.com/*",
-  "*://githubusercontent.com/*",
+  "*://*.githubusercontent.com/*",
+  "*://pub.dev/*",
 ];
 
 /**
@@ -236,6 +237,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     );
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
+    url = url.replace("cdn.jsdelivr.net", "fastly.jsdelivr.net");
     url = url.replace(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
       //"cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
@@ -254,6 +256,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://secure.gravatar.com/*",
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+      "*://cdn.jsdelivr.net/*",
       // ...test_urls   // 测试用例
     ],
   },
