@@ -7,7 +7,7 @@
     },
     "description": "将 Google CDN 替换为国内镜像",
     "background": {
-        "service_worker": "js/empty-script.js",
+        "service_worker": "js/background.js",
         "type": "module"
     },
     "permissions": [
