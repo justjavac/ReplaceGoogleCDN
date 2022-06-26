@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## [测试用例](/extension/test/README.md)
-## [一个完整的 测试环境例子 `extension/test/extension-v3-test` ](https://github.com/jingjingxyk/extension-v3-test)
+## [一个完整的 测试环境例子 ](https://github.com/jingjingxyk/extension-v3-test)
 
 ## CHANGELOG for 0.10.6
 > 1. 重新启用对firefox 的支持, 启用的扩展位于 `extension-v2` 目录
