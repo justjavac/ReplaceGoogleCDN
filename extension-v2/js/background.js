@@ -62,7 +62,7 @@ const remove_cps_urls = [
 ];
 
 /**
- * 移除CSP
+ * 移除 Content-Security-Policy
  * 参考文档：
  *   1、 https://developer.chrome.com/docs/extensions/reference/webRequest/#event-onHeadersReceived
  *   2、  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/trusted_types_on_webui.md
