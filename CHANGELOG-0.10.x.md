@@ -1,7 +1,13 @@
 # CHANGELOG
 
 ## [测试用例](/extension/test/README.md)
-## [一个完整的 测试环境例子 `extension/test/extension-v3-test` ](/extension/test/extension-v3-test/README.md)
+## [一个完整的 测试环境例子 ](https://github.com/jingjingxyk/extension-v3-test)
+
+## CHANGELOG for 0.10.6
+> 1. 重新启用对firefox 的支持, 启用的扩展位于 `extension-v2` 目录
+> 2. 移除目录 `extension/test/extension-v3-test`
+> 3. 移除的目录衍生新仓库 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test)
+
 
 ## CHANGELOG for 0.10.5
 >1. 新增 `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`

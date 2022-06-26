@@ -6,8 +6,6 @@ Thumbs.db
 server/
 server/*
 extension/_metadata/
-extension/test/extension-v3-test/_metadata/
+extension/test/extension-v3-test/
 extension/test/chromium-tools/
-extension/test/extension-v3-test/chromium-browser/
-extension/test/extension-v3-test/claat-linux-amd64
-extension/test/extension-v3-test/replace-google-frontend-cdn/
+package-lock.json
