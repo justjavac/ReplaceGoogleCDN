@@ -60,8 +60,9 @@ const remove_cps_urls = [
   "*://githubusercontent.com/*",
 ];
 
+
 /**
- * 移除CSP
+ * 移除 Content-Security-Policy
  * 参考文档：
  *   1、 https://developer.chrome.com/docs/extensions/reference/webRequest/#event-onHeadersReceived
  *   2、  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/trusted_types_on_webui.md
@@ -236,6 +237,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     );
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
+    url = url.replace("cdn.jsdelivr.net", "fastly.jsdelivr.net");
     url = url.replace(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
       //"cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
@@ -254,6 +256,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://secure.gravatar.com/*",
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
+      "*://cdn.jsdelivr.net/*",
       // ...test_urls   // 测试用例
     ],
   },
