@@ -17,9 +17,10 @@
 8. [unpkg](https://unpkg.com/)
 9. [cloudflare ](https://cdnjs.com/)
 10. [google libraries](https://developers.google.com/speed/libraries)
-11. [七牛静态库](http://staticfile.org/)
-12. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
-13. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
+11. [google libraries cn](https://developers.google.com/speed/libraries)
+12. [七牛静态库](http://staticfile.org/)
+13. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
+14. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
 ```text
 
@@ -30,6 +31,10 @@ google-themes.proxy.ustclug.org
 
 ```
 
+15. [CDNJS 南方科技大学](https://mirrors.sustech.edu.cn/help/cdnjs.html)
+16. [CDNJS 重庆邮电大学](https://mirrors.cqupt.edu.cn/cdnjs/)
+17. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
+
 ## 高级玩法
 
 > 使用时，请把 `proxy.domain.com` 更换为你自己的域名
@@ -38,9 +43,9 @@ google-themes.proxy.ustclug.org
 
 > 动态地址替换 `rules_advance_redirect_2.json`
 
-> 移除 CSP `rules_remove_header_1.json`
+> 移除 content-security-policy `rules_remove_content_security_policy_header.json`
 
-> 阻止请求 `rules_block_1.json`
+> 阻止请求 `rules_block_request.json`
 
 ## manifeset.json 参考 declarative_net_request 配置
 
@@ -81,7 +86,7 @@ google-themes.proxy.ustclug.org
 {
   "id": "ruleset_advance_redirect_1",
   "enabled": true,
-  "path": "rules/rules_advance_redirect_1.json"
+  "path": "rules/advance/rules_advance_redirect_1.json"
 }
 ```
 
@@ -93,7 +98,7 @@ google-themes.proxy.ustclug.org
 {
   "id": "ruleset_advance_redirect_2",
   "enabled": true,
-  "path": "rules/rules_advance_redirect_2.json"
+  "path": "rules/advance/rules_advance_redirect_2.json"
 }
 ```
 
@@ -103,7 +108,7 @@ google-themes.proxy.ustclug.org
 {
   "id": "ruleset_block_header_1",
   "enabled": true,
-  "path": "rules/rules_block_1.json"
+  "path": "rules/rules_block_request.json"
 }
 ```
 
@@ -113,6 +118,6 @@ google-themes.proxy.ustclug.org
 {
   "id": "ruleset_remove_header_1",
   "enabled": true,
-  "path": "rules/rules_remove_header_1.json"
+  "path": "rules/rules_append_header_1.json"
 }
 ```
