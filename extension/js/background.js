@@ -1,3 +1,1 @@
-chrome.runtime.onInstalled.addListener((details) => {
-
-});
+chrome.runtime.onInstalled.addListener((details) => {});

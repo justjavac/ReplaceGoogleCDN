@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://1_\\1_xn--3px_\\2.proxy.domain.com/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://([\\w|-]+?)\\.(\\w+?)/(.*?)",
+      "requireCapturing": true,
+      "requestDomains": ["example.com"],
+      "excludedRequestDomains": ["proxy.domain.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://2_\\1_xn--3px_\\2_xn--3px_\\3.proxy.domain/\\4"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
+      "requestDomains": ["example.com"],
+      "excludedRequestDomains": ["proxy.domain.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://3_\\1_xn--3px_\\2_xn--3px_\\3_xn--3px_\\4.proxy.domain/\\5"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
+      "requestDomains": ["example.com"],
+      "excludedRequestDomains": ["proxy.domain.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://4_\\1_xn--3px_\\2_xn--3px_\\3_xn--3px_\\4_xn--3px_\\5.proxy.domain/\\6"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
+      "requestDomains": ["example.com"],
+      "excludedRequestDomains": ["proxy.domain.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://5_\\1_xn--3px_\\2_xn--3px_\\3_xn--3px_\\4_xn--3px_\\5_xn--3px_\\6.proxy.domain/\\7"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.([\\w|-]+?)\\.(\\w+?)/(.*?)",
+      "requestDomains": ["example.com"],
+      "excludedRequestDomains": ["proxy.domain.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]
