@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "x-custom-token",
+          "operation": "set",
+          "value": "2aed78a8-af8d-11ec-b3bd-879f7464e58a"
+        },
+        {
+          "header": "user-agent",
+          "operation": "set",
+          "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36"
+        }
+      ],
+      "responseHeaders": [
+        { "header": "h1", "operation": "remove" },
+        { "header": "Set-Cookie", "operation": "remove" },
+        { "header": "h2", "operation": "set", "value": "v2" },
+        { "header": "h3", "operation": "append", "value": "v3" }
+      ]
+    },
+    "condition": {
+      "isUrlFilter": false,
+      "urlFilter": "*.com",
+      "requestDomains": ["example.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

@@ -60,7 +60,6 @@ const remove_cps_urls = [
   "*://githubusercontent.com/*",
 ];
 
-
 /**
  * 移除 Content-Security-Policy
  * 参考文档：
