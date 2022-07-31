@@ -57,7 +57,7 @@ const remove_cps_urls = [
   "*://stackoverflow.com/*",
   "*://translate.googleapis.com/*",
   "*://developers.redhat.com/*",
-  "*://githubusercontent.com/*",
+  "*://*.githubusercontent.com/*",
   "*://pub.dev/*",
 ];
 
