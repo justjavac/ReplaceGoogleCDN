@@ -23,7 +23,7 @@ if test -f auth.json; then
   echo $current_value
 
   # 新的token
-  new_value='2664f452-1020-11ed-af9c-fb67ccd54b6c'
+  new_value='b11102d8-1086-11ed-99e2-e73543daa618'
 
   sed -i "s/${current_value}/${new_value}/g" auth.json
 
