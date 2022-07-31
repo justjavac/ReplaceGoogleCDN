@@ -25,7 +25,8 @@ let rules = {
     "/rules/rules_remove_content_security_policy_header.json",
 };
 
-let updateRule = () => {
+
+let updateRule = (ruleinfo) => {
   let id = 1;
   let domain = "example.com";
   chrome.declarativeNetRequest.updateDynamicRules({
