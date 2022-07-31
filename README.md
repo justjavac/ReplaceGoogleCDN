@@ -29,6 +29,7 @@
 1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为 `lib.baomitu.com/jquery/$verson/$suffix`
 1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 需要请自行打开
 1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
+1. `developers.google.com` - 替换为 `developers.google.cn`
 
 ## 功能变更记录[`CHANGELOG-0.10.x`](CHANGELOG-0.10.x.md)
 

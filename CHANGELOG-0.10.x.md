@@ -4,7 +4,7 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
-## CHANGELOG for 0.10.7
+## CHANGELOG for 0.10.7 [2022-07-31 12:43:40 +0800]
 
 > 1.  新增 `developers.google.com` - 替换为 `developers.google.cn`
 > 2.  整理规则，合并规则文件，并且重命名名称
