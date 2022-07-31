@@ -1,12 +1,30 @@
-let showRuleJSON = (ruleinfo) => {
-  console.log(ruleinfo);
-  let url = chrome.runtime.getURL("/rules/rules_redirect_main.json");
-  fetch(url)
-    .then((x) => x.json())
-    .then((x) => {
-      console.log(x);
-    });
+let showRuleJSON = (rule) => {
+  let file = rules[rule] ? rules[rule] : "";
+  if (file) {
+    let url = chrome.runtime.getURL(file);
+    fetch(url)
+      .then((x) => x.json())
+      .then((x) => {
+        console.log(x);
+        document.querySelector("#rule-content-container").value =
+          JSON.stringify(x);
+      });
+  } else {
+    console.log("rule:" + rule + "no found!");
+  }
 };
+
+/**
+ * 规则名称 与 规则文件目录映射
+ */
+
+let rules = {
+  ruleset_redirect_main: "/rules/rules_redirect_main.json",
+  ruleset_redirect_main_extra: "/rules/rules_redirect_main_extra.json",
+  ruleset_remove_content_security_policy_header:
+    "/rules/rules_remove_content_security_policy_header.json",
+};
+
 let updateRule = () => {
   let id = 1;
   let domain = "example.com";
