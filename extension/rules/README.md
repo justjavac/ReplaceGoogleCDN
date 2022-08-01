@@ -16,10 +16,10 @@
 7. [jsdelivr](https://www.jsdelivr.com/)
 8. [unpkg](https://unpkg.com/)
 9. [cloudflare ](https://cdnjs.com/)
-11. [google libraries cn](https://developers.google.cn/speed/libraries)
-12. [七牛静态库](http://staticfile.org/)
-13. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
-14. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
+10. [google libraries cn](https://developers.google.cn/speed/libraries)
+11. [七牛静态库](http://staticfile.org/)
+12. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
+13. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
 ```text
 
