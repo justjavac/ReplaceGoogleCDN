@@ -225,7 +225,6 @@ chrome.webRequest.onBeforeRequest.addListener(
     return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
 
 */
-
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
     url = url.replace("fonts.googleapis.com", "fonts.loli.net");
