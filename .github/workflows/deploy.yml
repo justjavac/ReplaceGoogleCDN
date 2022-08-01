@@ -13,5 +13,5 @@ jobs:
       - name: Browser Plugin Publish
         uses: PlasmoHQ/bpp@v2
         with:
-          artifact: "dist/extension-v3.zip"
+          artifact: "dist/extension-v2.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
