@@ -5,4 +5,4 @@
 1. 广告拦截
 2. 访问 chromium source code 等
 
-## 使用`tools`目录下的辅助工具方便快捷
+## 配合`tools`目录下的辅助工具方便快捷
