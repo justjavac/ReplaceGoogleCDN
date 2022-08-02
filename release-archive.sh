@@ -39,9 +39,6 @@ zip -r ../dist/extension-v2.zip . \
 
 
 cd ${__DIR__}
-
-
-
 cd dist
 unzip extension-v2.zip -d extension-v2
 unzip extension-v3.zip -d extension-v3
