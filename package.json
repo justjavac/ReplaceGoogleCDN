@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
-    "build": "cd extension/; zip -r ../extension.zip .; cd -"
+    "build": "mkdir -p dist ; cd extension/; zip  -r ../dist/extension-v3.zip . -x './tools/*' -x './_metadata/*' -x './test/*' -x './rules/advance-no-use/*' -x './rules/example-no-use/*' -x './rules/README.md' ; cd -",
+    "release": "bash release-archive.sh"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.139",

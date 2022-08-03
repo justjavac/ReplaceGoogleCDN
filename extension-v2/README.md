@@ -1,1 +1,1 @@
-# 启用同时支持 chromium 和 firefox 
+# 启用同时支持 chromium 和 firefox

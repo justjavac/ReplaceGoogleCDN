@@ -9,3 +9,8 @@ extension/_metadata/
 extension/test/extension-v3-test/
 extension/test/chromium-tools/
 package-lock.json
+extension/tools/venv/
+extension/tools/chrome-linux.zip
+extension/tools/chrome-linux/
+extension/test/nohup.out
+dist
