@@ -225,7 +225,6 @@ chrome.webRequest.onBeforeRequest.addListener(
     return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
 
 */
-
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
     url = url.replace("fonts.googleapis.com", "fonts.loli.net");
@@ -244,6 +243,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
+    url = url.replace("developers.google.com", "developers.google.cn");
     return { redirectUrl: url };
   },
   {
@@ -257,6 +257,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
+      "*://developers.google.com/*",
       // ...test_urls   // 测试用例
     ],
   },

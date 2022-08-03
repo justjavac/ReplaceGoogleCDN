@@ -9,9 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Zip Extension
-        run: npm run build
+        run: npm run release
       - name: Browser Plugin Publish
         uses: PlasmoHQ/bpp@v2
         with:
-          artifact: "extension.zip"
+          artifact: "dist/extension-v2.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}

@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://\\1-\\2.proxy.domain.com/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://(\\w+?)\\.(\\w+?)/(.*?)",
+      "requestDomains": ["github.com", "example.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://\\1-\\2-\\3.proxy.domain.com/\\4"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://(\\w+?)\\.(\\w+?)\\.(\\w+?)/(.*?)",
+      "requestDomains": [
+        "ajax.googleapis.com",
+        "fonts.googleapis.com",
+        "themes.googleusercontent.com",
+        "fonts.gstatic.com",
+        "ssl.gstatic.com",
+        "www.gstatic.com",
+        "secure.gravatar.com",
+        "maxcdn.bootstrapcdn.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]
