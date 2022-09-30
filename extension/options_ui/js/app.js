@@ -147,7 +147,7 @@ let deleteDynamicRules = () => {
       let new_rules_urls = [];
       rules_urls.forEach((value, index, array) => {
         value = value.trim();
-        value = value.replace(/'|,|，|。|"/g, "");
+        value = value.replace(/^\s|\s$|'|,|，|。|"/g, "");
         if (value.length > 1) {
           console.log(value);
           new_rules_urls.push(value);
