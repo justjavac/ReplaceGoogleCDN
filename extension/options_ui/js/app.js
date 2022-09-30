@@ -225,6 +225,18 @@ let deleteDynamicRules = () => {
       }
     }
   });
+
+    document.querySelector(".back-new-rule-to-json").addEventListener("click", (event) => {
+    let rule_str = document.querySelector(".new-add-rule-pannel").value;
+    rule_str = rule_str.trim();
+    if (rule_str.length) {
+      rule_str = JSON.parse(rule_str);
+      if (rule_str) {
+          createJSONFile(rule_str,'ReplaceGoogleCDN-backup-'+parseInt(new Date().getTime() / 1000).toString()+'.json')
+      }
+    }
+  });
+
   /*
     let url = chrome.runtime.getURL("sandbox/index.html");
         chrome.tabs.create({url}, (callback) => {
