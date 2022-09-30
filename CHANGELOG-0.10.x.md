@@ -4,6 +4,10 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.8 [2022-09-30 19:43:40 +0800]
+> 1. 扩展选项页添加同步远端规则功能
+> 2. 扩展选项页完善自定义规则功能
+
 ## CHANGELOG for 0.10.7 [2022-07-31 12:43:40 +0800]
 
 > 1.  新增 `developers.google.com` - 替换为 `developers.google.cn`
