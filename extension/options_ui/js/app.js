@@ -25,21 +25,7 @@ let rules = {
     "/rules/rules_remove_content_security_policy_header.json",
 };
 
-let addRule = (ruleinfo) => {
-  let id = 1;
-  let domain = "example.com";
-  chrome.declarativeNetRequest.updateDynamicRules({
-    addRules: [
-      {
-        id: id,
-        priority: 1,
-        action: { type: "block" },
-        condition: { urlFilter: domain, resourceTypes: ["main_frame"] },
-      },
-    ],
-    removeRuleIds: [id],
-  });
-};
+
 
 let getRuleList = () => {
   chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
@@ -52,7 +38,7 @@ let getRuleList = () => {
     let list = "";
     rules.forEach((value, key, array) => {
       console.log(value.id, value);
-      list += `<li data-rule="${value.id}">${value.id}</li>`;
+      list += `<li data-rule="${value.id}" data-origin="${encodeURIComponent(JSON.stringify(value))}">${value.id}</li>`;
     });
     list_box.innerHTML = list;
   });
@@ -70,6 +56,8 @@ let getRuleList = () => {
   document
     .querySelector(".rule_static_set_list")
     .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
       console.log(event.target);
       console.log(event.target.nodeType);
       console.log(event.target.nodeName);
@@ -77,6 +65,21 @@ let getRuleList = () => {
         showRuleJSON(event.target.getAttribute("data-rule"));
       }
     });
+
+  document
+      .querySelector(".rule_dynamic_set_list")
+      .addEventListener("click", (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        console.log(event.target);
+        console.log(event.target.nodeType);
+        console.log(event.target.nodeName);
+        if (event.target.nodeName === "LI") {
+          console.log(event.target.getAttribute("data-origin"))
+           document.querySelector("#rule-content-container").value =decodeURIComponent(event.target.getAttribute("data-origin"));
+        }
+      });
+
 
   /*
       if (location.href.indexOf("problematic/url") !== -1) {
