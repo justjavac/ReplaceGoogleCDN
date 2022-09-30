@@ -13,3 +13,8 @@ textarea {
   min-width: 200px;
   min-height: 200px;
 }
+
+iframe{
+  border:none;
+  display:inline;
+}
