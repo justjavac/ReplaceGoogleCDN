@@ -58,9 +58,9 @@ let getRuleList = () => {
     .addEventListener("click", (event) => {
       event.stopPropagation();
       event.preventDefault();
-      console.log(event.target);
-      console.log(event.target.nodeType);
-      console.log(event.target.nodeName);
+      //console.log(event.target);
+      //console.log(event.target.nodeType);
+      //console.log(event.target.nodeName);
       if (event.target.nodeName === "LI") {
         showRuleJSON(event.target.getAttribute("data-rule"));
       }
@@ -71,9 +71,9 @@ let getRuleList = () => {
     .addEventListener("click", (event) => {
       event.stopPropagation();
       event.preventDefault();
-      console.log(event.target);
-      console.log(event.target.nodeType);
-      console.log(event.target.nodeName);
+      //console.log(event.target);
+      //console.log(event.target.nodeType);
+      //console.log(event.target.nodeName);
       if (event.target.nodeName === "LI") {
         console.log(event.target.getAttribute("data-origin"));
         document.querySelector("#rule-content-container").value =
@@ -156,7 +156,9 @@ let deleteDynamicRules = () => {
         }
       });
       console.log(new_rules_urls);
-      let default_rules_urls = [
+      let default_rules_urls = [];
+      /*
+      default_rules_urls = [
         "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/auth.json?raw=true",
         "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_advance_redirect_1.json?raw=true",
         "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_advance_redirect_2.json?raw=true",
@@ -172,6 +174,8 @@ let deleteDynamicRules = () => {
         "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_redirect_extra.json?raw=true",
         "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_remove_content_security_policy_header.json?raw=true",
       ];
+
+       */
       default_rules_urls = [];
       rules_urls = new_rules_urls ? new_rules_urls : default_rules_urls;
 
