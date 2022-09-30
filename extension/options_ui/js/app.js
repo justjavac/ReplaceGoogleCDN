@@ -25,8 +25,6 @@ let rules = {
     "/rules/rules_remove_content_security_policy_header.json",
 };
 
-
-
 let getRuleList = () => {
   chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
     console.log(count);
@@ -38,7 +36,9 @@ let getRuleList = () => {
     let list = "";
     rules.forEach((value, key, array) => {
       console.log(value.id, value);
-      list += `<li data-rule="${value.id}" data-origin="${encodeURIComponent(JSON.stringify(value))}">${value.id}</li>`;
+      list += `<li data-rule="${value.id}" data-origin="${encodeURIComponent(
+        JSON.stringify(value)
+      )}">${value.id}</li>`;
     });
     list_box.innerHTML = list;
   });
@@ -67,19 +67,19 @@ let getRuleList = () => {
     });
 
   document
-      .querySelector(".rule_dynamic_set_list")
-      .addEventListener("click", (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        console.log(event.target);
-        console.log(event.target.nodeType);
-        console.log(event.target.nodeName);
-        if (event.target.nodeName === "LI") {
-          console.log(event.target.getAttribute("data-origin"))
-           document.querySelector("#rule-content-container").value =decodeURIComponent(event.target.getAttribute("data-origin"));
-        }
-      });
-
+    .querySelector(".rule_dynamic_set_list")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      console.log(event.target);
+      console.log(event.target.nodeType);
+      console.log(event.target.nodeName);
+      if (event.target.nodeName === "LI") {
+        console.log(event.target.getAttribute("data-origin"));
+        document.querySelector("#rule-content-container").value =
+          decodeURIComponent(event.target.getAttribute("data-origin"));
+      }
+    });
 
   /*
       if (location.href.indexOf("problematic/url") !== -1) {
@@ -140,8 +140,8 @@ let deleteDynamicRules = () => {
   document
     .querySelector(".goto-sync-remote-rule")
     .addEventListener("click", async (event) => {
-    event.stopPropagation();
-    event.preventDefault();
+      event.stopPropagation();
+      event.preventDefault();
       let rule_server_urls = document
         .querySelector(".remote-rule-urls")
         .value.trim();
@@ -203,8 +203,8 @@ let deleteDynamicRules = () => {
       }
     });
   document.querySelector(".add-rule").addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
+    event.stopPropagation();
+    event.preventDefault();
     let rule_str = document.querySelector(".new-add-rule-pannel").value;
     rule_str = rule_str.trim();
     if (rule_str.length) {
@@ -230,37 +230,46 @@ let deleteDynamicRules = () => {
     }
   });
 
-  document.querySelector(".add-rule-from-file").addEventListener("click", (event) => {
-    event.stopPropagation();
-    event.preventDefault();
-    document.querySelector("#upload-file-to-rule").click();
-
-  });
-  document.querySelector("#upload-file-to-rule").addEventListener('change',(event)=>{
-    const files = event.target.files;
-    if(files && files[0]) {
-      const file = files[0];
-      console.log(file)
-      let reader = new FileReader();
-      reader.onload = function(){
-        document.querySelector(".new-add-rule-pannel").value = this.result;
-      };
-      reader.readAsText(file);
-
-    }
-  })
-    document.querySelector(".back-new-rule-to-json").addEventListener("click", (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-    let rule_str = document.querySelector(".new-add-rule-pannel").value;
-    rule_str = rule_str.trim();
-    if (rule_str.length) {
-      rule_str = JSON.parse(rule_str);
-      if (rule_str) {
-          createJSONFile(rule_str,'ReplaceGoogleCDN-backup-'+parseInt(new Date().getTime() / 1000).toString()+'.json')
+  document
+    .querySelector(".add-rule-from-file")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      document.querySelector("#upload-file-to-rule").click();
+    });
+  document
+    .querySelector("#upload-file-to-rule")
+    .addEventListener("change", (event) => {
+      const files = event.target.files;
+      if (files && files[0]) {
+        const file = files[0];
+        console.log(file);
+        let reader = new FileReader();
+        reader.onload = function () {
+          document.querySelector(".new-add-rule-pannel").value = this.result;
+        };
+        reader.readAsText(file);
       }
-    }
-  });
+    });
+  document
+    .querySelector(".back-new-rule-to-json")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      let rule_str = document.querySelector(".new-add-rule-pannel").value;
+      rule_str = rule_str.trim();
+      if (rule_str.length) {
+        rule_str = JSON.parse(rule_str);
+        if (rule_str) {
+          createJSONFile(
+            rule_str,
+            "ReplaceGoogleCDN-backup-" +
+              parseInt(new Date().getTime() / 1000).toString() +
+              ".json"
+          );
+        }
+      }
+    });
 
   /*
     let url = chrome.runtime.getURL("sandbox/index.html");
