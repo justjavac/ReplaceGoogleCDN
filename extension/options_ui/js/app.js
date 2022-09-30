@@ -5,7 +5,7 @@ let showRuleJSON = (rule) => {
     fetch(url)
       .then((x) => x.json())
       .then((x) => {
-        console.log(x);
+        console.log(JSON.stringify(x));
         document.querySelector("#rule-content-container").value =
           JSON.stringify(x);
       });
@@ -25,10 +25,12 @@ let rules = {
     "/rules/rules_remove_content_security_policy_header.json",
 };
 
+
 let getRuleList = () => {
   chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
     console.log(count);
   });
+
 
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     console.log(rules);
@@ -42,6 +44,7 @@ let getRuleList = () => {
     });
     list_box.innerHTML = list;
   });
+
 
   chrome.declarativeNetRequest.getEnabledRulesets((rulesetIds) => {
     console.log(rulesetIds);
@@ -66,6 +69,7 @@ let getRuleList = () => {
       }
     });
 
+
   document
     .querySelector(".rule_dynamic_set_list")
     .addEventListener("click", (event) => {
@@ -75,7 +79,7 @@ let getRuleList = () => {
       //console.log(event.target.nodeType);
       //console.log(event.target.nodeName);
       if (event.target.nodeName === "LI") {
-        console.log(event.target.getAttribute("data-origin"));
+          console.log(decodeURIComponent(event.target.getAttribute("data-origin")))
         document.querySelector("#rule-content-container").value =
           decodeURIComponent(event.target.getAttribute("data-origin"));
       }
@@ -90,14 +94,14 @@ let getRuleList = () => {
 
      */
 
+
   return;
-  chrome.declarativeNetRequest.getDynamicRules((rules) => {
-    console.log(rules);
-  });
+
   chrome.declarativeNetRequest.getMatchedRules({}, (RulesMatchedDetails) => {
     console.log(RulesMatchedDetails);
   });
 };
+
 
 let deleteDynamicRules = () => {
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
@@ -115,6 +119,7 @@ let deleteDynamicRules = () => {
     }
   });
 };
+
 
 (async () => {
   let {
@@ -216,10 +221,16 @@ let deleteDynamicRules = () => {
       if (rule_str) {
         let need_rules = [];
         let dynamic_id_index = parseInt(new Date().getTime() / 1000);
-        rule_str.forEach((value, key, array) => {
-          value.id = ++dynamic_id_index;
-          need_rules.push(value);
-        });
+        if(rule_str.id) {
+            rule_str.id=++dynamic_id_index
+            need_rules=[rule_str]
+        }else{
+            rule_str.forEach((value, key, array) => {
+                value.id = ++dynamic_id_index;
+                need_rules.push(value);
+            });
+        }
+
         console.log(need_rules);
         chrome.declarativeNetRequest.updateDynamicRules(
           {
@@ -304,4 +315,5 @@ let deleteDynamicRules = () => {
     },
     false
   );
+
 })();
