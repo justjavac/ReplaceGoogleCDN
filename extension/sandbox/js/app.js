@@ -27,15 +27,3 @@ list_box.addEventListener("click", (event) => {
     );
   }
 });
-/*
-document.querySelector('.sync-remote-rule').addEventListener('click',(event)=>{
-    let rule_url='https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/auth.json'
-    fetch(rule_url).then((response)=>{return response.json()}).then((response)=>{
-        console.log(response)
-        console.log(JSON.stringify(response))
-        console.log(location)
-        window.parent.postMessage(JSON.stringify(response),location.origin+'/options_ui/index.html')
-    })
-})
-
- */
