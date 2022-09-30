@@ -2,35 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>扩展选项</title>
     <link href="/options_ui/css/app.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
     <h1>扩展选项</h1>
 
-    <h2>添加自定义规则</h2>
     <div class="wrap">
       <div class="container">
-        <div class="old-rule-list"></div>
+
         <section class="box">
-          <!--
-          <input
-            name="rule"
-            type="text"
-            placeholder="添加规则功能未完善(不可用)，希望有同志可以完善以下"
-          />
-          -->
-          <button type="submit">提交规则</button>
+          <h2>获取远程服务器端配置规则</h2>
+          <textarea class='remote-rule-urls' cols='100' rows="10" placeholder="远程服务端地址，每行一个地址"></textarea>
+          <br/>
+          <button class="goto-sync-remote-rule">同步远端服务预配置规则</button>
+          <button class="delete-sync-remote-rule">删除预配置规则</button>
         </section>
+        <section class="box">
+          <h2>添加自定义规则</h2>
+          <textarea class='new-add-rule-pannel'  cols='100' rows="20" placeholder="自定义规则"></textarea>
+          <br/>
+          <label for="upload-file-to-rule">
+            <button type="button" class="add-rule-from-file"  >通过文件上传规则</button>
+            <input type="file" id="upload-file-to-rule" name="upload-file-to-rule"  hidden accept="application/json"/>
+          </label>
+          <br/>
+          <button type="button" class="add-rule">新增规则</button>
+          <button type="button" class="back-new-rule-to-json">备份新增规则到JSON文件</button>
+          <button class="delete-sync-remote-rule">删除自定义配置规则</button>
+        </section>
+
+    <section class="box">
+      <h2>已启用的静态规则列表：</h2>
+      <ul class="rule_static_set_list">
+        <li></li>
+      </ul>
+
+      <h2>已启用的动态规则列表：</h2>
+      <ul class="rule_dynamic_set_list">
+        <li></li>
+      </ul>
+      <h2>规则详情：</h2>
+      <div>
+        <textarea cols='100' rows="20" id="rule-content-container"></textarea>
       </div>
-    </div>
-    <h2>已启用的规则列表：</h2>
-    <ul class="rule_set_list">
-      <li></li>
-    </ul>
-    <h2>规则详情：</h2>
-    <div>
-      <textarea cols="200" rows="40" id="rule-content-container"></textarea>
+    </section>
+    <section class="box">
+      <iframe src="/sandbox/index.html" id="external_page" width="100%"></iframe>
+    </section>
+      </div>
     </div>
     <script src="/options_ui/js/app.js"></script>
   </body>

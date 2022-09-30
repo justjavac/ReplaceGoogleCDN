@@ -14,3 +14,5 @@ extension/tools/chrome-linux.zip
 extension/tools/chrome-linux/
 extension/test/nohup.out
 dist
+extension/manifest-backup.json
+

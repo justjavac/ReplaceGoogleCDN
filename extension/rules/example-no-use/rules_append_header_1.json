@@ -24,7 +24,6 @@
       ]
     },
     "condition": {
-      "isUrlFilter": false,
       "urlFilter": "*.com",
       "requestDomains": ["example.com"],
       "resourceTypes": [
