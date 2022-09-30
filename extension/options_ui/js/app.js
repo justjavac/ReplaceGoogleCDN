@@ -171,15 +171,6 @@ let deleteDynamicRules = () => {
         "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_redirect_extra.json?raw=true",
         "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_remove_content_security_policy_header.json?raw=true",
       ];
-      default_rules_urls = [
-        "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/auth.json?raw=true",
-        "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_advance_redirect_1.json?raw=true",
-        "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_advance_redirect_2.json?raw=true",
-        "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_block_request.json?raw=true",
-        "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_redirect_extra.json?raw=true",
-        "https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_remove_content_security_policy_header.json?raw=true",
-      ];
-
        */
       default_rules_urls = [];
       rules_urls = new_rules_urls ? new_rules_urls : default_rules_urls;
