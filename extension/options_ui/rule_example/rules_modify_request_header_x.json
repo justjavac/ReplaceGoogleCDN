@@ -19,7 +19,8 @@
           "header": "x-user-id",
           "operation": "set",
           "value": "f078e9b2-1073-11ed-9e0e-53f6bc701de3"
-        },        {
+        },
+        {
           "header": "x-trace-id",
           "operation": "set",
           "value": "f078e9b2-1073-11ed-9e0e-53f6bc701de3"

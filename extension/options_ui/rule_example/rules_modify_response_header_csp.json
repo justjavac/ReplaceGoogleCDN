@@ -37,10 +37,7 @@
     },
     "condition": {
       "urlFilter": "*",
-      "requestDomains": [
-        "github.com",
-        "pub.dev"
-      ],
+      "requestDomains": ["github.com", "pub.dev"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

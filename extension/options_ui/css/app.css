@@ -1,5 +1,10 @@
 body {
+  /*
   background-color: #f8f8f8;
+
+   */
+
+  color: #212529;
 }
 
 input {
@@ -9,26 +14,74 @@ li {
   font-size: 16px;
   list-style: decimal;
 }
-.box{
+textarea:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+textarea {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.box {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+
   border-radius: 6px;
-  color: rgba(0,0,0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background: #fff;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  /*
+  background-color: rgb(33,37,41);
+
+   */
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+button:active:focus {
+  box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
+}
+button:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+button {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+iframe {
+  border: none;
 }
 
-iframe{
-  border:none;
-}
-
-.rule_dynamic_set_list li:hover,.rule_static_set_list li:hover{
-
+.rule_dynamic_set_list li:hover,
+.rule_static_set_list li:hover {
   color: #c5955d;
   /*
-  font-size: 1.3rem;
-  */
+font-size: 1.3rem;
+*/
 }
 
-.del-flag{
-  color:red !important;
-
+.del-flag {
+  color: red !important;
 }

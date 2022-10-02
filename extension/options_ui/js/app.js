@@ -1,26 +1,26 @@
 (async () => {
-  let {
-    encodeBase64,
-    decodeBase64,
-    hasClass,
-    addClass
-  } = await import("/third_party/jingjingxyk/frontend-utils/utils.js");
+  let { encodeBase64, decodeBase64, hasClass, addClass } = await import(
+    "/third_party/jingjingxyk/frontend-utils/utils.js"
+  );
 
+  let { main } = await import("/options_ui/js/component/main.js");
+  let { sync_remote_conf } = await import(
+    "/options_ui/js/component/sync-remote-conf-rule.js"
+  );
+  let { self_define_conf } = await import(
+    "/options_ui/js/component/self-define-conf-rule.js"
+  );
+  let { showRuleList } = await import("/options_ui/js/component/show-rule.js");
+  main();
+  sync_remote_conf();
+  self_define_conf();
+  showRuleList();
 
-  let { main  }= await import( "/options_ui/js/component/main.js");
-  let { sync_remote_conf  }= await import( "/options_ui/js/component/sync-remote-conf-rule.js");
-  let { self_define_conf  }= await import( "/options_ui/js/component/self-define-conf-rule.js");
-  let { showRuleList }= await import( "/options_ui/js/component/show-rule.js");
-   main()
-   sync_remote_conf()
-   self_define_conf()
-   showRuleList();
-
-    chrome.declarativeNetRequest.getMatchedRules({}, (RulesMatchedDetails) => {
-        console.log(RulesMatchedDetails);
-    });
-     //静态规则处理
-    /*
+  chrome.declarativeNetRequest.getMatchedRules({}, (RulesMatchedDetails) => {
+    console.log(RulesMatchedDetails);
+  });
+  //静态规则处理
+  /*
         if (location.href.indexOf("problematic/url") !== -1) {
           chrome.declarativeNetRequest.updateEnabledRulesets({"disableRulesetIds": ["rules"]});
         } else {
@@ -29,8 +29,7 @@
 
        */
 
-
-    window.addEventListener(
+  window.addEventListener(
     "message",
     (event) => {
       console.log(event, event.source);
@@ -53,18 +52,11 @@
     false
   );
 
-
-
-
-
-
-
-    /*
+  /*
       let url = chrome.runtime.getURL("sandbox/index.html");
           chrome.tabs.create({url}, (callback) => {
           console.log(callback)
       });
       let iframe_src = document.querySelector("#external_page").getAttribute('src')
       */
-
 })();

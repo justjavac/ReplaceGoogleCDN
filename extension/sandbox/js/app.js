@@ -1,5 +1,4 @@
 let preview_url = [
-
   "https://source.chromium.org/",
   "https://summerofcode.withgoogle.com/programs/2022/organizations",
   "https://www.chromium.org/chromium-projects/",
