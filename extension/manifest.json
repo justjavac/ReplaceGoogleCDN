@@ -10,16 +10,6 @@
     "service_worker": "js/background.js",
     "type": "module"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://localhost:8000/*",
-        "https://auth.jingjingxyk.com/*"
-      ],
-      "run_at": "document_end",
-      "js": ["js/content-script/content-script.js"]
-    }
-  ],
   "permissions": [
     "declarativeNetRequest",
     "declarativeNetRequestWithHostAccess",
@@ -61,13 +51,6 @@
   "sandbox": {
     "pages": [
       "sandbox/index.html"
-    ]
-  },
-  "externally_connectable": {
-    "ids": ["*"],
-    "matches": [
-      "https://www.jingjingxyk.com/*",
-      "http://localhost:8000/*"
     ]
   },
   "author": "https://github.com/justjavac",
