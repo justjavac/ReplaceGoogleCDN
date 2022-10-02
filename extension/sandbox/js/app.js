@@ -1,7 +1,8 @@
 let preview_url = [
-  "https://www.chromium.org/chromium-projects/",
+
   "https://source.chromium.org/",
   "https://summerofcode.withgoogle.com/programs/2022/organizations",
+  "https://www.chromium.org/chromium-projects/",
   "https://cs.opensource.google/",
   "https://webrtc.org/",
   "https://chromium.googlesource.com/external/webrtc",

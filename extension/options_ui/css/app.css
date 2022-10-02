@@ -23,7 +23,12 @@ iframe{
 .rule_dynamic_set_list li:hover,.rule_static_set_list li:hover{
 
   color: #c5955d;
+  /*
   font-size: 1.3rem;
-
+  */
 }
 
+.del-flag{
+  color:red !important;
+
+}
