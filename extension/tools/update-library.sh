@@ -15,7 +15,7 @@ cd temp
 git clone -b main https://github.com/jingjingxyk/frontend-utils.git  --depth=1 --progress
 
 mkdir -p ${__DIR__}/../third_party/frontend-utils
-cp -f frontend-utils/utils.js ${__DIR__}/../third_party/frontend-utils/utils.js
+cp -f frontend-utils/utils.js ${__DIR__}/../jingjingxyk/frontend-utils/utils.js
 
 cd ${__DIR__}
 
