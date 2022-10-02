@@ -26,6 +26,29 @@ test -d frontend-utils/.git || git clone -b main https://github.com/jingjingxyk/
 mkdir -p ${__DIR__}/../third_party/jingjingxyk/frontend-utils
 cp -f frontend-utils/utils.js ${__DIR__}/../third_party/jingjingxyk/frontend-utils/utils.js
 
-cd ${__DIR__}
+cd ${__DIR__}/temp
+
+# git clone -b main https://github.com/josdejong/svelte-jsoneditor.git --depth=1 --progress
+test -d jsoneditor/.git || git clone -b v9.9.2   https://github.com/josdejong/jsoneditor.git --depth=1 --progress
+
+mkdir -p ${__DIR__}/../third_party/josdejong/jsoneditor/v9.9.2
+cd jsoneditor
+npm install
+npm run build
+cp -rf dist/* ${__DIR__}/../third_party/josdejong/jsoneditor/v9.9.2
+
+cd ${__DIR__}/temp
+
+test -d highlight.js/.git || git clone -b 11.6.0	https://github.com/highlightjs/highlight.js.git --depth=1  --progress
+
+mkdir -p ${__DIR__}/../third_party/highlightjs/highlight.js/11.6.0
+
+cd highlight.js
+npm install
+npm run build-cdn
+
+cp -rf build/* ${__DIR__}/../third_party/highlightjs/highlight.js/11.6.0
+
+cd ${__DIR__}/
 
 test -d temp && rm -rf temp
