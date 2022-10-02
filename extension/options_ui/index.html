@@ -10,46 +10,65 @@
 
     <div class="wrap">
       <div class="container">
-
         <section class="box">
-          <h2>获取远程服务器端配置规则</h2>
-          <textarea class='remote-rule-urls' cols='100' rows="10" placeholder="远程服务端地址，每行一个地址"></textarea>
-          <br/>
-          <button class="goto-sync-remote-rule">同步远端服务预配置规则</button>
-          <button class="delete-sync-remote-rule">删除预配置规则</button>
+          <h2>选项一：全局</h2>
+          <button class="backup-all-dynamic-rule">备份所有动态规则</button>
+          <button class="delete-all-dynamic-rule">删除所有动态规则</button>
         </section>
         <section class="box">
-          <h2>添加自定义规则</h2>
+          <h2>选项二：获取远端服务器端配置规则</h2>
+          <textarea class='remote-rule-urls' cols='100' rows="10" placeholder="远程服务端地址，每行一个地址"></textarea>
+          <br/>
+          <button class="goto-sync-remote-rule">同步远端服务配置规则</button>
+          <button class="delete-sync-remote-rule">清空已同步的远端服务配置规则</button>
+          <button class="autofill-default-remote-rule">载入服务器端地址例子</button>
+          <div class="external-page-box"></div>
+
+        </section>
+        <section class="box">
+          <h2>选项三：添加自定义规则</h2>
           <textarea class='new-add-rule-pannel'  cols='100' rows="20" placeholder="自定义规则"></textarea>
           <br/>
+          <button type="button" class="add-rule">新增规则</button>
+
           <label for="upload-file-to-rule">
             <button type="button" class="add-rule-from-file"  >通过文件上传规则</button>
             <input type="file" id="upload-file-to-rule" name="upload-file-to-rule"  hidden accept="application/json"/>
           </label>
           <br/>
-          <button type="button" class="add-rule">新增规则</button>
-          <button type="button" class="back-new-rule-to-json">备份新增规则到JSON文件</button>
-          <button class="delete-sync-remote-rule">删除自定义配置规则</button>
+          <br/>
+          <label class="autofill-self-define-rule">
+            <button data-rule="block-domain">载入例子：屏蔽指定域名(example.com)</button>
+            <button data-rule="modify-header-ua">载入例子：修改 UserAgent</button>
+            <button data-rule="modify-header-request-x">载入例子：请求头添加参数 </button>
+            <button data-rule="modify-header-request-cookie">载入例子：修改 cookie  </button>
+            <button data-rule="modify-header-response-x">载入例子：响应头添加参数 </button>
+            <button data-rule="modify-header-response-csp">载入例子：响应头修改CSP   </button>
+          </label>
+
+          <br/>
+          <button class="delete-self-define-rule">清空自定义配置规则</button>
         </section>
 
     <section class="box">
-      <h2>已启用的静态规则列表：</h2>
+      <h2>选项四：已启用规则列表：</h2>
+      <h3>静态规则列表：</h3>
       <ul class="rule_static_set_list">
         <li></li>
       </ul>
 
-      <h2>已启用的动态规则列表：</h2>
+      <h3>动态规则列表：</h3>
+      <span> 规则编号大于 10000 ，小于 100000 属于自定义规则，其他为同步的远程规则</span>
       <ul class="rule_dynamic_set_list">
         <li></li>
       </ul>
       <h2>规则详情：</h2>
       <div>
         <textarea cols='100' rows="20" id="rule-content-container"></textarea>
+        <button type="button" class="back-new-rule-to-json">备份当前规则到JSON文件</button>
       </div>
     </section>
-    <section class="box">
-      <iframe src="/sandbox/index.html" id="external_page" width="100%"></iframe>
-    </section>
+
       </div>
     </div>
     <script src="/options_ui/js/app.js"></script>

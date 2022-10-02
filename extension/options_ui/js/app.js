@@ -1,285 +1,36 @@
-let showRuleJSON = (rule) => {
-  let file = rules[rule] ? rules[rule] : "";
-  if (file) {
-    let url = chrome.runtime.getURL(file);
-    fetch(url)
-      .then((x) => x.json())
-      .then((x) => {
-        console.log(JSON.stringify(x));
-        document.querySelector("#rule-content-container").value =
-          JSON.stringify(x);
-      });
-  } else {
-    console.log("rule:" + rule + "no found!");
-  }
-};
-
-/**
- * 规则名称 与 规则文件目录映射
- */
-
-let rules = {
-  ruleset_redirect_main: "/rules/rules_redirect_main.json",
-  ruleset_redirect_main_extra: "/rules/rules_redirect_main_extra.json",
-  ruleset_remove_content_security_policy_header:
-    "/rules/rules_remove_content_security_policy_header.json",
-};
-
-let getRuleList = () => {
-  chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
-    console.log(count);
-  });
-
-  chrome.declarativeNetRequest.getDynamicRules((rules) => {
-    console.log(rules);
-    let list_box = document.querySelector(".rule_dynamic_set_list");
-    let list = "";
-    rules.forEach((value, key, array) => {
-      console.log(value.id, value);
-      list += `<li data-rule="${value.id}" data-origin="${encodeURIComponent(
-        JSON.stringify(value)
-      )}">${value.id}</li>`;
-    });
-    list_box.innerHTML = list;
-  });
-
-  chrome.declarativeNetRequest.getEnabledRulesets((rulesetIds) => {
-    console.log(rulesetIds);
-    let list_box = document.querySelector(".rule_static_set_list");
-    let list = "";
-    rulesetIds.map((value, index) => {
-      list += `<li data-rule="${value}">${value}</li>`;
-    });
-    list_box.innerHTML = list;
-  });
-
-  document
-    .querySelector(".rule_static_set_list")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      //console.log(event.target);
-      //console.log(event.target.nodeType);
-      //console.log(event.target.nodeName);
-      if (event.target.nodeName === "LI") {
-        showRuleJSON(event.target.getAttribute("data-rule"));
-      }
-    });
-
-  document
-    .querySelector(".rule_dynamic_set_list")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      //console.log(event.target);
-      //console.log(event.target.nodeType);
-      //console.log(event.target.nodeName);
-      if (event.target.nodeName === "LI") {
-        console.log(
-          decodeURIComponent(event.target.getAttribute("data-origin"))
-        );
-        document.querySelector("#rule-content-container").value =
-          decodeURIComponent(event.target.getAttribute("data-origin"));
-      }
-    });
-
-  /*
-      if (location.href.indexOf("problematic/url") !== -1) {
-        chrome.declarativeNetRequest.updateEnabledRulesets({"disableRulesetIds": ["rules"]});
-      } else {
-        chrome.declarativeNetRequest.updateEnabledRulesets({"enableRulesetIds": ["rules"]});
-      }
-
-     */
-
-  return;
-
-  chrome.declarativeNetRequest.getMatchedRules({}, (RulesMatchedDetails) => {
-    console.log(RulesMatchedDetails);
-  });
-};
-
-let deleteDynamicRules = () => {
-  chrome.declarativeNetRequest.getDynamicRules((rules) => {
-    console.log(rules);
-    let del_ids = [];
-    rules.forEach((value, key, array) => {
-      console.log(value, value.id);
-      del_ids.push(value.id);
-    });
-    if (del_ids) {
-      chrome.declarativeNetRequest.updateDynamicRules({
-        addRules: [],
-        removeRuleIds: del_ids,
-      });
-    }
-  });
-};
-
 (async () => {
   let {
     encodeBase64,
     decodeBase64,
     hasClass,
-    addClass,
-    removeClass,
-    createJSONFile,
-    fetchAll,
-    getContent,
-  } = await import("/third_party/frontend-utils/utils.js");
-  getRuleList();
+    addClass
+  } = await import("/third_party/jingjingxyk/frontend-utils/utils.js");
 
-  document
-    .querySelector(".delete-sync-remote-rule")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      deleteDynamicRules();
+
+  let { main  }= await import( "/options_ui/js/component/main.js");
+  let { sync_remote_conf  }= await import( "/options_ui/js/component/sync-remote-conf-rule.js");
+  let { self_define_conf  }= await import( "/options_ui/js/component/self-define-conf-rule.js");
+  let { showRuleList }= await import( "/options_ui/js/component/show-rule.js");
+   main()
+   sync_remote_conf()
+   self_define_conf()
+   showRuleList();
+
+    chrome.declarativeNetRequest.getMatchedRules({}, (RulesMatchedDetails) => {
+        console.log(RulesMatchedDetails);
     });
-
-  document
-    .querySelector(".goto-sync-remote-rule")
-    .addEventListener("click", async (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      let rule_server_urls = document
-        .querySelector(".remote-rule-urls")
-        .value.trim();
-      let rules_urls = rule_server_urls.split("\n");
-      let new_rules_urls = [];
-      rules_urls.forEach((value, index, array) => {
-        value = value.trim();
-        value = value.replace(/^\s|\s$|'|,|，|。|"/g, "");
-        if (value.length > 1) {
-          console.log(value);
-          new_rules_urls.push(value);
-        }
-      });
-      console.log(new_rules_urls);
-      let default_rules_urls = [];
-      /*
-      default_rules_urls = [
-        "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/auth.json?raw=true",
-        "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_advance_redirect_1.json?raw=true",
-        "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_advance_redirect_2.json?raw=true",
-        "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_block_request.json?raw=true",
-        "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_redirect_extra.json?raw=true",
-        "https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_remove_content_security_policy_header.json?raw=true",
-      ];
-       */
-      default_rules_urls = [];
-      rules_urls = new_rules_urls ? new_rules_urls : default_rules_urls;
-
-      let result = await fetchAll(rules_urls, getContent);
-      console.log(result);
-      if (result.length > 1) {
-        deleteDynamicRules();
-
-        let dynamic_id_index = parseInt(new Date().getTime() / 1000);
-        let need_rules = [];
-        result.forEach((rules) => {
-          rules.forEach((rule, index, array) => {
-            console.log(rule);
-            rule.id = ++dynamic_id_index;
-            console.log(rule);
-            need_rules.push(rule);
-          });
-        });
-        console.log(need_rules);
-        chrome.declarativeNetRequest.updateDynamicRules(
-          {
-            addRules: need_rules,
-            removeRuleIds: [],
-          },
-          (info) => {
-            console.log(info);
-          }
-        );
-      }
-    });
-  document.querySelector(".add-rule").addEventListener("click", (event) => {
-    event.stopPropagation();
-    event.preventDefault();
-    let rule_str = document.querySelector(".new-add-rule-pannel").value;
-    rule_str = rule_str.trim();
-    if (rule_str.length) {
-      rule_str = JSON.parse(rule_str);
-      if (rule_str) {
-        let need_rules = [];
-        let dynamic_id_index = parseInt(new Date().getTime() / 1000);
-        if (rule_str.id) {
-          rule_str.id = ++dynamic_id_index;
-          need_rules = [rule_str];
+     //静态规则处理
+    /*
+        if (location.href.indexOf("problematic/url") !== -1) {
+          chrome.declarativeNetRequest.updateEnabledRulesets({"disableRulesetIds": ["rules"]});
         } else {
-          rule_str.forEach((value, key, array) => {
-            value.id = ++dynamic_id_index;
-            need_rules.push(value);
-          });
+          chrome.declarativeNetRequest.updateEnabledRulesets({"enableRulesetIds": ["rules"]});
         }
 
-        console.log(need_rules);
-        chrome.declarativeNetRequest.updateDynamicRules(
-          {
-            addRules: need_rules,
-            removeRuleIds: [],
-          },
-          (info) => {
-            console.log(info);
-          }
-        );
-      }
-    }
-  });
+       */
 
-  document
-    .querySelector(".add-rule-from-file")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      document.querySelector("#upload-file-to-rule").click();
-    });
-  document
-    .querySelector("#upload-file-to-rule")
-    .addEventListener("change", (event) => {
-      const files = event.target.files;
-      if (files && files[0]) {
-        const file = files[0];
-        console.log(file);
-        let reader = new FileReader();
-        reader.onload = function () {
-          document.querySelector(".new-add-rule-pannel").value = this.result;
-        };
-        reader.readAsText(file);
-      }
-    });
-  document
-    .querySelector(".back-new-rule-to-json")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      let rule_str = document.querySelector(".new-add-rule-pannel").value;
-      rule_str = rule_str.trim();
-      if (rule_str.length) {
-        rule_str = JSON.parse(rule_str);
-        if (rule_str) {
-          createJSONFile(
-            rule_str,
-            "ReplaceGoogleCDN-backup-" +
-              parseInt(new Date().getTime() / 1000).toString() +
-              ".json"
-          );
-        }
-      }
-    });
 
-  /*
-    let url = chrome.runtime.getURL("sandbox/index.html");
-        chrome.tabs.create({url}, (callback) => {
-        console.log(callback)
-    });
-    let iframe_src = document.querySelector("#external_page").getAttribute('src')
-    */
-  window.addEventListener(
+    window.addEventListener(
     "message",
     (event) => {
       console.log(event, event.source);
@@ -301,4 +52,19 @@ let deleteDynamicRules = () => {
     },
     false
   );
+
+
+
+
+
+
+
+    /*
+      let url = chrome.runtime.getURL("sandbox/index.html");
+          chrome.tabs.create({url}, (callback) => {
+          console.log(callback)
+      });
+      let iframe_src = document.querySelector("#external_page").getAttribute('src')
+      */
+
 })();
