@@ -1,15 +1,8 @@
 chrome.runtime.onInstalled.addListener((details) => {});
 
 chrome.action.onClicked.addListener((tab) => {
-  chrome.tabs.create({ url: "https://www.jingjingxyk.com" });
+  //通过action 打开选项页
   chrome.runtime.openOptionsPage((w) => {
     console.log(w);
   });
-  /*
-    chrome.scripting.executeScript({
-        target: {tabId: tab.id},
-        files: ['content.js']
-    });
-
-     */
 });
