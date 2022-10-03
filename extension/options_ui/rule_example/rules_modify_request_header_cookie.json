@@ -6,9 +6,9 @@
       "type": "modifyHeaders",
       "requestHeaders": [
         {
-          "header": "Cookie",
+          "header": "cookie",
           "operation": "set",
-          "value": "f078e9b2-1073-11ed-9e0e-53f6bc701de3"
+          "value": "user_name=jingjingxyk;time=1664820322"
         }
       ]
     },

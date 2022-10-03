@@ -15,10 +15,15 @@
   sync_remote_conf();
   self_define_conf();
   showRuleList();
-
+  chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
+    console.log(count);
+  });
+  /*
   chrome.declarativeNetRequest.getMatchedRules({}, (RulesMatchedDetails) => {
     console.log(RulesMatchedDetails);
   });
+  */
+  //https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#type-HeaderOperation
   //静态规则处理
   /*
         if (location.href.indexOf("problematic/url") !== -1) {

@@ -1,9 +1,6 @@
-import {
-  fetchAll,
-  getContent,
-} from "/third_party/jingjingxyk/frontend-utils/utils.js";
-import { deleteDynamicRules } from "./common.js";
+import { id_ranges, utils } from "./common.js";
 import { showRuleList } from "./show-rule.js";
+import { rule_example_urls } from "./rule-example.js";
 
 let sync_remote_conf = () => {
   document
@@ -20,7 +17,6 @@ let sync_remote_conf = () => {
         value = value.trim();
         value = value.replace(/^\s|\s$|'|,|，|。|"/g, "");
         if (value.length > 1) {
-          console.log(value);
           new_rules_urls.push(value);
         }
       });
@@ -28,57 +24,53 @@ let sync_remote_conf = () => {
       if (!new_rules_urls) {
         return;
       }
-      let result = await fetchAll(new_rules_urls, getContent);
-      console.log(result);
-      if (result.length > 1) {
-        deleteDynamicRules("remote_server_rule");
+      let result = await utils.fetchAll(new_rules_urls, utils.getContent);
 
-        let dynamic_id_index = parseInt(new Date().getTime() / 1000);
+      if (result.length > 1) {
+        //let dynamic_id_index = parseInt(new Date().getTime() / 1000);
+        let dynamic_id_index = id_ranges["sync_remote_rule"][0];
         let need_rules = [];
-        result.forEach((rules) => {
-          rules.forEach((rule, index, array) => {
-            console.log(rule);
-            rule.id = ++dynamic_id_index;
-            console.log(rule);
-            need_rules.push(rule);
+        chrome.declarativeNetRequest.getDynamicRules((rules) => {
+          rules.forEach((value, index, array) => {
+            if (
+              value.id >= id_ranges["sync_remote_rule"][0] &&
+              value.id <= id_ranges["sync_remote_rule"][1]
+            ) {
+              if (value.id >= dynamic_id_index) {
+                dynamic_id_index = value.id;
+              }
+            }
           });
+          console.log("dynamic_id_index:", dynamic_id_index);
+          result.forEach((rules) => {
+            rules.forEach((rule, index, array) => {
+              rule.id = ++dynamic_id_index;
+              console.log(rule);
+              need_rules.push(rule);
+            });
+          });
+          console.log(need_rules);
+          chrome.declarativeNetRequest.updateDynamicRules(
+            {
+              addRules: need_rules,
+              removeRuleIds: [],
+            },
+            (info) => {
+              console.log(info);
+              showRuleList();
+            }
+          );
         });
-        console.log(need_rules);
-        chrome.declarativeNetRequest.updateDynamicRules(
-          {
-            addRules: need_rules,
-            removeRuleIds: [],
-          },
-          (info) => {
-            console.log(info);
-            showRuleList();
-          }
-        );
       }
     });
 
-  document
-    .querySelector(".delete-sync-remote-rule")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      deleteDynamicRules("remote_server_rule");
-    });
   document
     .querySelector(".autofill-default-remote-rule")
     .addEventListener("click", (event) => {
       event.stopPropagation();
       event.preventDefault();
-      document.querySelector(".remote-rule-urls").value = `
-            
-https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/auth.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_advance_redirect_1.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_advance_redirect_2.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_block_request.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_redirect_extra.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_remove_content_security_policy_header.json?raw=true
-
-                `;
+      document.querySelector(".remote-rule-urls").value =
+        rule_example_urls.trim();
       let iframe = `
                 <iframe src="/sandbox/index.html" id="external_page" width="100%"></iframe>
             `;

@@ -2,9 +2,9 @@ let preview_url = [
   "https://source.chromium.org/",
   "https://summerofcode.withgoogle.com/programs/2022/organizations",
   "https://www.chromium.org/chromium-projects/",
-  "https://cs.opensource.google/",
   "https://webrtc.org/",
   "https://chromium.googlesource.com/external/webrtc",
+  "https://cs.opensource.google/",
 ];
 let list_box = document.querySelector(".box");
 let list = "";

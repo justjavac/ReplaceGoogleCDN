@@ -5,7 +5,7 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "*",
-      "requestDomains": ["example.com"],
+      "requestDomains": ["www.jingjingxyk.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

@@ -14,7 +14,7 @@
     },
     "condition": {
       "urlFilter": "*",
-      "requestDomains": ["m.sm.cn"],
+      "requestDomains": ["m.sm.cn", "baidu.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

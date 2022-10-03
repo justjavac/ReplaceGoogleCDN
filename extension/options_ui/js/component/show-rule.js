@@ -1,5 +1,4 @@
-import { createJSONFile } from "/third_party/jingjingxyk/frontend-utils/utils.js";
-import { deleteDynamicRules } from "./common.js";
+import { deleteDynamicRules, id_ranges, utils } from "./common.js";
 
 /**
  * 规则名称 与 规则文件目录映射
@@ -29,27 +28,27 @@ let showRuleJSON = (rule) => {
 };
 
 let showRuleList = () => {
-  chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
-    console.log(count);
-  });
-
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
-    console.log(rules);
+    //console.log(rules);
     let list_box = document.querySelector(".rule_dynamic_set_list");
     let list = "";
     rules.forEach((value, key, array) => {
-      console.log(value.id, value);
+      //console.log(value.id, value);
       list += `<li data-rule-id="${value.id}" data-origin="${encodeURIComponent(
         JSON.stringify(value)
       )}">${value.id}<span class="del-flag" data-rule-id="${
         value.id
-      }" >&nbsp;&nbsp;✖︎</span></li>`;
+      }" >&nbsp;&nbsp;&nbsp;&nbsp;✖︎</span></li>`;
     });
     list_box.innerHTML = list;
   });
 
   chrome.declarativeNetRequest.getEnabledRulesets((rulesetIds) => {
     console.log(rulesetIds);
+    /*
+      let mainifest=chrome.runtime.getManifest()
+      console.log(mainifest.declarative_net_request.rule_resources)
+     */
     let list_box = document.querySelector(".rule_static_set_list");
     let list = "";
     rulesetIds.map((value, index) => {
@@ -108,7 +107,7 @@ let showRuleList = () => {
         console.log(time);
         //time=parseInt(new Date().getTime() / 1000).toString()
         if (rule_str) {
-          createJSONFile(
+          utils.createJSONFile(
             rule_str,
             "ReplaceGoogleCDN-backup-rule-" + time + ".json"
           );

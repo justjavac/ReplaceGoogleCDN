@@ -7,12 +7,45 @@ body {
   color: #212529;
 }
 
+.alert-info {
+  --bs-alert-color: #055160;
+  --bs-alert-bg: #cff4fc;
+  --bs-alert-border-color: #b6effb;
+}
+
 input {
   min-width: 400px;
 }
+.list-group {
+  margin-left: 3rem;
+  margin-right: 2rem;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+}
 li {
-  font-size: 16px;
   list-style: decimal;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+li:active {
+  z-index: 2;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+li:hover {
+  color: #495057;
+  text-decoration: none;
+  background-color: #f8f9fa;
 }
 textarea:focus {
   color: #212529;
@@ -81,7 +114,10 @@ iframe {
 font-size: 1.3rem;
 */
 }
-
+.dynamic-rule-list-note {
+  margin-left: 2rem;
+}
 .del-flag {
   color: red !important;
+  font-size: 1rem;
 }

@@ -12,8 +12,8 @@
       ]
     },
     "condition": {
-      "urlFilter": "*.com",
-      "requestDomains": ["baidu.com"],
+      "urlFilter": "*",
+      "requestDomains": ["www.jingjingxyk.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
