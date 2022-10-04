@@ -21,3 +21,4 @@ extension/third_party/
 dist
 extension/manifest-backup.json
 extension/web/proxy.pac
+extension/web-backup

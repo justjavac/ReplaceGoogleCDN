@@ -1,4 +1,3 @@
-
 (async () => {
   let { encodeBase64, decodeBase64, hasClass, addClass } = await import(
     "/third_party/jingjingxyk/frontend-utils/utils.js"
@@ -35,7 +34,6 @@
 
        */
 
-
   window.addEventListener(
     "message",
     (event) => {
@@ -58,6 +56,4 @@
     },
     false
   );
-
-
 })();
