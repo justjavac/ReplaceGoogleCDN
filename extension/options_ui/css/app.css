@@ -121,3 +121,28 @@ font-size: 1.3rem;
   color: red !important;
   font-size: 1rem;
 }
+
+.placeholder-box {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.example-hidden {
+  display: none;
+}
+
+.show-rule-info-box-no-use {
+  /*
+  position: relative;
+  top:-540px;
+  top:-30px;
+  */
+  position: absolute;
+
+  top: 1750px;
+  z-index: 100;
+  left: 200px;
+}
+.show-rule-info-box-extra {
+  top: 2020px;
+}
