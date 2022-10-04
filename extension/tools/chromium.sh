@@ -96,8 +96,8 @@ else
 
   }
 fi
-echo $chromium
 
+echo $chromium
 
 $chromium \
 --user-data-dir=$dir \
