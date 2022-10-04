@@ -1,3 +1,4 @@
+
 (async () => {
   let { encodeBase64, decodeBase64, hasClass, addClass } = await import(
     "/third_party/jingjingxyk/frontend-utils/utils.js"
@@ -34,6 +35,7 @@
 
        */
 
+
   window.addEventListener(
     "message",
     (event) => {
@@ -57,11 +59,5 @@
     false
   );
 
-  /*
-      let url = chrome.runtime.getURL("sandbox/index.html");
-          chrome.tabs.create({url}, (callback) => {
-          console.log(callback)
-      });
-      let iframe_src = document.querySelector("#external_page").getAttribute('src')
-      */
+
 })();

@@ -25,6 +25,7 @@ zip -r ../dist/extension-v3.zip . \
   -x "./.idea/*"
 
 
+
 cd ${__DIR__}
 
 

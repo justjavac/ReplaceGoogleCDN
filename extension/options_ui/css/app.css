@@ -1,21 +1,15 @@
 body {
+
   /*
   background-color: #f8f8f8;
-
    */
-
   color: #212529;
-}
-
-.alert-info {
-  --bs-alert-color: #055160;
-  --bs-alert-bg: #cff4fc;
-  --bs-alert-border-color: #b6effb;
 }
 
 input {
   min-width: 400px;
 }
+
 .list-group {
   margin-left: 3rem;
   margin-right: 2rem;
@@ -146,3 +140,4 @@ font-size: 1.3rem;
 .show-rule-info-box-extra {
   top: 2020px;
 }
+
