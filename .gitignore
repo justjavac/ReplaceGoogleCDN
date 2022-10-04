@@ -15,6 +15,7 @@ extension/tools/chrome-linux/
 extension/tools/blocked-domain.py
 extension/tools/temp/
 extension/test/nohup.out
+extension/tools/git-clean-file-history.sh
 
 extension/third_party/
 !extension/third_party/README.md
@@ -22,4 +23,4 @@ extension/third_party/
 
 dist
 extension/manifest-backup.json
-
+extension/web/
