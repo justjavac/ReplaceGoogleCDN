@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "x-custom-token",
+          "operation": "set",
+          "value": "2aed78a8-af8d-11ec-b3bd-879f7464e58a"
+        },
+        {
+          "header": "user-agent",
+          "operation": "set",
+          "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36"
+        },
+        {
+          "header": "x-user-id",
+          "operation": "set",
+          "value": "f078e9b2-1073-11ed-9e0e-53f6bc701de3"
+        },
+        {
+          "header": "x-trace-id",
+          "operation": "set",
+          "value": "f078e9b2-1073-11ed-9e0e-53f6bc701de3"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "requestDomains": ["www.jingjingxyk.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

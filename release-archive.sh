@@ -22,10 +22,7 @@ zip -r ../dist/extension-v3.zip . \
   -x "./test/*" \
   -x "./dist/*" \
   -x "./.git/*" \
-  -x "./.idea/*" \
-  -x "./rules/advance/*" \
-  -x "./rules/example-no-use/*" \
-  -x "./rules/README.md"
+  -x "./.idea/*"
 
 
 cd ${__DIR__}
