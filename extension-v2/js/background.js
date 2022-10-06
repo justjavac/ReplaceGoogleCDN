@@ -15,6 +15,17 @@ function hasCSP(headers = []) {
   );
 }
 
+/*
+==================================================
+
+                功能一： 移除内容安全策略 （content-security-policy)
+                        实际也可以：
+                            1. 响应头添加键值对
+                            2. 响应头移除键值对
+
+==================================================
+*/
+
 /**
  * 响应头里CSP相关的选项
  * @type {string[]}
@@ -43,7 +54,7 @@ const remove_csp_item = [
  * 需要移除CSP的URL
  * @type {string[]}
  */
-const remove_cps_urls = [
+const remove_csp_urls = [
   "*://ajax.googleapis.com/*",
   "*://fonts.googleapis.com/*",
   "*://themes.googleusercontent.com/*",
@@ -85,7 +96,7 @@ chrome.webRequest.onHeadersReceived.addListener(
   {
     //    urls: ["<all_urls>"],
     urls: [
-      ...remove_cps_urls, //需要移除CSP自己添加url
+      ...remove_csp_urls, //需要移除CSP自己添加url
     ],
     types: [
       "main_frame",
@@ -106,64 +117,46 @@ chrome.webRequest.onHeadersReceived.addListener(
   ["blocking", "responseHeaders"]
 );
 
-//Open Source urls
+/*
+==================================================
+
+                功能二： 请求地址重定向 （ url redirect)
+                           支持高级玩法（支持2种玩法）
+==================================================
+*/
+
+// 高级玩法使用的泛解析的域名
+let suffix_domain = ".proxy.xiaoshuogeng.com";
+
+//Open Source urls 高级玩法测试域名
 let opensource_google_urls = [
   "*://*.chromium.org/*", //Chromium ChromiumOS GN
   "*://*.googlesource.com/*", //Chromium
   "*://summerofcode.withgoogle.com/*",
-  "https://cs.opensource.google/*", //Google Open Source
-  "https://opensource.googleblog.com/*",
-  "https://opensource.google/*",
+  "*://cs.opensource.google/*", //Google Open Source
+  "*://opensource.googleblog.com/*",
+  "*://opensource.google/*",
 ];
-
-// 测试域名组
+// 高级玩法测试域名组
 let test_urls = [
-  ...opensource_google_urls, //数组
-  "*://*.google.com/*", //测试域名
-  "*://github.com/*", //测试域名
+  ...opensource_google_urls,
+  "*://*.google.com/*",
+  "*://github.com/*",
 ];
 
 /**
- *   使用自己架设的 nginx服务，替换CDN地址
+ *  高级玩法一：
+ *            特定域名替换
  *
-
+ *   使用自建CDN，进行地址替换
+ *
  *   备注： domain.com   请更换为自己的域名
  *
- *   测试案例 查看chromium 源码
- *   https://gerrit.googlesource.com/gerrit
- *   https://www.chromium.org
- *   https://chromium.googlesource.com/
- *   https://source.chromium.org/chromium
- *   https://cs.opensource.google/
-
- * @param details
- * @param proxy_provider  # 请更换为自己的域名
- * @returns {string}
- *
+ *   测试例子：  打开 https://github.com (仅用于学习技术)
+ *   替换以后得的地址： https://github-com.proxy.xiaoshuogeng.com/
  */
 
-let use_nginx_proxy = (details, proxy_provider) => {
-  // 主要是和 nginx 配合使用
-  let url = details.url.replace("http://", "https://");
-  // 代理服务提供者 需要支持泛域名
-  // let proxy_provider = '.proxy.domain.com'
-  let middle_builder = new URL(url);
-
-  // 中文域名编码转换 punycode标准编码: punycode('点') = 'xn--3px'
-  //替换点. 为了正则表达式好区分 _xn--3px_仅仅是分隔符号，可以自己定义分隔符号
-
-  let host = middle_builder.host.replace(/\./g, "_xn--3px_");
-  //计算符号点的个数
-  let dot_nums = middle_builder.host.match(/\./g).length;
-  let query_string = middle_builder.pathname + middle_builder.search;
-
-  return "https://" + dot_nums + "_" + host + proxy_provider + query_string;
-};
-
-// 你的支持泛解析的域名
-let suffix_domain = ".proxy.domain.com";
-
-// 指定匹配域名
+// 高级玩法一：需要匹配的域名
 let need_replace_cdn_urls = [
   "ajax.googleapis.com",
   "fonts.googleapis.com",
@@ -176,9 +169,12 @@ let need_replace_cdn_urls = [
   "github.com",
   "www.google.com",
 ];
+
 let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
   return "https://" + currentValue.replace(/\./g, "-") + suffix_domain;
 });
+
+// 高级玩法一：执行域名替换
 let replace_cdn_urls = (details) => {
   let url_obj = new URL(details.url);
   let query_string = url_obj.pathname + url_obj.search;
@@ -189,42 +185,64 @@ let replace_cdn_urls = (details) => {
   return null;
 };
 
+/**
+ *  高级玩法二：
+ *            泛域名替换（不限定域名）
+ *
+ *   中文域名编码转换 punycode标准编码: punycode('点') = 'xn--3px'
+ *   替换点. 为了正则表达式好区分 _xn--3px_仅仅是分隔符号，可以自己定义分隔符号
+ *
+ *   测试例子：打开 https://www.google.com (仅用于学习技术)
+ *   替换以后地址：https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
+ *
+ */
+
+// 高级玩法二：执行域名替换
+let use_nginx_proxy = (details, proxy_provider) => {
+  let url = details.url.replace("http://", "https://");
+  let middle_builder = new URL(url);
+  let host = middle_builder.host.replace(/\./g, "_xn--3px_");
+  //计算符号点的个数
+  let dot_nums = middle_builder.host.match(/\./g).length;
+  let query_string = middle_builder.pathname + middle_builder.search;
+
+  return "https://" + dot_nums + "_" + host + proxy_provider + query_string;
+};
+
+/*
+  请求地址重定向
+  参考文档：
+  1. https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest
+
+*/
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     /*
-    Comment out these lines
-    The returned data is NOT a webRequest.BlockingResponse type data, will cause error on Chrome Version 87 88 90
-    see https://github.com/justjavac/ReplaceGoogleCDN/issues/64#issuecomment-839610913
-    see https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest
-
-    If we need to deal with the CSP, we must return the right data type but not simple a url string.
+      Comment out these lines
+      The returned data is NOT a webRequest.BlockingResponse type data, will cause error on Chrome Version 87 88 90
+      see https://github.com/justjavac/ReplaceGoogleCDN/issues/64#issuecomment-839610913
+      If we need to deal with the CSP, we must return the right data type but not simple a url string.
     */
+
     /*
-    if (tabinfo.get(details.tabId)) {
-        return details.url;
+      if (tabinfo.get(details.tabId)) {
+          return details.url;
+      }
+    */
+
+    /*
+
+    //高级玩法一：
+    let des_url;
+    if ((des_url = replace_cdn_urls(details))) {
+      return { redirectUrl: des_url };
     }
+
+    //高级玩法二：
+    return { redirectUrl: use_nginx_proxy(details, suffix_domain) };
+
     */
 
-    /*
-    // 方法一： 支持特定域名替换
-    // 测试例子：打开 https://github.com (仅用于学习技术)
-    // https://github-com.proxy.xiaoshuogeng.com/
-
-     let des_url;
-     if ((des_url = replace_cdn_urls(details))) {
-        return {redirectUrl: des_url};
-     }
-
-*/
-
-    /*
-   // 方法二： 使用nginx架设的服务动态地址替换
-   // 测试例子：打开 https://www.google.com (仅用于学习技术)
-   // https://2_www_xn--3px_google_xn--3px_com.proxy.xiaoshuogeng.com/
-
-    return {redirectUrl: use_nginx_proxy(details,suffix_domain)};
-
-*/
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
     url = url.replace("fonts.googleapis.com", "fonts.loli.net");
@@ -237,10 +255,11 @@ chrome.webRequest.onBeforeRequest.addListener(
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
     url = url.replace("cdn.jsdelivr.net", "fastly.jsdelivr.net");
+
+    //"cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
+    //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
     url = url.replace(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
-      //"cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
-      //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
     url = url.replace("developers.google.com", "developers.google.cn");
@@ -258,10 +277,70 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
       "*://developers.google.com/*",
-      // ...test_urls   // 测试用例
+      ...test_urls, // 高级玩法的测试用例
     ],
   },
   ["blocking"]
+);
+
+/*
+  请求头添加、移除参数
+  参考文档：
+   1. https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest
+
+  例子1：吸怪 User-Agent
+  例子2：请求头添加参数
+  例子3：请求头移除参数 移除携带的cookie信息
+*/
+chrome.webRequest.onBeforeSendHeaders.addListener(
+  (details) => {
+    //console.log(details)
+    let urlObj = new URL(details.url);
+    //console.log(urlObj)
+    if (urlObj.host.indexOf("baidu.com") !== -1) {
+      //请求头修改User Agent
+      for (const header of details.requestHeaders) {
+        if (header.name.toLowerCase() === "user-agent") {
+          header.value =
+            "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1";
+        }
+      }
+
+      //请求头移除参数（例子删除携带的cookie
+      details.requestHeaders = details.requestHeaders.filter((header) => {
+        if (header.name.toLowerCase() === "cookie") {
+          return false;
+        } else {
+          return header;
+        }
+      });
+    }
+
+    //请求头添加参数(例子：请求添加额外参数)
+    if (urlObj.host.indexOf("proxy.xiaoshuogeng.com") !== -1) {
+      details.requestHeaders.push({
+        name: "x-user-id",
+        value: "8feed7c8-fe26-11ec-acc8-d34ecdbd4e54",
+      });
+      details.requestHeaders.push({
+        name: "x-auth-token",
+        value: "89b71a78-fe26-11ec-a410-9f2dc97caf21",
+      });
+      details.requestHeaders.push({
+        name: "x-permissions-id",
+        value: "b5c7d018-fe2a-11ec-9cc1-ab39db39504a",
+      });
+    }
+    //console.log(details.requestHeaders)
+    return { requestHeaders: details.requestHeaders };
+  },
+  {
+    urls: [
+     // "*://*.baidu.com/*", //例子 移除请求头携带的cookie
+      //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
+    ],
+  },
+  ["blocking", "requestHeaders"]
 );
 
 chrome.tabs.onRemoved.addListener(function (tabId) {

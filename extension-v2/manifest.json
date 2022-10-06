@@ -1,6 +1,6 @@
 {
   "name": "Replace Google CDN",
-  "version": "0.10.7",
+  "version": "0.10.9",
   "manifest_version": 2,
   "icons": {
     "128": "icons/128.png"
@@ -9,6 +9,7 @@
   "background": {
     "scripts": ["js/background.js"]
   },
+  "incognito": "spanning",
   "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
   "author": "https://github.com/justjavac",
   "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN"
