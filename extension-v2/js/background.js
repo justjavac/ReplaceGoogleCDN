@@ -126,7 +126,8 @@ chrome.webRequest.onHeadersReceived.addListener(
 */
 
 // 高级玩法使用的泛解析的域名
-let suffix_domain = ".proxy.xiaoshuogeng.com";
+let suffix_domain = ".proxy.domain.com";//请把这个换成你自己的域名
+//let suffix_domain = ".proxy.xiaoshuogeng.com";
 
 //Open Source urls 高级玩法测试域名
 let opensource_google_urls = [
