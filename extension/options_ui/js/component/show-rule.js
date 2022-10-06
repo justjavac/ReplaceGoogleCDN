@@ -18,7 +18,7 @@ let showRuleJSON = (rule) => {
     fetch(url)
       .then((x) => x.json())
       .then((x) => {
-        console.log(JSON.stringify(x));
+        //console.log(JSON.stringify(x));
         document.querySelector("#rule-content-container").value =
           JSON.stringify(x);
       });
@@ -77,11 +77,8 @@ let showRuleList = () => {
       event.preventDefault();
       //console.log(event.target);
       //console.log(event.target.nodeType);
-      console.log(event.target.nodeName);
+      //console.log(event.target.nodeName);
       if (event.target.nodeName === "LI") {
-        console.log(
-          decodeURIComponent(event.target.getAttribute("data-origin"))
-        );
         document.querySelector("#rule-content-container").value =
           decodeURIComponent(event.target.getAttribute("data-origin"));
       }

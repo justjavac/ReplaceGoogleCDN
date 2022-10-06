@@ -30,8 +30,8 @@ let deleteDynamicRules = (type, id = 0) => {
         break;
     }
     rules.forEach((value, key, array) => {
-      console.log(value, value.id);
       if (value.id >= id_range[0] && value.id <= id_range[1]) {
+        // console.log(value, value.id);
         del_ids.push(value.id);
       }
     });
