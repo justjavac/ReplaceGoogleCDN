@@ -277,7 +277,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
       "*://developers.google.com/*",
-      ...test_urls, // 高级玩法的测试用例
+      //...test_urls, // 高级玩法的测试用例
     ],
   },
   ["blocking"]
