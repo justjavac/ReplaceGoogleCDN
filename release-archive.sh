@@ -7,37 +7,49 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
-test -d dist  && rm -rf dist
-mkdir -p dist
+test -d dist && rm -rf dist
+mkdir -p dist/
+cd ${__DIR__}/dist
 
-test -f  dist/extension-v2.zip  && rm -f  dist/extension-v2.zip
-test -f  dist/extension-v3.zip  && rm -f  dist/extension-v3.zip
+test -f extension-v2.zip && rm -f extension-v2.zip
+test -f extension-v3.zip && rm -f extension-v3.zip
 
-# 打包 manifest v3
-cd ${__DIR__}/extension/
+cd ${__DIR__}/extension
 
+# 打包 manifest v3 支持chromium 内核系列
 zip -r ../dist/extension-v3.zip . \
-  -x "./tools/*" \
-  -x "./_metadata/*" \
-  -x "./test/*" \
-  -x "./dist/*" \
-  -x "./.git/*" \
-  -x "./.idea/*"
-
-
+  -x "tools/*" \
+  -x "_metadata/*" \
+  -x "rules/advance-no-use/*" \
+  -x "rules/example-no-use/*" \
+  -x "rules/README.md" \
+  -x "screenshot/*" \
+  -x "test/*" \
+  -x "web/*" \
+  -x "web-backup/*" \
+  -x "manifest-backup.json" \
+  -x "third_party/highlightjs/*" \
+  -x "third_party/josdejong/*" \
+  -x "third_party/webrtc/*"
 
 cd ${__DIR__}
+zip -u dist/extension-v3.zip ./README.md
+zip -u dist/extension-v3.zip ./Privacy.md
+zip -u dist/extension-v3.zip ./LICENSE
 
-
-# 打包 manifest v2
+# 打包 manifest v2  支持chromium 内核系列 和 firefox
 cd ${__DIR__}/extension-v2/
 
 zip -r ../dist/extension-v2.zip . \
   -x "./README.md"
 
-
 cd ${__DIR__}
-cd dist
+zip -u dist/extension-v2.zip ./README.md
+zip -u dist/extension-v2.zip ./Privacy.md
+zip -u dist/extension-v2.zip ./LICENSE
+
+cd ${__DIR__}/dist
+# 查看打包结果
 unzip extension-v2.zip -d extension-v2
 unzip extension-v3.zip -d extension-v3
 
