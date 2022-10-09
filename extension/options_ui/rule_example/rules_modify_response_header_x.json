@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        { "header": "h1", "operation": "remove" },
+        { "header": "Set-Cookie", "operation": "remove" },
+        { "header": "h2", "operation": "set", "value": "v2" },
+        { "header": "h3", "operation": "append", "value": "v3" }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "requestDomains": ["www.jingjingxyk.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

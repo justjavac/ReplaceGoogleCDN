@@ -37,8 +37,9 @@ export GOOGLE_API_KEY="no"
 export GOOGLE_DEFAULT_CLIENT_ID="no"
 export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 
-test -d /tmp/custom-chromium-user-data || mkdir custom-chromium-user-data
-dir=/tmp/custom-chromium-user-data
+uuid=$(cat /proc/sys/kernel/random/uuid)
+test -d /tmp/$uuid || mkdir -p /tmp/$uuid
+dir=/tmp/$uuid
 
 if test "$kernel_name" = "Linux"; then
   {
@@ -95,7 +96,10 @@ else
 
   }
 fi
-cmd=<<EOF $chromium \
+
+echo $chromium
+
+$chromium \
 --user-data-dir=$dir \
 --enable-remote-extensions \
 --load-extension="$extensions" \
@@ -104,6 +108,4 @@ cmd=<<EOF $chromium \
 --enable-logging=stderr --v=1 \
 --remote-debugging-port=9222 \
 about:blank
-EOF
 
-`${cmd}`

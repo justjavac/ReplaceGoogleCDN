@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "cookie",
+          "operation": "set",
+          "value": "user_name=jingjingxyk;time=1664820322"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "requestDomains": ["www.jingjingxyk.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

@@ -22,17 +22,18 @@
 13. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
 ```text
-
-ajax.googleapis.com
-ajax.proxy.ustclug.org
-themes.googleusercontent.com
-google-themes.proxy.ustclug.org
-
+ajax.googleapis.com           ajax.proxy.ustclug.org
+themes.googleusercontent.com  google-themes.proxy.ustclug.org
 ```
 
 15. [CDNJS 南方科技大学](https://mirrors.sustech.edu.cn/help/cdnjs.html)
-16. [CDNJS 重庆邮电大学](https://mirrors.cqupt.edu.cn/cdnjs/)
+16. [CDNJS 重庆邮电大学暂时不可用](https://mirrors.cqupt.edu.cn/cdnjs/)
 17. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
+18. [公共 CDN 静态资源加速服务 7ED Services ](https://www.7ed.net/start/public-cdn.html)
+
+## 匹配规则文档:
+
+1. [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
 
 ## 高级玩法
 
