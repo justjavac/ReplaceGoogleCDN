@@ -2,7 +2,7 @@
  *    测试用例
  *
  *   测试步骤
- *   1.  浏览器打开: https://cloud-soft.xieyaokun.com/
+ *   1.  浏览器打开: https://pub.dev/
  *   2.  打开控制台
  *   3.  复制代码到控制台，并且执行
  *   4.  观察执行结果
@@ -13,7 +13,7 @@
  */
 
 //浏览器控制台执行代码,  检验移除CSP是否生效
-javascript: (() => {
+(() => {
   let script = document.createElement("script");
   script.setAttribute("src", "https://frontend-inject.xieyaokun.com/main.js"),
     script.setAttribute("type", "application/javascript"),
