@@ -6,7 +6,7 @@
 
 ## CHANGELOG for 0.10.10 [2022-10-16 00:25:40 +0800]
 
-> 1. 新增cn.gravatar.com en.gravatar.com 地址重定向
+> 1. 新增 cn.gravatar.com en.gravatar.com 地址重定向
 > 1. 扩展选项页增加-演示例子
 > 1. 新增扩展选项功能截图
 
