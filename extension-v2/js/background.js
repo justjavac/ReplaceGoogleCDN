@@ -267,12 +267,12 @@ chrome.webRequest.onBeforeRequest.addListener(
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
     url = url.replace(
-        /code\.jquery\.com\/jquery-(\d{1,4}\.\d{1,4}\.\d{1,4})(.*?)/g,
-        "lib.baomitu.com/jquery/$1/jquery$2"
+      /code\.jquery\.com\/jquery-(\d{1,4}\.\d{1,4}\.\d{1,4})(.*?)/g,
+      "lib.baomitu.com/jquery/$1/jquery$2"
     );
     url = url.replace(
-        /code\.jquery\.com\/ui\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
-        "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
+      /code\.jquery\.com\/ui\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
+      "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
     );
     url = url.replace("developers.google.com", "developers.google.cn");
     return { redirectUrl: url };
@@ -354,7 +354,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     urls: [
       // "*://*.baidu.com/*", //例子 移除请求头携带的cookie
       //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
-        "*://example.com/*"
+      "*://example.com/*",
     ],
   },
   ["blocking", "requestHeaders"]
