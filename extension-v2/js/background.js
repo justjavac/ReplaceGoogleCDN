@@ -344,6 +344,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     urls: [
       // "*://*.baidu.com/*", //例子 移除请求头携带的cookie
       //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
+        "*://example.com/*"
     ],
   },
   ["blocking", "requestHeaders"]
