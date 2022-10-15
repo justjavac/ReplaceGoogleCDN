@@ -266,6 +266,14 @@ chrome.webRequest.onBeforeRequest.addListener(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
+    url = url.replace(
+        /code\.jquery\.com\/jquery-(\d{1,4}\.\d{1,4}\.\d{1,4})(.*?)/g,
+        "lib.baomitu.com/jquery/$1/jquery$2"
+    );
+    url = url.replace(
+        /code\.jquery\.com\/ui\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
+        "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
+    );
     url = url.replace("developers.google.com", "developers.google.cn");
     return { redirectUrl: url };
   },
@@ -283,6 +291,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
       "*://developers.google.com/*",
+      "*://code.jquery.com/jquery-*",
+      "*://code.jquery.com/ui/*",
       //...test_urls, // 高级玩法的测试用例
     ],
   },
