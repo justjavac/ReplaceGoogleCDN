@@ -4,6 +4,12 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.10 [2022-10-16 00:25:40 +0800]
+
+> 1. 新增cn.gravatar.com en.gravatar.com 地址重定向
+> 1. 扩展选项页增加-演示例子
+> 1. 新增扩展选项功能截图
+
 ## CHANGELOG for 0.10.9 [2022-10-04 16:10:40 +0800]
 
 > 1. 扩展选项页功能完善-第三版
