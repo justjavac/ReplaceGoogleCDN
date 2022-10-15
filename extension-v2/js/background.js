@@ -255,6 +255,9 @@ chrome.webRequest.onBeforeRequest.addListener(
     );
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
+    url = url.replace("en.gravatar.com", "gravatar.loli.net");
+    url = url.replace("cn.gravatar.com", "gravatar.loli.net");
+
     url = url.replace("cdn.jsdelivr.net", "fastly.jsdelivr.net");
 
     //"cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
@@ -274,6 +277,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://fonts.gstatic.com/*",
       "*://www.google.com/recaptcha/*",
       "*://secure.gravatar.com/*",
+      "*://en.gravatar.com/*",
+      "*://cn.gravatar.com/*",
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",

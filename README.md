@@ -67,7 +67,7 @@
 ### 在线安装
 
 - [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
-- [Firfox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
+- [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
 - [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
 
 ### 手动安装

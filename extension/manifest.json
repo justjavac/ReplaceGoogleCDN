@@ -41,7 +41,7 @@
     ]
   },
   "content_security_policy": {
-    "extension_pages": "default-src 'self';script-src 'self'  'wasm-unsafe-eval'  ;object-src 'self'; style-src 'self' 'unsafe-inline'; connect-src https://github.com  https://justjavac.com https://*.justjavac.com/ https://*.jingjingxyk.com https://jingjingxyk.github.io http://localhost https://raw.githubusercontent.com https://gitee.com ;",
+    "extension_pages": "default-src 'self';script-src 'self'  'wasm-unsafe-eval'  ;object-src 'self'; style-src 'self' 'unsafe-inline'; connect-src   https://justjavac.com https://justjavac.github.io https://*.justjavac.com/ https://*.jingjingxyk.com https://jingjingxyk.github.io http://localhost http://localhost:8080 https://raw.githubusercontent.com https://github.com https://gitee.com ;",
     "sandbox": "sandbox allow-scripts allow-popups; script-src 'unsafe-inline' 'unsafe-eval'  "
   },
   "options_ui": {
