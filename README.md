@@ -80,7 +80,7 @@ Chrome 安装方法（Google 被墙了上不去）：
 > 4. 选择 Load unpacked extension... 然后定位到刚才解压的文件夹里面的 extension 目录，确定
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
 
-### 手动安装方式三：(来自国内镜像) 克隆源代码以后， 步骤如上： :point_up_2: :point_up_2: :point_up_2:
+### 扩展下载方式三：(来自国内镜像) 克隆源代码以后， 步骤如上： :point_up_2: :point_up_2: :point_up_2:
 
 ```shell
 # 克隆源代码
@@ -92,7 +92,7 @@ git -C replacegooglecdn pull  --depth=1 --progress  --rebase=true
 
 ```
 
-### 手动安装方式四：（已经构建好，可以上传扩展市场的代码）
+### 扩展下载方式四：（已经构建好，可以上传扩展市场的代码）
 
 1. [ReplaceGoogleCDN-v3.zip（release v3 版本）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip)
 1. [ReplaceGoogleCDN-v2.zip（release v2 版本）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip)

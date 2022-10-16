@@ -8,6 +8,8 @@
 
 > 1. 新增 `cn.gravatar.com, en.gravatar.com` 地址重定向
 > 1. `v3` 版本`manifest.json` 扩展选项页内容安全策略添加请求的地址
+> 1. `v2` 版本不上 jquery 替换
+> 1. 新增扩展方式和地址
 
 ## CHANGELOG for 0.10.9 [2022-10-04 16:10:40 +0800]
 
