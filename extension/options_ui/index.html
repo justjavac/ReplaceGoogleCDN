@@ -38,7 +38,7 @@
           </button>
           <span class="placeholder-box"></span>
           <button class="delete-self-define-special-rule">
-            清空所有特制动态规则
+            清空所有自定义特制动态规则
           </button>
         </section>
         <section class="box">
@@ -72,6 +72,7 @@
           <span class="placeholder-box"></span>
           <button type="button" class="add-special-rule">新增特制规则</button>
           <span class="placeholder-box"></span>
+          <span class="placeholder-box"></span>
           <label for="upload-file-to-rule">
             <button type="button" class="add-rule-from-file">
               通过文件上传规则(仅支持json和txt)
@@ -85,6 +86,7 @@
             />
           </label>
           <h5></h5>
+          <br />
           <label class="autofill-self-define-rule example-item example-hidden">
             <button data-rule="redirect-domain">例子：域名重定向</button>
             <button data-rule="block-domain">
@@ -122,9 +124,9 @@
           <h3>2）动态规则列表：</h3>
           <div class="dynamic-rule-list-note">
             <span>
-              自定义规则编号： 20000>=编号<=29999
-              <br />
               自定义特制规则编号： 10000>=编号<=19999
+              <br />
+              自定义规则编号： 20000>=编号<=29999
               <br />
               同步远端静态规则编号：30000<=编号<=39999
               <br />

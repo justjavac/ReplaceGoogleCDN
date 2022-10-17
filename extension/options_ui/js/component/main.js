@@ -51,12 +51,15 @@ let main = () => {
         //let dynamic_id_index = parseInt(new Date().getTime() / 1000);
         let dynamic_id_index = id_ranges["sync_remote_static_rule"][0];
         let need_rules = [];
+        let need_delete_rules = [];
         chrome.declarativeNetRequest.getDynamicRules((rules) => {
           rules.forEach((value, index, array) => {
             if (
               value.id >= id_ranges["sync_remote_static_rule"][0] &&
               value.id <= id_ranges["sync_remote_static_rule"][1]
             ) {
+              console.log(value);
+              need_delete_rules.push(value.id);
               if (value.id >= dynamic_id_index) {
                 dynamic_id_index = value.id;
               }
@@ -71,15 +74,13 @@ let main = () => {
               need_rules.push(rule);
             });
           });
-          console.log(need_rules);
           chrome.declarativeNetRequest.updateDynamicRules(
             {
               addRules: need_rules,
-              removeRuleIds: [],
+              removeRuleIds: need_delete_rules,
             },
             (info) => {
               console.log(info);
-              showRuleList();
             }
           );
 
@@ -104,6 +105,7 @@ let main = () => {
             UpdateRulesetOptions,
             (callback) => {
               console.log(callback);
+              showRuleList();
             }
           );
         });

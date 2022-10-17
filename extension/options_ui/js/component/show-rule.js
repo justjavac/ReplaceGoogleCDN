@@ -1,18 +1,15 @@
 import { deleteDynamicRules, id_ranges, utils } from "./common.js";
 
-/**
- * 规则名称 与 规则文件目录映射
- */
-
-let rules = {
-  ruleset_redirect_main: "/rules/rules_redirect_main.json",
-  ruleset_redirect_main_extra: "/rules/rules_redirect_main_extra.json",
-  ruleset_remove_content_security_policy_header:
-    "/rules/rules_remove_content_security_policy_header.json",
-};
-
 let showRuleJSON = (rule) => {
-  let file = rules[rule] ? rules[rule] : "";
+  let local_manifest = chrome.runtime.getManifest();
+  let local_declarative_net_request =
+    local_manifest.declarative_net_request.rule_resources;
+  let default_static_rules = {};
+  local_declarative_net_request.forEach((value) => {
+    default_static_rules[value.id] = value.path;
+  });
+
+  let file = default_static_rules[rule] ? default_static_rules[rule] : "";
   if (file) {
     let url = chrome.runtime.getURL(file);
     fetch(url)

@@ -17,7 +17,7 @@
 8. [unpkg](https://unpkg.com/)
 9. [cloudflare ](https://cdnjs.com/)
 10. [google libraries cn](https://developers.google.cn/speed/libraries)
-11. [七牛静态库](http://staticfile.org/)
+11. [七牛静态库 Staticfile CDN](http://staticfile.org/)
 12. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
 13. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
