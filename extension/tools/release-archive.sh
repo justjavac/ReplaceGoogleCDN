@@ -35,6 +35,7 @@ rsync -avr --delete-before --stats --progress extension/ dist/build/ReplaceGoogl
 cp -f README.md dist/build/ReplaceGoogleCDN-v3-$time/
 cp -f Privacy.md dist/build/ReplaceGoogleCDN-v3-$time/
 cp -f LICENSE dist/build/ReplaceGoogleCDN-v3-$time/
+cp -f CHANGELOG-0.10.x.md dist/build/ReplaceGoogleCDN-v3-$time/
 
 rsync -av --progress extension-v2/ dist/build/ReplaceGoogleCDN-v2-$time/ \
   --exclude README.md
