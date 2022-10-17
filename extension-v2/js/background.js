@@ -255,6 +255,9 @@ chrome.webRequest.onBeforeRequest.addListener(
     );
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
+    url = url.replace("en.gravatar.com", "gravatar.loli.net");
+    url = url.replace("cn.gravatar.com", "gravatar.loli.net");
+
     url = url.replace("cdn.jsdelivr.net", "fastly.jsdelivr.net");
 
     //"cdn.bootcdn.net/ajax/libs/twitter-bootstrap/"
@@ -262,6 +265,14 @@ chrome.webRequest.onBeforeRequest.addListener(
     url = url.replace(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
       "lib.baomitu.com/twitter-bootstrap/$1/$2"
+    );
+    url = url.replace(
+      /code\.jquery\.com\/jquery-(\d{1,4}\.\d{1,4}\.\d{1,4})(.*?)/g,
+      "lib.baomitu.com/jquery/$1/jquery$2"
+    );
+    url = url.replace(
+      /code\.jquery\.com\/ui\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
+      "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
     );
     url = url.replace("developers.google.com", "developers.google.cn");
     return { redirectUrl: url };
@@ -274,10 +285,14 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://fonts.gstatic.com/*",
       "*://www.google.com/recaptcha/*",
       "*://secure.gravatar.com/*",
+      "*://en.gravatar.com/*",
+      "*://cn.gravatar.com/*",
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
       "*://developers.google.com/*",
+      "*://code.jquery.com/jquery-*",
+      "*://code.jquery.com/ui/*",
       //...test_urls, // 高级玩法的测试用例
     ],
   },
@@ -339,6 +354,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     urls: [
       // "*://*.baidu.com/*", //例子 移除请求头携带的cookie
       //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
+      "*://example.com/*",
     ],
   },
   ["blocking", "requestHeaders"]
