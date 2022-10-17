@@ -133,39 +133,6 @@
   },
   {
     "id": 5,
-    "priority": 998,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "www.recaptcha.net"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "www.google.com/recaptcha/",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 6,
     "priority": 1,
     "action": {
       "type": "redirect",
@@ -204,7 +171,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 6,
     "priority": 1,
     "action": {
       "type": "redirect",
@@ -234,8 +201,8 @@
     }
   },
   {
-    "id": 9,
-    "priority": 10,
+    "id": 7,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -268,8 +235,8 @@
     }
   },
   {
-    "id": 10,
-    "priority": 99,
+    "id": 8,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -299,8 +266,8 @@
     }
   },
   {
-    "id": 11,
-    "priority": 99,
+    "id": 9,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -330,8 +297,8 @@
     }
   },
   {
-    "id": 12,
-    "priority": 99,
+    "id": 10,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {

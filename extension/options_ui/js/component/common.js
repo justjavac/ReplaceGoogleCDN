@@ -3,7 +3,8 @@ import { showRuleList } from "./show-rule.js";
 let id_ranges = {
   self_define_special_rule: [10000, 19999],
   self_define_rule: [20000, 29999],
-  sync_remote_rule: [30000, 320000],
+  sync_remote_static_rule: [30000, 39999],
+  sync_remote_rule: [40000, 320000],
   all_dynamic_rule: [0, Infinity],
 };
 let deleteDynamicRules = (type, id = 0) => {
@@ -15,6 +16,9 @@ let deleteDynamicRules = (type, id = 0) => {
         id_range = id_ranges[type];
         break;
       case "self_define_rule":
+        id_range = id_ranges[type];
+        break;
+      case "sync_remote_static_rule":
         id_range = id_ranges[type];
         break;
       case "sync_remote_rule":
@@ -58,5 +62,39 @@ let backupDynamicRules = () => {
     }
   });
 };
+/**
+ * 启用本地默认静态规则
+ */
+let enableStaticRules = () => {
+  let local_manifest = chrome.runtime.getManifest();
+  //console.log(local_manifest);
+  let local_declarative_net_request =
+    local_manifest.declarative_net_request.rule_resources;
 
-export { utils, deleteDynamicRules, backupDynamicRules, id_ranges };
+  let UpdateRulesetOptions = {
+    disableRulesetIds: [],
+    enableRulesetIds: [],
+  };
+  local_declarative_net_request.forEach((value) => {
+    //console.log(value);
+    if (value.enabled === true) {
+      UpdateRulesetOptions.enableRulesetIds.push(value.id);
+    }
+  });
+
+  chrome.declarativeNetRequest.updateEnabledRulesets(
+    UpdateRulesetOptions,
+    (callback) => {
+      //console.log(callback);
+      deleteDynamicRules("sync_remote_static_rule");
+    }
+  );
+};
+
+export {
+  utils,
+  deleteDynamicRules,
+  backupDynamicRules,
+  id_ranges,
+  enableStaticRules,
+};

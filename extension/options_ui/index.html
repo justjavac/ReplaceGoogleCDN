@@ -15,16 +15,24 @@
           <h2>选项一：全局动态规则处理</h2>
           <button class="backup-all-dynamic-rule">备份所有动态规则</button>
           <span class="placeholder-box"></span>
+          <span class="placeholder-box"></span>
+          <button class="delete-all-dynamic-rule">清空所有动态规则</button>
+          <h5></h5>
           <button class="example-show-controller" data-state="hidden-example">
             显示演示例子
           </button>
           <h5></h5>
-          <button class="delete-all-dynamic-rule">清空所有动态规则</button>
-          <span class="placeholder-box"></span>
-          <button class="delete-sync-remote-rule">
-            清空所有同步远端动态规则
+          <button class="goto-sync-remote-repository-static-rule">
+            同步远端仓库静态规则到本地，并停用本地默认静态规则
           </button>
           <span class="placeholder-box"></span>
+          <button class="enable-static-rule">启用本地默认静态规则</button>
+
+          <h5></h5>
+          <button class="delete-sync-remote-rule">
+            清空所有已同步的远端动态规则
+          </button>
+          <h5></h5>
           <button class="delete-self-define-rule">
             清空所有自定义动态规则(特制除外)
           </button>
@@ -118,7 +126,9 @@
               <br />
               自定义特制规则编号： 10000>=编号<=19999
               <br />
-              远端同步规则编号：30000<=编号<=320000
+              同步远端静态规则编号：30000<=编号<=39999
+              <br />
+              同步远端动态规则编号：40000<=编号<=320000
               <br />
               其他编号： 未定义
             </span>
