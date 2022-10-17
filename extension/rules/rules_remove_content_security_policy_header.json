@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "priority": 2,
+    "priority": 1,
     "action": {
       "type": "modifyHeaders",
       "responseHeaders": [

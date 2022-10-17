@@ -4,6 +4,10 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.11 [2022-10-17 15:10:40 +0800]
+
+> 1. 实现不更新扩展的前提下，同步主仓库最新版静态规则
+
 ## CHANGELOG for 0.10.10 [2022-10-16 00:25:40 +0800]
 
 > 1. 新增 `cn.gravatar.com, en.gravatar.com` 地址重定向

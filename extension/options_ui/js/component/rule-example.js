@@ -27,5 +27,10 @@ https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/example/r
 https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/example/rules_block_request_custom_main.json?raw=true
 
 `;
-
-export { rule_example, rule_example_urls };
+let remote_repository_static_urls = {
+  manifest_url:
+    "https://raw.githubusercontent.com/justjavac/ReplaceGoogleCDN/master/extension/manifest.json",
+  mainfiest_url_base:
+    "https://raw.githubusercontent.com/justjavac/ReplaceGoogleCDN/master/extension/",
+};
+export { rule_example, rule_example_urls, remote_repository_static_urls };

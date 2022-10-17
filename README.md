@@ -70,7 +70,7 @@
 - [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
 - [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
 
-### 手动安装方式二：
+### 手动安装：
 
 Chrome 安装方法（Google 被墙了上不去）：
 
@@ -94,12 +94,12 @@ git -C replacegooglecdn pull  --depth=1 --progress  --rebase=true
 
 ### 扩展下载方式四：（已经构建好，可以上传扩展市场的代码）
 
-1. [ReplaceGoogleCDN-v3.zip（release v3 版本）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip)
-1. [ReplaceGoogleCDN-v2.zip（release v2 版本）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip)
+1. [ReplaceGoogleCDN-v3.zip（release v3 版本）支持 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip)
+1. [ReplaceGoogleCDN-v2.zip（release v2 版本）同时支持 firefox 和 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip)
 1. [ReplaceGoogleCDN.zip（全部源码）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN.zip)
 
 ```text
-# 原理： github的: page + action
+# 原理： github: page + action
 
 # 构建脚本
 https://github.com/jingjingxyk/jingjingxyk.github.io/blob/main/tools/setup-gh-pages-step-02-chromium-extension.sh
