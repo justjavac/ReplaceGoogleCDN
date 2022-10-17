@@ -19,7 +19,7 @@ function hasCSP(headers = []) {
 ==================================================
 
                 功能一： 移除内容安全策略 （content-security-policy)
-                        实际也可以：
+                        可以修改响应头
                             1. 响应头添加键值对
                             2. 响应头移除键值对
 
@@ -300,11 +300,19 @@ chrome.webRequest.onBeforeRequest.addListener(
 );
 
 /*
+==================================================
+
+                功能三： 修改请求头 （ modify header)
+
+==================================================
+*/
+
+/*
   请求头添加、移除参数
   参考文档：
    1. https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest
 
-  例子1：吸怪 User-Agent
+  例子1：请求头修改 User-Agent
   例子2：请求头添加参数
   例子3：请求头移除参数 移除携带的cookie信息
 */
