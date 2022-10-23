@@ -1,7 +1,4 @@
 let proxy_domains = [
-  "www.privoxy.org",
-  "googlesource.com",
-  "opensource.google",
   "translate.googleapis.com",
 ];
 
