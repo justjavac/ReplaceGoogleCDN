@@ -1,4 +1,8 @@
-let proxy_domains = ["translate.googleapis.com"];
+let proxy_domains = [
+  "translate.googleapis.com",
+  "chrome.google.com",
+  "lh3.googleusercontent.com",
+];
 
 function encodeBase64(str) {
   return btoa(encodeURIComponent(str));
