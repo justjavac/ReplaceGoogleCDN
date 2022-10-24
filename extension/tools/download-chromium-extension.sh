@@ -20,6 +20,7 @@ fi
 
 
 # 参考文档： https://github.com/tonystark93/crx-download/blob/master/background.js
+# 参考文档： https://www.cnblogs.com/jingjingxyk/p/16821342.html
 
 # `https://clients2.google.com/service/update2/crx?response=redirect&prodversion=${version}&acceptformat=crx2,crx3&x=id%3D${result[1]}%26uc&nacl_arch=${nacl_arch}`;
 
