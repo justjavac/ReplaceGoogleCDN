@@ -54,8 +54,9 @@ unset no_proxy
 # curl -x "socks5h://127.0.0.1:2000" -Lo google-translate.crx $download_url
 # curl --proxy "socks5h://127.0.0.1:2000" -Lo google-translate.crx $download_url
 
-
+set +e
 unzip -d google-translate google-translate.crx
+set -e
 
 cd ${__DIR__}/
 
