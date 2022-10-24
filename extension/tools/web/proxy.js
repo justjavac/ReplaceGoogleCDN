@@ -1,6 +1,4 @@
-let proxy_domains = [
-  "translate.googleapis.com",
-];
+let proxy_domains = ["translate.googleapis.com"];
 
 function encodeBase64(str) {
   return btoa(encodeURIComponent(str));
