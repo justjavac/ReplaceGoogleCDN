@@ -70,6 +70,7 @@ const remove_csp_urls = [
   "*://developers.redhat.com/*",
   "*://*.githubusercontent.com/*",
   "*://pub.dev/*",
+  "*://stackoverflow.com/*",
 ];
 
 /**
@@ -129,22 +130,6 @@ chrome.webRequest.onHeadersReceived.addListener(
 let suffix_domain = ".proxy.domain.com"; //请把这个换成你自己的域名
 //let suffix_domain = ".proxy.xiaoshuogeng.com";
 
-//Open Source urls 高级玩法测试域名
-let opensource_google_urls = [
-  "*://*.chromium.org/*", //Chromium ChromiumOS GN
-  "*://*.googlesource.com/*", //Chromium
-  "*://summerofcode.withgoogle.com/*",
-  "*://cs.opensource.google/*", //Google Open Source
-  "*://opensource.googleblog.com/*",
-  "*://opensource.google/*",
-];
-// 高级玩法测试域名组
-let test_urls = [
-  ...opensource_google_urls,
-  "*://*.google.com/*",
-  "*://github.com/*",
-];
-
 /**
  *  高级玩法一：
  *            特定域名替换
@@ -166,6 +151,7 @@ let need_replace_cdn_urls = [
   "ssl.gstatic.com",
   "www.gstatic.com",
   "secure.gravatar.com",
+  "www.gravatar.com",
   "maxcdn.bootstrapcdn.com",
   "github.com",
   "www.google.com",
@@ -185,6 +171,23 @@ let replace_cdn_urls = (details) => {
   }
   return null;
 };
+
+//Open Source urls 高级玩法测试域名
+let opensource_google_urls = [
+  "*://*.chromium.org/*", //Chromium ChromiumOS GN
+  "*://*.googlesource.com/*", //Chromium
+  "*://summerofcode.withgoogle.com/*",
+  "*://cs.opensource.google/*", //Google Open Source
+  "*://opensource.googleblog.com/*",
+  "*://opensource.google/*",
+];
+
+// 高级玩法测试域名组
+let test_urls = [
+  ...opensource_google_urls,
+  "*://*.google.com/*",
+  "*://github.com/*",
+];
 
 /**
  *  高级玩法二：
@@ -210,6 +213,13 @@ let use_nginx_proxy = (details, proxy_provider) => {
   return "https://" + dot_nums + "_" + host + proxy_provider + query_string;
 };
 
+// 被阻止请求的域名列表
+let block_domains = [
+  "google-analytics.com",
+  "example.com",
+  "googletagmanager.com",
+];
+
 /*
   请求地址重定向
   参考文档：
@@ -232,15 +242,30 @@ chrome.webRequest.onBeforeRequest.addListener(
     */
 
     /*
+          //拦截请求域名(也就是广告拦截器原理) 写法一：
+          let prevent_domins = block_domains.filter(
+            (domain) => details.url.indexOf(domain) !== -1
+          );
+          if (prevent_domins.length > 0) {
+            return { cancel: true };
+          }
 
-    //高级玩法一：
-    let des_url;
-    if ((des_url = replace_cdn_urls(details))) {
-      return { redirectUrl: des_url };
-    }
+          //拦截请求域名(也就是广告拦截器原理) 写法二：
+          if (
+            details.url.indexOf("example.com") !== -1 ||
+            details.url.indexOf("google-analytics.com") !== -1
+          ) {
+            return { cancel: true };
+          }
 
-    //高级玩法二：
-    return { redirectUrl: use_nginx_proxy(details, suffix_domain) };
+          //高级玩法一：
+          let des_url;
+          if ((des_url = replace_cdn_urls(details))) {
+            return { redirectUrl: des_url };
+          }
+
+          //高级玩法二：
+          return { redirectUrl: use_nginx_proxy(details, suffix_domain) };
 
     */
 
@@ -293,6 +318,9 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://developers.google.com/*",
       "*://code.jquery.com/jquery-*",
       "*://code.jquery.com/ui/*",
+      //"*://*.googletagmanager.com/*",
+      //"*://*.example.com/*",
+      //"*://*.google-analytics.com/*",
       //...test_urls, // 高级玩法的测试用例
     ],
   },
