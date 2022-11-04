@@ -3,33 +3,30 @@
 ## 网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)
 
 1. [网络拨测工具](https://zijian.aliyun.com/detect/http)
-2. [网站诊断分析工具](https://zijian.aliyun.com/)
+1. [网站诊断分析工具](https://zijian.aliyun.com/)
 
 ## 公共 CDN 静态资源库
 
 1. [前端 CDNJS 库及 Google Fonts、Ajax 和 Gravatar 国内加速服务 http://css.loli.net](https://u.sb/css-cdn/)
-2. [360 奇舞团](https://cdn.baomitu.com/)
-3. [又拍云](http://jscdn.upai.com/)
-4. [BootCDN](https://www.bootcdn.cn/)
-5. [字节跳动静态资源公共库](http://cdn.bytedance.com/)
-6. [Microsoft Ajax Content Delivery Network](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview)
-7. [jsdelivr](https://www.jsdelivr.com/)
-8. [unpkg](https://unpkg.com/)
-9. [cloudflare ](https://cdnjs.com/)
-10. [google libraries cn](https://developers.google.cn/speed/libraries)
-11. [七牛静态库 Staticfile CDN](http://staticfile.org/)
-12. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
-13. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
+1. [360 奇舞团](https://cdn.baomitu.com/)
+1. [又拍云](http://jscdn.upai.com/)
+1. [BootCDN](https://www.bootcdn.cn/)
+1. [字节跳动静态资源公共库](http://cdn.bytedance.com/)
+1. [Microsoft Ajax Content Delivery Network](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview)
+1. [jsdelivr](https://www.jsdelivr.com/)
+1. [unpkg](https://unpkg.com/)
+1. [cloudflare ](https://cdnjs.com/)
+1. [google libraries cn](https://developers.google.cn/speed/libraries)
+1. [七牛静态库 Staticfile CDN](http://staticfile.org/)
+1. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
+1. [CDNJS 南方科技大学](https://mirrors.sustech.edu.cn/help/cdnjs.html)
+1. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
+1. [公共 CDN 静态资源加速服务 7ED Services ](https://www.7ed.net/start/public-cdn.html)
+1. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
-```text
-ajax.googleapis.com           ajax.proxy.ustclug.org
-themes.googleusercontent.com  google-themes.proxy.ustclug.org
-```
+> ajax.googleapis.com ajax.proxy.ustclug.org
 
-15. [CDNJS 南方科技大学](https://mirrors.sustech.edu.cn/help/cdnjs.html)
-16. [CDNJS 重庆邮电大学暂时不可用](https://mirrors.cqupt.edu.cn/cdnjs/)
-17. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
-18. [公共 CDN 静态资源加速服务 7ED Services ](https://www.7ed.net/start/public-cdn.html)
+> themes.googleusercontent.com google-themes.proxy.ustclug.org
 
 ## 匹配规则文档:
 
