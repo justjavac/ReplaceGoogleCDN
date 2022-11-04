@@ -31,10 +31,9 @@ javascript: (() => {
   let script = document.createElement("script");
   script.setAttribute(
     "src",
-    "https://frontend-inject.xiaoshuogeng.com/main.js"
-    //"https://www.jingjingxyk.com/frontend-experimental-features/main.js"
+    "https://www.jingjingxyk.com/frontend-experimental-features/main.js"
   ),
-    script.setAttribute("type", "module"),
+    script.setAttribute("type", "application/javascript"),
     script.setAttribute("charset", "utf-8"),
     document.body.appendChild(script);
 })();
