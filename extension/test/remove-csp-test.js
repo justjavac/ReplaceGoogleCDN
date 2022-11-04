@@ -15,7 +15,10 @@
 //浏览器控制台执行代码,  检验移除CSP是否生效
 (() => {
   let script = document.createElement("script");
-  script.setAttribute("src", "https://frontend-inject.xieyaokun.com/main.js"),
+  script.setAttribute(
+    "src",
+    "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.module.min.js"
+  ),
     script.setAttribute("type", "application/javascript"),
     script.setAttribute("charset", "utf-8"),
     document.body.appendChild(script);
@@ -25,7 +28,10 @@
 
 javascript: (() => {
   let script = document.createElement("script");
-  script.setAttribute("src", "https://frontend-inject.xieyaokun.com/main.js"),
+  script.setAttribute(
+    "src",
+    "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.module.min.js"
+  ),
     script.setAttribute("type", "application/javascript"),
     script.setAttribute("charset", "utf-8"),
     document.body.appendChild(script);

@@ -16,6 +16,8 @@ extension/tools/blocked-domain.py
 extension/tools/temp/
 extension/test/nohup.out
 extension/tools/git-clean-file-history.sh
+extension/tools/local-deploy.sh
+extension/tools/web/proxy.pac
 
 extension/third_party/
 !extension/third_party/README.md
@@ -23,4 +25,6 @@ extension/third_party/
 
 dist
 extension/manifest-backup.json
-extension/web/
+
+
+extension/web-backup/
