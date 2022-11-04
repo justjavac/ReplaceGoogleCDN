@@ -73,12 +73,13 @@ const remove_csp_urls = [
   "*://stackoverflow.com/*",
 ];
 
-console.log(chrome.app.getDetails().version);
-console.log(navigator.userAgent);
+//console.log(chrome.app.getDetails().version);
+//console.log(navigator.userAgent);
 let chrome_ersion = (/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [, 0])[1];
-console.log(chrome_ersion);
+//console.log(chrome_ersion);
 
-//  原因所在：	  https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType
+//  浏览器各版本支持的ResourceType
+//   https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType
 
 let web_request_resource_types = [
   "main_frame",
@@ -140,21 +141,7 @@ chrome.webRequest.onHeadersReceived.addListener(
     urls: [
       ...remove_csp_urls, //需要移除CSP自己添加url
     ],
-    types: [
-      "main_frame",
-      "sub_frame",
-      "stylesheet",
-      "script",
-      "image",
-      "font",
-      "object",
-      "xmlhttprequest",
-      "ping",
-      "csp_report",
-      "media",
-      "websocket",
-      "other",
-    ],
+    types: web_request_resource_types,
   },
   ["blocking", "responseHeaders"]
 );
