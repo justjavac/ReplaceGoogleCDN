@@ -17,9 +17,10 @@
   let script = document.createElement("script");
   script.setAttribute(
     "src",
-    "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.module.min.js"
+    "https://frontend-inject.xiaoshuogeng.com/main.js"
   ),
-    script.setAttribute("type", "application/javascript"),
+    script.setAttribute("type", "module"),
+    //script.setAttribute("type", "application/javascript"),
     script.setAttribute("charset", "utf-8"),
     document.body.appendChild(script);
 })();
@@ -30,7 +31,7 @@ javascript: (() => {
   let script = document.createElement("script");
   script.setAttribute(
     "src",
-    "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.module.min.js"
+    "https://www.jingjingxyk.com/frontend-experimental-features/main.js"
   ),
     script.setAttribute("type", "application/javascript"),
     script.setAttribute("charset", "utf-8"),

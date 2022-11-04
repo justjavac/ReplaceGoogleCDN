@@ -4,6 +4,10 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.13 [2022-11-05 03:10:40 +0800]
+
+> 1. v2 版本扩展支持 XP 系统下 最后一个 chrome 版本
+
 ## CHANGELOG for 0.10.12 [2022-11-04 08:10:40 +0800]
 
 > 1. v2 版本添加域名拦截功能

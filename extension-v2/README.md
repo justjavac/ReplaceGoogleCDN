@@ -12,4 +12,6 @@
 
 ## 发现 v2 版本功能齐全的扩展[HeaderEditor](https://github.com/FirefoxBar/HeaderEditor.git)
 
-> 没有提供 v3 版本，关键是有 UI，使用的技术都是一样的
+> HeaderEditor 没有提供 v3 版本。但是它的界面很好用
+
+## 本扩展的 v2 版本支持 chromium 内核版本 49

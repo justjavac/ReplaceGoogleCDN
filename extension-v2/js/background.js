@@ -73,6 +73,46 @@ const remove_csp_urls = [
   "*://stackoverflow.com/*",
 ];
 
+//console.log(chrome.app.getDetails().version);
+//console.log(navigator.userAgent);
+let chrome_ersion = (/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [, 0])[1];
+//console.log(chrome_ersion);
+
+//  浏览器各版本支持的ResourceType
+//   https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType
+
+let web_request_resource_types = [
+  "main_frame",
+  "sub_frame",
+  "stylesheet",
+  "script",
+  "image",
+  "font",
+  "object",
+  "xmlhttprequest",
+  "ping",
+  "other",
+  "csp_report",
+  "media",
+  "websocket",
+];
+
+if (chrome_ersion < 58) {
+  //  "csp_report",  "media",  "websocket"  chromium 内核版本58以上才完全支持
+  web_request_resource_types = [
+    "main_frame",
+    "sub_frame",
+    "stylesheet",
+    "script",
+    "image",
+    "font",
+    "object",
+    "xmlhttprequest",
+    "ping",
+    "other",
+  ];
+}
+
 /**
  * 移除 Content-Security-Policy
  * 参考文档：
@@ -82,6 +122,8 @@ const remove_csp_urls = [
  *   4、 Arrow_Function 箭头函数
  *   5、 返回新的新的响应头： return {responseHeaders: details.responseHeaders};
  *   6、Chrome 新增的可信类型（Trusted types），暂时不知道怎么解决
+ *   7、https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived
+ *   8、https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType
  *
  */
 
@@ -99,21 +141,7 @@ chrome.webRequest.onHeadersReceived.addListener(
     urls: [
       ...remove_csp_urls, //需要移除CSP自己添加url
     ],
-    types: [
-      "main_frame",
-      "sub_frame",
-      "stylesheet",
-      "script",
-      "image",
-      "font",
-      "object",
-      "xmlhttprequest",
-      "ping",
-      "csp_report",
-      "media",
-      "websocket",
-      "other",
-    ],
+    types: web_request_resource_types,
   },
   ["blocking", "responseHeaders"]
 );
