@@ -75,7 +75,7 @@ const remove_csp_urls = [
 
 //console.log(chrome.app.getDetails().version);
 //console.log(navigator.userAgent);
-let chrome_ersion = (/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [, 0])[1];
+let chrome_ersion = (/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [, 59])[1];
 //console.log(chrome_ersion);
 
 //  浏览器各版本支持的ResourceType
