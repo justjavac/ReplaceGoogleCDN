@@ -6,7 +6,7 @@
 
 > 函数使用文档： https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#method-updateDynamicRules
 
-## 演示函数的使用用法
+## 函数的使用用法
 
 ```text
 
@@ -102,6 +102,18 @@ chrome.declarativeNetRequest.updateDynamicRules(
 | 同步远端动态规则       | 选项二：同步远端配置规则 --同步远端配置规则                                       | 40000<=规则 ID 编号<=320000 | 同步远端动态规则     | 同步指定仓库地址的规则， 实现不更新扩展，更新规则        | 与选项一：清空所有已同步的远端动态规则 相对应。删除规则时只删除对应区间的规则                                   |
 | 其它未定义             | 无                                                                                |             无              | 无                   | 无                                                       | 无                                                                                                              |
 
+```text
+自定义特制规则编号： 10000>=编号<=19999
+
+自定义规则编号： 20000>=编号<=29999
+
+同步远端静态规则编号：30000<=编号<=39999
+
+同步远端动态规则编号：40000<=编号<=320000
+
+其他编号： 未定义
+              
+```
 ## 演示地址的规则来源
 
 > https://github.com/jingjingxyk/extension-v3-test/tree/main/rules
