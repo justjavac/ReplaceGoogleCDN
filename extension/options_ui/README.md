@@ -13,10 +13,10 @@
 // chromium 内核版本87以上开始支持
 
 //添加的规则
-addRules={}
+addRules=[{规则1},{规则2},{规则3},{规则4}]
 
 //要删除的规则ID
-removeRuleIds=[]
+removeRuleIds=[规则1的id,规则2的id,规则3的id]
 
 UpdateRuleOptions={
     addRules,
