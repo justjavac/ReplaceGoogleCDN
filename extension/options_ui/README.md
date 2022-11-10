@@ -112,8 +112,9 @@ chrome.declarativeNetRequest.updateDynamicRules(
 同步远端动态规则编号：40000<=编号<=320000
 
 其他编号： 未定义
-              
+
 ```
+
 ## 演示地址的规则来源
 
 > https://github.com/jingjingxyk/extension-v3-test/tree/main/rules
