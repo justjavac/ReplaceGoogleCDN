@@ -42,7 +42,8 @@ zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-0.10.x.md
 cd ${__DIR__}/extension-v2/
 
 zip -r ../dist/ReplaceGoogleCDN-v2.zip . \
-  -x "./README.md"
+  -x "./README.md" \
+  -x "./test/*"
 
 cd ${__DIR__}
 zip -u dist/ReplaceGoogleCDN-v2.zip ./README.md
