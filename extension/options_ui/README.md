@@ -121,7 +121,7 @@ chrome.declarativeNetRequest.updateDynamicRules(
 
 ## 清空所有动态规则
 
-> 也就通过 `chrome.declarativeNetRequest.updateDynamicRules` 添加的规则，都会被删除
+> 通过 `chrome.declarativeNetRequest.updateDynamicRules` 添加的规则，都会被删除
 
 ## 备份规则
 
