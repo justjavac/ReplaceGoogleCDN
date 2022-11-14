@@ -153,7 +153,7 @@ let self_define_conf = () => {
       let dt = e.dataTransfer;
       let files = dt.files;
 
-      let fileType = /^application\/json|text\/plain/;
+      let fileType = /^(application\/json)|(text\/plain)/;
       const file = files[0];
       console.log(file);
       if (files && files[0] && fileType.test(files[0].type)) {
