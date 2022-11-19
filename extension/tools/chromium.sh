@@ -107,5 +107,6 @@ $chromium \
 --auto-open-devtools-for-tabs \
 --enable-logging=stderr --v=1 \
 --remote-debugging-port=9222 \
+--disable-encryption --disable-machine-id \
 about:blank
 
