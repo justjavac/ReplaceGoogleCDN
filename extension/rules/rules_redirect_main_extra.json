@@ -13,6 +13,7 @@
     },
     "condition": {
       "urlFilter": "https://www.google.com/recaptcha/api.js",
+      "requestDomains": ["www.google.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
