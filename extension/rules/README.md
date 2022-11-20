@@ -28,6 +28,10 @@
 
 > themes.googleusercontent.com google-themes.proxy.ustclug.org
 
+> fonts.gstatic.com fonts.gstatic.cn
+
+> fonts.googleapis.com fonts.googleapis.cn
+
 ## 匹配规则文档:
 
 1. [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
