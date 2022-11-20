@@ -71,12 +71,20 @@ let add_self_define_rule = (type = "self_define_rule") => {
     });
   }
 };
+
+/**
+ * 增加普通规则
+ */
 let self_define_conf = () => {
   document.querySelector(".add-rule").addEventListener("click", (event) => {
     event.stopPropagation();
     event.preventDefault();
     add_self_define_rule("self_define_rule");
   });
+
+  /**
+   * 增加特制规则
+   */
   document
     .querySelector(".add-special-rule")
     .addEventListener("click", (event) => {
@@ -92,6 +100,17 @@ let self_define_conf = () => {
       document.querySelector("#upload-file-to-rule").click();
     });
 
+  /**
+   * 文件上传规则和拖拽上传
+   */
+  let showUploadFileContent = (file) => {
+    let reader = new FileReader();
+    reader.onload = function () {
+      document.querySelector(".new-add-rule-pannel").value = this.result;
+    };
+    reader.readAsText(file);
+  };
+
   document
     .querySelector("#upload-file-to-rule")
     .addEventListener("change", (event) => {
@@ -99,14 +118,56 @@ let self_define_conf = () => {
       if (files && files[0]) {
         const file = files[0];
         console.log(file);
-        let reader = new FileReader();
-        reader.onload = function () {
-          document.querySelector(".new-add-rule-pannel").value = this.result;
-        };
-        reader.readAsText(file);
+        showUploadFileContent(file);
       }
     });
 
+  // https://developer.mozilla.org/zh-CN/docs/Web/API/File_API/Using_files_from_web_applications
+  let dropbox;
+
+  dropbox = document.getElementById("dropbox");
+
+  dropbox.addEventListener(
+    "dragenter",
+    (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    },
+    false
+  );
+  dropbox.addEventListener(
+    "dragover",
+    (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    },
+    false
+  );
+
+  dropbox.addEventListener(
+    "drop",
+    (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+
+      let dt = e.dataTransfer;
+      let files = dt.files;
+
+      let fileType = /^(application\/json)|(text\/plain)/;
+      const file = files[0];
+      console.log(file);
+      if (files && files[0] && fileType.test(files[0].type)) {
+        const file = files[0];
+        console.log(file);
+        showUploadFileContent(file);
+      }
+    },
+    false
+  );
+
+  /**
+   * 演示例子
+   */
   document
     .querySelector(".autofill-self-define-rule")
     .addEventListener("click", (event) => {

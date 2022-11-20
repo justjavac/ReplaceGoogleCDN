@@ -4,6 +4,12 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.14 [2022-11-19 22:17:40 +0800]
+
+> 1. 新增拖拽文件上传规则
+> 1. 修改选项页 README.md
+> 1. 缩小部分规则匹配场景
+
 ## CHANGELOG for 0.10.13 [2022-11-05 03:10:40 +0800]
 
 > 1. v2 版本扩展支持 XP 系统下 最后一个 chrome 版本
