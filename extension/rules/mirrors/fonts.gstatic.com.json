@@ -63,5 +63,39 @@
         "other"
       ]
     }
+  },
+  {
+    "id": 3,
+    "priority": 102,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "fonts.gstatic.cn"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "fonts.gstatic.com",
+      "requestDomains": ["fonts.gstatic.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   }
 ]
