@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "ajax.proxy.ustclug.org"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "ajax.googleapis.com",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+
+  {
+    "id": 2,
+    "priority": 199,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://use.sevencdn.com/gajax/\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 198,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 300,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://gapis.geekzu.org/ajax/ajax/libs/\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

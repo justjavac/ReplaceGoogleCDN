@@ -25,10 +25,11 @@ let sync_remote_conf = () => {
         return;
       }
       let result = await utils.fetchAll(new_rules_urls, utils.getContent);
-
-      if (result.length > 1) {
+      console.log(result);
+      if (result.length > 0) {
         //let dynamic_id_index = parseInt(new Date().getTime() / 1000);
         let dynamic_id_index = id_ranges["sync_remote_rule"][0];
+        console.log(dynamic_id_index);
         let need_rules = [];
         chrome.declarativeNetRequest.getDynamicRules((rules) => {
           rules.forEach((value, index, array) => {
