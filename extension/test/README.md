@@ -36,3 +36,16 @@
     https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_remove_content_security_policy_header.json?raw=true
 
 ```
+
+## 静态默认规则候选项载入地址
+
+```text
+
+https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/ajax.googleapis.com.json?raw=true
+https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/fonts.googleapis.com.json?raw=true
+https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/gravatar.com.json?raw=true
+https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/cdnjs.cloudflare.com.json?raw=true
+https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/fonts.gstatic.com.json?raw=true
+https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/themes.googleusercontent.com.json?raw=true
+
+```

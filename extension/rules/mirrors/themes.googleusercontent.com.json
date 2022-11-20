@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "themes.loli.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "themes.googleusercontent.com",
+      "requestDomains": ["themes.googleusercontent.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://gapis.geekzu.org/g-themes/\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://themes\\.googleusercontent\\.com/(.*?)",
+      "requestDomains": ["themes.googleusercontent.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

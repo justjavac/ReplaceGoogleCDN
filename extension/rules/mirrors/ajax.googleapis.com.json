@@ -35,20 +35,19 @@
   },
   {
     "id": 2,
-    "priority": 1,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
         "transform": {
           "scheme": "https",
-          "host": "fonts.loli.net"
+          "host": "ajax.proxy.ustclug.org"
         }
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
-      "requestDomains": ["fonts.googleapis.com"],
-      "excludedRequestDomains": ["fonts.googleapis.com"],
+      "urlFilter": "ajax.googleapis.com",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -68,21 +67,19 @@
       ]
     }
   },
+
   {
     "id": 3,
-    "priority": 1,
+    "priority": 199,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "themes.loli.net"
-        }
+        "regexSubstitution": "https://use.sevencdn.com/gajax/\\1"
       }
     },
     "condition": {
-      "urlFilter": "themes.googleusercontent.com",
-      "requestDomains": ["themes.googleusercontent.com"],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -104,20 +101,16 @@
   },
   {
     "id": 4,
-    "priority": 1,
+    "priority": 198,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "gstatic.loli.net"
-        }
+        "regexSubstitution": "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
       }
     },
     "condition": {
-      "urlFilter": "fonts.gstatic.com",
-      "requestDomains": ["fonts.gstatic.com"],
-      "excludedRequestDomains": ["fonts.gstatic.com"],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -139,24 +132,16 @@
   },
   {
     "id": 5,
-    "priority": 1,
+    "priority": 300,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "gravatar.loli.net"
-        }
+        "regexSubstitution": "https://gapis.geekzu.org/ajax/ajax/libs/\\1"
       }
     },
     "condition": {
-      "urlFilter": "gravatar.com",
-      "requestDomains": [
-        "secure.gravatar.com",
-        "www.gravatar.com",
-        "cn.gravatar.com",
-        "en.gravatar.com"
-      ],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -178,16 +163,78 @@
   },
   {
     "id": 6,
-    "priority": 1,
+    "priority": 401,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/twitter-bootstrap/\\1/\\2"
+        "regexSubstitution": "https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "maxcdn.bootstrapcdn.com/bootstrap/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
-      "requestDomains": ["maxcdn.bootstrapcdn.com"],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 402,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://lib.baomitu.com/\\1/\\2/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 403,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -209,19 +256,16 @@
   },
   {
     "id": 7,
-    "priority": 1,
+    "priority": 408,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "fastly.jsdelivr.net"
-        }
+        "regexSubstitution": "https://unpkg.com/\\1@\\2/dist/\\3"
       }
     },
     "condition": {
-      "urlFilter": "cdn.jsdelivr.net",
-      "requestDomains": ["cdn.jsdelivr.net"],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -243,16 +287,16 @@
   },
   {
     "id": 8,
-    "priority": 1,
+    "priority": 409,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/jquery/\\1/jquery\\2"
+        "regexSubstitution": "https://cdnjs.cloudflare.com/ajax/libs/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
-      "requestDomains": ["code.jquery.com"],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -274,50 +318,16 @@
   },
   {
     "id": 9,
-    "priority": 1,
+    "priority": 410,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
+        "regexSubstitution": "https://cdn.staticfile.org/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
-      "requestDomains": ["code.jquery.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 10,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "developers.google.cn"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "developers.google.com",
-      "requestDomains": ["developers.google.com"],
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

@@ -1,6 +1,6 @@
 {
   "name": "Replace Google CDN",
-  "version": "0.10.14",
+  "version": "0.10.15",
   "manifest_version": 3,
   "icons": {
     "128": "icons/128.png"
