@@ -1,6 +1,40 @@
 [
   {
     "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "ajax.loli.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "ajax.googleapis.com",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
     "priority": 100,
     "action": {
       "type": "redirect",
@@ -35,7 +69,7 @@
   },
 
   {
-    "id": 2,
+    "id": 3,
     "priority": 199,
     "action": {
       "type": "redirect",
@@ -66,7 +100,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 4,
     "priority": 198,
     "action": {
       "type": "redirect",
@@ -97,7 +131,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 5,
     "priority": 300,
     "action": {
       "type": "redirect",
@@ -107,6 +141,192 @@
     },
     "condition": {
       "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 401,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/\\1/\\2/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 402,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://lib.baomitu.com/\\1/\\2/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 403,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 408,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://unpkg.com/\\1@\\2/dist/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 409,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://cdnjs.cloudflare.com/ajax/libs/\\1/\\2/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "priority": 410,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://cdn.staticfile.org/\\1/\\2/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
