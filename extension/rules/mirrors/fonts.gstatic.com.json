@@ -39,11 +39,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://gapis.geekzu.org/g-fonts/\\1"
+        "regexSubstitution": "gapis.geekzu.org/g-fonts/\\1"
       }
     },
     "condition": {
-      "regexFilter": "^https://fonts\\.gstatic\\.com/(.*?)",
+      "regexFilter": "fonts\\.gstatic\\.com/(.*?)",
       "requestDomains": ["fonts.gstatic.com"],
       "resourceTypes": [
         "main_frame",

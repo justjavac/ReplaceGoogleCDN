@@ -67,11 +67,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
+        "regexSubstitution": "mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
       }
     },
     "condition": {
-      "regexFilter": "^https://cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)",
+      "regexFilter": "cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)",
       "requestDomains": ["cdnjs.cloudflare.com"],
       "resourceTypes": [
         "main_frame",

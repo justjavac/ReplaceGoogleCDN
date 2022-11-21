@@ -39,11 +39,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://gapis.geekzu.org/g-themes/\\1"
+        "regexSubstitution": "gapis.geekzu.org/g-themes/\\1"
       }
     },
     "condition": {
-      "regexFilter": "^https://themes\\.googleusercontent\\.com/(.*?)",
+      "regexFilter": "themes\\.googleusercontent\\.com/(.*?)",
       "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
