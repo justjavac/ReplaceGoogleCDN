@@ -182,7 +182,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/twitter-bootstrap/\\1/\\2"
+        "regexSubstitution": "https://lib.baomitu.com/twitter-bootstrap/\\1/\\2"
       }
     },
     "condition": {

@@ -291,11 +291,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://cdnjs.cloudflare.com/ajax/libs/\\1/\\2/\\3"
+        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -322,11 +322,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://cdn.staticfile.org/\\1/\\2/\\3"
+        "regexSubstitution": "cdn.staticfile.org/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "^https://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",

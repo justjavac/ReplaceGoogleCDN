@@ -5,15 +5,12 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "themes.loli.net"
-        }
+        "regexSubstitution": "lib.baomitu.com/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "urlFilter": "themes.googleusercontent.com",
-      "requestDomains": ["themes.googleusercontent.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -35,16 +32,16 @@
   },
   {
     "id": 2,
-    "priority": 100,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://gapis.geekzu.org/g-themes/\\1"
+        "regexSubstitution": "cdn.staticfile.org/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "^https://themes\\.googleusercontent\\.com/(.*?)",
-      "requestDomains": ["themes.googleusercontent.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -66,19 +63,16 @@
   },
   {
     "id": 3,
-    "priority": 101,
+    "priority": 991,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "google-themes.proxy.ustclug.org"
-        }
+        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "urlFilter": "themes.googleusercontent.com",
-      "requestDomains": ["themes.googleusercontent.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
