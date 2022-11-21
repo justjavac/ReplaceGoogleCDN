@@ -5,11 +5,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/jquery/\\1/jquery\\2"
+        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -30,17 +30,18 @@
       ]
     }
   },
+
   {
     "id": 2,
     "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdn.staticfile.org/jquery/\\1/jquery\\2"
+        "regexSubstitution": "lib.baomitu.com/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -63,15 +64,15 @@
   },
   {
     "id": 3,
-    "priority": 991,
+    "priority": 993,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/jquery/\\1/jquery\\2"
+        "regexSubstitution": "cdn.staticfile.org/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -94,15 +95,15 @@
   },
   {
     "id": 4,
-    "priority": 992,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "fastly.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
+        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -125,15 +126,46 @@
   },
   {
     "id": 5,
-    "priority": 993,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jQuery/jquery-\\1\\2"
+        "regexSubstitution": "fastly.jsdelivr.net/npm/jquery-ui@\\1/dist/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "requestDomains": ["code.jquery.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/jqueryui/\\1/\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
