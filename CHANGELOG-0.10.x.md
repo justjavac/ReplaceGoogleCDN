@@ -4,6 +4,11 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.15 [2022-11-21 03:53:40 +0800]
+
+> 1. 为默认静态规则，准备冗余候选项
+> 1. 域名 `fonts.gstatic.com` 和 `fonts.googleapis.com` 暂时取消 地址重定向
+
 ## CHANGELOG for 0.10.14 [2022-11-19 22:17:40 +0800]
 
 > 1. 新增拖拽文件上传规则

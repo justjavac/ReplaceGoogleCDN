@@ -10,7 +10,6 @@
     },
     "condition": {
       "regexFilter": "^https://([\\w|-]+?)\\.(\\w+?)/(.*?)",
-      "requireCapturing": true,
       "requestDomains": ["example.com"],
       "excludedRequestDomains": ["proxy.domain.com"],
       "resourceTypes": [

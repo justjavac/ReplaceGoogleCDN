@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "cdnjs.loli.net" }
+      }
+    },
+    "condition": {
+      "urlFilter": "cdnjs.cloudflare.com/ajax/libs",
+      "requestDomains": ["cdnjs.cloudflare.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 99,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "use.sevencdn.com" }
+      }
+    },
+    "condition": {
+      "urlFilter": "cdnjs.cloudflare.com/ajax/libs",
+      "requestDomains": ["cdnjs.cloudflare.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 298,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)",
+      "requestDomains": ["cdnjs.cloudflare.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]
