@@ -18,6 +18,7 @@ extension/test/nohup.out
 extension/tools/git-clean-file-history.sh
 extension/tools/local-deploy.sh
 extension/tools/web/proxy.pac
+extension/tools/download-chromium-extension-backup.sh
 
 extension/third_party/
 !extension/third_party/README.md
@@ -28,3 +29,8 @@ extension/manifest-backup.json
 
 
 extension/web-backup/
+
+extension/rules/mirrors/raw.githubusercontent.com.json
+extension/rules/mirrors/github.com.json
+extension/rules/mirrors/google.com.json
+extension/rules/mirrors/wikipedia.org.json
