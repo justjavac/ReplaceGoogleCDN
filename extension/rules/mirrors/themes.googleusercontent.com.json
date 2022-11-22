@@ -39,11 +39,45 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://gapis.geekzu.org/g-themes/\\1"
+        "regexSubstitution": "gapis.geekzu.org/g-themes/\\1"
       }
     },
     "condition": {
-      "regexFilter": "^https://themes\\.googleusercontent\\.com/(.*?)",
+      "regexFilter": "themes\\.googleusercontent\\.com/(.*?)",
+      "requestDomains": ["themes.googleusercontent.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 101,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "google-themes.proxy.ustclug.org"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "themes.googleusercontent.com",
       "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",

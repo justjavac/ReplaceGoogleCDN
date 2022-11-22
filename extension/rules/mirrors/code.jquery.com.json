@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "priority": 100,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "cdnjs.loli.net" }
+        "regexSubstitution": "lib.baomitu.com/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "urlFilter": "cdnjs.cloudflare.com/ajax/libs",
-      "requestDomains": ["cdnjs.cloudflare.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -32,16 +32,16 @@
   },
   {
     "id": 2,
-    "priority": 99,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "transform": { "scheme": "https", "host": "use.sevencdn.com" }
+        "regexSubstitution": "cdn.staticfile.org/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "urlFilter": "cdnjs.cloudflare.com/ajax/libs",
-      "requestDomains": ["cdnjs.cloudflare.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -63,16 +63,16 @@
   },
   {
     "id": 3,
-    "priority": 298,
+    "priority": 991,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
+        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)",
-      "requestDomains": ["cdnjs.cloudflare.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -94,16 +94,47 @@
   },
   {
     "id": 4,
-    "priority": 300,
+    "priority": 992,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
+        "regexSubstitution": "fastly.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
-      "requestDomains": ["cdnjs.cloudflare.com"],
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 993,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jQuery/jquery-\\1\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

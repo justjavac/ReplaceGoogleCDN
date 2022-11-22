@@ -49,3 +49,13 @@ https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors
 https://github.com/jingjingxyk/ReplaceGoogleCDN/blob/dev/extension/rules/mirrors/themes.googleusercontent.com.json?raw=true
 
 ```
+
+## 拨测工具测试地址
+
+```text
+
+https://fonts.googleapis.com/css?family=Google+Sans:300,400,500
+
+https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
+
+```
