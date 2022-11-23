@@ -26,11 +26,9 @@ extension/third_party/
 
 dist
 extension/manifest-backup.json
-
-
 extension/web-backup/
-
 extension/rules/mirrors/raw.githubusercontent.com.json
+extension/rules/mirrors/imgur.com.json
 extension/rules/mirrors/github.com.json
 extension/rules/mirrors/google.com.json
 extension/rules/mirrors/wikipedia.org.json
