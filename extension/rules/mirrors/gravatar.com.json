@@ -115,5 +115,44 @@
         "other"
       ]
     }
+  },
+  {
+    "id": 4,
+    "priority": 101,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gravatar.cdn.haah.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "gravatar.com",
+      "requestDomains": [
+        "secure.gravatar.com",
+        "www.gravatar.com",
+        "cn.gravatar.com",
+        "en.gravatar.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   }
 ]

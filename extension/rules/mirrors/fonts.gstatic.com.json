@@ -97,5 +97,39 @@
         "other"
       ]
     }
+  },
+  {
+    "id": 4,
+    "priority": 103,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gstatic.cdn.haah.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "fonts.gstatic.com",
+      "requestDomains": ["fonts.gstatic.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   }
 ]

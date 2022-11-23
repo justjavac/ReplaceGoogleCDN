@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "priority": 103,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gtranslate.cdn.haah.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "translate.googleapis.com",
+      "requestDomains": ["translate.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

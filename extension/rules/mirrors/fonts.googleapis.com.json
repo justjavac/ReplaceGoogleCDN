@@ -134,5 +134,39 @@
         "other"
       ]
     }
+  },
+  {
+    "id": 5,
+    "priority": 200,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gfont.cdn.haah.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "fonts.googleapis.com",
+      "requestDomains": ["fonts.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   }
 ]
