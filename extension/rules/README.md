@@ -38,18 +38,6 @@
 
 1. [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
 
-## 高级玩法
-
-> 使用时，请把 `proxy.domain.com` 更换为你自己的域名
-
-> 固定地址替换 `rules_advance_redirect_1.json`
-
-> 动态地址替换 `rules_advance_redirect_2.json`
-
-> 移除 content-security-policy `rules_remove_content_security_policy_header.json`
-
-> 阻止请求 `rules_block_request.json`
-
 ## manifeset.json 参考 declarative_net_request 配置
 
 ```json
@@ -80,6 +68,18 @@
   }
 }
 ```
+
+## 高级玩法(默认不启用)
+
+> 使用时，请把 `proxy.domain.com` 更换为你自己的域名
+
+> 固定地址替换 `rules_advance_redirect_1.json`
+
+> 动态地址替换 `rules_advance_redirect_2.json`
+
+> 移除 content-security-policy `rules_remove_content_security_policy_header.json`
+
+> 阻止请求 `rules_block_request.json`
 
 ### 指定匹配域名
 
