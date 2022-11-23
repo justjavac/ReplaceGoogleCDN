@@ -66,5 +66,39 @@
         "other"
       ]
     }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gcore.jsdelivr.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "cdn.jsdelivr.net",
+      "requestDomains": ["cdn.jsdelivr.net"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
   }
 ]

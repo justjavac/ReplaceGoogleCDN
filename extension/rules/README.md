@@ -23,6 +23,7 @@
 1. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
 1. [公共 CDN 静态资源加速服务 7ED Services ](https://www.7ed.net/start/public-cdn.html)
 1. [辉哥博客&蓝易云安全](https://www.haah.net/archives/7885.html)
+1. [AHDark](https://www.sourcegcdn.com/)
 1. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
 > ajax.googleapis.com ajax.proxy.ustclug.org
