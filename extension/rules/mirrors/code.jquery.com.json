@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "priority": 1,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -30,9 +30,10 @@
       ]
     }
   },
+
   {
     "id": 2,
-    "priority": 1,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -61,9 +62,10 @@
       ]
     }
   },
+
   {
     "id": 3,
-    "priority": 991,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -92,9 +94,10 @@
       ]
     }
   },
+
   {
     "id": 4,
-    "priority": 992,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -123,9 +126,10 @@
       ]
     }
   },
+
   {
     "id": 5,
-    "priority": 993,
+    "priority": 101,
     "action": {
       "type": "redirect",
       "redirect": {

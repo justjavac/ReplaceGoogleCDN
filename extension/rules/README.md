@@ -7,7 +7,7 @@
 
 ## 公共 CDN 静态资源库
 
-1. [前端 CDNJS 库及 Google Fonts、Ajax 和 Gravatar 国内加速服务 http://css.loli.net](https://u.sb/css-cdn/)
+1. [烧饼博客 前端 CDNJS 库及 Google Fonts、Ajax 和 Gravatar 国内加速服务](https://u.sb/css-cdn/)
 1. [360 奇舞团](https://cdn.baomitu.com/)
 1. [又拍云](http://jscdn.upai.com/)
 1. [BootCDN](https://www.bootcdn.cn/)
@@ -22,6 +22,8 @@
 1. [CDNJS 南方科技大学](https://mirrors.sustech.edu.cn/help/cdnjs.html)
 1. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
 1. [公共 CDN 静态资源加速服务 7ED Services ](https://www.7ed.net/start/public-cdn.html)
+1. [辉哥博客&蓝易云安全](https://www.haah.net/archives/7885.html)
+1. [AHDark](https://www.sourcegcdn.com/)
 1. [中科大反向代理列表如下：](https://mirrors.ustc.edu.cn/)
 
 > ajax.googleapis.com ajax.proxy.ustclug.org
@@ -36,19 +38,9 @@
 
 1. [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
 
-## 高级玩法
-
-> 使用时，请把 `proxy.domain.com` 更换为你自己的域名
-
-> 固定地址替换 `rules_advance_redirect_1.json`
-
-> 动态地址替换 `rules_advance_redirect_2.json`
-
-> 移除 content-security-policy `rules_remove_content_security_policy_header.json`
-
-> 阻止请求 `rules_block_request.json`
-
 ## manifeset.json 参考 declarative_net_request 配置
+
+> chromium 内核版本需要大于 87
 
 ```json
 {
@@ -78,6 +70,18 @@
   }
 }
 ```
+
+## 高级玩法(默认不启用)
+
+> 使用时，请把 `proxy.domain.com` 更换为你自己的域名
+
+> 固定地址替换 `rules_advance_redirect_1.json`
+
+> 动态地址替换 `rules_advance_redirect_2.json`
+
+> 移除 content-security-policy `rules_remove_content_security_policy_header.json`
+
+> 阻止请求 `rules_block_request.json`
 
 ### 指定匹配域名
 

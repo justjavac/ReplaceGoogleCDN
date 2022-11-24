@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "priority": 1,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -33,6 +33,7 @@
       ]
     }
   },
+
   {
     "id": 2,
     "priority": 100,
@@ -64,15 +65,51 @@
       ]
     }
   },
+
   {
     "id": 3,
-    "priority": 101,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
         "transform": {
           "scheme": "https",
           "host": "google-themes.proxy.ustclug.org"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "themes.googleusercontent.com",
+      "requestDomains": ["themes.googleusercontent.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+
+  {
+    "id": 4,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gtheme.cdn.haah.net"
         }
       }
     },
