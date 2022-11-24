@@ -7,7 +7,7 @@
 
 ## 公共 CDN 静态资源库
 
-1. [前端 CDNJS 库及 Google Fonts、Ajax 和 Gravatar 国内加速服务 http://css.loli.net](https://u.sb/css-cdn/)
+1. [烧饼博客 前端 CDNJS 库及 Google Fonts、Ajax 和 Gravatar 国内加速服务](https://u.sb/css-cdn/)
 1. [360 奇舞团](https://cdn.baomitu.com/)
 1. [又拍云](http://jscdn.upai.com/)
 1. [BootCDN](https://www.bootcdn.cn/)
@@ -39,6 +39,8 @@
 1. [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
 
 ## manifeset.json 参考 declarative_net_request 配置
+
+> chromium 内核版本需要大于 87
 
 ```json
 {

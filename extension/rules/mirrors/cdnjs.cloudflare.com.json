@@ -30,9 +30,10 @@
       ]
     }
   },
+
   {
     "id": 2,
-    "priority": 99,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -61,9 +62,10 @@
       ]
     }
   },
+
   {
     "id": 3,
-    "priority": 298,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -92,41 +94,10 @@
       ]
     }
   },
-  {
-    "id": 4,
-    "priority": 300,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "regexSubstitution": "fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
-      }
-    },
-    "condition": {
-      "regexFilter": "cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
-      "requestDomains": ["cdnjs.cloudflare.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
-      ]
-    }
-  },
 
   {
-    "id": 5,
-    "priority": 301,
+    "id": 4,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -160,8 +131,8 @@
   },
 
   {
-    "id": 6,
-    "priority": 301,
+    "id": 5,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -173,6 +144,38 @@
     },
     "condition": {
       "urlFilter": "cdnjs.cloudflare.com",
+      "requestDomains": ["cdnjs.cloudflare.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+
+  {
+    "id": 6,
+    "priority": 90,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "cdnjs\\.cloudflare\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["cdnjs.cloudflare.com"],
       "resourceTypes": [
         "main_frame",
