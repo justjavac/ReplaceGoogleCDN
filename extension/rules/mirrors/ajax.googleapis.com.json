@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "priority": 1,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -33,6 +33,7 @@
       ]
     }
   },
+
   {
     "id": 2,
     "priority": 100,
@@ -70,7 +71,7 @@
 
   {
     "id": 3,
-    "priority": 199,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -99,9 +100,10 @@
       ]
     }
   },
+
   {
     "id": 4,
-    "priority": 198,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -130,9 +132,10 @@
       ]
     }
   },
+
   {
     "id": 5,
-    "priority": 300,
+    "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -161,9 +164,45 @@
       ]
     }
   },
+
   {
     "id": 6,
-    "priority": 401,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "gajax.cdn.haah.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "ajax.googleapis.com",
+      "requestDomains": ["ajax.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+
+  {
+    "id": 7,
+    "priority": 90,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -192,9 +231,10 @@
       ]
     }
   },
+
   {
-    "id": 6,
-    "priority": 402,
+    "id": 8,
+    "priority": 90,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -223,9 +263,10 @@
       ]
     }
   },
+
   {
-    "id": 6,
-    "priority": 403,
+    "id": 9,
+    "priority": 90,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -254,9 +295,10 @@
       ]
     }
   },
+
   {
-    "id": 7,
-    "priority": 408,
+    "id": 10,
+    "priority": 90,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -285,9 +327,10 @@
       ]
     }
   },
+
   {
-    "id": 8,
-    "priority": 409,
+    "id": 11,
+    "priority": 90,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -316,9 +359,10 @@
       ]
     }
   },
+
   {
-    "id": 9,
-    "priority": 410,
+    "id": 12,
+    "priority": 90,
     "action": {
       "type": "redirect",
       "redirect": {
