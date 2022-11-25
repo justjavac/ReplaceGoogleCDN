@@ -1,3 +1,5 @@
+import { showRuleList } from "./show-rule.js";
+
 let default_domains = {
   "ajax.googleapis.com": {
     id: 1,
@@ -124,6 +126,7 @@ let default_domains_app = () => {
       },
       (parameter) => {
         console.log(parameter);
+        showRuleList();
       }
     );
   });
