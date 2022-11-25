@@ -88,7 +88,11 @@ let default_domains_app = () => {
           for (let i in response) {
             console.log(response[i]);
             let option = document.createElement("option");
-            option.text = JSON.stringify(response[i]["action"]["redirect"]);
+            option.text =
+              "候选项" +
+              response[i]["id"] +
+              ": " +
+              JSON.stringify(response[i]["action"]["redirect"]);
             option.value = response[i]["id"];
             option.setAttribute("data-rule-info", JSON.stringify(response[i]));
             default_domains_option.add(option);
@@ -98,11 +102,11 @@ let default_domains_app = () => {
     }
   });
   default_domains_option.addEventListener("change", (event) => {
-    console.log(event.target);
-    console.log(event.target.selectedIndex);
+    //console.log(event.target);
+    //console.log(event.target.selectedIndex);
     let value = event.target.options[event.target.selectedIndex].value;
-    console.log(value);
-    if (value == 0) {
+    //console.log(value);
+    if (event.target.selectedIndex === 0 || parseInt(value) === 0) {
       return;
     }
 
