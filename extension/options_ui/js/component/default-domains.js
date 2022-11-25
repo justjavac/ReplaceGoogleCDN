@@ -1,4 +1,4 @@
-let default_redirect_domains = {
+let default_domains = {
   "ajax.googleapis.com": {
     id: 1,
     domain: "ajax.googleapis.com",
@@ -36,20 +36,20 @@ let default_redirect_domains = {
      */
 };
 
-let default_domains = () => {
+let default_domains_app = () => {
   let list = "";
-  for (let i in default_redirect_domains) {
-    console.log(i, default_redirect_domains[i]);
-    list += `<li data-id="${default_redirect_domains[i].id}" data-domain="${default_redirect_domains[i].domain}">${i}</li>`;
+  for (let i in default_domains) {
+    console.log(i, default_domains[i]);
+    list += `<li data-id="${default_domains[i].id}" data-domain="${default_domains[i].domain}">${i}</li>`;
   }
-  let default_domains = document.querySelector(".default-redirect-domains");
-  default_domains.innerHTML = list;
+  let default_domains_list = document.querySelector(".default-redirect-domains");
+  default_domains_list.innerHTML = list;
 
   let default_domains_option = document.querySelector(
     ".default-redirect-domians-options"
   );
 
-  default_domains.addEventListener("click", (event) => {
+  default_domains_list.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
     if (event.target.nodeName === "LI") {
@@ -82,7 +82,7 @@ let default_domains = () => {
       return;
     }
 
-    console.log(event.target.options[event.target.selectedIndex]);
+    //console.log(event.target.options[event.target.selectedIndex]);
 
     let rule_info =
       event.target.options[event.target.selectedIndex].getAttribute(
@@ -107,4 +107,4 @@ let default_domains = () => {
   });
 };
 
-export { default_domains };
+export { default_domains_app };
