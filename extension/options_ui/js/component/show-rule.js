@@ -33,7 +33,9 @@ let showRuleList = () => {
       //console.log(value.id, value);
       list += `<li data-rule-id="${value.id}" data-origin="${encodeURIComponent(
         JSON.stringify(value)
-      )}">${value.id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
+      )}">${
+        value.id
+      }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
       }" >&nbsp;&nbsp;&nbsp;&nbsp;✖︎</span></li>`;
     });
