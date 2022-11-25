@@ -3,6 +3,11 @@
     "/third_party/jingjingxyk/frontend-utils/utils.js"
   );
 
+  let { default_domains } = await import(
+    "/options_ui/js/component/default-domain-redirect.js"
+  );
+  default_domains();
+
   let { main } = await import("/options_ui/js/component/main.js");
   let { sync_remote_conf } = await import(
     "/options_ui/js/component/sync-remote-conf-rule.js"
