@@ -36,7 +36,27 @@ let default_domains = {
      */
 };
 
+let reset_default_domain_app = () => {
+  document
+    .querySelector(".reset_default_domain")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      chrome.declarativeNetRequest.updateDynamicRules(
+        {
+          addRules: [],
+          removeRuleIds: [1, 2, 3, 4, 5, 6, 7, 8],
+        },
+        (parameter) => {
+          console.log(parameter);
+          location.reload();
+        }
+      );
+    });
+};
 let default_domains_app = () => {
+  reset_default_domain_app();
+
   let list = "";
   for (let i in default_domains) {
     console.log(i, default_domains[i]);
