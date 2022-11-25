@@ -27,4 +27,5 @@ extension/third_party/
 dist
 extension/manifest-backup.json
 extension/web-backup/
-extension/rules/mirrors/backup/
+extension/rules/example-no-use/backup/
+

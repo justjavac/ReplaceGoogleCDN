@@ -5,13 +5,15 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://images.weserv.nl/?url=\\1"
+        "transform": {
+          "scheme": "https",
+          "host": "ajax.loli.net"
+        }
       }
     },
     "condition": {
-      "regexFilter": "(.*?)",
-      "requestDomains": ["imgur.com"],
-      "initiatorDomains": ["stackoverflow.com"],
+      "urlFilter": "ajax.googleapis.com",
+      "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -31,20 +33,21 @@
       ]
     }
   },
-
   {
     "id": 2,
     "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://img.noobzone.ru/getimg.php?url=\\2"
+        "transform": {
+          "scheme": "https",
+          "host": "cdnjs.loli.net"
+        }
       }
     },
     "condition": {
-      "regexFilter": "(http[s]{0,1}://)(.*?)",
-      "requestDomains": ["imgur.com"],
-      "initiatorDomains": ["stackoverflow.com"],
+      "urlFilter": "cdnjs.cloudflare.com/ajax/libs",
+      "requestDomains": ["cdnjs.cloudflare.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -68,17 +71,17 @@
     "id": 3,
     "priority": 100,
     "action": {
-      "type": "modifyHeaders",
-      "requestHeaders": [
-        {
-          "header": "referer",
-          "operation": "remove"
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "fonts.loli.net"
         }
-      ]
+      }
     },
     "condition": {
-      "urlFilter": "img.noobzone.ru/getimg.php",
-      "requestDomains": ["img.noobzone.ru"],
+      "urlFilter": "fonts.googleapis.com",
+      "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -98,20 +101,21 @@
       ]
     }
   },
-
   {
     "id": 4,
     "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://pic1.xuehuaimg.com/proxy/\\2"
+        "transform": {
+          "scheme": "https",
+          "host": "gstatic.loli.net"
+        }
       }
     },
     "condition": {
-      "regexFilter": "(http[s]{0,1}://)(.*?)",
-      "requestDomains": ["imgur.com"],
-      "initiatorDomains": ["stackoverflow.com"],
+      "urlFilter": "fonts.gstatic.com",
+      "requestDomains": ["fonts.gstatic.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -131,20 +135,60 @@
       ]
     }
   },
-
   {
     "id": 5,
     "priority": 100,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://search.pstatic.net/common?src=\\1"
+        "transform": {
+          "scheme": "https",
+          "host": "gravatar.loli.net"
+        }
       }
     },
     "condition": {
-      "regexFilter": "(.*?)",
-      "requestDomains": ["imgur.com"],
-      "initiatorDomains": ["stackoverflow.com"],
+      "urlFilter": "gravatar.com",
+      "requestDomains": [
+        "secure.gravatar.com",
+        "www.gravatar.com",
+        "cn.gravatar.com",
+        "en.gravatar.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "themes.loli.net"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "themes.googleusercontent.com",
+      "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
