@@ -22,7 +22,7 @@ rsync -avr --delete-before --stats --progress extension/ dist/build/ReplaceGoogl
   --exclude _metadata \
   --exclude 'test' \
   --exclude rules/advance-no-use \
-  --exclude rules/example-no-use \
+  --exclude rules/example-no-use/backup \
   --exclude rules/README.md \
   --exclude screenshot \
   --exclude web \

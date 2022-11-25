@@ -3,6 +3,10 @@
     "/third_party/jingjingxyk/frontend-utils/utils.js"
   );
 
+  let { default_domains_app } = await import(
+    "/options_ui/js/component/default-domains.js"
+  );
+
   let { main } = await import("/options_ui/js/component/main.js");
   let { sync_remote_conf } = await import(
     "/options_ui/js/component/sync-remote-conf-rule.js"
@@ -11,6 +15,7 @@
     "/options_ui/js/component/self-define-conf-rule.js"
   );
   let { showRuleList } = await import("/options_ui/js/component/show-rule.js");
+  default_domains_app();
   main();
   sync_remote_conf();
   self_define_conf();
