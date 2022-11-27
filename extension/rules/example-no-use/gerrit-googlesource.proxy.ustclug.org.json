@@ -13,9 +13,7 @@
     },
     "condition": {
       "urlFilter": "gerrit.googlesource.com",
-      "requestDomains": [
-        "gerrit.googlesource.com"
-      ],
+      "requestDomains": ["gerrit.googlesource.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
