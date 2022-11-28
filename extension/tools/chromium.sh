@@ -108,7 +108,7 @@ $chromium \
 --enable-logging=stderr --v=1 \
 --remote-debugging-port=9222 \
 --disable-encryption --disable-machine-id \
-chrome://version
+about:blank
 
 # 全屏
 # --start-fullscreen
