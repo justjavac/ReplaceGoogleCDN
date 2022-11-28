@@ -5,7 +5,7 @@ __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-
+cd ${__DIR__}
 python3 -m venv venv
 
 . venv/bin/activate
