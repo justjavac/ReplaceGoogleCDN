@@ -110,3 +110,7 @@ $chromium \
 --disable-encryption --disable-machine-id \
 about:blank
 
+# 全屏
+# --start-fullscreen
+# 空白页
+# about:blank

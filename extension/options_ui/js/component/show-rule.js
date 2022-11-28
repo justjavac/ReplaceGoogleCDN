@@ -37,7 +37,7 @@ let showRuleList = () => {
         value.id
       }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
-      }" >&nbsp;&nbsp;&nbsp;&nbsp;✖︎</span></li>`;
+      }" >&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
     });
     list_box.innerHTML = list;
   });
