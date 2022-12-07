@@ -377,6 +377,23 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     //console.log(details)
     let urlObj = new URL(details.url);
     //console.log(urlObj)
+
+    let ua_index = 0;
+    let referer_index = 0;
+    let cookie_index = 0;
+
+    for (const [index, header] of details.requestHeaders.entries()) {
+      if (header.name.toLowerCase() === "user-agent") {
+        ua_index = index;
+      }
+      if (header.name.toLowerCase() === "referer") {
+        referer_index = index;
+      }
+      if (header.name.toLowerCase() === "cookie") {
+        cookie_index = index;
+      }
+    }
+
     if (urlObj.host.indexOf("baidu.com") !== -1) {
       //请求头修改User Agent
       for (const header of details.requestHeaders) {
