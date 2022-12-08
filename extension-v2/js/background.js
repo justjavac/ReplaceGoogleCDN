@@ -280,10 +280,16 @@ let use_nginx_proxy = (details, proxy_provider) => {
 
 // 被阻止请求的域名列表
 let block_domains = [
-  "google-analytics.com",
   "example-example.com",
-  "googletagmanager.com",
+  "test1-example.com",
+  "test2-example.com",
+  "test3-example.com",
 ];
+let block_domain_urls = [];
+block_domains.forEach((value, index, array) => {
+  block_domain_urls.push("*://" + value + "/*");
+  block_domain_urls.push("*://*." + value + "/*");
+});
 
 /*
   请求地址重定向
@@ -307,19 +313,11 @@ chrome.webRequest.onBeforeRequest.addListener(
     */
 
     /*
-          //拦截请求域名(也就是广告拦截器原理) 写法一：
+          //拦截请求域名(也就是广告拦截器原理)：
           let prevent_domins = block_domains.filter(
             (domain) => details.url.indexOf(domain) !== -1
           );
           if (prevent_domins.length > 0) {
-            return { cancel: true };
-          }
-
-          //拦截请求域名(也就是广告拦截器原理) 写法二：
-          if (
-            details.url.indexOf("example.com") !== -1 ||
-            details.url.indexOf("google-analytics.com") !== -1
-          ) {
             return { cancel: true };
           }
 
@@ -383,10 +381,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://developers.google.com/*",
       "*://code.jquery.com/jquery-*",
       "*://code.jquery.com/ui/*",
-      //"*://*.googletagmanager.com/*",
-      //"*://*.example.com/*",
-      //"*://*.google-analytics.com/*",
       //...test_urls, // 高级玩法的测试用例
+      ...block_domain_urls, //阻止域名请求
     ],
   },
   ["blocking"]
