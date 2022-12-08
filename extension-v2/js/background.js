@@ -492,7 +492,8 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
       "*://example-example.com/*",
     ],
   },
-  ["blocking", "requestHeaders", "extraHeaders"]
+  ["blocking", "requestHeaders"]
+  //["blocking", "requestHeaders", "extraHeaders"]
 );
 
 chrome.tabs.onRemoved.addListener(function (tabId) {
