@@ -131,7 +131,7 @@ chrome.webRequest.onHeadersReceived.addListener(
   (details) => {
     tabinfo.set(details.tabId, hasCSP(details.responseHeaders)); //暂时不知道什么地方用到
 
-    //删除移除 Content-Security-Policy
+    //移除响应头 Content-Security-Policy
     details.responseHeaders = details.responseHeaders.filter(
       (response_header) =>
         !remove_csp_item.includes(response_header.name.toLowerCase())
