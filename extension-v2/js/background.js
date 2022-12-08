@@ -130,10 +130,47 @@ if (chrome_ersion < 58) {
 chrome.webRequest.onHeadersReceived.addListener(
   (details) => {
     tabinfo.set(details.tabId, hasCSP(details.responseHeaders)); //暂时不知道什么地方用到
+
+    //删除移除 Content-Security-Policy
+    details.responseHeaders = details.responseHeaders.filter(
+      (response_header) =>
+        !remove_csp_item.includes(response_header.name.toLowerCase())
+    );
+
+    /*
+    for (let [index, header] of details.responseHeaders.entries()) {
+      console.log(index, header);
+    }
+    */
+
+    //解决跨域例子
+    /*
+    details.responseHeaders.push({
+      name: "Access-Control-Allow-Methods",
+      value: "GET,HEAD,POST,PUT,DELETE,CONNECT,OPTIONS,TRACE,PATCH",
+    });
+    details.responseHeaders.push({
+      name: "Access-Control-Allow-Headers",
+      value: "Authorization,X-CustomHeader",
+    });
+
+    details.responseHeaders.push({
+      name: "Access-Control-Expose-Headers",
+      value: "Authorization,X-CustomHeader",
+    });
+
+    details.responseHeaders.push({
+      name: "Access-Control-Allow-Credentials",
+      value: "true",
+    });
+    details.responseHeaders.push({
+      name: "Access-Control-Allow-Origin",
+      value: "*",
+      //value: details.initiator,
+    });
+    */
     return {
-      responseHeaders: details.responseHeaders.filter(
-        (header) => !remove_csp_item.includes(header.name.toLowerCase())
-      ),
+      responseHeaders: details.responseHeaders,
     };
   },
   {
@@ -378,9 +415,9 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     let urlObj = new URL(details.url);
     //console.log(urlObj)
 
-    let ua_index = 0;
-    let referer_index = 0;
-    let cookie_index = 0;
+    let ua_index = -1;
+    let referer_index = -1;
+    let cookie_index = -1;
 
     for (const [index, header] of details.requestHeaders.entries()) {
       if (header.name.toLowerCase() === "user-agent") {
@@ -405,10 +442,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
         }
       }
        */
-      details.requestHeaders[ua_index]["value"] = custom_user_agent;
+      if (ua_index !== -1) {
+        details.requestHeaders[ua_index]["value"] = custom_user_agent;
+      }
 
       //请求头移除参数（例子: 删除携带的 cookie)
       /*
+      //删除携带的cookie 方式一
       details.requestHeaders = details.requestHeaders.filter((header) => {
         if (header.name.toLowerCase() === "cookie") {
           return false;
@@ -417,13 +457,17 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
         }
       });
        */
-      //（例子: 删除携带的 cookie)
+      //删除携带的cookie 方式二
       //参考文档： https://www.runoob.com/jsref/jsref-splice.html
-      details.requestHeaders.splice(cookie_index, 1);
+      if (cookie_index !== -1) {
+        details.requestHeaders.splice(cookie_index, 1);
+      }
+      //查看删除后结果
+      //console.log(cookie_index, details.requestHeaders);
     }
-    console.log(cookie_index, details.requestHeaders);
 
-    //请求头添加参数(例子：请求添加额外参数)
+    //请求头添加参数
+    //(例子：请求添加额外参数)
     if (urlObj.host.indexOf("proxy.xiaoshuogeng.com") !== -1) {
       details.requestHeaders.push({
         name: "x-user-id",
