@@ -156,7 +156,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 // 高级玩法使用的泛解析的域名
 let suffix_domain = ".proxy.domain.com"; //请把这个换成你自己的域名
-//let suffix_domain = ".proxy.xiaoshuogeng.com";
+suffix_domain = ".proxy.xiaoshuogeng.com";
 
 /**
  *  高级玩法一：
@@ -396,14 +396,19 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 
     if (urlObj.host.indexOf("baidu.com") !== -1) {
       //请求头修改User Agent
+      let custom_user_agent =
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1";
+      /*
       for (const header of details.requestHeaders) {
         if (header.name.toLowerCase() === "user-agent") {
-          header.value =
-            "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1";
+          header.value =custom_user_agent
         }
       }
+       */
+      details.requestHeaders[ua_index]["value"] = custom_user_agent;
 
-      //请求头移除参数（例子删除携带的cookie
+      //请求头移除参数（例子: 删除携带的 cookie)
+      /*
       details.requestHeaders = details.requestHeaders.filter((header) => {
         if (header.name.toLowerCase() === "cookie") {
           return false;
@@ -411,7 +416,12 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
           return header;
         }
       });
+       */
+      //（例子: 删除携带的 cookie)
+      //参考文档： https://www.runoob.com/jsref/jsref-splice.html
+      details.requestHeaders.splice(cookie_index, 1);
     }
+    console.log(cookie_index, details.requestHeaders);
 
     //请求头添加参数(例子：请求添加额外参数)
     if (urlObj.host.indexOf("proxy.xiaoshuogeng.com") !== -1) {
@@ -433,9 +443,9 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
   },
   {
     urls: [
-      // "*://*.baidu.com/*", //例子 移除请求头携带的cookie
+      //"*://*.baidu.com/*", //例子 移除请求头携带的cookie和修改User-Agent
       //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
-      "*://example.com/*",
+      "*://example-example.com/*",
     ],
   },
   ["blocking", "requestHeaders", "extraHeaders"]
