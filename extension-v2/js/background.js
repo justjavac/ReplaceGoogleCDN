@@ -143,32 +143,6 @@ chrome.webRequest.onHeadersReceived.addListener(
     }
     */
 
-    //解决跨域例子
-    /*
-    details.responseHeaders.push({
-      name: "Access-Control-Allow-Methods",
-      value: "GET,HEAD,POST,PUT,DELETE,CONNECT,OPTIONS,TRACE,PATCH",
-    });
-    details.responseHeaders.push({
-      name: "Access-Control-Allow-Headers",
-      value: "Authorization,X-CustomHeader",
-    });
-
-    details.responseHeaders.push({
-      name: "Access-Control-Expose-Headers",
-      value: "Authorization,X-CustomHeader",
-    });
-
-    details.responseHeaders.push({
-      name: "Access-Control-Allow-Credentials",
-      value: "true",
-    });
-    details.responseHeaders.push({
-      name: "Access-Control-Allow-Origin",
-      value: "*",
-      //value: details.initiator,
-    });
-    */
     return {
       responseHeaders: details.responseHeaders,
     };
