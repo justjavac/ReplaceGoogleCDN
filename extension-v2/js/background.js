@@ -156,7 +156,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 // 高级玩法使用的泛解析的域名
 let suffix_domain = ".proxy.domain.com"; //请把这个换成你自己的域名
-suffix_domain = ".proxy.xiaoshuogeng.com";
+// suffix_domain = ".proxy.xiaoshuogeng.com";
 
 /**
  *  高级玩法一：
@@ -244,7 +244,7 @@ let use_nginx_proxy = (details, proxy_provider) => {
 // 被阻止请求的域名列表
 let block_domains = [
   "google-analytics.com",
-  "example.com",
+  "example-example.com",
   "googletagmanager.com",
 ];
 
