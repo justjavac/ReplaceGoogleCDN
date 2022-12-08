@@ -280,10 +280,16 @@ let use_nginx_proxy = (details, proxy_provider) => {
 
 // 被阻止请求的域名列表
 let block_domains = [
-  "google-analytics.com",
   "example-example.com",
-  "googletagmanager.com",
+  "test1-example.com",
+  "test2-example.com",
+  "test3-example.com",
 ];
+let block_domain_urls = [];
+block_domains.forEach((value, index, array) => {
+  block_domain_urls.push("*://" + value + "/*");
+  block_domain_urls.push("*://*." + value + "/*");
+});
 
 /*
   请求地址重定向
@@ -387,6 +393,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       //"*://*.example.com/*",
       //"*://*.google-analytics.com/*",
       //...test_urls, // 高级玩法的测试用例
+      ...block_domain_urls, //阻止域名请求
     ],
   },
   ["blocking"]
