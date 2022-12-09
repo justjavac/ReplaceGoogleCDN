@@ -78,8 +78,15 @@ let showRuleList = () => {
       //console.log(event.target.nodeType);
       //console.log(event.target.nodeName);
       if (event.target.nodeName === "LI") {
-        document.querySelector("#rule-content-container").value =
-          decodeURIComponent(event.target.getAttribute("data-origin"));
+        let content_box = document.querySelector("#rule-content-container");
+        content_box.value = decodeURIComponent(
+          event.target.getAttribute("data-origin")
+        );
+        content_box.setAttribute("rule-type", "dynamic");
+        content_box.setAttribute(
+          "rule-id",
+          event.target.getAttribute("data-rule-id")
+        );
       }
       if (event.target.nodeName === "SPAN") {
         deleteDynamicRules(
@@ -110,6 +117,38 @@ let showRuleList = () => {
         }
       }
     });
+  document.querySelector(".update-rule").addEventListener("click", (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    let content_box = document.querySelector("#rule-content-container");
+    let rule_str = content_box.value;
+    let rule_type = content_box.getAttribute("rule-type");
+
+    document.querySelector(".notice").innerText = "";
+    if (rule_type === "dynamic") {
+      let rule_id = content_box.getAttribute("rule-id");
+      rule_str = rule_str.trim();
+      if (rule_str.length) {
+        let rule = JSON.parse(rule_str);
+        /*
+        let time = new Date().toISOString();
+        console.log(time);
+        time=parseInt(new Date().getTime() / 1000).toString()
+         */
+        if (rule) {
+          rule_id = parseInt(rule_id);
+          rule.id = rule_id;
+          console.log(rule);
+          chrome.declarativeNetRequest.updateDynamicRules({
+            addRules: [rule],
+            removeRuleIds: [rule_id],
+          });
+        }
+      }
+    } else {
+      document.querySelector(".notice").innerText = "静态规则不允许修改";
+    }
+  });
 };
 
 export { showRuleList };

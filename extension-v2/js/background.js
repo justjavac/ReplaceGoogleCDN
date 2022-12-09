@@ -130,10 +130,21 @@ if (chrome_ersion < 58) {
 chrome.webRequest.onHeadersReceived.addListener(
   (details) => {
     tabinfo.set(details.tabId, hasCSP(details.responseHeaders)); //暂时不知道什么地方用到
+
+    //移除响应头 Content-Security-Policy
+    details.responseHeaders = details.responseHeaders.filter(
+      (response_header) =>
+        !remove_csp_item.includes(response_header.name.toLowerCase())
+    );
+
+    /*
+    for (let [index, header] of details.responseHeaders.entries()) {
+      console.log(index, header);
+    }
+    */
+
     return {
-      responseHeaders: details.responseHeaders.filter(
-        (header) => !remove_csp_item.includes(header.name.toLowerCase())
-      ),
+      responseHeaders: details.responseHeaders,
     };
   },
   {
@@ -156,7 +167,7 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 // 高级玩法使用的泛解析的域名
 let suffix_domain = ".proxy.domain.com"; //请把这个换成你自己的域名
-//let suffix_domain = ".proxy.xiaoshuogeng.com";
+// suffix_domain = ".proxy.xiaoshuogeng.com";
 
 /**
  *  高级玩法一：
@@ -243,10 +254,16 @@ let use_nginx_proxy = (details, proxy_provider) => {
 
 // 被阻止请求的域名列表
 let block_domains = [
-  "google-analytics.com",
-  "example.com",
-  "googletagmanager.com",
+  "example-example.com",
+  "test1-example.com",
+  "test2-example.com",
+  "test3-example.com",
 ];
+let block_domain_urls = [];
+block_domains.forEach((value, index, array) => {
+  block_domain_urls.push("*://" + value + "/*");
+  block_domain_urls.push("*://*." + value + "/*");
+});
 
 /*
   请求地址重定向
@@ -270,19 +287,11 @@ chrome.webRequest.onBeforeRequest.addListener(
     */
 
     /*
-          //拦截请求域名(也就是广告拦截器原理) 写法一：
+          //拦截请求域名(也就是广告拦截器原理)：
           let prevent_domins = block_domains.filter(
             (domain) => details.url.indexOf(domain) !== -1
           );
           if (prevent_domins.length > 0) {
-            return { cancel: true };
-          }
-
-          //拦截请求域名(也就是广告拦截器原理) 写法二：
-          if (
-            details.url.indexOf("example.com") !== -1 ||
-            details.url.indexOf("google-analytics.com") !== -1
-          ) {
             return { cancel: true };
           }
 
@@ -346,10 +355,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://developers.google.com/*",
       "*://code.jquery.com/jquery-*",
       "*://code.jquery.com/ui/*",
-      //"*://*.googletagmanager.com/*",
-      //"*://*.example.com/*",
-      //"*://*.google-analytics.com/*",
       //...test_urls, // 高级玩法的测试用例
+      ...block_domain_urls, //阻止域名请求
     ],
   },
   ["blocking"]
@@ -377,16 +384,41 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     //console.log(details)
     let urlObj = new URL(details.url);
     //console.log(urlObj)
+
+    let ua_index = -1;
+    let referer_index = -1;
+    let cookie_index = -1;
+
+    for (const [index, header] of details.requestHeaders.entries()) {
+      if (header.name.toLowerCase() === "user-agent") {
+        ua_index = index;
+      }
+      if (header.name.toLowerCase() === "referer") {
+        referer_index = index;
+      }
+      if (header.name.toLowerCase() === "cookie") {
+        cookie_index = index;
+      }
+    }
+
     if (urlObj.host.indexOf("baidu.com") !== -1) {
       //请求头修改User Agent
+      let custom_user_agent =
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1";
+      /*
       for (const header of details.requestHeaders) {
         if (header.name.toLowerCase() === "user-agent") {
-          header.value =
-            "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1";
+          header.value =custom_user_agent
         }
       }
+       */
+      if (ua_index !== -1) {
+        details.requestHeaders[ua_index]["value"] = custom_user_agent;
+      }
 
-      //请求头移除参数（例子删除携带的cookie
+      //请求头移除参数（例子: 删除携带的 cookie)
+      /*
+      //删除携带的cookie 方式一
       details.requestHeaders = details.requestHeaders.filter((header) => {
         if (header.name.toLowerCase() === "cookie") {
           return false;
@@ -394,9 +426,18 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
           return header;
         }
       });
+       */
+      //删除携带的cookie 方式二
+      //参考文档： https://www.runoob.com/jsref/jsref-splice.html
+      if (cookie_index !== -1) {
+        details.requestHeaders.splice(cookie_index, 1);
+      }
+      //查看删除后结果
+      //console.log(cookie_index, details.requestHeaders);
     }
 
-    //请求头添加参数(例子：请求添加额外参数)
+    //请求头添加参数
+    //(例子：请求添加额外参数)
     if (urlObj.host.indexOf("proxy.xiaoshuogeng.com") !== -1) {
       details.requestHeaders.push({
         name: "x-user-id",
@@ -416,12 +457,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
   },
   {
     urls: [
-      // "*://*.baidu.com/*", //例子 移除请求头携带的cookie
+      //"*://*.baidu.com/*", //例子 移除请求头携带的cookie和修改User-Agent
       //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
-      "*://example.com/*",
+      "*://example-example.com/*",
     ],
   },
   ["blocking", "requestHeaders"]
+  //["blocking", "requestHeaders", "extraHeaders"]
 );
 
 chrome.tabs.onRemoved.addListener(function (tabId) {
