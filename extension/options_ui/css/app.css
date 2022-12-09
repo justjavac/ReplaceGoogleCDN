@@ -160,3 +160,10 @@ font-size: 1.3rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   appearance: none;
 }
+
+.notice {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: red;
+}

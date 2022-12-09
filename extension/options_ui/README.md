@@ -12,21 +12,13 @@
 
 // chromium 内核版本87以上开始支持
 
-//添加的规则
-addRules=[{规则1},{规则2},{规则3},{规则4}]
-
-//要删除的规则ID
-removeRuleIds=[规则1的id,规则2的id,规则3的id]
-
-UpdateRuleOptions={
-    addRules,
-    removeRuleIds
-}
 
 chrome.declarativeNetRequest.updateDynamicRules(
-    options: UpdateRuleOptions,
-    callback?: function,
-)
+    {
+        addRules: [ {新增规则1},{新增规则2},{新增规则3},{新增规则4} ],
+        removeRuleIds: [待删除规则的id1,待删除规则的id2,待删除规则的id3]
+    }
+);
 
 ```
 
