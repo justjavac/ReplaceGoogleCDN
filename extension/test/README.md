@@ -61,7 +61,7 @@ https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirror
 
 ```text
 
-https://fonts.googleapis.com/css?family=Google+Sans:300,400,500
+https://fonts.googleapis.com/css?family=Google+Sans
 
 https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
 

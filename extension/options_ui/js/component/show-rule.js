@@ -16,8 +16,9 @@ let showRuleJSON = (rule) => {
       .then((x) => x.json())
       .then((x) => {
         //console.log(JSON.stringify(x));
-        document.querySelector("#rule-content-container").value =
-          JSON.stringify(x);
+        let content_box = document.querySelector("#rule-content-container");
+        content_box.value = JSON.stringify(x);
+        content_box.setAttribute("rule-type", "static");
       });
   } else {
     console.log("rule:" + rule + "no found!");
