@@ -55,6 +55,21 @@ https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirror
 https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/gravatar.com.json?raw=true
 https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/www.gstatic.com.json?raw=true
 
+
+# 镜像地址
+
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/ajax.googleapis.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/cdn.jsdelivr.net.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/fonts.googleapis.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/themes.googleusercontent.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/code.jquery.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/fonts.gstatic.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/translate.googleapis.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/cdnjs.cloudflare.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/code.jquery.com-ui.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/gravatar.com.json?raw=true
+https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/www.gstatic.com.json?raw=true
+
 ```
 
 ## 拨测工具测试地址
