@@ -80,7 +80,7 @@ chrome.declarativeNetRequest.updateDynamicRules(
 
 > 然后调用函数，执行规则插入、删除 、备份操作
 
-> 更新操作： 其实是删除，然后插入 
+> 更新操作： 其实是删除，然后插入
 
 > 规则 ID 是自定义的
 
