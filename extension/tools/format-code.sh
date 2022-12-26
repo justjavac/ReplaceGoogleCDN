@@ -6,9 +6,9 @@ __DIR__=$(cd "$(dirname "$0")";pwd)
 cd ${__DIR__}
 
 
-__ROOT__=$(readlink -f ${__DIR__}/../../)
+__PROJECT__=$(readlink -f ${__DIR__}/../../)
 
-cd ${__ROOT__}
+cd ${__PROJECT__}
 
 npx prettier --write .
 

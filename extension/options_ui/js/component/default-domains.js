@@ -1,5 +1,6 @@
 import { showRuleList } from "./show-rule.js";
 
+//domain 与 rules/mirrors 目录下文件名称一一对应
 let default_domains = {
   "ajax.googleapis.com": {
     id: 1,
@@ -29,13 +30,26 @@ let default_domains = {
     id: 7,
     domain: "code.jquery.com",
   },
-  /*
-    "code.jquery.com/ui/(prefix)(version)(suffix)": {
-        "id": 8,
-        "domain": "code.jquery.com-ui"
-    }
-
-     */
+  "code.jquery.com/ui/(prefix)(version)(suffix)": {
+    id: 8,
+    domain: "code.jquery.com-ui",
+  },
+  "cdnjs.cloudflare.com": {
+    id: 9,
+    domain: "cdnjs.cloudflare.com",
+  },
+  "cdn.jsdelivr.net": {
+    id: 10,
+    domain: "cdn.jsdelivr.net",
+  },
+  "translate.googleapis.com": {
+    id: 11,
+    domain: "translate.googleapis.com",
+  },
+  "www.gstatic.com": {
+    id: 12,
+    domain: "www.gstatic.com",
+  },
 };
 
 let reset_default_domain_app = () => {
@@ -47,7 +61,7 @@ let reset_default_domain_app = () => {
       chrome.declarativeNetRequest.updateDynamicRules(
         {
           addRules: [],
-          removeRuleIds: [1, 2, 3, 4, 5, 6, 7, 8],
+          removeRuleIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         },
         (parameter) => {
           console.log(parameter);

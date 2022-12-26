@@ -96,7 +96,7 @@ chrome.declarativeNetRequest.updateDynamicRules(
 | 未定义                 | 无                                                                                 |             无              | 无                   | 无                                                       | 无                           |
 
 ```text
-默认侯选项切换规则编号： 编号<=10000
+默认侯选项切换规则编号（固定编号）： 编号<=10000
 
 自定义特制规则编号： 10000>=编号<=19999
 
@@ -112,17 +112,20 @@ chrome.declarativeNetRequest.updateDynamicRules(
 
 ## 固定规则编号
 
-| 规则 ID |                     URI                      |  备注  |
-| :-----: | :------------------------------------------: | :----: |
-|    1    |             ajax.googleapis.com              |  启用  |
-|    2    |             fonts.googleapis.com             |  启用  |
-|    3    |         themes.googleusercontent.com         |  启用  |
-|    4    |              fonts.gstatic.com               |  启用  |
-|    5    |             secure.gravatar.com              |  启用  |
-|    6    |      maxcdn.bootstrapcdn.com/bootstrap       |  启用  |
-|    7    |   code.jquery.com/jquery-(version)(suffix)   |  启用  |
-|    8    | code.jquery.com/ui/(prefix)(version)(suffix) |  启用  |
-|    9    |             cdnjs.cloudflare.com             | 未启用 |
+| 规则 ID |                     URI                      |    备注    |
+| :-----: | :------------------------------------------: | :--------: |
+|    1    |             ajax.googleapis.com              |    启用    |
+|    2    |             fonts.googleapis.com             |    启用    |
+|    3    |         themes.googleusercontent.com         |    启用    |
+|    4    |              fonts.gstatic.com               |    启用    |
+|    5    |             secure.gravatar.com              |    启用    |
+|    6    |      maxcdn.bootstrapcdn.com/bootstrap       |    启用    |
+|    7    |   code.jquery.com/jquery-(version)(suffix)   |    启用    |
+|    8    | code.jquery.com/ui/(prefix)(version)(suffix) |    启用    |
+|    9    |             cdnjs.cloudflare.com             | 默认未启用 |
+|   10    |               cdn.jsdelivr.net               |    启用    |
+|   11    |           translate.googleapis.com           | 默认未启用 |
+|   12    |               www.gstatic.com                |    启用    |
 
 ## 演示地址的规则来源
 
