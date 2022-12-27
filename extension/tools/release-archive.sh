@@ -18,6 +18,9 @@ mkdir -p dist/build
 
 # 复制目录中的所有文件，但特定子目录中的某些文件除外
 rsync -avr --delete-before --stats --progress extension/ dist/build/ReplaceGoogleCDN-v3-$time/ \
+  --exclude .git/ \
+  --exclude .idea/ \
+  --exclude node_modules/ \
   --exclude tools/ \
   --exclude _metadata \
   --exclude 'test' \

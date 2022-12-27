@@ -9,6 +9,10 @@ input {
   min-width: 400px;
 }
 
+.default-notice {
+  color: #30ba78;
+}
+
 .list-group {
   margin-left: 3rem;
   margin-right: 2rem;
