@@ -33,8 +33,8 @@
 
 ## 扩展选项页使用简述
 
-- 点击扩展图标-自动打开扩展选项页
-- [扩展选项配置原理](extension/options_ui/README.md)
+1. 点击扩展图标-自动打开扩展选项页
+1. [扩展选项配置原理](extension/options_ui/README.md)
 
 ## 功能变更记录[`CHANGELOG-0.10.x`](CHANGELOG-0.10.x.md)
 
