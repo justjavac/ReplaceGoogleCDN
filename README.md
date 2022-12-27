@@ -31,6 +31,11 @@
 1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
 1. `developers.google.com` - 替换为 `developers.google.cn`
 
+## 扩展选项页使用简述
+
+1. 点击扩展图标-自动打开扩展选项页
+1. [扩展选项配置原理](extension/options_ui/README.md)
+
 ## 功能变更记录[`CHANGELOG-0.10.x`](CHANGELOG-0.10.x.md)
 
 ## [可用 公共 CDN 静态资源库 和 网络拨测工具](extension/rules/README.md)
