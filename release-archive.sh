@@ -18,6 +18,10 @@ cd ${__DIR__}/extension
 
 # 打包 manifest v3 支持chromium 内核系列
 zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
+  -x ".git/*" \
+  -x ".idea/*" \
+  -x "_metadata/*" \
+  -x "node_modules/*" \
   -x "tools/*" \
   -x "_metadata/*" \
   -x "rules/advance-no-use/*" \
@@ -42,6 +46,10 @@ zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-0.10.x.md
 cd ${__DIR__}/extension-v2/
 
 zip -r ../dist/ReplaceGoogleCDN-v2.zip . \
+  -x ".git/*" \
+  -x ".idea/*" \
+  -x "_metadata/*" \
+  -x "node_modules/*" \
   -x "./README.md" \
   -x "./test/*"
 

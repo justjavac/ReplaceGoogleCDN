@@ -1,6 +1,7 @@
 node_modules
 extension.zip
 .idea/
+.git/
 .DS_Store
 Thumbs.db
 server/
