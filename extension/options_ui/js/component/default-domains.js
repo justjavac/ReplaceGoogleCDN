@@ -75,7 +75,7 @@ let default_domains_app = () => {
 
   let list = "";
   for (let i in default_domains) {
-    console.log(i, default_domains[i]);
+    //console.log(i, default_domains[i]);
     list += `<li data-id="${default_domains[i].id}" data-domain="${default_domains[i].domain}">${i}</li>`;
   }
   let default_domains_list = document.querySelector(

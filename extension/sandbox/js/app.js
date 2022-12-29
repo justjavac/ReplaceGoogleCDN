@@ -4,6 +4,7 @@ let preview_url = [
   "https://www.chromium.org/chromium-projects/",
   "https://webrtc.org/",
   "https://chromium.googlesource.com/external/webrtc",
+  "https://android.googlesource.com/",
   "https://cs.opensource.google/",
 ];
 let list_box = document.querySelector(".box");
@@ -18,12 +19,18 @@ list_box.addEventListener("click", (event) => {
   //console.log(event.target.nodeName);
   if (event.target.nodeName === "PRE") {
     let url = event.target.innerText;
-    //top.open(url, "_blank");
-    window.parent.postMessage(
-      JSON.stringify({
-        url: url,
-      }),
-      location.origin + "/options_ui/index.html"
-    );
+    console.log(self, top);
+    if (self !== top) {
+      //'在iframe中'
+      console.log("在iframe中");
+      window.parent.postMessage(
+        JSON.stringify({
+          url: url,
+        }),
+        location.origin + "/options_ui/index.html"
+      );
+    } else {
+      top.open(url, "_blank");
+    }
   }
 });
