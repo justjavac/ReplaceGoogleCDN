@@ -26,7 +26,6 @@ zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
   -x "_metadata/*" \
   -x "rules/advance-no-use/*" \
   -x "rules/example-no-use/backup/*" \
-  -x "rules/README.md" \
   -x "screenshot/*" \
   -x "test/*" \
   -x "web/*" \
