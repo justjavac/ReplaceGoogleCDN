@@ -5,9 +5,11 @@ __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
-cd ${__DIR__}/../../
-__ROOT__=$(pwd)
+__PROJECT__=$(
+  cd ${__DIR__}/../../
+  pwd
+)
+cd ${__PROJECT__}
 
 #time=`date -u '+%Y-%m-%dT%H:%M:%SZ'`
 time=$(date -u '+%Y-%m-%dT%H-%M-%SZ')
@@ -26,7 +28,6 @@ rsync -avr --delete-before --stats --progress extension/ dist/build/ReplaceGoogl
   --exclude 'test' \
   --exclude rules/advance-no-use \
   --exclude rules/example-no-use/backup/ \
-  --exclude rules/README.md \
   --exclude screenshot \
   --exclude web \
   --exclude web-backup \
@@ -48,14 +49,14 @@ cp -f README.md dist/build/ReplaceGoogleCDN-v2-$time/
 cp -f Privacy.md dist/build/ReplaceGoogleCDN-v2-$time/
 cp -f LICENSE dist/build/ReplaceGoogleCDN-v2-$time/
 
-cd ${__ROOT__}/dist/build/
-zip -r ${__ROOT__}/dist/ReplaceGoogleCDN-v3-$time.zip ReplaceGoogleCDN-v3-$time/
-zip -r ${__ROOT__}/dist/ReplaceGoogleCDN-v2-$time.zip ReplaceGoogleCDN-v2-$time/
-test -d ${__ROOT__}/dist/build/ && rm -rf ${__ROOT__}/dist/build/
+cd ${__PROJECT__}/dist/build/
+zip -r ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-$time.zip ReplaceGoogleCDN-v3-$time/
+zip -r ${__PROJECT__}/dist/ReplaceGoogleCDN-v2-$time.zip ReplaceGoogleCDN-v2-$time/
+test -d ${__PROJECT__}/dist/build/ && rm -rf ${__PROJECT__}/dist/build/
 
 
-cd ${__ROOT__}/dist/
+cd ${__PROJECT__}/dist/
 # 查看打包结果
 unzip ReplaceGoogleCDN-v3-$time.zip
 unzip ReplaceGoogleCDN-v2-$time.zip
-cd ${__ROOT__}
+cd ${__PROJECT__}

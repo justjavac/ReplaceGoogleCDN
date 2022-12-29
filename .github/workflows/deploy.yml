@@ -10,8 +10,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Zip Extension
         run: npm run release
-      - name: Browser Plugin Publish
+      - name: Browser Plugin Publish v2
         uses: PlasmoHQ/bpp@v2
         with:
           artifact: "dist/ReplaceGoogleCDN-v2.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
+      - name: Browser Plugin Publish v3
+        uses: PlasmoHQ/bpp@v3
+        with:
+          artifact: "dist/ReplaceGoogleCDN-v3.zip"
+          keys: ${{ secrets.SUBMIT_KEYS }}
+        # 使用参考 https://github.com/PlasmoHQ/bpp.git
