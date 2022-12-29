@@ -6,7 +6,7 @@ let rule_example = {
   "modify-header-request-cookie": `rules_modify_request_header_cookie.json`,
   "modify-header-response-x": `rules_modify_response_header_x.json`,
   "modify-header-response-csp": `rules_modify_response_header_csp.json`,
-  "redirect-to-extension": `redirect-to-extension.json`,
+  "redirect-to-extension-path": `redirect-to-extension-path.json`,
 };
 
 /**
