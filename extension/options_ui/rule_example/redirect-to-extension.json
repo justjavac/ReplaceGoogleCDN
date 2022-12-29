@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "extensionPath": "/sandbox/index.html"
+      }
+    },
+    "condition": {
+      "urlFilter": "chromium-extensions.jingjingxyk.com",
+      "requestDomains": ["chromium-extensions.jingjingxyk.com"],
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
