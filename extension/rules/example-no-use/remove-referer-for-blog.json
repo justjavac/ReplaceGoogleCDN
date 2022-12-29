@@ -13,10 +13,7 @@
     },
     "condition": {
       "urlFilter": "*.sinaimg.cn",
-      "initiatorDomains": [
-        "blog.csdn.net",
-        "www.cnblogs.com"
-      ],
+      "initiatorDomains": ["blog.csdn.net", "www.cnblogs.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -50,13 +47,8 @@
     },
     "condition": {
       "urlFilter": "mmbiz.qpic.cn",
-      "requestDomains": [
-        "mmbiz.qpic.cn"
-      ],
-      "initiatorDomains": [
-        "blog.csdn.net",
-        "www.cnblogs.com"
-      ],
+      "requestDomains": ["mmbiz.qpic.cn"],
+      "initiatorDomains": ["blog.csdn.net", "www.cnblogs.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -91,9 +83,7 @@
     },
     "condition": {
       "urlFilter": "tva1.sinaimg.cn",
-      "requestDomains": [
-        "tva1.sinaimg.cn"
-      ],
+      "requestDomains": ["tva1.sinaimg.cn"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -127,9 +117,7 @@
     },
     "condition": {
       "urlFilter": "*",
-      "requestDomains": [
-        "tva1.sinaimg.cn"
-      ],
+      "requestDomains": ["tva1.sinaimg.cn"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
