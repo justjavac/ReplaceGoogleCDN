@@ -18,6 +18,8 @@ let preview_url = [
   "https://www.openharmony.cn/",
   "https://www.debian.org/",
   "https://home.uniontech.com/",
+  "http://www.wangma.net.cn/",
+  "https://www.cncf.io/",
 ];
 let list_box = document.querySelector(".box");
 let list = "";
