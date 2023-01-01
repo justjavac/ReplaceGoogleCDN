@@ -4,8 +4,20 @@ let preview_url = [
   "https://www.chromium.org/chromium-projects/",
   "https://webrtc.org/",
   "https://chromium.googlesource.com/external/webrtc",
-  "https://android.googlesource.com/",
   "https://cs.opensource.google/",
+  "https://www.kernel.org/",
+  "https://fuchsia.googlesource.com/",
+  "https://android.googlesource.com/",
+  "https://www.freertos.org/",
+  "https://ffmpeg.org/",
+  "https://www.blender.org/",
+  "https://opencv.org/",
+  "https://www.ovn.org",
+  "https://github.com/openvswitch/ovs.git",
+  "https://www.unrealengine.com/en-US/unreal-engine-5",
+  "https://www.openharmony.cn/",
+  "https://www.debian.org/",
+  "https://home.uniontech.com/",
 ];
 let list_box = document.querySelector(".box");
 let list = "";
