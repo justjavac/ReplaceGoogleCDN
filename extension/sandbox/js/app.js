@@ -1,3 +1,7 @@
+/**
+ * 完善本扩展的初衷，获取知识
+ * @type {string[]}
+ */
 let preview_url = [
   "https://source.chromium.org/",
   "https://summerofcode.withgoogle.com/programs/2022/organizations",
@@ -20,11 +24,23 @@ let preview_url = [
   "https://home.uniontech.com/",
   "http://www.wangma.net.cn/",
   "https://www.cncf.io/",
+  "https://github.com/riscv",
 ];
+
+let is_iframe = self !== top;
 let list_box = document.querySelector(".box");
 let list = "";
 preview_url.map((value, index) => {
-  list += `<li data-href="${value}" ><pre>${value}</pre></li>`;
+  if (is_iframe) {
+    list += `<li data-href="${value}" ><pre>${value}</pre></li>`;
+  } else {
+    list += `<li data-href="${value}" >
+            <a
+              target="_blank" 
+              rel="noopener noreferrer"
+              href="${value}"
+            >${value}</a></li>`;
+  }
 });
 list_box.innerHTML = list;
 
@@ -33,8 +49,8 @@ list_box.addEventListener("click", (event) => {
   //console.log(event.target.nodeName);
   if (event.target.nodeName === "PRE") {
     let url = event.target.innerText;
-    console.log(self, top);
-    if (self !== top) {
+    //console.log(self, top);
+    if (is_iframe) {
       //'在iframe中'
       console.log("在iframe中");
       window.parent.postMessage(
