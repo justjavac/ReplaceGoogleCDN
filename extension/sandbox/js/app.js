@@ -25,6 +25,7 @@ let preview_url = [
   "http://www.wangma.net.cn/",
   "https://www.cncf.io/",
   "https://github.com/riscv",
+  "https://docs.ros.org/",
 ];
 
 let is_iframe = self !== top;
