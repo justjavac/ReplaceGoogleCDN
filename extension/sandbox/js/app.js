@@ -10,7 +10,6 @@ let preview_url = [
   "https://chromium.googlesource.com/external/webrtc",
   "https://cs.opensource.google/",
   "https://www.kernel.org/",
-  "https://fuchsia.googlesource.com/",
   "https://android.googlesource.com/",
   "https://www.freertos.org/",
   "https://ffmpeg.org/",
