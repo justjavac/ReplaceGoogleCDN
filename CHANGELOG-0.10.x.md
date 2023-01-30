@@ -6,7 +6,7 @@
 
 ## CHANGELOG for 0.10.20 [2023-01-30 23:12:54 +0800]
 
-> 1. 移除无效的静态资源库【辉哥博客&蓝易云安全】
+> 1. 移除无效的静态资源库 [辉哥博客&蓝易云安全](https://www.haah.net/archives/7885.html)
 > 1. `fonts.googleapis.com` 重定向到 `fonts.googleapis.cn`
 > 1. `fonts.gstatic.com` 重定向到 `fonts.gstatic.cn`
 > 1. 新增使用扩展的修改相应头和请求头的功能解决跨域的例子 (CORS.json)
