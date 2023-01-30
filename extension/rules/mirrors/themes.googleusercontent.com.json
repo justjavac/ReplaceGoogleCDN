@@ -99,40 +99,5 @@
         "other"
       ]
     }
-  },
-
-  {
-    "id": 4,
-    "priority": 100,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "gtheme.cdn.haah.net"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "themes.googleusercontent.com",
-      "requestDomains": ["themes.googleusercontent.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
-      ]
-    }
   }
 ]

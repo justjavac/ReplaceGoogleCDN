@@ -1,0 +1,34 @@
+{
+  "action": {
+    "redirect": {
+      "transform": {
+        "host": "sstatic.net",
+        "scheme": "https"
+      }
+    },
+    "type": "redirect"
+  },
+  "condition": {
+    "requestDomains": ["cdn.sstatic.net"],
+    "resourceTypes": [
+      "main_frame",
+      "sub_frame",
+      "stylesheet",
+      "script",
+      "image",
+      "font",
+      "object",
+      "xmlhttprequest",
+      "ping",
+      "csp_report",
+      "media",
+      "websocket",
+      "webtransport",
+      "webbundle",
+      "other"
+    ],
+    "urlFilter": "cdn.sstatic.net"
+  },
+  "id": 20019,
+  "priority": 2
+}
