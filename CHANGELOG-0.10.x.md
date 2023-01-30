@@ -4,6 +4,14 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.20 [2023-01-30 23:12:54 +0800]
+
+> 1. 移除无效的静态资源库【辉哥博客&蓝易云安全】
+> 1. `fonts.googleapis.com` 重定向到 `fonts.googleapis.cn`
+> 1. `fonts.gstatic.com` 重定向到 `fonts.gstatic.cn`
+> 1. 新增使用扩展的修改相应头和请求头的功能解决跨域的例子 (CORS.json)
+> 1. 新增解决 stackoverflow.com 网站下 cdn.sstatic.net 域下静态资源加载慢的例子 (sstatic.net-stackoverflow.com.json)
+
 ## CHANGELOG for 0.10.19 [2022-12-29 12:41:02 +0800]
 
 > 1. 添加 域名重定向到扩展指定指定页面的例子
