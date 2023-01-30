@@ -1,5 +1,6 @@
 /**
  * 完善本扩展的初衷，获取知识
+ * 靡不有初，鲜克有终
  * @type {string[]}
  */
 let preview_url = [
@@ -9,22 +10,12 @@ let preview_url = [
   "https://webrtc.org/",
   "https://chromium.googlesource.com/external/webrtc",
   "https://cs.opensource.google/",
-  "https://www.kernel.org/",
-  "https://android.googlesource.com/",
-  "https://www.freertos.org/",
-  "https://ffmpeg.org/",
-  "https://www.blender.org/",
-  "https://opencv.org/",
-  "https://www.ovn.org",
-  "https://github.com/openvswitch/ovs.git",
-  "https://www.unrealengine.com/en-US/unreal-engine-5",
-  "https://www.openharmony.cn/",
-  "https://www.debian.org/",
-  "https://home.uniontech.com/",
-  "http://www.wangma.net.cn/",
-  "https://www.cncf.io/",
-  "https://github.com/riscv",
-  "https://docs.ros.org/",
+  "https://stackoverflow.com/tags/socat/hot?filter=all",
+  "https://patrickhlauke.github.io/recaptcha/",
+  "https://pub.dev/",
+  "https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js",
+  "https://developers.google.com/",
+  "https://releases.jquery.com/",
 ];
 
 let is_iframe = self !== top;
