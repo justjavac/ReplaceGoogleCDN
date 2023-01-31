@@ -4,18 +4,18 @@
  * @type {string[]}
  */
 let preview_url = [
-  "https://source.chromium.org/",
-  "https://summerofcode.withgoogle.com/programs/2022/organizations",
-  "https://www.chromium.org/chromium-projects/",
-  "https://webrtc.org/",
-  "https://chromium.googlesource.com/external/webrtc",
-  "https://cs.opensource.google/",
   "https://stackoverflow.com/tags/socat/hot?filter=all",
   "https://patrickhlauke.github.io/recaptcha/",
   "https://pub.dev/",
   "https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js",
   "https://developers.google.com/",
   "https://releases.jquery.com/",
+  "https://source.chromium.org/",
+  "https://cs.opensource.google/",
+  "https://www.chromium.org/chromium-projects/",
+  "https://summerofcode.withgoogle.com/programs/2022/organizations",
+  "https://webrtc.org/",
+  "https://chromium.googlesource.com/external/webrtc",
 ];
 
 let is_iframe = self !== top;
