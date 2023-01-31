@@ -11,6 +11,7 @@
 > 1. `fonts.gstatic.com` 重定向到 `fonts.gstatic.cn`
 > 1. 新增使用扩展的修改相应头和请求头的功能解决跨域的例子 (CORS.json)
 > 1. 新增解决 stackoverflow.com 网站下 cdn.sstatic.net 域下静态资源加载慢的例子 (sstatic.net-stackoverflow.com.json)
+> 1. 修改演示例子里地址链接
 
 ## CHANGELOG for 0.10.19 [2022-12-29 12:41:02 +0800]
 
