@@ -41,7 +41,7 @@
       "redirect": {
         "transform": {
           "scheme": "https",
-          "host": "fonts.loli.net"
+          "host": "fonts.googleapis.cn"
         }
       }
     },
@@ -110,7 +110,7 @@
       "redirect": {
         "transform": {
           "scheme": "https",
-          "host": "gstatic.loli.net"
+          "host": "fonts.gstatic.cn"
         }
       }
     },

@@ -1,0 +1,52 @@
+{
+  "action": {
+    "requestHeaders": [
+      {
+        "header": "referer",
+        "operation": "set",
+        "value": "https://www.jingjingxyk.com"
+      },
+      {
+        "header": "origin",
+        "operation": "set",
+        "value": "https://www.jingjingxyk.com"
+      }
+    ],
+    "responseHeaders": [
+      {
+        "header": "access-control-allow-origin",
+        "operation": "set",
+        "value": "*"
+      },
+      {
+        "header": "set-cookie",
+        "operation": "remove"
+      }
+    ],
+    "type": "modifyHeaders"
+  },
+  "condition": {
+    "initiatorDomains": ["justjavac.com", "jingjingxyk.com"],
+    "requestDomains": ["www.jingjingxyk.com"],
+    "resourceTypes": [
+      "main_frame",
+      "sub_frame",
+      "stylesheet",
+      "script",
+      "image",
+      "font",
+      "object",
+      "xmlhttprequest",
+      "ping",
+      "csp_report",
+      "media",
+      "websocket",
+      "webtransport",
+      "webbundle",
+      "other"
+    ],
+    "urlFilter": "https://www.jingjingxyk.com/s?ie=utf-8&wd=*"
+  },
+  "id": 20015,
+  "priority": 10
+}

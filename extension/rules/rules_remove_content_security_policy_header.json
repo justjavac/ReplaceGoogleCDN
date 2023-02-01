@@ -40,8 +40,10 @@
       "requestDomains": [
         "ajax.googleapis.com",
         "fonts.googleapis.com",
+        "fonts.googleapis.cn",
         "themes.googleusercontent.com",
         "fonts.gstatic.com",
+        "fonts.gstatic.cn",
         "ssl.gstatic.com",
         "www.gstatic.com",
         "secure.gravatar.com",
