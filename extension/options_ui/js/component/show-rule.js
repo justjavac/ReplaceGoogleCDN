@@ -69,7 +69,7 @@ let showRuleList = () => {
         JSON.stringify(value)
       )}" title="规则来源：${show_id_range_name}">规则来源：${show_id_range_name}；编号为:&nbsp;&nbsp;${
         value.id
-      }；&nbsp;&nbsp;规则作用：${rule_action_type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
+      }&nbsp;&nbsp;；规则作用：${rule_action_type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
       }" title="删除本条规则">&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
     });
