@@ -182,19 +182,23 @@ font-size: 1.3rem;
 
 /*
   配色参考： https://c.runoob.com/more/colorpad/tradcnc.html
-
+https://chromiumdash.appspot.com/schedule
  */
 
 .single_rule {
   background-color: #732e7e;
+  background-color: rgb(156, 39, 176);
 }
 
 .self_define_special_rule {
   background-color: #808883;
+  background-color: rgb(0, 150, 136);
 }
 
 .self_define_rule {
   background-color: #9db1a0;
+  background-color: #4c8bf5;
+  background-color: rgb(3, 169, 244);
 }
 
 .sync_remote_static_rule {
@@ -211,6 +215,8 @@ font-size: 1.3rem;
 
 .all_dynamic_rule_test {
   /*
+    background-color: #eee;
+
     background-color: #1a638a;
     background-color: #10da5a;
     background-color: #04a4ff;
