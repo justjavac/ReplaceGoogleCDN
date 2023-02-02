@@ -29,11 +29,12 @@ let getRuleClassName = (id) => {
   id = parseInt(id);
   let name = "";
   for (let i in id_ranges) {
-    if (id_ranges[i][0] <= id && id >= id_ranges[i][1]) {
+    if (id_ranges[i][0] <= id && id <= id_ranges[i][1]) {
       name = i;
+      break;
     }
   }
-  // console.log(name,id_ranges[name])
+  console.log(name, id_ranges[name]);
   return name;
 };
 
