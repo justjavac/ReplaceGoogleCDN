@@ -1,6 +1,7 @@
 import * as utils from "/third_party/jingjingxyk/frontend-utils/utils.js";
 import { showRuleList } from "./show-rule.js";
 let id_ranges = {
+  single_rule: [1, 9999],
   self_define_special_rule: [10000, 19999],
   self_define_rule: [20000, 29999],
   sync_remote_static_rule: [30000, 39999],

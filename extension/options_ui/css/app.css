@@ -171,3 +171,25 @@ font-size: 1.3rem;
   line-height: 1.5;
   color: red;
 }
+
+.single_rule {
+  background-color: #8a2be2;
+}
+
+.self_define_special_rule {
+  background-color: #027a7a;
+}
+
+.self_define_rule {
+  background-color: #0befef;
+}
+
+.sync_remote_static_rule {
+  background-color: #8b8bdd;
+}
+.sync_remote_rule {
+  background-color: #03a623;
+}
+.all_dynamic_rule {
+  background-color: #f8f8f8;
+}
