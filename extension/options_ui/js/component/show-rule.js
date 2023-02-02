@@ -42,7 +42,11 @@ let getRuleClassName = (id) => {
   //console.log(id,name, id_ranges[name]);
   return name;
 };
-
+let rule_action_types = {
+  redirect: "URI重定向",
+  modifyHeaders: "修改请求头或者响应头",
+  block: "阻止请求",
+};
 let showRuleList = () => {
   //动态规则集
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
@@ -53,13 +57,14 @@ let showRuleList = () => {
       //console.log(value.id, value);
       let id_range_name = getRuleClassName(value.id);
       let show_id_range_name = id_ranges_name[id_range_name];
+      let rule_action_type = rule_action_types[value.action.type];
       list += `<li class="${getRuleClassName(value.id)}" data-rule-id="${
         value.id
       }" data-origin="${encodeURIComponent(
         JSON.stringify(value)
       )}" title="规则来源：${show_id_range_name}">规则来源：${show_id_range_name}；编号为:&nbsp;&nbsp;${
         value.id
-      }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
+      }；&nbsp;&nbsp;规则作用：${rule_action_type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
       }" title="删除本条规则">&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
     });
