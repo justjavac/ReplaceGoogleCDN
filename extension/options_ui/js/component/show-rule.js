@@ -34,7 +34,7 @@ let getRuleClassName = (id) => {
       break;
     }
   }
-  //console.log(name, id_ranges[name]);
+  //console.log(id,name, id_ranges[name]);
   return name;
 };
 
