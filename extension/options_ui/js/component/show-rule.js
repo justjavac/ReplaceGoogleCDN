@@ -1,4 +1,9 @@
-import { deleteDynamicRules, id_ranges, utils } from "./common.js";
+import {
+  deleteDynamicRules,
+  id_ranges,
+  id_ranges_name,
+  utils,
+} from "./common.js";
 
 let showRuleJSON = (rule) => {
   let local_manifest = chrome.runtime.getManifest();
@@ -25,24 +30,53 @@ let showRuleJSON = (rule) => {
   }
 };
 
+let getRuleClassName = (id) => {
+  id = parseInt(id);
+  let name = "";
+  for (let i in id_ranges) {
+    if (id_ranges[i][0] <= id && id <= id_ranges[i][1]) {
+      name = i;
+      break;
+    }
+  }
+  //console.log(id,name, id_ranges[name]);
+  return name;
+};
+
+let rule_action_types = {
+  redirect: "URI重定向",
+  modifyHeaders: "修改请求头或者响应头",
+  block: "阻止请求",
+};
+
+/**
+ * 显示规则集
+ */
 let showRuleList = () => {
+  //动态规则集
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     //console.log(rules);
     let list_box = document.querySelector(".rule_dynamic_set_list");
     let list = "";
     rules.forEach((value, key, array) => {
       //console.log(value.id, value);
-      list += `<li data-rule-id="${value.id}" data-origin="${encodeURIComponent(
+      let id_range_name = getRuleClassName(value.id);
+      let show_id_range_name = id_ranges_name[id_range_name];
+      let rule_action_type = rule_action_types[value.action.type];
+      list += `<li class="${getRuleClassName(value.id)}" data-rule-id="${
+        value.id
+      }" data-origin="${encodeURIComponent(
         JSON.stringify(value)
-      )}">${
+      )}" title="规则来源：${show_id_range_name}">规则来源：${show_id_range_name}；编号为:&nbsp;&nbsp;${
         value.id
-      }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
+      }&nbsp;&nbsp;；规则作用：${rule_action_type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
-      }" >&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
+      }" title="删除本条规则">&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
     });
     list_box.innerHTML = list;
   });
 
+  //静态规则集，也就是manifest.json 配置信息
   chrome.declarativeNetRequest.getEnabledRulesets((rulesetIds) => {
     console.log(rulesetIds);
     /*
