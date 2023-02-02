@@ -34,12 +34,21 @@ test -d temp && rm -rf temp
 mkdir -p temp
 cd ${__DIR__}/temp
 
-
+# google translate
 extension_id=aapbdbdomjkkjkaonfhkkikfgjllcleb
+file_name='google-translate'
 
-download_url='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=106.0.0.0&acceptformat=crx2,crx3&x=id%3Daapbdbdomjkkjkaonfhkkikfgjllcleb%26uc&nacl_arch=x86-64'
+# Clear Site Data
+extension_id=aihgofjefdlhpnmeakpnjjeajofpcbhj
+file_name='Clear-Site-Data'
 
-curl -Lo google-translate.crx $download_url
+# Multi Elasticsearch Head
+extension_id=cpmmilfkofbeimbmgiclohpodggeheim
+file_name='Multi-Elasticsearch-Head'
+
+download_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=109.0.5414.119&acceptformat=crx2,crx3&x=id%3D${extension_id}%26uc&nacl_arch=x86-64"
+
+curl -Lo "${file_name}.crx" $download_url
 
 unset http_proxy
 unset https_proxy
@@ -52,7 +61,7 @@ unset no_proxy
 # curl --proxy "socks5h://127.0.0.1:2000" -Lo google-translate.crx $download_url
 
 set +e
-unzip -d google-translate google-translate.crx
+unzip -d ${file_name} "${file_name}.crx"
 set -e
 
 cd ${__DIR__}/

@@ -1,11 +1,20 @@
 import * as utils from "/third_party/jingjingxyk/frontend-utils/utils.js";
 import { showRuleList } from "./show-rule.js";
 let id_ranges = {
+  single_rule: [1, 9999],
   self_define_special_rule: [10000, 19999],
   self_define_rule: [20000, 29999],
   sync_remote_static_rule: [30000, 39999],
   sync_remote_rule: [40000, 320000],
   all_dynamic_rule: [0, Infinity],
+};
+let id_ranges_name = {
+  single_rule: "默认侯选项规则",
+  self_define_special_rule: "自定义特制规则",
+  self_define_rule: "自定义普通规则",
+  sync_remote_static_rule: "同步远端静态规则",
+  sync_remote_rule: "同步远端动态规则",
+  all_dynamic_rule: "所有动态规则",
 };
 let deleteDynamicRules = (type, id = 0) => {
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
@@ -96,5 +105,6 @@ export {
   deleteDynamicRules,
   backupDynamicRules,
   id_ranges,
+  id_ranges_name,
   enableStaticRules,
 };

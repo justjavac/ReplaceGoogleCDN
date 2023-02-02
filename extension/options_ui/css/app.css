@@ -121,6 +121,14 @@ font-size: 1.3rem;
   font-weight: 800;
 }
 
+/*
+#jsoneditor {
+  width: 600px;
+  height: 500px;
+}
+
+ */
+
 .placeholder-box {
   display: inline-block;
   margin-left: 2rem;
@@ -170,4 +178,46 @@ font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.5;
   color: red;
+}
+
+/*
+  配色参考： https://c.runoob.com/more/colorpad/tradcnc.html
+
+ */
+
+.single_rule {
+  background-color: #732e7e;
+}
+
+.self_define_special_rule {
+  background-color: #808883;
+}
+
+.self_define_rule {
+  background-color: #9db1a0;
+}
+
+.sync_remote_static_rule {
+  background-color: #8b8bdd;
+}
+
+.sync_remote_rule {
+  background-color: #d2ae8c;
+}
+
+.all_dynamic_rule {
+  background-color: #58665e;
+}
+
+.all_dynamic_rule_test {
+  /*
+    background-color: #1a638a;
+    background-color: #10da5a;
+    background-color: #04a4ff;
+    background-color: #027a7a;
+    background-color: #9c27b0;
+    background-color: #8b8bdd;
+    background-color: #efefef;
+    background-color: #bd7a07;
+  */
 }
