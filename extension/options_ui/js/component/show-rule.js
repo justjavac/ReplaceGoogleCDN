@@ -1,4 +1,9 @@
-import { deleteDynamicRules, id_ranges, utils } from "./common.js";
+import {
+  deleteDynamicRules,
+  id_ranges,
+  id_ranges_name,
+  utils,
+} from "./common.js";
 
 let showRuleJSON = (rule) => {
   let local_manifest = chrome.runtime.getManifest();
@@ -39,15 +44,20 @@ let getRuleClassName = (id) => {
 };
 
 let showRuleList = () => {
+  //动态规则集
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     //console.log(rules);
     let list_box = document.querySelector(".rule_dynamic_set_list");
     let list = "";
     rules.forEach((value, key, array) => {
       //console.log(value.id, value);
+      let id_range_name = getRuleClassName(value.id);
+      let show_id_range_name = id_ranges_name[id_range_name];
       list += `<li class="${getRuleClassName(value.id)}" data-rule-id="${
         value.id
-      }" data-origin="${encodeURIComponent(JSON.stringify(value))}">${
+      }" data-origin="${encodeURIComponent(
+        JSON.stringify(value)
+      )}" >${show_id_range_name}:${
         value.id
       }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
@@ -56,6 +66,7 @@ let showRuleList = () => {
     list_box.innerHTML = list;
   });
 
+  //静态规则集，也就是manifest.json 配置信息
   chrome.declarativeNetRequest.getEnabledRulesets((rulesetIds) => {
     console.log(rulesetIds);
     /*
