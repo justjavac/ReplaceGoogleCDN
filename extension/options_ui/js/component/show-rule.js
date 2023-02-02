@@ -25,6 +25,19 @@ let showRuleJSON = (rule) => {
   }
 };
 
+let getRuleClassName = (id) => {
+  id = parseInt(id);
+  let name = "";
+  for (let i in id_ranges) {
+    if (id_ranges[i][0] <= id && id <= id_ranges[i][1]) {
+      name = i;
+      break;
+    }
+  }
+  //console.log(id,name, id_ranges[name]);
+  return name;
+};
+
 let showRuleList = () => {
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     //console.log(rules);
@@ -32,9 +45,9 @@ let showRuleList = () => {
     let list = "";
     rules.forEach((value, key, array) => {
       //console.log(value.id, value);
-      list += `<li data-rule-id="${value.id}" data-origin="${encodeURIComponent(
-        JSON.stringify(value)
-      )}">${
+      list += `<li class="${getRuleClassName(value.id)}" data-rule-id="${
+        value.id
+      }" data-origin="${encodeURIComponent(JSON.stringify(value))}">${
         value.id
       }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
