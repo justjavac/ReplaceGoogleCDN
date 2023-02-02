@@ -173,7 +173,7 @@ font-size: 1.3rem;
 }
 
 .single_rule {
-  background-color: #8a2be2;
+  background-color: #9c27b0;
 }
 
 .self_define_special_rule {
@@ -181,15 +181,15 @@ font-size: 1.3rem;
 }
 
 .self_define_rule {
-  background-color: #0befef;
+  background-color: #04a4ff;
 }
 
 .sync_remote_static_rule {
   background-color: #8b8bdd;
 }
 .sync_remote_rule {
-  background-color: #03a623;
+  background-color: #10da5a;
 }
 .all_dynamic_rule {
-  background-color: #f8f8f8;
+  background-color: #efefef;
 }
