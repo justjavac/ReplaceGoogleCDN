@@ -57,11 +57,11 @@ let showRuleList = () => {
         value.id
       }" data-origin="${encodeURIComponent(
         JSON.stringify(value)
-      )}" alt="${show_id_range_name}">${show_id_range_name}:${
+      )}" title="规则来源：${show_id_range_name}">规则来源：${show_id_range_name}；编号为:&nbsp;&nbsp;${
         value.id
       }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
         value.id
-      }" >&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
+      }" title="删除本条规则">&nbsp;&nbsp;&nbsp;&nbsp;❌</span></li>`;
     });
     list_box.innerHTML = list;
   });

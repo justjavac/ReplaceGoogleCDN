@@ -182,7 +182,7 @@ font-size: 1.3rem;
 }
 
 .self_define_special_rule {
-  background-color: #1a638a;
+  background-color: #808883;
 }
 
 .self_define_rule {
@@ -203,6 +203,8 @@ font-size: 1.3rem;
 
 .all_dynamic_rule_test {
   /*
+
+    background-color: #1a638a;
     background-color: #10da5a;
     background-color: #04a4ff;
     background-color: #027a7a;
