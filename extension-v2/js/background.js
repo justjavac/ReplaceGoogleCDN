@@ -337,6 +337,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
     );
     url = url.replace("developers.google.com", "developers.google.cn");
+    // url = url.replace("developer.android.com", "developer.android.google.cn");
     return { redirectUrl: url };
   },
   {

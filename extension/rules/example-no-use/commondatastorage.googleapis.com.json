@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://commondatastorage\\.googleapis\\.com/chromium-browser-snapshots/(.*?)",
+      "requestDomains": ["commondatastorage.googleapis.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]
