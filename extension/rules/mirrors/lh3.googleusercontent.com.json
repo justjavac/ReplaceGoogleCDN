@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "priority": 200,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://images.weserv.nl/?url=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "(.*?)",
+      "requestDomains": ["lh3.googleusercontent.com"],
+      "initiatorDomains": ["material.io"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://pic1.xuehuaimg.com/proxy/\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "(http[s]{0,1}://)(.*?)",
+      "requestDomains": ["lh3.googleusercontent.com"],
+      "initiatorDomains": ["material.io"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+
+  {
+    "id": 5,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://search.pstatic.net/common?src=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "(.*?)",
+      "requestDomains": ["lh3.googleusercontent.com"],
+      "initiatorDomains": ["material.io"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

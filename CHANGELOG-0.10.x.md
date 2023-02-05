@@ -4,6 +4,16 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.21 [2023-02-05 13:22:30 +0800]
+
+> 1. 默认候选项新增域名`developer.android.com`
+> 1. 默认候选项新增域名`lh3.googleusercontent.com`
+> 1. 默认候选项新增域名`cdn.sstatic.net`
+> 1. 默认候选项新增域名`imgur.com`
+> 1. 重定向例子 `golang.org/dl/`
+> 1. 重定向例子 `commondatastorage.googleapis.com/chromium-browser-snapshots`
+> 1. 规则列表添加区块颜色，用于区分不同的规则区间
+
 ## CHANGELOG for 0.10.20 [2023-01-30 23:12:54 +0800]
 
 > 1. 移除无效的静态资源库 [辉哥博客&蓝易云安全](https://www.haah.net/archives/7885.html)
