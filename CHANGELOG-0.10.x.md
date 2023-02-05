@@ -12,7 +12,7 @@
 > 1. 默认候选项新增域名`imgur.com`
 > 1. 重定向例子 `golang.org/dl/`
 > 1. 重定向例子 `commondatastorage.googleapis.com/chromium-browser-snapshots`
-> 1. 规则列表添加区块颜色，用于区分不同的规则区间
+> 1. 规则列表区块颜色调整，用于区分不同的规则区间
 
 ## CHANGELOG for 0.10.20 [2023-01-30 23:12:54 +0800]
 
