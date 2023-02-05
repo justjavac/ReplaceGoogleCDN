@@ -42,14 +42,38 @@ let default_domains = {
     id: 10,
     domain: "cdn.jsdelivr.net",
   },
+  /*
   "translate.googleapis.com": {
     id: 11,
     domain: "translate.googleapis.com",
   },
+   */
   "www.gstatic.com": {
     id: 12,
     domain: "www.gstatic.com",
   },
+  "developer.android.com": {
+    id: 13,
+    domain: "developer.android.com",
+  },
+  "lh3.googleusercontent.com": {
+    id: 14,
+    domain: "lh3.googleusercontent.com",
+  },
+  "cdn.sstatic.net": {
+    id: 15,
+    domain: "cdn.sstatic.net",
+  },
+  "imgur.com": {
+    id: 16,
+    domain: "imgur.com",
+  },
+  /*
+  "developers.google.com": {
+    id: 17,
+    domain: "developers.google.com",
+  },
+   */
 };
 
 let reset_default_domain_app = () => {
@@ -61,7 +85,9 @@ let reset_default_domain_app = () => {
       chrome.declarativeNetRequest.updateDynamicRules(
         {
           addRules: [],
-          removeRuleIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          removeRuleIds: [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+          ],
         },
         (parameter) => {
           console.log(parameter);
@@ -76,7 +102,7 @@ let default_domains_app = () => {
   let list = "";
   for (let i in default_domains) {
     //console.log(i, default_domains[i]);
-    list += `<li data-id="${default_domains[i].id}" data-domain="${default_domains[i].domain}">${i}</li>`;
+    list += `<li data-id="${default_domains[i].id}" data-domain="${default_domains[i].domain}">${default_domains[i].id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${i}</li>`;
   }
   let default_domains_list = document.querySelector(
     ".default-redirect-domains"

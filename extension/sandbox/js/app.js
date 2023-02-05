@@ -9,13 +9,23 @@ let preview_url = [
   "https://pub.dev/",
   "https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js",
   "https://developers.google.com/",
+  "https://developer.android.com/?hl=zh-cn",
   "https://releases.jquery.com/",
+  "https://m3.material.io/",
+  "https://github.com/material-components/material-web.git",
+  "https://golang.org/dl/",
+  "https://download-chromium.appspot.com/",
+  "https://registry.npmmirror.com/binary.html?path=chromium-browser-snapshots/",
+  "https://chromium.googlesource.com/chromium/src",
+  "https://chromium.googlesource.com/chromium/src/+/HEAD/docs/README.md",
   "https://source.chromium.org/",
   "https://cs.opensource.google/",
   "https://www.chromium.org/chromium-projects/",
   "https://summerofcode.withgoogle.com/programs/2022/organizations",
   "https://webrtc.org/",
+  "https://webrtc.googlesource.com/src",
   "https://chromium.googlesource.com/external/webrtc",
+  "https://github.com/webrtc/samples.git",
 ];
 
 let is_iframe = self !== top;
