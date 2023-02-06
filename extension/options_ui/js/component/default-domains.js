@@ -56,6 +56,14 @@ let default_domains = {
     id: 13,
     domain: "developer.android.com",
   },
+  "developers.google.com": {
+    id: 17,
+    domain: "developers.google.com",
+  },
+  "source.android.com": {
+    id: 18,
+    domain: "source.android.com",
+  },
   "lh3.googleusercontent.com": {
     id: 14,
     domain: "lh3.googleusercontent.com",
@@ -68,12 +76,6 @@ let default_domains = {
     id: 16,
     domain: "imgur.com",
   },
-  /*
-  "developers.google.com": {
-    id: 17,
-    domain: "developers.google.com",
-  },
-   */
 };
 
 let reset_default_domain_app = () => {
@@ -86,7 +88,7 @@ let reset_default_domain_app = () => {
         {
           addRules: [],
           removeRuleIds: [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
           ],
         },
         (parameter) => {
@@ -102,7 +104,7 @@ let default_domains_app = () => {
   let list = "";
   for (let i in default_domains) {
     //console.log(i, default_domains[i]);
-    list += `<li data-id="${default_domains[i].id}" data-domain="${default_domains[i].domain}">${default_domains[i].id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${i}</li>`;
+    list += `<li data-id="${default_domains[i].id}" data-domain="${default_domains[i].domain}">编号：${default_domains[i].id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${i}</li>`;
   }
   let default_domains_list = document.querySelector(
     ".default-redirect-domains"
@@ -129,7 +131,7 @@ let default_domains_app = () => {
             console.log(response[i]);
             let option = document.createElement("option");
             option.text =
-              "候选项" +
+              "规则候选项" +
               response[i]["id"] +
               ": " +
               JSON.stringify(response[i]["action"]["redirect"]);

@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <title>扩展选项</title>
     <link href="/options_ui/css/app.css" type="text/css" rel="stylesheet" />
-    <style class="style-box"></style>
+    <style>
+      .nav-bar-index {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        text-decoration: none;
+        margin-left: 800px;
+        color: #0d6efd;
+      }
+      .nav-bar-index:focus,
+      .nav-bar-index:hover {
+        color: #0d6efd;
+      }
+    </style>
   </head>
   <body>
-    <h1>扩展选项</h1>
-
+    <h2>扩展默认选项</h2>
+    <a target="_blank" href="./advance.html" class="nav-bar-index"
+      >扩展高级选项设置</a
+    >
     <div class="wrap">
       <div class="container">
         <section class="box">
@@ -28,116 +42,7 @@
             <option>请选择</option>
           </select>
         </section>
-        <section class="box">
-          <h2>选项一：全局动态规则处理</h2>
-          <button class="backup-all-dynamic-rule">备份所有动态规则</button>
-          <span class="placeholder-box"></span>
-          <span class="placeholder-box"></span>
-          <button class="delete-all-dynamic-rule">清空所有动态规则</button>
-          <h5></h5>
-          <button class="example-show-controller" data-state="hidden-example">
-            显示演示例子
-          </button>
-          <h5></h5>
-          <button class="goto-sync-remote-repository-static-rule">
-            同步远端仓库最新静态规则到本地，并停用本地默认静态规则
-          </button>
-          <span class="placeholder-box"></span>
-          <button class="enable-static-rule">启用本地默认静态规则</button>
 
-          <h5></h5>
-          <button class="delete-sync-remote-rule">
-            清空所有已同步的远端动态规则
-          </button>
-          <h5></h5>
-          <button class="delete-self-define-rule">
-            清空所有自定义动态规则(特制除外)
-          </button>
-          <span class="placeholder-box"></span>
-          <button class="delete-self-define-special-rule">
-            清空所有自定义特制动态规则
-          </button>
-        </section>
-        <section class="box">
-          <h2>选项二：同步远端配置规则</h2>
-          <textarea
-            class="remote-rule-urls"
-            cols="100"
-            rows="10"
-            placeholder="远程服务端地址，每行一个地址"
-          ></textarea>
-          <h4></h4>
-          <button class="goto-sync-remote-rule">同步远端配置规则</button>
-          <span class="placeholder-box"></span>
-          <button
-            class="autofill-default-remote-rule example-item example-hidden"
-          >
-            演示例子：载入远端地址
-          </button>
-          <div class="external-page-box"></div>
-        </section>
-        <section class="box">
-          <h2>选项三：自定义规则</h2>
-          <textarea
-            class="new-add-rule-pannel"
-            cols="100"
-            rows="20"
-            placeholder="自定义规则"
-          ></textarea>
-          <h5></h5>
-          <button type="button" class="add-rule">新增规则</button>
-          <span class="placeholder-box"></span>
-          <button type="button" class="add-special-rule">新增特制规则</button>
-          <span class="placeholder-box"></span>
-          <span class="placeholder-box"></span>
-          <label for="upload-file-to-rule">
-            <button type="button" class="add-rule-from-file">
-              通过文件上传规则(仅支持json和txt)
-            </button>
-            <input
-              type="file"
-              id="upload-file-to-rule"
-              name="upload-file-to-rule"
-              hidden
-              accept="application/json,text/plain,text/txt"
-            />
-          </label>
-          <span class="placeholder-box"></span>
-          <span class="placeholder-box"></span>
-          <label for="dropbox">
-            <button id="dropbox" class="dropbox">拖拽文件到这里</button>
-          </label>
-          <h5></h5>
-          <br />
-          <label class="autofill-self-define-rule example-item example-hidden">
-            <button data-rule="redirect-domain">例子：域名重定向</button>
-            <button data-rule="block-domain">
-              例子：屏蔽指定域名(jingjingxyk.com)
-            </button>
-            <button data-rule="modify-header-ua">
-              例子：请求头修改 UserAgent
-            </button>
-
-            <button data-rule="modify-header-request-x">
-              例子：请求头添加参数 x-header-param
-            </button>
-            <h5></h5>
-            <button data-rule="modify-header-request-cookie">
-              例子：请求头修改 cookie
-            </button>
-            <button data-rule="modify-header-response-x">
-              例子：响应头添加参数
-            </button>
-            <button data-rule="modify-header-response-csp">
-              例子：响应头移除content-security-policy
-            </button>
-            <button data-rule="redirect-to-extension-path">
-              例子：域名重定向扩展提供的页面
-            </button>
-          </label>
-
-          <br />
-        </section>
         <section class="box">
           <h2>选项四：已启用规则列表：</h2>
           <h3>1）静态规则列表：</h3>
@@ -146,7 +51,7 @@
               <li></li>
             </ul>
           </div>
-          <h3>2）动态规则列表：</h3>
+          <h3>2）动态规则列表：🔃</h3>
           <div class="dynamic-rule-list-note">
             <span>
               默认选项切换规则编号（固定编号）： 编号<10000
@@ -196,6 +101,6 @@
         </section>
       </div>
     </div>
-    <script src="/options_ui/js/app.js"></script>
+    <script src="/options_ui/js/index.js"></script>
   </body>
 </html>

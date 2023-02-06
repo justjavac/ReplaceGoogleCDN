@@ -1,36 +1,34 @@
-[
-  {
-    "id": 2,
-    "priority": 100,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "developer.android.google.cn"
-        }
+{
+  "action": {
+    "redirect": {
+      "transform": {
+        "host": "developer.android.google.cn",
+        "scheme": "https"
       }
     },
-    "condition": {
-      "urlFilter": "developer.android.com",
-      "requestDomains": ["developer.android.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
-      ]
-    }
-  }
-]
+    "type": "redirect"
+  },
+  "condition": {
+    "requestDomains": ["developer.android.com"],
+    "resourceTypes": [
+      "main_frame",
+      "sub_frame",
+      "stylesheet",
+      "script",
+      "image",
+      "font",
+      "object",
+      "xmlhttprequest",
+      "ping",
+      "csp_report",
+      "media",
+      "websocket",
+      "webtransport",
+      "webbundle",
+      "other"
+    ],
+    "urlFilter": "developer.android.com"
+  },
+  "id": 20019,
+  "priority": 2
+}
