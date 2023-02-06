@@ -172,7 +172,7 @@ let default_domains_app = () => {
       },
       (parameter) => {
         console.log(parameter);
-        showRuleList();
+        showRuleList("single_rule");
       }
     );
   });
