@@ -4,6 +4,17 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for 0.10.22 [2023-02-06 23:49:00 +0800]
+
+> 1. v3 版本 修改 扩展选项页面拆分为 2 个页面,分别是默认配置页面和高级配置页面
+> 1. v3 版本 新增 默认候选项新增域名`developer.android.com`
+> 1. v3 版本 新增 默认候选项新增域名`source.android.com`
+> 1. v3 版本 升级 到 0.10.22
+> 1. v2 版本 修改 `fonts.gstatic.com` 和 `fonts.gstatic.com` 重定向地址
+> 1. v2 版本 新增 `developer.android.com` 地址重定向
+> 1. v2 版本 新增 `source.android.com` 地址重定向
+> 1. v2 版本 升级 到 0.10.15
+
 ## CHANGELOG for 0.10.21 [2023-02-05 13:22:30 +0800]
 
 > 1. 默认候选项新增域名`developer.android.com`
