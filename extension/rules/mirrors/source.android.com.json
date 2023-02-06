@@ -3,14 +3,14 @@
     "action": {
       "redirect": {
         "transform": {
-          "host": "developer.android.google.cn",
+          "host": "source.android.google.cn",
           "scheme": "https"
         }
       },
       "type": "redirect"
     },
     "condition": {
-      "requestDomains": ["developer.android.com"],
+      "requestDomains": ["source.android.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -27,9 +27,9 @@
         "webtransport",
         "webbundle",
         "other"
-      ]
+      ],
+      "urlFilter": "source.android.com"
     },
-    "urlFilter": "developer.android.com",
     "id": 20019,
     "priority": 2
   }
