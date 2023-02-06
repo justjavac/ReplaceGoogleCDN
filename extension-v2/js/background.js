@@ -340,6 +340,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     );
     url = url.replace("developers.google.com", "developers.google.cn");
     url = url.replace("developer.android.com", "developer.android.google.cn");
+    url = url.replace("source.android.com", "source.android.google.cn");
     return { redirectUrl: url };
   },
   {
@@ -355,10 +356,11 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
-      "*://developers.google.com/*",
-      "*://developer.android.com/*",
       "*://code.jquery.com/jquery-*",
       "*://code.jquery.com/ui/*",
+      "*://developers.google.com/*",
+      "*://developer.android.com/*",
+      "*://source.android.com/*",
       //...test_urls, // 高级玩法的测试用例
       ...block_domain_urls, //阻止域名请求
     ],
