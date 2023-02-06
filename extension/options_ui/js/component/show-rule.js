@@ -61,7 +61,7 @@ let showRuleList = (type = "all_dynamic_rule") => {
     rules.forEach((value, key, array) => {
       //console.log(value.id, value);
       let id_range_name = getRuleClassName(value.id);
-      console.log(value.id, id_range_name, type);
+      //console.log(value.id, id_range_name, type);
       //显示指定区间的数据
 
       if (type !== "all_dynamic_rule" && type !== id_range_name) {
