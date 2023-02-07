@@ -208,7 +208,7 @@
     }
   },
   {
-    "id": 7,
+    "id": 10,
     "priority": 1,
     "action": {
       "type": "redirect",
@@ -242,7 +242,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 7,
     "priority": 1,
     "action": {
       "type": "redirect",
@@ -273,7 +273,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 8,
     "priority": 1,
     "action": {
       "type": "redirect",
@@ -304,7 +304,7 @@
     }
   },
   {
-    "id": 10,
+    "id": 17,
     "priority": 1,
     "action": {
       "type": "redirect",
@@ -318,6 +318,74 @@
     "condition": {
       "urlFilter": "developers.google.com",
       "requestDomains": ["developers.google.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "developer.android.google.cn"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "developer.android.com",
+      "requestDomains": ["developer.android.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "source.android.google.cn"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "source.android.com",
+      "requestDomains": ["source.android.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

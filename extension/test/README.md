@@ -11,6 +11,10 @@
 1. [`code.jquery.com/jquery-` 替换为 `lib.baomitu.com/jquery/` 打开 `https://releases.jquery.com/` 查看结果 ](https://releases.jquery.com/)
 1. [`code.jquery.com/ui/` 替换为 `ajax.aspnetcdn.com/ajax/jquery.ui` 打开 `https://releases.jquery.com/` 查看结果 ](https://releases.jquery.com/)
 1. [`commondatastorage.googleapis.com/chromium-browser-snapshots/` 替换为 `https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/1086244/chrome-mac.zip` 打开 `https://commondatastorage.googleapis.com/chromium-browser-snapshots/` 查看结果 ](https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/1086244/chrome-mac.zip)
+1. [developer.android.com](https://developer.android.com/?hl=zh-cn)
+1. [source.android.com](https://source.android.com)
+1. [jquery](https://releases.jquery.com/)
+1. [material](https://m3.material.io/)
 
 ## 扩展选项页，同步服务器端规则例子一
 
