@@ -1,4 +1,4 @@
-## 测试说明
+# 测试说明
 
 ### 让 XP 系统下的 chrome 49 能使用本扩展
 
@@ -21,3 +21,15 @@
 #### Sectigo 证书链过期问题和解决办法
 
 1. [Sectigo AddTrust External CA Root 根证书 2020 年 5 月 30 日到期和解决方案](https://billing.yahuhost.com/announcements/196/Sectigo-AddTrust-External-CA-Root-%E6%A0%B9%E8%AF%81%E4%B9%A62020%E5%B9%B45%E6%9C%8830%E6%97%A5%E5%88%B0%E6%9C%9F.html)
+
+## 测试用例
+
+1. [stackoverflow](https://stackoverflow.com/tags/socat/hot?filter=all)
+1. [www.google.com/recaptcha/api.js](https://patrickhlauke.github.io/recaptcha/)
+1. [修改 content-security-policy ](https://pub.dev/)
+1. [cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js)
+1. [developers.google.com](https://developers.google.com/)
+1. [developer.android.com](https://developer.android.com/?hl=zh-cn)
+1. [source.android.com](https://source.android.com)
+1. [jquery](https://releases.jquery.com/)
+1. [material](https://m3.material.io/)
