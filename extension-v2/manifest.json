@@ -1,11 +1,11 @@
 {
   "name": "Replace Google CDN",
-  "version": "0.10.14",
+  "version": "0.10.15",
   "manifest_version": 2,
   "icons": {
     "128": "icons/128.png"
   },
-  "description": "将 Google CDN 替换为国内镜像",
+  "description": "将 Google CDN 替换为国内镜像 v2",
   "background": {
     "scripts": ["js/background.js"]
   },

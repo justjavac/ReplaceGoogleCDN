@@ -52,7 +52,7 @@ let rule_action_types = {
 /**
  * 显示规则集
  */
-let showRuleList = () => {
+let showRuleList = (type = "all_dynamic_rule") => {
   //动态规则集
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     //console.log(rules);
@@ -61,6 +61,12 @@ let showRuleList = () => {
     rules.forEach((value, key, array) => {
       //console.log(value.id, value);
       let id_range_name = getRuleClassName(value.id);
+      //console.log(value.id, id_range_name, type);
+      //显示指定区间的数据
+
+      if (type !== "all_dynamic_rule" && type !== id_range_name) {
+        return;
+      }
       let show_id_range_name = id_ranges_name[id_range_name];
       let rule_action_type = rule_action_types[value.action.type];
       list += `<li class="${getRuleClassName(value.id)}" data-rule-id="${

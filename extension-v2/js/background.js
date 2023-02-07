@@ -308,9 +308,11 @@ chrome.webRequest.onBeforeRequest.addListener(
 
     let url = details.url.replace("http://", "https://");
     url = url.replace("ajax.googleapis.com", "ajax.loli.net");
-    url = url.replace("fonts.googleapis.com", "fonts.loli.net");
+    //url = url.replace("fonts.googleapis.com", "fonts.loli.net");
+    url = url.replace("fonts.googleapis.com", "fonts.googleapis.cn");
     url = url.replace("themes.googleusercontent.com", "themes.loli.net");
-    url = url.replace("fonts.gstatic.com", "gstatic.loli.net");
+    //url = url.replace("fonts.gstatic.com", "gstatic.loli.net");
+    url = url.replace("fonts.gstatic.com", "fonts.gstatic.cn");
     url = url.replace(
       "www.google.com/recaptcha/",
       "www.recaptcha.net/recaptcha/"
@@ -337,7 +339,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
     );
     url = url.replace("developers.google.com", "developers.google.cn");
-    // url = url.replace("developer.android.com", "developer.android.google.cn");
+    url = url.replace("developer.android.com", "developer.android.google.cn");
+    url = url.replace("source.android.com", "source.android.google.cn");
     return { redirectUrl: url };
   },
   {
@@ -353,9 +356,11 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://www.gravatar.com/*",
       "*://maxcdn.bootstrapcdn.com/bootstrap/*",
       "*://cdn.jsdelivr.net/*",
-      "*://developers.google.com/*",
       "*://code.jquery.com/jquery-*",
       "*://code.jquery.com/ui/*",
+      "*://developers.google.com/*",
+      "*://developer.android.com/*",
+      "*://source.android.com/*",
       //...test_urls, // 高级玩法的测试用例
       ...block_domain_urls, //阻止域名请求
     ],

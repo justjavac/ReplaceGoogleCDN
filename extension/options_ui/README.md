@@ -131,6 +131,8 @@ chrome.declarativeNetRequest.updateDynamicRules(
 |   15    |               cdn.sstatic.net                | 默认未启用 |
 |   16    |                  imgur.com                   | 默认未启用 |
 |   17    |            developers.google.com             |    启用    |
+|   18    |              source.android.com              | 默认未启用 |
+
 
 > 默认未启用的规则，如何启用？ 答：在默认候选项选选项中，选中规则即启用规，规则列表可以看到启用的规则
 
