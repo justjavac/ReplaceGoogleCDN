@@ -49,6 +49,7 @@ zip -r ../dist/ReplaceGoogleCDN-v2.zip . \
   -x ".idea/*" \
   -x "_metadata/*" \
   -x "node_modules/*" \
+  -x "tools/*" \
   -x "./README.md" \
   -x "./test/*"
 
