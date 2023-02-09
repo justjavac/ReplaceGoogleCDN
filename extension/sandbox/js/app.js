@@ -21,13 +21,18 @@ let preview_url = [
   "https://chromium.googlesource.com/chromium/src",
   "https://chromium.googlesource.com/chromium/src/+/HEAD/docs/README.md",
   "https://source.chromium.org/",
+  "https://www.chromestatus.com/",
+  "https://chromiumdash.appspot.com/schedule",
   "https://cs.opensource.google/",
   "https://www.chromium.org/chromium-projects/",
   "https://summerofcode.withgoogle.com/programs/2022/organizations",
   "https://webrtc.org/",
   "https://webrtc.googlesource.com/src",
   "https://chromium.googlesource.com/external/webrtc",
+  "https://chromium.googlesource.com/chromium/src/+/main/",
   "https://github.com/webrtc/samples.git",
+  "https://www.mozilla.org/zh-CN/firefox/features/",
+  "https://pptr.dev/",
 ];
 
 let is_iframe = self !== top;
