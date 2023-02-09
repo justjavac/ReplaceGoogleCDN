@@ -43,6 +43,9 @@ cp -f CHANGELOG-v3-0.10.x.md dist/build/ReplaceGoogleCDN-v3-$time/
 
 rsync -av --progress extension-v2/ dist/build/ReplaceGoogleCDN-v2-$time/ \
   --exclude README.md \
+  --exclude js/background-advance.js \
+  --exclude js/background-default.js \
+  --exclude tools/ \
   --exclude test
 
 cp -f README.md dist/build/ReplaceGoogleCDN-v2-$time/
