@@ -133,8 +133,10 @@ chrome.declarativeNetRequest.updateDynamicRules(
 |   17    |            developers.google.com             |    启用    |
 |   18    |              source.android.com              |    启用    |
 |   19    |       www.google.com/recaptcha/api.js        |    启用    |
+|  9999   |         example-wirdcard.domain.com          | 默认未启用 |
 
 > 默认未启用的规则，如何启用？ 答：在默认候选项选选项中，选中规则即启用规，规则列表可以看到启用的规则
+> 规则 id=9999，priority=9999。拥有最高优先级，作用： 覆盖其他地址重定向规则
 
 ## 演示地址的规则来源
 

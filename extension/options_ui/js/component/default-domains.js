@@ -76,6 +76,10 @@ let default_domains = {
     id: 16,
     domain: "imgur.com",
   },
+  "supper-priority-override-rule": {
+    id: 9999,
+    domain: "supper-priority-override",
+  },
 };
 
 let reset_default_domain_app = () => {
@@ -88,7 +92,7 @@ let reset_default_domain_app = () => {
         {
           addRules: [],
           removeRuleIds: [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+            9999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
           ],
         },
         (parameter) => {
