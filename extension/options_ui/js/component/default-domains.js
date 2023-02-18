@@ -76,10 +76,12 @@ let default_domains = {
     id: 16,
     domain: "imgur.com",
   },
+  /*
   "supper-priority-override-rule": {
     id: 9999,
     domain: "supper-priority-override",
   },
+   */
 };
 
 let reset_default_domain_app = () => {
