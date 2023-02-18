@@ -7,6 +7,6 @@
 ```text
 # 使用
 
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/example-no-use/imgur-stackoverflow.com.json?raw=true
+https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/example-no-use/imgur.com-stackoverflow.com.json?raw=true
 
 ```
