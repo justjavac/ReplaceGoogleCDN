@@ -1,4 +1,7 @@
 (async () => {
+  let { JSONEditor } = await import(
+    "/third_party/josdejong/svelte-jsoneditor/main/index.js"
+  );
   let { main } = await import("/options_ui/js/component/main.js");
   let { sync_remote_conf } = await import(
     "/options_ui/js/component/sync-remote-conf-rule.js"
@@ -14,6 +17,29 @@
   showRuleList();
   chrome.declarativeNetRequest.getAvailableStaticRuleCount((count) => {
     console.log(count);
+  });
+
+  window.editor = new JSONEditor({
+    target: document.getElementById("jsoneditor"),
+    props: {
+      mode: "text",
+      onChange: (
+        updatedContent,
+        previousContent,
+        { contentErrors, patchResult }
+      ) => {
+        // content is an object { json: JSONData } | { text: string }
+        console.log("onChange", {
+          updatedContent,
+          previousContent,
+          contentErrors,
+          patchResult,
+        });
+        console.log(updatedContent);
+        let content_box = document.querySelector("#rule-content-container");
+        content_box.value = updatedContent.text;
+      },
+    },
   });
 
   window.addEventListener(
