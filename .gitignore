@@ -25,6 +25,7 @@ extension/tools/download-chromium-extension-backup.sh
 extension/third_party/
 !extension/third_party/README.md
 !extension/third_party/jingjingxyk
+!extension/third_party/josdejong/svelte-jsoneditor
 
 dist
 extension/manifest-backup.json
