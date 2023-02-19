@@ -46,6 +46,10 @@ file_name='Clear-Site-Data'
 extension_id=cpmmilfkofbeimbmgiclohpodggeheim
 file_name='Multi-Elasticsearch-Head'
 
+# replace-google-cdn 为了看扩展市场与本仓库的代码区别
+extension_id=kpampjmfiopfpkkepbllemkibefkiice
+file_name='replace-google-cdn'
+
 download_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=109.0.5414.119&acceptformat=crx2,crx3&x=id%3D${extension_id}%26uc&nacl_arch=x86-64"
 
 curl -Lo "${file_name}.crx" $download_url

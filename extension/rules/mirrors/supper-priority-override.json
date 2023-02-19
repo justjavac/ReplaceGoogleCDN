@@ -1,0 +1,44 @@
+[
+  {
+    "id": 9999,
+    "priority": 9999,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(.*?)",
+      "requestDomains": [
+        "developers.google.com",
+        "source.android.com",
+        "developer.android.com",
+        "www.google.com"
+      ],
+      "excludedRequestDomains": [
+        "developers.google.com",
+        "source.android.com",
+        "developer.android.com",
+        "www.google.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]

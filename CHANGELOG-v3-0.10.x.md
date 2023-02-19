@@ -4,6 +4,12 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for v3 0.10.24 [2023-02-18 14:20:00 +0800]
+
+> 1. v3 版本 添加 默认候选规则，规则 id=9999，priority=9999（暂不启用)
+> 1. v3 版本 备注信息： 规则 id=9999，用于覆盖其他地址重定向规则
+> 1. v3 版本 添加 JSON [(josdejong/svelte-jsoneditor)](https://github.com/josdejong/svelte-jsoneditor)格式化工具
+
 ## CHANGELOG for v3 0.10.23 [2023-02-07 11:21:00 +0800]
 
 > 1. v3 版本 修改 静态规则和默认候选项规则 规则编号统一一致
