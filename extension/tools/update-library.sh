@@ -32,6 +32,15 @@ mkdir -p ${__DIR__}/../third_party/jingjingxyk/frontend-utils
 cp -f frontend-utils/utils.js ${__DIR__}/../third_party/jingjingxyk/frontend-utils/utils.js
 
 
+cd ${__DIR__}/temp
+test -d svelte-jsoneditor/.git || git clone -b main https://github.com/josdejong/svelte-jsoneditor.git --depth=1 --progress
+mkdir -p ${__DIR__}/../third_party/josdejong/svelte-jsoneditor/main
+cd svelte-jsoneditor
+npm install
+npm run build
+cp -rf package-vanilla/* ${__DIR__}/../third_party/josdejong/svelte-jsoneditor/main
+
+
 cd ${__DIR__}/
 
 

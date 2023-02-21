@@ -21,6 +21,10 @@ let showRuleJSON = (rule) => {
       .then((x) => x.json())
       .then((x) => {
         //console.log(JSON.stringify(x));
+        editor.set({
+          json: x,
+          text: undefined,
+        });
         let content_box = document.querySelector("#rule-content-container");
         content_box.value = JSON.stringify(x);
         content_box.setAttribute("rule-type", "static");
@@ -120,6 +124,15 @@ let showRuleList = (type = "all_dynamic_rule") => {
       //console.log(event.target.nodeName);
       if (event.target.nodeName === "LI") {
         let content_box = document.querySelector("#rule-content-container");
+        let content = decodeURIComponent(
+          event.target.getAttribute("data-origin")
+        );
+        //console.log(content);
+
+        editor.set({
+          json: JSON.parse(content),
+          text: undefined,
+        });
         content_box.value = decodeURIComponent(
           event.target.getAttribute("data-origin")
         );
