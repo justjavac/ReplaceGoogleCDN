@@ -203,6 +203,26 @@ let showRuleList = (type = "all_dynamic_rule") => {
       document.querySelector(".notice").innerText = "静态规则不允许修改";
     }
   });
+
+  /*
+   * 启用 规则 格式化
+   */
+  document
+    .querySelector(".format-rule-code")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      let content_box = document.querySelector("#rule-content-container");
+      let content = content_box.value;
+      if (content) {
+        let button = document.querySelector(
+          "#jsoneditor .jse-button.jse-format"
+        );
+        if (button) {
+          button.click();
+        }
+      }
+    });
 };
 
 export { showRuleList };
