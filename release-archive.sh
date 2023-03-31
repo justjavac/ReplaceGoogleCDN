@@ -32,7 +32,6 @@ zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
   -x "web-backup/*" \
   -x "manifest-backup.json" \
   -x "third_party/highlightjs/*" \
-  -x "third_party/josdejong/*" \
   -x "third_party/webrtc/*"
 
 cd ${__DIR__}
