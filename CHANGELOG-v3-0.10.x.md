@@ -4,6 +4,10 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for v3 0.10.26 [2023-03-31 13:27:00 +0800]
+
+> 1. v3 版本 修复 修复打包 bug (打包补上 josdejong/svelte-jsoneditor)
+
 ## CHANGELOG for v3 0.10.25 [2023-03-05 23:25:00 +0800]
 
 > 1. v3 版本 添加 格式化规则功能
@@ -111,12 +115,12 @@
 
 ## CHANGELOG for 0.10.7 [2022-07-31 12:43:40 +0800]
 
-> 1.  新增 `developers.google.com` - 替换为 `developers.google.cn`
-> 2.  整理规则，合并规则文件，并且重命名名称
-> 3.  新增 高阶定制玩法 辅助工具
-> 4.  新增 扩展程序选项 WebUI 可视化自定义规则雏形
-> 5.  使用 prettier 格式化代码
-> 6.  添加自动化测试脚本
+> 1. 新增 `developers.google.com` - 替换为 `developers.google.cn`
+> 2. 整理规则，合并规则文件，并且重命名名称
+> 3. 新增 高阶定制玩法 辅助工具
+> 4. 新增 扩展程序选项 WebUI 可视化自定义规则雏形
+> 5. 使用 prettier 格式化代码
+> 6. 添加自动化测试脚本
 
 ## CHANGELOG for 0.10.6
 
@@ -126,58 +130,58 @@
 
 ## CHANGELOG for 0.10.5
 
-> 1.  新增 `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
-> 2.  新增 `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用
-> 3.  新增 公共 CDN 静态资源库 极客族公共加速服务 `https://cdn.geekzu.org/cached.html`
-> 4.  新增 公共 CDN 静态资源库 七牛静态库 `http://staticfile.org/`
-> 5.  新增 通过国内镜像 克隆本项目源代码
+> 1. 新增 `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
+> 2. 新增 `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用
+> 3. 新增 公共 CDN 静态资源库 极客族公共加速服务 `https://cdn.geekzu.org/cached.html`
+> 4. 新增 公共 CDN 静态资源库 七牛静态库 `http://staticfile.org/`
+> 5. 新增 通过国内镜像 克隆本项目源代码
 
 ## CHANGELOG for 0.10.4
 
 ### 变更
 
-> 1.  修复 `www.google.com/recaptcha/` 无法显示问题； 通过新增 `extension/rules/rules_redirect_1_extra.json`实现
-> 2.  test 环境 修改： `extension/test/extension-v3-test/README.md` 描述
-> 3.  格式化文件： `extension/rules/rules_redirect_1.json`
-> 4.  修复 `https://pub.dev/` 无法地址重定向；通过移除`pub.dev`的响应头`content-security-policy`实现
-> 5.  test 用例 新增 `extension/test/README.md` 测试用例记录
+> 1. 修复 `www.google.com/recaptcha/` 无法显示问题； 通过新增 `extension/rules/rules_redirect_1_extra.json`实现
+> 2. test 环境 修改： `extension/test/extension-v3-test/README.md` 描述
+> 3. 格式化文件： `extension/rules/rules_redirect_1.json`
+> 4. 修复 `https://pub.dev/` 无法地址重定向；通过移除`pub.dev`的响应头`content-security-policy`实现
+> 5. test 用例 新增 `extension/test/README.md` 测试用例记录
 
 ## CHANGELOG for 0.10.3
 
 ### 变更
 
-> 1.  新增 公共 CDN 静态资源库 中科大 `rules/README.md`
-> 2.  修改屏蔽 `content-security-policy`功能，新增 4 个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
-> 3.  新增 移除`CSP`的请求地址 `githubusercontent.com`
-> 4.  新增 `cdnjs.cloudflare.com` 替换规则 `rules-cdnjs-cloudflare-com-redirect.json`,默认未启用
-> 5.  test 环境 修改功能： github.com 地址替换后 PAJX 报错, 添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
-> 6.  test 环境 新增功能： 自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
+> 1. 新增 公共 CDN 静态资源库 中科大 `rules/README.md`
+> 2. 修改屏蔽 `content-security-policy`功能，新增 4 个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
+> 3. 新增 移除`CSP`的请求地址 `githubusercontent.com`
+> 4. 新增 `cdnjs.cloudflare.com` 替换规则 `rules-cdnjs-cloudflare-com-redirect.json`,默认未启用
+> 5. test 环境 修改功能： github.com 地址替换后 PAJX 报错,添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
+> 6. test 环境 新增功能： 自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
 
 ## CHANGELOG for 0.10.2
 
 ### 变更
 
-> 1.  test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
-> 2.  test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
-> 3.  test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
-> 4.  test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 查看网页引入的所有域名
-> 5.  新增 `code.query.com` jquery 地址替换
-> 6.  解决 0.10.1 版本中 `第9 , 10条不能共用问题`
-> 7.  删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains`错误配置 位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
-> 8.  maxcdn.bootstrapcdn.com 替换为 lib.baomitu.com
+> 1. test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
+> 2. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
+> 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`开启"上帝"模式，可编辑网页
+> 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 查看网页引入的所有域名
+> 5. 新增 `code.query.com` jquery 地址替换
+> 6. 解决 0.10.1 版本中 `第9 , 10条不能共用问题`
+> 7. 删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains`错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
+> 8. maxcdn.bootstrapcdn.com 替换为 lib.baomitu.com
 
 ## CHANGELOG for 0.10.1 新增适配 chromium manifest v3 版本
 
 ### 变更
 
-> 1.  `manifest.json -> manifest-v2.json` (已复制保存）
-> 2.  `background.js` 不再使用了
-> 3.  `manifest.json： manifest_version -> 3`
-> 4.  新增 `chromium manifest v3 declarativeNetRequest rules `
-> 5.  新增 `v3 redirect url rule (rules/rules_redirect_1.json)`
-> 6.  新增 `v3 remove response header rule` 可以移除 CSP 选项 ` (rules/rules_remove_header_1.json)`
-> 7.  新增 `v3 append request header rule` 可向请求头添加内容 `(rules/rules_append_header_1.json)`
-> 8.  新增 `v3 block request header rule` 锁请求 `(rules/rules_block_1.json)`
-> 9.  新增 v3 固定替换地址 rule `(rules/rules_advance_redirect_1.json)`
+> 1. `manifest.json -> manifest-v2.json` (已复制保存）
+> 2. `background.js` 不再使用了
+> 3. `manifest.json： manifest_version -> 3`
+> 4. 新增 `chromium manifest v3 declarativeNetRequest rules `
+> 5. 新增 `v3 redirect url rule (rules/rules_redirect_1.json)`
+> 6. 新增 `v3 remove response header rule` 可以移除 CSP 选项 ` (rules/rules_remove_header_1.json)`
+> 7. 新增 `v3 append request header rule` 可向请求头添加内容 `(rules/rules_append_header_1.json)`
+> 8. 新增 `v3 block request header rule` 锁请求 `(rules/rules_block_1.json)`
+> 9. 新增 v3 固定替换地址 rule `(rules/rules_advance_redirect_1.json)`
 > 10. 新增 v3 动态替换地址 rule ` (rules/rules_advance_redirect_2.json)`
 > 11. 上述第 9-10 条不能同时使用，会产生冲突
