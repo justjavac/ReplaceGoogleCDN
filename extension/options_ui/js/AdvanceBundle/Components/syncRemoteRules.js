@@ -1,8 +1,12 @@
-import { id_ranges, utils } from "./common.js";
-import { showRuleList } from "./show-rule.js";
-import { rule_example_urls } from "./rule-example.js";
+import {
+  id_ranges,
+  updateDynamicRules,
+  utils,
+} from "../../CommonBundle/Components/common.js";
+import showRuleList from "../../CommonBundle/Components/showRuleList.js";
+import { rule_example_mirror_urls } from "../Config/rule_example_conf.js";
 
-let sync_remote_conf = () => {
+let bindGotoSyncRemoteRulesEventListener = () => {
   document
     .querySelector(".goto-sync-remote-rule")
     .addEventListener("click", async (event) => {
@@ -41,7 +45,8 @@ let sync_remote_conf = () => {
               }
             }
           });
-          console.log("dynamic_id_index:", dynamic_id_index);
+
+          console.log("sync_remote_rule latest dynamic_id :", dynamic_id_index);
           result.forEach((rules) => {
             rules.forEach((rule, index, array) => {
               rule.id = ++dynamic_id_index;
@@ -49,32 +54,32 @@ let sync_remote_conf = () => {
               need_rules.push(rule);
             });
           });
-          console.log(need_rules);
-          chrome.declarativeNetRequest.updateDynamicRules(
-            {
-              addRules: need_rules,
-              removeRuleIds: [],
-            },
-            (info) => {
-              console.log(info);
-              showRuleList();
-            }
-          );
+          updateDynamicRules(need_rules, [], () => {
+            showRuleList();
+          });
         });
       }
     });
+};
 
+let bindLoadRemoteRuleExample = () => {
   document
     .querySelector(".autofill-default-remote-rule")
     .addEventListener("click", (event) => {
       event.stopPropagation();
       event.preventDefault();
       document.querySelector(".remote-rule-urls").value =
-        rule_example_urls.trim();
+        rule_example_mirror_urls.trim();
       let iframe = `
                 <iframe src="/sandbox/index.html" id="external_page" width="100%"></iframe>
             `;
       document.querySelector(".external-page-box").innerHTML = iframe;
     });
 };
-export { sync_remote_conf };
+
+export default () => {
+  //同步远端规则
+  bindGotoSyncRemoteRulesEventListener();
+  //同步远端规则 例子
+  bindLoadRemoteRuleExample();
+};
