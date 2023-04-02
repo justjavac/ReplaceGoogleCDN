@@ -1,11 +1,11 @@
 {
   "name": "Replace Google CDN",
-  "version": "0.10.26",
+  "version": "0.10.27",
   "manifest_version": 3,
   "icons": {
     "128": "icons/128.png"
   },
-  "description": "将 Google CDN 替换为国内镜像 v3 更新日期：2023-03-31",
+  "description": "将 Google CDN 替换为国内镜像 v3 更新日期：2023-04-02",
   "background": {
     "service_worker": "js/background.js",
     "type": "module"
