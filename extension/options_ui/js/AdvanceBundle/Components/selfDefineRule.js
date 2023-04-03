@@ -1,12 +1,17 @@
-import { id_ranges } from "./common.js";
-import { showRuleList } from "./show-rule.js";
-// 两种引入模块写法体验
-let { rule_example } = await import("/options_ui/js/component/rule-example.js");
+import {
+  id_ranges,
+  updateDynamicRules,
+} from "../../CommonBundle/Components/common.js";
+import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 
-let add_self_define_rule = (type = "self_define_rule") => {
+// 两种引入模块写法体验
+//let { rule_example } = await import( "/options_ui/js/AdvanceBundle/Config/rule_example_conf.js");
+import { rule_example } from "../Config/rule_example_conf.js";
+import { showDynamicRules } from "../../CommonBundle/Components/showDynamicRules.js";
+
+let addSelfDefineRule = (type = "self_define_rule") => {
   let rule_str = document.querySelector(".new-add-rule-pannel").value;
   rule_str = rule_str.trim();
-  console.log(rule_str);
   if (rule_str.length > 2) {
     let rules_arr = JSON.parse(rule_str);
     console.log("add rule origin content", rules_arr);
@@ -57,16 +62,9 @@ let add_self_define_rule = (type = "self_define_rule") => {
       }
       console.log(need_rules);
       if (need_rules) {
-        chrome.declarativeNetRequest.updateDynamicRules(
-          {
-            addRules: need_rules,
-            removeRuleIds: [],
-          },
-          (info) => {
-            console.log(info);
-            showRuleList();
-          }
-        );
+        updateDynamicRules(need_rules, [], () => {
+          showDynamicRules();
+        });
       }
     });
   }
@@ -75,23 +73,29 @@ let add_self_define_rule = (type = "self_define_rule") => {
 /**
  * 增加普通规则
  */
-let self_define_conf = () => {
+
+let bindButtonSelfDefineRuleEventListener = () => {
   document.querySelector(".add-rule").addEventListener("click", (event) => {
     event.stopPropagation();
     event.preventDefault();
-    add_self_define_rule("self_define_rule");
+    addSelfDefineRule("self_define_rule");
   });
+};
 
-  /**
-   * 增加特制规则
-   */
+/**
+ * 增加特制规则
+ */
+let bindButtonSelfDefineSpecialRuleEventListener = () => {
   document
     .querySelector(".add-special-rule")
     .addEventListener("click", (event) => {
       event.stopPropagation();
       event.preventDefault();
-      add_self_define_rule("self_define_special_rule");
+      addSelfDefineRule("self_define_special_rule");
     });
+};
+
+let bindButtonUploadRuleFromFile = () => {
   document
     .querySelector(".add-rule-from-file")
     .addEventListener("click", (event) => {
@@ -164,10 +168,13 @@ let self_define_conf = () => {
     },
     false
   );
+};
 
-  /**
-   * 演示例子
-   */
+/**
+ * 演示例子
+ */
+
+let bindAutoFillRuleEditorPannelEventListener = () => {
   document
     .querySelector(".autofill-self-define-rule")
     .addEventListener("click", (event) => {
@@ -176,7 +183,7 @@ let self_define_conf = () => {
       console.log(event.target.nodeType, event.target.nodeName);
       if (event.target.nodeName === "BUTTON") {
         let data_rule = event.target.getAttribute("data-rule");
-        console.log(data_rule);
+        //console.log(data_rule);
         if (rule_example[data_rule]) {
           fetch("/options_ui/rule_example/" + rule_example[data_rule])
             .then((response) => response.text())
@@ -188,4 +195,9 @@ let self_define_conf = () => {
     });
 };
 
-export { self_define_conf };
+export default () => {
+  bindButtonSelfDefineRuleEventListener();
+  bindButtonSelfDefineSpecialRuleEventListener();
+  bindButtonUploadRuleFromFile();
+  bindAutoFillRuleEditorPannelEventListener();
+};

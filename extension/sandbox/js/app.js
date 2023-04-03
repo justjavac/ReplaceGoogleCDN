@@ -57,16 +57,18 @@ list_box.addEventListener("click", (event) => {
   //console.log(event.target.nodeName);
   if (event.target.nodeName === "PRE") {
     let url = event.target.innerText;
+    window.parent.postMessage(
+      JSON.stringify({
+        url: url,
+      }),
+      location.origin + "/options_ui/index.html"
+    );
+    return;
+
     //console.log(self, top);
     if (is_iframe) {
       //'在iframe中'
       console.log("在iframe中");
-      window.parent.postMessage(
-        JSON.stringify({
-          url: url,
-        }),
-        location.origin + "/options_ui/index.html"
-      );
     } else {
       top.open(url, "_blank");
     }

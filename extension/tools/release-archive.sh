@@ -33,7 +33,6 @@ rsync -avr --delete-before --stats --progress extension/ dist/build/ReplaceGoogl
   --exclude web-backup \
   --exclude manifest-backup.json \
   --exclude third_party/highlightjs/ \
-  --exclude third_party/josdejong/ \
   --exclude third_party/webrtc/
 
 cp -f README.md dist/build/ReplaceGoogleCDN-v3-$time/

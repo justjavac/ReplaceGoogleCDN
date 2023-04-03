@@ -18,7 +18,7 @@ let rule_example = {
  *
  * @type {string}
  */
-let rule_example_urls = `
+let rule_example_mirror_urls = `
 https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/auth.json?raw=true
 https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_advance_redirect_1.json?raw=true
 https://www.jingjingxyk.com/chromium-extension/extension-v3-test/rules/rules_advance_redirect_2.json?raw=true
@@ -34,4 +34,8 @@ let remote_repository_static_urls = {
   mainfiest_url_base:
     "https://raw.githubusercontent.com/justjavac/ReplaceGoogleCDN/master/extension/",
 };
-export { rule_example, rule_example_urls, remote_repository_static_urls };
+export {
+  rule_example,
+  rule_example_mirror_urls,
+  remote_repository_static_urls,
+};

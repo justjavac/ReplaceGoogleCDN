@@ -4,6 +4,10 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for v3 0.10.27 [2023-04-02 21:50:00 +0800]
+
+> 1.  v3 版本 修复 通过重新组织代码，解决删除单条规则时,重复渲染动态规则列表的 bug
+
 ## CHANGELOG for v3 0.10.26 [2023-03-31 13:27:00 +0800]
 
 > 1. v3 版本 修复 修复打包 bug (打包补上 josdejong/svelte-jsoneditor)
