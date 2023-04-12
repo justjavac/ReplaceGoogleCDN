@@ -555,14 +555,14 @@ and some TypeScript types now come from `immutable-json-patch`.
 
 ### Bug Fixes
 
-* indexRouter.js files containing broken imports to ts files ([0c4a9f0](https://github.com/josdejong/svelte-jsoneditor/commit/0c4a9f0c2dea2a45aa5dd5b2176ad7802a4e5206))
+* index.js files containing broken imports to ts files ([0c4a9f0](https://github.com/josdejong/svelte-jsoneditor/commit/0c4a9f0c2dea2a45aa5dd5b2176ad7802a4e5206))
 
 ### [0.3.52](https://github.com/josdejong/svelte-jsoneditor/compare/v0.3.51...v0.3.52) (2022-05-23)
 
 
 ### Bug Fixes
 
-* indexRouter.js file containing broken references to .ts files (regression since v0.3.51) ([36959ee](https://github.com/josdejong/svelte-jsoneditor/commit/36959ee0e2ea8cbbefcbb63f193d83b556404dbc))
+* index.js file containing broken references to .ts files (regression since v0.3.51) ([36959ee](https://github.com/josdejong/svelte-jsoneditor/commit/36959ee0e2ea8cbbefcbb63f193d83b556404dbc))
 
 ### [0.3.51](https://github.com/josdejong/svelte-jsoneditor/compare/v0.3.50...v0.3.51) (2022-05-23)
 
