@@ -20,12 +20,12 @@
       ],
       "urlFilter": "https://pic1.xuehuaimg.com/proxy/"
     },
-    "id": 20001,
-    "priority": 100
+    "id": 1,
+    "priority": 1
   },
   {
-    "id": 3,
-    "priority": 100,
+    "id": 2,
+    "priority": 1,
     "action": {
       "type": "modifyHeaders",
       "requestHeaders": [

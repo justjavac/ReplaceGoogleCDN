@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "priority": 200,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -22,7 +22,7 @@
   },
   {
     "id": 2,
-    "priority": 100,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "priority": 100,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -64,7 +64,7 @@
   },
   {
     "id": 5,
-    "priority": 100,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
