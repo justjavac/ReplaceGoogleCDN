@@ -14,19 +14,30 @@
       "resourceTypes": [
         "main_frame",
         "sub_frame",
-        "stylesheet",
-        "script",
         "image",
-        "font",
         "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
+        "xmlhttprequest"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 100,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://img.noobzone.ru/getimg.php?url=\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "(http[s]{0,1}://)(.*?)",
+      "requestDomains": ["imgur.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "image",
+        "object",
+        "xmlhttprequest"
       ]
     }
   },
@@ -45,23 +56,12 @@
       "resourceTypes": [
         "main_frame",
         "sub_frame",
-        "stylesheet",
-        "script",
         "image",
-        "font",
         "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
+        "xmlhttprequest"
       ]
     }
   },
-
   {
     "id": 5,
     "priority": 100,
@@ -77,19 +77,9 @@
       "resourceTypes": [
         "main_frame",
         "sub_frame",
-        "stylesheet",
-        "script",
         "image",
-        "font",
         "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
+        "xmlhttprequest"
       ]
     }
   }

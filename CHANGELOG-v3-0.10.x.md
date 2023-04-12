@@ -4,6 +4,12 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for v3 0.10.28 [2023-04-12 15:38:00 +0800]
+
+> 1.  域名`lh3.googleusercontent.com` 和 `imgur.com` 添加辅助规则。 删除请求头中 `referer` 键值对
+> 1.  域名`lh3.googleusercontent.com` 和 `imgur.com` 重定向规则 资源类型，仅限图片
+> 1.  域名`fonts.googleapis.com` 和 `fonts.googleapis.com` 修改重定向规则,修改重定向到的目标地址
+
 ## CHANGELOG for v3 0.10.27 [2023-04-02 21:50:00 +0800]
 
 > 1.  v3 版本 修复 通过重新组织代码，解决删除单条规则时,重复渲染动态规则列表的 bug
