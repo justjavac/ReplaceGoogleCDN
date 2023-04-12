@@ -115,7 +115,7 @@
     },
     "condition": {
       "urlFilter": "fonts.gstatic.com",
-      "requestDomains": ["fonts.googleapis.com"],
+      "requestDomains": ["fonts.gstatic.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
