@@ -37,6 +37,11 @@
         "id": "ruleset_domain_replace",
         "enabled": false,
         "path": "rules/rules_domain_replace.json"
+      },
+      {
+        "id": "ruleset_default_domains_helper",
+        "enabled": true,
+        "path": "rules/rules-default-domains-helper.json"
       }
     ]
   },

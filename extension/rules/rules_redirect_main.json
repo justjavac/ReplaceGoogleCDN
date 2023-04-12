@@ -48,7 +48,6 @@
     "condition": {
       "urlFilter": "fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
-      "excludedRequestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -116,8 +115,7 @@
     },
     "condition": {
       "urlFilter": "fonts.gstatic.com",
-      "requestDomains": ["fonts.gstatic.com"],
-      "excludedRequestDomains": ["fonts.gstatic.com"],
+      "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "priority": 200,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -11,29 +11,39 @@
     "condition": {
       "regexFilter": "(.*?)",
       "requestDomains": ["lh3.googleusercontent.com"],
-      "initiatorDomains": ["material.io"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
-        "stylesheet",
-        "script",
         "image",
-        "font",
         "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
+        "xmlhttprequest"
       ]
     }
   },
   {
-    "id": 4,
-    "priority": 100,
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://img.noobzone.ru/getimg.php?url=\\2"
+      }
+    },
+    "condition": {
+      "regexFilter": "(http[s]{0,1}://)(.*?)",
+      "requestDomains": ["lh3.googleusercontent.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "image",
+        "object",
+        "xmlhttprequest"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -43,30 +53,19 @@
     "condition": {
       "regexFilter": "(http[s]{0,1}://)(.*?)",
       "requestDomains": ["lh3.googleusercontent.com"],
-      "initiatorDomains": ["material.io"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
-        "stylesheet",
-        "script",
         "image",
-        "font",
         "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
+        "xmlhttprequest"
       ]
     }
   },
 
   {
-    "id": 5,
-    "priority": 100,
+    "id": 4,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
@@ -76,23 +75,12 @@
     "condition": {
       "regexFilter": "(.*?)",
       "requestDomains": ["lh3.googleusercontent.com"],
-      "initiatorDomains": ["material.io"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
-        "stylesheet",
-        "script",
         "image",
-        "font",
         "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "webtransport",
-        "webbundle",
-        "other"
+        "xmlhttprequest"
       ]
     }
   }
