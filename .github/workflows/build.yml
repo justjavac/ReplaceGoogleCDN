@@ -1,0 +1,44 @@
+name: build-replace-google-cdn
+
+on: [ push, pull_request ]
+
+jobs:
+  linux:
+    if: 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare Source Code
+        run: |
+          lscpu
+          echo $PATH
+          env
+          docker info
+          id -u
+          id -g
+          who
+          cat /etc/os-release
+          hostnamectl
+          uname -s
+          uname -m 
+          uname -r
+          node -v
+      - name: Build
+        run: |
+          bash  release-archive.sh
+          ls -lah dist
+      - name: production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: replace-google-cdn
+          retention-days: 7
+          path: |
+            dist/ReplaceGoogleCDN-v2.zip
+            dist/ReplaceGoogleCDN-v3.zip
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            dist/ReplaceGoogleCDN-v2.zip
+            dist/ReplaceGoogleCDN-v3.zip
