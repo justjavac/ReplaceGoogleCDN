@@ -10,12 +10,22 @@ jobs:
         uses: actions/checkout@v3
       - name: Zip Extension
         run: npm run release
+      - name: production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: replace-google-cdn
+          retention-days: 7
+          path: |
+            dist/ReplaceGoogleCDN-v2.zip
+            dist/ReplaceGoogleCDN-v3.zip
       - name: Browser Plugin Publish v2
+        if: 0
         uses: PlasmoHQ/bpp@v2
         with:
           artifact: "dist/ReplaceGoogleCDN-v2.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
       - name: Browser Plugin Publish v3
+        if: 0
         uses: PlasmoHQ/bpp@v3
         with:
           artifact: "dist/ReplaceGoogleCDN-v3.zip"
