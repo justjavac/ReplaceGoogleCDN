@@ -26,11 +26,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://img.noobzone.ru/getimg.php?url=\\2"
+        "regexSubstitution": "https://img.noobzone.ru/getimg.php?url=\\1"
       }
     },
     "condition": {
-      "regexFilter": "(http[s]{0,1}://)(.*?)",
+      "regexFilter": "^https?://(.*?)",
       "requestDomains": ["lh3.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
@@ -47,11 +47,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://pic1.xuehuaimg.com/proxy/\\2"
+        "regexSubstitution": "https://pic1.xuehuaimg.com/proxy/\\1"
       }
     },
     "condition": {
-      "regexFilter": "(http[s]{0,1}://)(.*?)",
+      "regexFilter": "^https?://(.*?)",
       "requestDomains": ["lh3.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
