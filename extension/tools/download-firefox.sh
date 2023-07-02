@@ -19,5 +19,11 @@ cd ${__DIR__}
 # MV3 扩展在 Firefox 109（2023 年 1 月 17 日）的全面发布中发布
 #  https://www.mozilla.org/en-US/firefox/109.0/releasenotes/
 
-curl -Lo firefox-109.0b9.tar.bz2 https://archive.mozilla.org/pub/firefox/releases/109.0b9/linux-x86_64/en-US/firefox-109.0b9.tar.bz2
-tar -jxvf firefox-109.0b9.tar.bz2
+# firefox 114 支持 DNS over HTTPS ；WebTransport默认启用
+# https://www.mozilla.org/en-US/firefox/113.0/releasenotes/
+
+# linux firefox 版本
+VERSION=115.0esr
+
+curl -Lo firefox-${VERSION}.tar.bz2 https://archive.mozilla.org/pub/firefox/releases/${VERSION}/linux-x86_64/en-US/firefox-${VERSION}.tar.bz2
+tar -jxvf firefox-${VERSION}.tar.bz2

@@ -1,4 +1,6 @@
 .jse-theme-dark {
+  --jse-theme: dark;
+
   /* over all fonts, sizes, and colors */
   --jse-theme-color: #2f6dd0;
   --jse-theme-color-highlight: #467cd2;

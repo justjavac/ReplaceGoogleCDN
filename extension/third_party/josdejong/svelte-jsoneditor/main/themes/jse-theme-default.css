@@ -1,4 +1,6 @@
 :root {
+  --jse-theme: light;
+
   /* over all fonts, sizes, and colors */
   --jse-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
     Cantarell, 'Helvetica Neue', sans-serif;

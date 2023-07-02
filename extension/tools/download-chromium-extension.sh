@@ -9,10 +9,7 @@ if [ ! "$BASH_VERSION" ]; then
   exit 1
 fi
 
-# 执行脚本命令
-
-# bash  extension/tools/download-chromium-extension.sh  --proxy 1
-
+# 本脚本存在的意义：从扩展应用商店下载扩展
 
 # 下载chromium 扩展，并解压
 # 例子 下载 谷歌翻译扩展
@@ -24,11 +21,22 @@ fi
 
 # `https://clients2.google.com/service/update2/crx?response=redirect&prodversion=${version}&acceptformat=crx2,crx3&x=id%3D${result[1]}%26uc&nacl_arch=${nacl_arch}`;
 
+# bash  extension/tools/download-chromium-extension.sh  --proxy http://127.0.0.1:8015
 
-PROXY_URL=${2:+'http://127.0.0.1:8015'}
+mirror=''
+while [ $# -gt 0 ]; do
+  case "$1" in
+  --proxy)
+    export HTTP_PROXY="$2"
+    export HTTPS_PROXY="$2"
+    export NO_PROXY="127.0.0.1,localhost,127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16,198.18.0.0/15,169.254.0.0/16"
+    shift
+    ;;
+  *) ;;
 
-export http_proxy=$PROXY_URL
-export https_proxy=$PROXY_URL
+  esac
+  shift $(($# > 0 ? 1 : 0))
+done
 
 test -d temp && rm -rf temp
 mkdir -p temp
@@ -64,6 +72,7 @@ unset no_proxy
 # curl -x "socks5h://127.0.0.1:2000" -Lo google-translate.crx $download_url
 # curl --proxy "socks5h://127.0.0.1:2000" -Lo google-translate.crx $download_url
 
+# crx 是经过定制的 zip 压缩格式文件
 set +e
 unzip -d ${file_name} "${file_name}.crx"
 set -e

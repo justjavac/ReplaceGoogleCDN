@@ -26,4 +26,4 @@ cd ${__DIR__}
 -jsconsole \
 -start-debugger-server 9221 \
 -install-global-extension  ${__ROOT__}/extension-v2 \
-https://www.marxists.org/ https://stackoverflow.com/tags/socat/hot?filter=all
+https://stackoverflow.com/tags/socat/hot?filter=all

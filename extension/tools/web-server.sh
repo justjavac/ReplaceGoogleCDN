@@ -7,17 +7,14 @@ __DIR__=$(
 )
 echo ${__DIR__}
 
-
 __ROOT__=$(readlink -f ${__DIR__}/../../)
 echo ${__ROOT__}
-
 
 __WEB_DIR__=$(
   cd ${__DIR__}/web/
   pwd
 )
 echo ${__WEB_DIR__}
-
 
 cd ${__WEB_DIR__}
 
