@@ -16,6 +16,7 @@ extension/tools/chrome-linux/
 extension/tools/blocked-domain.py
 extension/tools/temp/
 extension/test/nohup.out
+extension/test/firefox
 
 extension/third_party/
 

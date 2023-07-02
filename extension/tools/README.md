@@ -6,7 +6,7 @@
 # 查看帮助
 python3 extension/tools/update-manifest.py  --help
 
-# 切换mainfest.json 支持 chromium 系浏览器  
+# 切换mainfest.json 支持 chromium 系浏览器
 python3 extension/tools/update-manifest.py  chromium
 
 # 切换mainfest.json 支持 firefix  系浏览器
@@ -18,18 +18,19 @@ python3 extension/tools/update-manifest.py  firefox
 
 ```shell
 
-python3 extension/tools/download-chromium-extension.sh 
+python3 extension/tools/download-chromium-extension.sh
 # 通过代理下载
 python3 extension/tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
 
 ```
 
-## 下载chromium 浏览器
+## 下载 chromium 浏览器
+
 ```shell
 bash extension/tools/chromium.sh
 ```
 
-## 下载firefox 浏览器
+## 下载 firefox 浏览器
 
 ```shell
 bash extension/tools/download-firefox.sh

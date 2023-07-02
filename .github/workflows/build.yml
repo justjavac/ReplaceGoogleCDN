@@ -1,6 +1,6 @@
 name: build-replace-google-cdn
 
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 jobs:
   linux:

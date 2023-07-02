@@ -8,8 +8,7 @@
 
 > 1. 升级 josdejong/svelte-jsoneditor 并确定其版本为 v0.17.8
 > 2. 支持 firefox 浏览器，firefox 版本需要 >= v113
-> 3. 添加 python 脚本 便捷修改 manifest.json 文件，打包时构建支持firefox 版本
-
+> 3. 添加 python 脚本 便捷修改 manifest.json 文件，打包时构建支持 firefox 版本
 
 ## CHANGELOG for v3 0.10.28 [2023-04-12 15:38:00 +0800]
 
@@ -169,11 +168,15 @@
 
 > 1. 新增 公共 CDN 静态资源库 中科大 `rules/README.md`
 > 2. 修改屏蔽 `content-security-policy`功能，新增 4
+
      个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
+
 > 3. 新增 移除`CSP`的请求地址 `githubusercontent.com`
 > 4. 新增 `cdnjs.cloudflare.com` 替换规则 `rules-cdnjs-cloudflare-com-redirect.json`,默认未启用
 > 5. test 环境 修改功能： github.com 地址替换后 PAJX
+
      报错,添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
+
 > 6. test 环境 新增功能： 自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
 
 ## CHANGELOG for 0.10.2
@@ -182,15 +185,23 @@
 
 > 1. test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
 > 2. test 环境 新增功能： service-worker `sw.js`
+
      小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
+
 > 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`
+
      开启"上帝"模式，可编辑网页
+
 > 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`
+
      查看网页引入的所有域名
+
 > 5. 新增 `code.query.com` jquery 地址替换
 > 6. 解决 0.10.1 版本中 `第9 , 10条不能共用问题`
 > 7. 删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains`
+
      错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
+
 > 8. maxcdn.bootstrapcdn.com 替换为 lib.baomitu.com
 
 ## CHANGELOG for 0.10.1 新增适配 chromium manifest v3 版本
