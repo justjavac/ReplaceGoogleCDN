@@ -178,9 +178,9 @@
 ### 变更
 
 > 1. test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
-> 2. test 环境 新增功能： service-worker `sw.js`小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
-> 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`开启"上帝"模式，可编辑网页
-> 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`查看网页引入的所有域名
+> 2. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
+> 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
+> 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 查看网页引入的所有域名
 > 5. 新增 `code.query.com` jquery 地址替换
 > 6. 解决 0.10.1 版本中 `第9 , 10条不能共用问题`
 > 7. 删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains` 错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
