@@ -1,7 +1,10 @@
 #!/bin/bash
 set -exu
 
-__DIR__=$(cd "$(dirname "$0")";pwd)
+__DIR__=$(
+  cd "$(dirname "$0")"
+  pwd
+)
 cd ${__DIR__}
 
 if [ ! "$BASH_VERSION" ]; then
@@ -14,7 +17,6 @@ fi
 # 下载chromium 扩展，并解压
 # 例子 下载 谷歌翻译扩展
 # https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb
-
 
 # 参考文档： https://github.com/tonystark93/crx-download/blob/master/background.js
 # 参考文档： https://www.cnblogs.com/jingjingxyk/p/16821342.html
@@ -30,6 +32,7 @@ while [ $# -gt 0 ]; do
     export HTTP_PROXY="$2"
     export HTTPS_PROXY="$2"
     export NO_PROXY="127.0.0.1,localhost,127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16,198.18.0.0/15,169.254.0.0/16"
+    export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com,.aliyuncs.com,.taobao.org,.tsinghua.edu.cn,.ustc.edu.cn,.aliyun.com"
     shift
     ;;
   *) ;;
@@ -58,14 +61,9 @@ file_name='Multi-Elasticsearch-Head'
 extension_id=kpampjmfiopfpkkepbllemkibefkiice
 file_name='replace-google-cdn'
 
-download_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=109.0.5414.119&acceptformat=crx2,crx3&x=id%3D${extension_id}%26uc&nacl_arch=x86-64"
+download_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=114.0.5726.0&acceptformat=crx2,crx3&x=id%3D${extension_id}%26uc&nacl_arch=x86-64"
 
 curl -Lo "${file_name}.crx" $download_url
-
-unset http_proxy
-unset https_proxy
-unset no_proxy
-
 
 # 使用不同的代理方式
 # proxychains curl -Lo google-translate.crx $download_url
@@ -80,7 +78,5 @@ set -e
 cd ${__DIR__}/
 
 exit 0
-
-
 
 test -d temp && rm -rf temp

@@ -21,9 +21,11 @@ cd ${__DIR__}
 # https://extensionworkshop.com/documentation/develop/manifest-v3-migration-guide/
 
 ./firefox/firefox \
--profile $profile_folder \
--devtools \
--jsconsole \
+-profile "$profile_folder" \
 -start-debugger-server 9221 \
--install-global-extension  ${__ROOT__}/extension-v2 \
-https://stackoverflow.com/tags/socat/hot?filter=all
+ about:debugging#/runtime/this-firefox
+
+# -devtools \
+# -jsconsole \
+#  about:blank
+# -install-global-extension  ${__ROOT__}/extension-v2 \
