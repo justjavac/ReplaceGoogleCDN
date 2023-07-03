@@ -15,7 +15,6 @@ test -f ReplaceGoogleCDN-v2.zip && rm -f ReplaceGoogleCDN-v2.zip
 test -f ReplaceGoogleCDN-v3.zip && rm -f ReplaceGoogleCDN-v3.zip
 
 cd ${__DIR__}/extension
-
 python3 tools/update-manifest.py  chromium
 # 打包 manifest v3 支持chromium 内核系列
 zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
@@ -41,8 +40,8 @@ zip -u dist/ReplaceGoogleCDN-v3.zip ./Privacy.md
 zip -u dist/ReplaceGoogleCDN-v3.zip ./LICENSE
 zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-v3-0.10.x.md
 
+cd ${__DIR__}/extension
 python3 tools/update-manifest.py  firefox
-
 zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
   -x ".git/*" \
   -x ".idea/*" \
@@ -67,7 +66,8 @@ zip -u dist/ReplaceGoogleCDN-v3.zip ./LICENSE
 zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-v3-0.10.x.md
 
 #  恢复为默认
-python3 tools/update-manifest.py  chromium
+cd ${__DIR__}/
+python3 extension/tools/update-manifest.py  chromium
 
 # 打包 manifest v2  支持chromium 内核系列 和 firefox
 cd ${__DIR__}/extension-v2/
