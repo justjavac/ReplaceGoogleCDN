@@ -55,14 +55,14 @@
     "page": "options_ui/index.html",
     "open_in_tab": true
   },
-  "sandbox": {
-    "pages": [
-      "sandbox/index.html"
-    ]
-  },
   "action": {
     "default_title": "Replace Google CDN"
   },
   "author": "https://github.com/justjavac",
-  "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN"
+  "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN",
+  "sandbox": {
+    "pages": [
+      "sandbox/index.html"
+    ]
+  }
 }
