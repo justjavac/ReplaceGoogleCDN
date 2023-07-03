@@ -34,7 +34,8 @@ jobs:
           retention-days: 7
           path: |
             dist/ReplaceGoogleCDN-v2.zip
-            dist/ReplaceGoogleCDN-v3.zip
+            dist/ReplaceGoogleCDN-v3-chromium.zip
+            dist/ReplaceGoogleCDN-v3-firefox.zip
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
