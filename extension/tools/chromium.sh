@@ -55,8 +55,9 @@ $chromium \
   --remote-debugging-port=9222 \
   --disable-encryption --disable-machine-id \
   --start-maximized \
-  about:blank chrome://version
+  about:blank
 
+# chrome://version
 # 全屏
 # --start-fullscreen
 # 空白页
@@ -64,7 +65,7 @@ $chromium \
 # 查看所有内置命令
 # chrome://chrome-urls/
 # 使用 代理 方式一
-# --proxy-pac-url="https://cloud-soft.xieyaokun.com/local-proxy.pac"
+# --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"
 # 使用 代理 方式二
 # --proxy-server="http=http://127.0.0.1:8015;https=http://127.0.0.1:8015"
 # 使用 代理 方式三

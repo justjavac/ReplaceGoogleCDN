@@ -18,7 +18,7 @@ python3 extension/tools/update-manifest.py  firefox
 
 ```
 
-## 应用商店里扩展源码
+## 下载应用商店里扩展源码
 
 ```shell
 
@@ -44,7 +44,7 @@ bash extension/tools/download-chromium.sh --proxy http://127.0.0.1:1080 --offici
 ## 运行 chromium 浏览器
 
 ```shell
-
+bash extension/tools/chromium.sh
 ```
 
 ## 下载 firefox 浏览器
@@ -60,5 +60,18 @@ bash extension/tools/download-firefox.sh 115.0esr
 ## 运行firefox 浏览器
 
 ```shell 
+bash extension/tools/firefox.sh 
+```
+
+
+## 启动  Proxy Auto-Configuration
+
+> Proxy Auto-Configuration (PAC) file
+
+```shell 
+bash extension/tools/web-server.sh 
+
+# 使用 pac 文件
+# chromium  --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"  --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
 
 ```

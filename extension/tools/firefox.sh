@@ -31,12 +31,29 @@ cd ${__DIR__}
 # 支持 ResourceType
 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType
 
+
+# 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
+cp -f prefs.js $profile_folder
+
+
 ./firefox/firefox \
 -profile "$profile_folder" \
--start-debugger-server 9221 \
+--remote-debugging-port 9221
  about:debugging#/runtime/this-firefox
 
+# -start-debugger-server  vs  --remote-debugging-port
+# -start-debugger-server 9221 \
 # -devtools \
 # -jsconsole \
 #  about:blank
 # -install-global-extension  ${__ROOT__}/extension-v2 \
+
+
+#  扩展 TWP - Translate Web Pages  traduzir-paginas-web
+#  https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/
+
+# 下载扩展
+# https://addons.mozilla.org/firefox/downloads/file/4126844/traduzir_paginas_web-9.8.1.0.xpi
+
+# gecko-dev
+# https://github.com/mozilla/gecko-dev.git

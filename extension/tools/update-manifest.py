@@ -91,7 +91,8 @@ if __name__ == '__main__':
     firefox_specific_settings = '''
     {
         "gecko": {
-            "id": "zonghengbaihe521@qq.com"
+            "id": "zonghengbaihe521@qq.com",
+            "strict_min_version": "113.0"
         }
     }
     '''
