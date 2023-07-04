@@ -46,7 +46,8 @@ case $OS in
   curl -L -O $DOWNLOAD_CHROMIUM_URL
   unzip chrome-win.zip
   ;;
-  *)
-    echo 'no match OS'
-    ;;
+*)
+  echo 'no match OS'
+  ;;
+
 esac
