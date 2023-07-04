@@ -40,10 +40,13 @@ case $OS in
   unzip chrome-mac.zip
   ;;
 
-"MINGW64_NT")
+'MINGW64_NT'* | 'MSYS_NT'*)
   test -f chrome-win.zip && rm -rf chrome-win.zip
   test -d chrome-win && rm -rf chrome-win
   curl -L -O $DOWNLOAD_CHROMIUM_URL
   unzip chrome-win.zip
   ;;
+  *)
+    echo 'no match OS'
+    ;;
 esac
