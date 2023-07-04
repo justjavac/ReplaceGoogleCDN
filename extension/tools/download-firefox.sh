@@ -2,7 +2,10 @@
 
 set -exu
 
-__DIR__=$(cd "$(dirname "$0")";pwd)
+__DIR__=$(
+  cd "$(dirname "$0")"
+  pwd
+)
 cd ${__DIR__}
 
 # download firefox
@@ -19,5 +22,38 @@ cd ${__DIR__}
 # MV3 扩展在 Firefox 109（2023 年 1 月 17 日）的全面发布中发布
 #  https://www.mozilla.org/en-US/firefox/109.0/releasenotes/
 
-curl -Lo firefox-109.0b9.tar.bz2 https://archive.mozilla.org/pub/firefox/releases/109.0b9/linux-x86_64/en-US/firefox-109.0b9.tar.bz2
-tar -jxvf firefox-109.0b9.tar.bz2
+# firefox 114 支持 DNS over HTTPS ；WebTransport默认启用
+# https://www.mozilla.org/en-US/firefox/113.0/releasenotes/
+
+OS=$(uname -s)
+ARCH=$(uname -m)
+echo "${OS}_${ARCH}"
+
+FIREFOX_VERSION=114.0b9
+
+SHOW_DOWNLOAD_FIREFOX_URL=https://archive.mozilla.org/pub/firefox/releases/
+
+DOWNLOAD_FIREFOX_URL_PREFIX=https://archive.mozilla.org/pub/firefox/releases
+
+case $OS in
+"Linux")
+  test -f firefox-${FIREFOX_VERSION}.tar.bz2 && rm -rf firefox-${FIREFOX_VERSION}.tar.bz2
+  test -d firefox && rm -rf firefox
+  DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/linux-${ARCH}/en-US/firefox-${FIREFOX_VERSION}.tar.bz2
+  curl -Lo firefox-${FIREFOX_VERSION}.tar.bz2 ${DOWNLOAD_FIREFOX_URL}
+
+  tar -jxvf firefox-${FIREFOX_VERSION}.tar.bz2
+  ;;
+"Darwin")
+  test -f Firefox%20${FIREFOX_VERSION}.dmg && rm -rf Firefox%20${FIREFOX_VERSION}.dmg
+  DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
+  curl -Lo Firefox%20${FIREFOX_VERSION}.dmg ${DOWNLOAD_FIREFOX_URL}
+
+  ;;
+
+"MINGW64_NT")
+  test -f Firefox%20Setup%20${FIREFOX_VERSION}.msi && rm -rf Firefox%20Setup%20${FIREFOX_VERSION}.msi
+  DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/win64/en-US/Firefox%20Setup%20${FIREFOX_VERSION}.msi
+  curl -Lo Firefox%20Setup%20${FIREFOX_VERSION}.msi ${DOWNLOAD_FIREFOX_URL}
+  ;;
+esac
