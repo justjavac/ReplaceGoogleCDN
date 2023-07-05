@@ -39,9 +39,9 @@
 1. <strong>点击扩展图标-自动打开扩展选项页</strong>
 1. [扩展选项配置原理](extension/options_ui/README.md)
 
-## v3 功能变更记录[`CHANGELOG-0.10.x-V3`](CHANGELOG-v3-0.10.x.md)
+## v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
 
-## v2 功能变更记录[`CHANGELOG-0.10.x-V2`](CHANGELOG-v2-0.10.x.md)
+## v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
 
 ## [可用 公共 CDN 静态资源库 和 网络拨测工具](extension/rules/README.md)
 
@@ -91,6 +91,9 @@ Chrome 安装方法（Google 被墙了上不去）：
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
 
 ### 扩展下载方式三：(来自国内镜像) 克隆源代码以后， 步骤如上： :point_up_2: :point_up_2: :point_up_2:
+
+1. [ReplaceGoogleCDN gitee 镜像](https://gitee.com/mirrors/replacegooglecdn)
+1. [ReplaceGoogleCDN gitcode 镜像](https://gitcode.net/mirrors/justjavac/replacegooglecdn.git)
 
 ```shell
 # 克隆源代码

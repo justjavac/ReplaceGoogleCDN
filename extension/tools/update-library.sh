@@ -18,7 +18,6 @@ fi
 # 使用代理下载源码
 # bash  update-library.sh --proxy http://127.0.0.1:1080
 
-mirror=''
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)

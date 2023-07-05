@@ -33,7 +33,6 @@ case $OS in
 "Darwin")
   chromium='chrome-mac/Chromium.app/Contents/MacOS/Chromium'
   ;;
-
 "MINGW64_NT")
   # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
   # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
@@ -51,7 +50,6 @@ $chromium \
   --enable-remote-extensions \
   --enable-extensions \
   --load-extension="$extensions" \
-  --enable-extensions \
   --auto-open-devtools-for-tabs \
   --enable-logging=stderr --v=1 \
   --remote-debugging-port=9222 \
@@ -59,7 +57,25 @@ $chromium \
   --start-maximized \
   about:blank
 
+# chrome://version
 # 全屏
 # --start-fullscreen
 # 空白页
 # about:blank
+# 查看所有内置命令
+# chrome://chrome-urls/
+# 使用 代理 方式一
+# --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"
+# 使用 代理 方式二
+# --proxy-server="http=http://127.0.0.1:8015;https=http://127.0.0.1:8015"
+# 使用 代理 方式三
+#--proxy-server="SOCKS5://127.0.0.1:2000"
+
+# --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+
+#  --flag-switches-begin \
+#  --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure,ProcessPerSiteUpToMainFrameThreshold \
+#  --enable-features=VaapiVideoDecodeLinuxGL \
+#  --enable-features=PlatformHEVCDecoderSupport \
+#  --flag-switches-end \
+# --disable-extensions-except=
