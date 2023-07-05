@@ -4,7 +4,7 @@
 
 ## [一个完整的 测试环境例子 可用于查看优秀的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
-## CHANGELOG for v3 0.10.29 [2023-07-05 07:00:00 +0800]
+## CHANGELOG for v3 0.10.29 [2023-07-05 21:00:00 +0800]
 
 > 1. 升级 josdejong/svelte-jsoneditor 并确定其版本为 v0.17.8
 > 2. 支持 firefox 浏览器，firefox 版本需要 >= v113
