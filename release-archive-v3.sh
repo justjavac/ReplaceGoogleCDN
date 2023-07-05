@@ -7,7 +7,6 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
-test -d dist && rm -rf dist
 mkdir -p dist/
 cd ${__DIR__}/dist
 
@@ -15,7 +14,7 @@ test -f ReplaceGoogleCDN-v3-chromium.zip && rm -f ReplaceGoogleCDN-v3-chromium.z
 test -f ReplaceGoogleCDN-v3-firefox.zip && rm -f ReplaceGoogleCDN-v3-firefox.zip
 
 cd ${__DIR__}/
-python3 extension/tools/update-manifest.py  chromium
+python3 extension/tools/update-manifest.py chromium
 
 cd ${__DIR__}/extension
 # 打包 manifest v3 支持chromium 内核系列
@@ -42,10 +41,8 @@ zip -u dist/ReplaceGoogleCDN-v3-chromium.zip ./Privacy.md
 zip -u dist/ReplaceGoogleCDN-v3-chromium.zip ./LICENSE
 zip -u dist/ReplaceGoogleCDN-v3-chromium.zip ./CHANGELOG-v3-x.x.x.md
 
-
-
 cd ${__DIR__}/
-python3 extension/tools/update-manifest.py  firefox
+python3 extension/tools/update-manifest.py firefox
 
 cd ${__DIR__}/extension
 zip -r ../dist/ReplaceGoogleCDN-v3-firefox.zip . \
@@ -73,7 +70,7 @@ zip -u dist/ReplaceGoogleCDN-v3-firefox.zip ./CHANGELOG-v3-x.x.x.md
 
 #  恢复为默认
 cd ${__DIR__}/
-python3 extension/tools/update-manifest.py  chromium
+python3 extension/tools/update-manifest.py chromium
 
 cd ${__DIR__}/dist
 # 查看打包结果

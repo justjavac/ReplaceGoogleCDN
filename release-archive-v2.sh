@@ -7,7 +7,6 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
-test -d dist && rm -rf dist
 mkdir -p dist/
 cd ${__DIR__}/dist
 
