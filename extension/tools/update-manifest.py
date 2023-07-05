@@ -96,7 +96,6 @@ if __name__ == '__main__':
         }
     }
     '''
-    firefox_specific_settings = None
 
     background_content = chromium_background_content
     sandbox_content = chromium_sandbox_content

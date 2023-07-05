@@ -1,6 +1,9 @@
 name: build-replace-google-cdn
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   linux:
@@ -23,23 +26,47 @@ jobs:
           uname -m 
           uname -r
           node -v
-      - name: Build
+      - name: Build v2
         run: |
-          bash  release-archive.sh
+          bash  release-archive-v2.sh
           ls -lah dist
-      - name: production artifacts
+      - name: production artifacts v2
         uses: actions/upload-artifact@v3
         with:
-          name: replace-google-cdn
+          name: replace-google-cdn-v2
           retention-days: 7
           path: |
             dist/ReplaceGoogleCDN-v2.zip
+      - name: Build v3
+        run: |
+          bash  release-archive-v3.sh
+          ls -lah dist
+      - name: production artifacts v3
+        uses: actions/upload-artifact@v3
+        with:
+          name: replace-google-cdn-v3-chromium
+          retention-days: 7
+          path: |
             dist/ReplaceGoogleCDN-v3-chromium.zip
             dist/ReplaceGoogleCDN-v3-firefox.zip
+      - name: Browser Plugin Publish v2
+        if: 0
+        uses: PlasmoHQ/bpp@v2
+        with:
+          artifact: "dist/ReplaceGoogleCDN-v2.zip"
+          keys: ${{ secrets.SUBMIT_KEYS }}
+      - name: Browser Plugin Publish v3
+        if: 0
+        uses: PlasmoHQ/bpp@v3
+        with:
+          artifact: "dist/ReplaceGoogleCDN-v3.zip"
+          keys: ${{ secrets.SUBMIT_KEYS }}
+        # 使用参考 https://github.com/PlasmoHQ/bpp.git
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             dist/ReplaceGoogleCDN-v2.zip
-            dist/ReplaceGoogleCDN-v3.zip
+            dist/ReplaceGoogleCDN-v3-chromium.zip
+            dist/ReplaceGoogleCDN-v3-firefox.zip
