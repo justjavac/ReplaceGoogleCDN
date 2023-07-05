@@ -40,17 +40,22 @@ cd ${__DIR__}
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f prefs.js $profile_folder
 
+# export MOZ_ENABLE_WAYLAND=1
+
 ./firefox/firefox \
   -profile "$profile_folder" \
-  --remote-debugging-port 9221 \
+  -start-debugger-server 9221 \
+  --remote-debugging-port 9222 \
   about:debugging#/runtime/this-firefox
 
+# Firefox supports several remote protocols   https://firefox-source-docs.mozilla.org/remote/index.html
 # -start-debugger-server  vs  --remote-debugging-port
 # -start-debugger-server 9221 \
 # -devtools \
 # -jsconsole \
 #  about:blank
-# 此命令已不可用
+
+# 此命令已不可用 ; Firefox 允许通过 RDP（远程调试协议）安装插件
 # -install-global-extension  ${__ROOT__}/extension-v2 \
 # -install-global-extension ${__DIR__}/traduzir_paginas_web-9.8.1.0.xpi \
 

@@ -78,3 +78,4 @@ $chromium \
 #  --enable-features=VaapiVideoDecodeLinuxGL \
 #  --enable-features=PlatformHEVCDecoderSupport \
 #  --flag-switches-end \
+# --disable-extensions-except=
