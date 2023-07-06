@@ -51,7 +51,8 @@
 
 ![](./screen-sof.png)
 
-第一行是 jquery.min.js 的原始请求 `https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js`，被拦截并替换，返回的状态码为 307 Internal Redirect，耗时 26ms。第三行是 jquery.min.js 被替换后的请求，33kB，耗时 95ms。
+第一行是 jquery.min.js 的原始请求 `https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js`，被拦截并替换，返回的状态码为
+307 Internal Redirect，耗时 26ms。第三行是 jquery.min.js 被替换后的请求，33kB，耗时 95ms。
 
 下表是各种资源的网络请求对比（以替换后的速度为基准 100%）：
 
@@ -72,6 +73,16 @@
 | rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |       96 |        4.2 |       1% |
 | keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |       75 |       97.3 |    27.9% |
 
+## 打包命令
+
+```shell
+
+bash   release-archive-v2.sh
+
+bash   release-archive-v3.sh
+
+```
+
 ## 安装
 
 ### 在线安装
@@ -84,7 +95,10 @@
 
 Chrome 安装方法（Google 被墙了上不去）：
 
-> 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，找到 `extension` 子目录
+> 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，找到 `extension`
+
+     子目录
+
 > 2. 打开 Chrome，输入: `chrome://extensions/`
 > 3. 勾选 Developer Mode
 > 4. 选择 Load unpacked extension... 然后定位到刚才解压的文件夹里面的 extension 目录，确定

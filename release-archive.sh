@@ -38,7 +38,7 @@ cd ${__DIR__}
 zip -u dist/ReplaceGoogleCDN-v3.zip ./README.md
 zip -u dist/ReplaceGoogleCDN-v3.zip ./Privacy.md
 zip -u dist/ReplaceGoogleCDN-v3.zip ./LICENSE
-zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-v3-0.10.x.md
+zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-v3-x.x.x.md
 
 # 打包 manifest v2  支持chromium 内核系列 和 firefox
 cd ${__DIR__}/extension-v2/
@@ -58,7 +58,7 @@ cd ${__DIR__}
 zip -u dist/ReplaceGoogleCDN-v2.zip ./README.md
 zip -u dist/ReplaceGoogleCDN-v2.zip ./Privacy.md
 zip -u dist/ReplaceGoogleCDN-v2.zip ./LICENSE
-zip -u dist/ReplaceGoogleCDN-v2.zip ./CHANGELOG-v2-0.10.x.md
+zip -u dist/ReplaceGoogleCDN-v2.zip ./CHANGELOG-v2-x.x.x.md
 
 cd ${__DIR__}/dist
 # 查看打包结果
