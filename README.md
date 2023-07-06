@@ -56,22 +56,32 @@
 
 下表是各种资源的网络请求对比（以替换后的速度为基准 100%）：
 
-| 资源                       | 来源                             |   尺寸(kB) | 时间(ms) |  速度(B/ms) |      百分比 |
-|--------------------------|--------------------------------|---------:|-------:|----------:|---------:|
-| jquery.min.js            | ajax.googleapis.com            |        0 |     26 |         - |        - |
-| stub.en.js               | cdn.sstatic.net                |     18.0 |    293 |      61.4 |      18% |
-| **jquery.min.js**        | **ajax.loli.net** ⚡️           | **33.1** | **95** | **348.4** | **100%** |
-| clc.min.js               | cdn.sstatic.net                |      4.2 |    399 |      10.5 |      30% |
-| full.en.js               | cdn.sstatic.net                |     99.6 |    534 |     186.5 |      54% |
-| gpt.js                   | securepubads.g.doubleclick.net |     21.3 |     85 |     250.6 |      72% |
-| analytics.js             | google-analytics.com           |     19.6 |     79 |     248.1 |      71% |
-| quant.js                 | secure.quantserve.com          |      9.1 |    420 |      21.7 |      62% |
-| beacon.js                | sb.scorecardresearch.com       |      1.8 |     73 |      24.7 |      71% |
-| integrator.js            | adservice.google.com 🐌        |      0.3 |     87 |       3.4 |       1% |
-| markup.js                | clc.stackoverflow.com 🐌       |      9.2 |    252 |      36.5 |      10% |
-| osd.js                   | googletagservices.com          |     28.1 |     90 |     312.2 |      89% |
-| rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |     96 |       4.2 |       1% |
-| keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |     75 |      97.3 |    27.9% |
+| 资源                     | 来源                           | 尺寸(kB) | 时间(ms) | 速度(B/ms) |   百分比 |
+| ------------------------ | ------------------------------ | -------: | -------: | ---------: | -------: |
+| jquery.min.js            | ajax.googleapis.com            |        0 |       26 |          - |        - |
+| stub.en.js               | cdn.sstatic.net                |     18.0 |      293 |       61.4 |      18% |
+| **jquery.min.js**        | **ajax.loli.net** ⚡️          | **33.1** |   **95** |  **348.4** | **100%** |
+| clc.min.js               | cdn.sstatic.net                |      4.2 |      399 |       10.5 |      30% |
+| full.en.js               | cdn.sstatic.net                |     99.6 |      534 |      186.5 |      54% |
+| gpt.js                   | securepubads.g.doubleclick.net |     21.3 |       85 |      250.6 |      72% |
+| analytics.js             | google-analytics.com           |     19.6 |       79 |      248.1 |      71% |
+| quant.js                 | secure.quantserve.com          |      9.1 |      420 |       21.7 |      62% |
+| beacon.js                | sb.scorecardresearch.com       |      1.8 |       73 |       24.7 |      71% |
+| integrator.js            | adservice.google.com 🐌        |      0.3 |       87 |        3.4 |       1% |
+| markup.js                | clc.stackoverflow.com 🐌       |      9.2 |      252 |       36.5 |      10% |
+| osd.js                   | googletagservices.com          |     28.1 |       90 |      312.2 |      89% |
+| rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |       96 |        4.2 |       1% |
+| keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |       75 |       97.3 |    27.9% |
+
+## 打包命令
+
+```shell
+
+bash   release-archive-v2.sh
+
+bash   release-archive-v3.sh
+
+```
 
 ## 安装
 
@@ -86,7 +96,9 @@
 Chrome 安装方法（Google 被墙了上不去）：
 
 > 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，找到 `extension`
+
      子目录
+
 > 2. 打开 Chrome，输入: `chrome://extensions/`
 > 3. 勾选 Developer Mode
 > 4. 选择 Load unpacked extension... 然后定位到刚才解压的文件夹里面的 extension 目录，确定
