@@ -95,10 +95,8 @@ bash   release-archive-v3.sh
 
 Chrome 安装方法（Google 被墙了上不去）：
 
-> 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，找到 `extension`
-
-     子目录
-
+> 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，
+>    找到 `extension` 子目录
 > 2. 打开 Chrome，输入: `chrome://extensions/`
 > 3. 勾选 Developer Mode
 > 4. 选择 Load unpacked extension... 然后定位到刚才解压的文件夹里面的 extension 目录，确定
@@ -126,6 +124,8 @@ git -C replacegooglecdn pull  --depth=1 --progress  --rebase=true
 1. [ReplaceGoogleCDN-v3.zip（release v3 版本）支持 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip)
 1. [ReplaceGoogleCDN-v2.zip（release v2 版本）同时支持 firefox 和 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip)
 1. [ReplaceGoogleCDN.zip（全部源码）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN.zip)
+
+#### 扩展下载方式四, 构建原理
 
 ```text
 # 原理： github: page + action
