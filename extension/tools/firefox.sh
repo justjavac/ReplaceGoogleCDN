@@ -43,6 +43,7 @@ cd ${__PROJECT__}/extension/tools/
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f prefs.js $profile_folder
 
+# cd ${__PROJECT__}/extension-v2
 cd ${__PROJECT__}/extension
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
