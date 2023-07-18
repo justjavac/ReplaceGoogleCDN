@@ -20,6 +20,8 @@ mkdir -p $profile_folder
 
 cd ${__PROJECT__}
 
+python3 extension/tools/update-manifest.py  firefox
+
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
 
@@ -44,20 +46,17 @@ cp -f prefs.js $profile_folder
 cd ${__PROJECT__}/extension
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
-export MOZ_ENABLE_WAYLAND=1
-
 npx web-ext run \
   --verbose \
   --devtools \
-  --browser-console \
   --firefox=${__PROJECT__}/extension/tools/firefox/firefox \
   --firefox-profile=$profile_folder \
   --profile-create-if-missing \
   --arg="--new-tab=https://stackoverflow.com/tags/socat/hot?filter=all" \
   --start-url https://m3.material.io/
 
+#   --browser-console \
 exit 0
-
 
 # export MOZ_ENABLE_WAYLAND=1
 
