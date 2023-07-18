@@ -3,11 +3,13 @@
   "scripts": {
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
     "build": "bash extension/tools/release-archive.sh",
-    "release": "bash release-archive.sh"
+    "release": "bash release-archive.sh",
+    "firefox-test": "npx web-ext run "
   },
   "devDependencies": {
     "@types/chrome": "^0.0.139",
     "prettier": "^2.3.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "web-ext": "^7.6.2"
   }
 }

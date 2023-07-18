@@ -8,8 +8,8 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
-__ROOT__=$(
-  cd ${__DIR__}/../
+__PROJECT__=$(
+  cd ${__DIR__}/../../
   pwd
 )
 
@@ -18,7 +18,7 @@ profile_folder="/tmp/${uuid}"
 
 mkdir -p $profile_folder
 
-cd ${__DIR__}
+cd ${__PROJECT__}
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
@@ -37,8 +37,27 @@ cd ${__DIR__}
 # 支持 ResourceType
 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType
 
+cd ${__PROJECT__}/extension/tools/
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f prefs.js $profile_folder
+
+cd ${__PROJECT__}/extension
+# reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
+
+export MOZ_ENABLE_WAYLAND=1
+
+npx web-ext run \
+  --verbose \
+  --devtools \
+  --browser-console \
+  --firefox=${__PROJECT__}/extension/tools/firefox/firefox \
+  --firefox-profile=$profile_folder \
+  --profile-create-if-missing \
+  --arg="--new-tab=https://stackoverflow.com/tags/socat/hot?filter=all" \
+  --start-url https://m3.material.io/
+
+exit 0
+
 
 # export MOZ_ENABLE_WAYLAND=1
 
