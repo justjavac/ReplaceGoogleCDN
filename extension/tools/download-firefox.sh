@@ -30,6 +30,9 @@ ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
 FIREFOX_VERSION=114.0b9
+if  test -n "$1" ; then
+  FIREFOX_VERSION="$1"
+fi
 
 SHOW_DOWNLOAD_FIREFOX_URL=https://archive.mozilla.org/pub/firefox/releases/
 
@@ -41,14 +44,12 @@ case $OS in
   test -d firefox && rm -rf firefox
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/linux-${ARCH}/en-US/firefox-${FIREFOX_VERSION}.tar.bz2
   curl -Lo firefox-${FIREFOX_VERSION}.tar.bz2 ${DOWNLOAD_FIREFOX_URL}
-
   tar -jxvf firefox-${FIREFOX_VERSION}.tar.bz2
   ;;
 "Darwin")
   test -f Firefox%20${FIREFOX_VERSION}.dmg && rm -rf Firefox%20${FIREFOX_VERSION}.dmg
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
   curl -Lo Firefox%20${FIREFOX_VERSION}.dmg ${DOWNLOAD_FIREFOX_URL}
-
   ;;
 
 "MINGW64_NT")

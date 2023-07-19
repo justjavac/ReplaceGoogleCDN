@@ -39,9 +39,9 @@
 1. <strong>点击扩展图标-自动打开扩展选项页</strong>
 1. [扩展选项配置原理](extension/options_ui/README.md)
 
-## v3 功能变更记录[`CHANGELOG-0.10.x-V3`](CHANGELOG-v3-0.10.x.md)
+## v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
 
-## v2 功能变更记录[`CHANGELOG-0.10.x-V2`](CHANGELOG-v2-0.10.x.md)
+## v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
 
 ## [可用 公共 CDN 静态资源库 和 网络拨测工具](extension/rules/README.md)
 
@@ -51,7 +51,8 @@
 
 ![](./screen-sof.png)
 
-第一行是 jquery.min.js 的原始请求 `https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js`，被拦截并替换，返回的状态码为 307 Internal Redirect，耗时 26ms。第三行是 jquery.min.js 被替换后的请求，33kB，耗时 95ms。
+第一行是 jquery.min.js 的原始请求 `https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js`，被拦截并替换，返回的状态码为
+307 Internal Redirect，耗时 26ms。第三行是 jquery.min.js 被替换后的请求，33kB，耗时 95ms。
 
 下表是各种资源的网络请求对比（以替换后的速度为基准 100%）：
 
@@ -72,6 +73,16 @@
 | rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |       96 |        4.2 |       1% |
 | keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |       75 |       97.3 |    27.9% |
 
+## 打包命令
+
+```shell
+
+bash   release-archive-v2.sh
+
+bash   release-archive-v3.sh
+
+```
+
 ## 安装
 
 ### 在线安装
@@ -84,13 +95,17 @@
 
 Chrome 安装方法（Google 被墙了上不去）：
 
-> 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，找到 `extension` 子目录
+> 1. 下载 [ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN/archive/master.zip) 然后解压，
+>    找到 `extension` 子目录
 > 2. 打开 Chrome，输入: `chrome://extensions/`
 > 3. 勾选 Developer Mode
 > 4. 选择 Load unpacked extension... 然后定位到刚才解压的文件夹里面的 extension 目录，确定
 > 5. 这就安装好了，去掉 Developer Mode 勾选。
 
 ### 扩展下载方式三：(来自国内镜像) 克隆源代码以后， 步骤如上： :point_up_2: :point_up_2: :point_up_2:
+
+1. [ReplaceGoogleCDN gitee 镜像](https://gitee.com/mirrors/replacegooglecdn)
+1. [ReplaceGoogleCDN gitcode 镜像](https://gitcode.net/mirrors/justjavac/replacegooglecdn.git)
 
 ```shell
 # 克隆源代码
@@ -109,6 +124,8 @@ git -C replacegooglecdn pull  --depth=1 --progress  --rebase=true
 1. [ReplaceGoogleCDN-v3.zip（release v3 版本）支持 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip)
 1. [ReplaceGoogleCDN-v2.zip（release v2 版本）同时支持 firefox 和 chromium 系列浏览器](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip)
 1. [ReplaceGoogleCDN.zip（全部源码）](https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN.zip)
+
+#### 扩展下载方式四, 构建原理
 
 ```text
 # 原理： github: page + action

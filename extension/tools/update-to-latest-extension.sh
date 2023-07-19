@@ -2,7 +2,10 @@
 
 set -exu
 
-__DIR__=$(cd "$(dirname "$0")";pwd)
+__DIR__=$(
+  cd "$(dirname "$0")"
+  pwd
+)
 cd ${__DIR__}
 
 # 下载扩展

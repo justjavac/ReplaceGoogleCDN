@@ -1,4 +1,4 @@
-chrome.runtime.onInstalled.addListener((details) => {});
+chrome.runtime.onInstalled.addListener(async (details) => {});
 
 chrome.action.onClicked.addListener((tab) => {
   //通过action 打开选项页
