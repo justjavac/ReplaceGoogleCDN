@@ -1,4 +1,4 @@
-certifi==2022.6.15
+certifi==2023.7.22
 charset-normalizer==2.1.0
 greenlet==2.0.2
 idna==3.3
