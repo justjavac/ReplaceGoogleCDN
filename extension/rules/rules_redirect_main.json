@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "ajax.googleapis.com",
+      "urlFilter": "|http*://ajax.googleapis.com",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -45,7 +45,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
+      "urlFilter": "|http*://fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -78,7 +78,7 @@
       }
     },
     "condition": {
-      "urlFilter": "themes.googleusercontent.com",
+      "urlFilter": "|http*://themes.googleusercontent.com",
       "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
@@ -111,7 +111,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.gstatic.com",
+      "urlFilter": "|http*://fonts.gstatic.com",
       "requestDomains": ["fonts.gstatic.com"],
       "resourceTypes": [
         "main_frame",
@@ -144,7 +144,7 @@
       }
     },
     "condition": {
-      "urlFilter": "gravatar.com",
+      "urlFilter": "|http*://*.gravatar.com",
       "requestDomains": [
         "secure.gravatar.com",
         "www.gravatar.com",
@@ -175,11 +175,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/twitter-bootstrap/\\1/\\2"
+        "regexSubstitution": "https://lib.baomitu.com/twitter-bootstrap/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "maxcdn\\.bootstrapcdn\\.com/bootstrap/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "https?://maxcdn\\.bootstrapcdn\\.com/bootstrap/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["maxcdn.bootstrapcdn.com"],
       "resourceTypes": [
         "main_frame",
@@ -212,7 +212,7 @@
       }
     },
     "condition": {
-      "urlFilter": "cdn.jsdelivr.net",
+      "urlFilter": "|http*://cdn.jsdelivr.net",
       "requestDomains": ["cdn.jsdelivr.net"],
       "resourceTypes": [
         "main_frame",
@@ -238,11 +238,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/jquery/\\1/jquery\\2"
+        "regexSubstitution": "https://lib.baomitu.com/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "https?://code\\.jquery\\.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -268,11 +268,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
+        "regexSubstitution": "https://ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -305,7 +305,7 @@
       }
     },
     "condition": {
-      "urlFilter": "developers.google.com",
+      "urlFilter": "|http*://developers.google.com",
       "requestDomains": ["developers.google.com"],
       "resourceTypes": [
         "main_frame",
@@ -338,7 +338,7 @@
       }
     },
     "condition": {
-      "urlFilter": "developer.android.com",
+      "urlFilter": "|http*://developer.android.com",
       "requestDomains": ["developer.android.com"],
       "resourceTypes": [
         "main_frame",
@@ -371,7 +371,7 @@
       }
     },
     "condition": {
-      "urlFilter": "source.android.com",
+      "urlFilter": "|http*://source.android.com",
       "requestDomains": ["source.android.com"],
       "resourceTypes": [
         "main_frame",
