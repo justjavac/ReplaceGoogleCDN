@@ -24,8 +24,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ]
     }
@@ -56,8 +55,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ]
     }
@@ -88,8 +86,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ]
     }
@@ -120,8 +117,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ]
     }
@@ -151,8 +147,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ]
     }
@@ -182,8 +177,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ]
     }
