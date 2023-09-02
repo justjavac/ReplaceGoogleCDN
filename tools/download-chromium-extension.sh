@@ -1,16 +1,24 @@
 #!/bin/bash
-set -exu
 
+if [ ! "$BASH_VERSION" ]; then
+  echo "Please do not use BASH  to run this script ($0), just execute it directly" 1>&2
+  exit 1
+fi
+
+set -exu
 __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
+__PROJECT__=$(
+  cd ${__DIR__}/../
+  pwd
+)
 
-if [ ! "$BASH_VERSION" ]; then
-  echo "Please do not use sh to run this script ($0), just execute it directly" 1>&2
-  exit 1
-fi
+mkdir -p ${__PROJECT__}/var/
+
+cd ${__PROJECT__}/var/
+
 
 # 本脚本存在的意义：从扩展应用商店下载扩展
 
@@ -23,7 +31,8 @@ fi
 
 # `https://clients2.google.com/service/update2/crx?response=redirect&prodversion=${version}&acceptformat=crx2,crx3&x=id%3D${result[1]}%26uc&nacl_arch=${nacl_arch}`;
 
-# bash  extension/tools/download-chromium-extension.sh  --proxy http://127.0.0.1:8015
+## 下载命令例子：
+# bash  tools/download-chromium-extension.sh  --proxy http://127.0.0.1:8015
 
 mirror=''
 while [ $# -gt 0 ]; do
@@ -41,9 +50,8 @@ while [ $# -gt 0 ]; do
   shift $(($# > 0 ? 1 : 0))
 done
 
-test -d temp && rm -rf temp
-mkdir -p temp
-cd ${__DIR__}/temp
+mkdir -p chromium-extensions
+cd ${__PROJECT__}/var/chromium-extensions
 
 # google translate
 extension_id=aapbdbdomjkkjkaonfhkkikfgjllcleb
@@ -75,8 +83,5 @@ set +e
 unzip -d ${file_name} "${file_name}.crx"
 set -e
 
-cd ${__DIR__}/
+cd ${__PROJECT__}/var/chromium-extensions
 
-exit 0
-
-test -d temp && rm -rf temp

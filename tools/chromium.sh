@@ -5,9 +5,7 @@ __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
-
-__ROOT__=$(
+__PROJECT__=$(
   cd ${__DIR__}/../
   pwd
 )
@@ -24,7 +22,7 @@ export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 test -d /tmp/$uuid || mkdir -p /tmp/$uuid
-dir=/tmp/$uuid
+USER_DATA=/tmp/$uuid
 
 case $OS in
 "Linux")
@@ -42,11 +40,13 @@ esac
 
 echo $chromium
 
+cd ${__PROJECT__}/var
+
 #扩展所在目录
-extensions=${__ROOT__}
+extensions=${__PROJECT__}/extension
 
 $chromium \
-  --user-data-dir=$dir \
+  --user-data-dir=$USER_DATA \
   --enable-remote-extensions \
   --enable-extensions \
   --load-extension="$extensions" \

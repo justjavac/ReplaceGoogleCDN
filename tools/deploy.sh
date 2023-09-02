@@ -6,10 +6,9 @@ __DIR__=$(
   pwd
 )
 __PROJECT__=$(
-  cd ${__DIR__}/../../
+  cd ${__DIR__}/../
   pwd
 )
-
 
 cd ${__PROJECT__}
 
@@ -17,7 +16,8 @@ bash release-archive.sh
 
 cd ${__PROJECT__}
 
-# 默认部署在和本项目同级目录，文件夹名称：ReplaceGoogleCDN-v3
+# 默认部署目录为，本项目的上一级目录，文件夹名称：ReplaceGoogleCDN-v3
+
 test -d ${__PROJECT__}/../ReplaceGoogleCDN-v3 && rm -rf ${__PROJECT__}/../ReplaceGoogleCDN-v3
 
 mv  ${__PROJECT__}/dist/ReplaceGoogleCDN-v3 ${__PROJECT__}/../
