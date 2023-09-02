@@ -10,7 +10,7 @@
 > 1. 新增： 默认规则实现兼容 firefox
 > 1. 新增： 准备发布 v3 1.0.0 版本
 > 1. 变更： 修改规则`developer.android.com`,`developers.google.com`,`source.android.com`,`developers.google.com`,`source.android.com` 默认不启用
-> 1. 变更： 归档不属于扩展的目录和文件
+> 1. 变更： 准备归档不属于扩展的目录和文件（进行中）
 > 1. 变更： 移除 2 种不支持的规则类型 `"webtransport"`,`"webbundle"` ,实现兼容 firefox
 > 1. 修复: [修复匹配规则宽泛 bug](https://github.com/justjavac/ReplaceGoogleCDN/issues/182)
 > 1. 变更： `imgur.com` 的候选项规则 删除无效的候选项 `search.pstatic.net`
