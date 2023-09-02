@@ -9,6 +9,7 @@
 > 1. URL 匹配规则添加 `scheme` 匹配,收缩匹配范围
 > 1. [修复匹配规则宽泛 bug](https://github.com/justjavac/ReplaceGoogleCDN/issues/182)
 > 1. 移除 2 种不支持的规则类型 `"webtransport"`,`"webbundle"` ,实现兼容 firefox
+> 1. 修改规则`developer.android.com`,`developers.google.com`,`source.android.com`,`developers.google.com`,`source.android.com` 默认不启用
 > 1. 归档不属于扩展的目录和文件
 > 1. 准备发布 v3 1.0.0 版本
 
