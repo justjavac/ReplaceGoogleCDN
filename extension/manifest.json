@@ -15,7 +15,9 @@
     "declarativeNetRequestWithHostAccess",
     "declarativeNetRequestFeedback"
   ],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "declarative_net_request": {
     "rule_resources": [
       {
@@ -54,6 +56,8 @@
   "author": "https://github.com/justjavac",
   "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN",
   "sandbox": {
-    "pages": ["sandbox/index.html"]
+    "pages": [
+      "sandbox/index.html"
+    ]
   }
 }
