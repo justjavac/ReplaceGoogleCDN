@@ -179,7 +179,7 @@
       }
     },
     "condition": {
-      "regexFilter": "https?://maxcdn\\.bootstrapcdn\\.com/bootstrap/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://maxcdn\\.bootstrapcdn\\.com/bootstrap/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["maxcdn.bootstrapcdn.com"],
       "resourceTypes": [
         "main_frame",
@@ -238,11 +238,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://lib.baomitu.com/jquery/\\1/jquery\\2"
+        "regexSubstitution": "https://cdn.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "https?://code\\.jquery\\.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -272,107 +272,8 @@
       }
     },
     "condition": {
-      "regexFilter": "https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 17,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "developers.google.cn"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "|http*://developers.google.com",
-      "requestDomains": ["developers.google.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 18,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "developer.android.google.cn"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "|http*://developer.android.com",
-      "requestDomains": ["developer.android.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 13,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "source.android.google.cn"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "|http*://source.android.com",
-      "requestDomains": ["source.android.com"],
       "resourceTypes": [
         "main_frame",
         "sub_frame",

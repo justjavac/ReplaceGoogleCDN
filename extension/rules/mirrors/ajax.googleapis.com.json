@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "ajax.googleapis.com",
+      "urlFilter": "|http*://ajax.googleapis.com",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -47,7 +47,7 @@
       }
     },
     "condition": {
-      "urlFilter": "ajax.googleapis.com",
+      "urlFilter": "|http*://ajax.googleapis.com",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -75,11 +75,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "use.sevencdn.com/gajax/\\1"
+        "regexSubstitution": "https://use.sevencdn.com/gajax/\\1"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -107,11 +107,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
+        "regexSubstitution": "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/\\1"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -139,11 +139,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "gapis.geekzu.org/ajax/ajax/libs/\\1"
+        "regexSubstitution": "https://gapis.geekzu.org/ajax/ajax/libs/\\1"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -170,11 +170,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/\\1/\\2/\\3"
+        "regexSubstitution": "https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -202,11 +202,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/\\1/\\2/\\3"
+        "regexSubstitution": "https://lib.baomitu.com/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)/(.*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -234,11 +234,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -265,11 +265,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "unpkg.com/\\1@\\2/dist/\\3"
+        "regexSubstitution": "https://unpkg.com/\\1@\\2/dist/\\3"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -297,11 +297,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/\\1/\\2/\\3"
+        "regexSubstitution": "https://cdnjs.cloudflare.com/ajax/libs/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -329,11 +329,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdn.staticfile.org/\\1/\\2/\\3"
+        "regexSubstitution": "https://cdn.staticfile.org/\\1/\\2/\\3"
       }
     },
     "condition": {
-      "regexFilter": "ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
+      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)/([\\.|\\d]*?)/(.*?)",
       "requestDomains": ["ajax.googleapis.com"],
       "resourceTypes": [
         "main_frame",
