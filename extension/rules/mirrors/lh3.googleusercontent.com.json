@@ -61,27 +61,5 @@
         "xmlhttprequest"
       ]
     }
-  },
-
-  {
-    "id": 4,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "regexSubstitution": "https://search.pstatic.net/common?src=\\1"
-      }
-    },
-    "condition": {
-      "regexFilter": "(.*?)",
-      "requestDomains": ["lh3.googleusercontent.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "image",
-        "object",
-        "xmlhttprequest"
-      ]
-    }
   }
 ]
