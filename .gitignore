@@ -5,24 +5,26 @@ extension.zip
 Thumbs.db
 server/
 server/*
-extension/_metadata/
-extension/test/extension-v3-test/
-extension/test/chromium-tools/
 package-lock.json
-
-tools/blocked-domain.py
-extension/tools/git-clean-file-history.sh
-extension/tools/local-deploy.sh
-tools/web/proxy.pac
-extension/tools/download-chromium-extension-backup.sh
 
 extension/third_party/
 !extension/third_party/README.md
 !extension/third_party/jingjingxyk
 !extension/third_party/josdejong/svelte-jsoneditor
 
-dist
-var/
+extension/_metadata/
+extension/tools/git-clean-file-history.sh
+extension/tools/local-deploy.sh
+
 extension/web-backup/
 extension/rules/example-no-use/backup/
+
+
+tools/download-chromium-extension-backup.sh
+tools/blocked-domain.py
+tools/web/proxy.pac
+
+dist
+var/
+
 
