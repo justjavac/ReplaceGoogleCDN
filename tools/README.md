@@ -42,7 +42,7 @@ bash extension/tools/chromium.sh
 bash tools/download-firefox.sh
 
 # 下载指定版本firefox
-bash tools/download-firefox.sh 118.0b3/
+bash tools/download-firefox.sh 118.0b3
 ```
 
 ## 运行 firefox 浏览器

@@ -1,19 +1,25 @@
-#!/bin/env bash
+#!/bin/bash
 
 set -exu
 
-__DIR__=$(cd "$(dirname "$0")";pwd)
-
-__ROOT__=$(
+# __DIR__=$(cd "$(dirname "$0")";pwd)
+__DIR__=$(
+  cd "$(dirname "$0")"
+  pwd
+)
+__PROJECT__=$(
   cd ${__DIR__}/../
   pwd
 )
 
 cd ${__DIR__}
 
+
+
+
 # 自动测试
 #  浏览器日志位于 nohup.out 文件
-nohup  sh ${__ROOT__}/tools/chromium.sh  &
+nohup  sh ${__PROJECT__}/tools/chromium.sh  &
 
 sleep 10
 
