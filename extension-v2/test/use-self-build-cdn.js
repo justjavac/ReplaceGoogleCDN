@@ -17,7 +17,7 @@
 
 // 打开替换CDN 功能
 /*
-// extension/js/background-advance.js （289-307行 选择去掉相应的注释）
+// extension-v2/js/background-advance.js （289-307行 选择去掉相应的注释）
 
 
 //方法一： 使用nginx架设的服务地址替换 (支持N个域名)
