@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "cdn.jsdelivr.net",
+      "urlFilter": "|http*://cdn.jsdelivr.net",
       "requestDomains": ["cdn.jsdelivr.net"],
       "resourceTypes": [
         "main_frame",
@@ -45,7 +45,7 @@
       }
     },
     "condition": {
-      "urlFilter": "cdn.jsdelivr.net",
+      "urlFilter": "|http*://cdn.jsdelivr.net",
       "requestDomains": ["cdn.jsdelivr.net"],
       "resourceTypes": [
         "main_frame",

@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
+      "urlFilter": "|http*://fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -46,7 +46,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
+      "urlFilter": "|http*://fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -80,7 +80,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
+      "urlFilter": "|http*://fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -114,7 +114,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
+      "urlFilter": "|http*://fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",
@@ -147,7 +147,7 @@
       }
     },
     "condition": {
-      "urlFilter": "fonts.googleapis.com",
+      "urlFilter": "|http*://fonts.googleapis.com",
       "requestDomains": ["fonts.googleapis.com"],
       "resourceTypes": [
         "main_frame",

@@ -5,11 +5,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/jquery/\\1/jquery\\2"
+        "regexSubstitution": "https://lib.baomitu.com/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "^https?://code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -36,11 +36,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdn.staticfile.org/jquery/\\1/jquery\\2"
+        "regexSubstitution": "https://cdn.staticfile.org/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "^https?://code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -67,11 +67,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/jquery/\\1/jquery\\2"
+        "regexSubstitution": "https://cdnjs.cloudflare.com/ajax/libs/jquery/\\1/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "^https?://code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -98,11 +98,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "fastly.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "^https?://code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -129,11 +129,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jQuery/jquery-\\1\\2"
+        "regexSubstitution": "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-\\1\\2"
       }
     },
     "condition": {
-      "regexFilter": "code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
+      "regexFilter": "^https?://code.jquery.com/jquery-(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",

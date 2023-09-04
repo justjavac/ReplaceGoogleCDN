@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "themes.googleusercontent.com",
+      "urlFilter": "|http*://themes.googleusercontent.com",
       "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
@@ -39,11 +39,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "gapis.geekzu.org/g-themes/\\1"
+        "regexSubstitution": "https://gapis.geekzu.org/g-themes/\\1"
       }
     },
     "condition": {
-      "regexFilter": "themes\\.googleusercontent\\.com/(.*?)",
+      "regexFilter": "^https?://themes\\.googleusercontent\\.com/(.*?)",
       "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",
@@ -77,7 +77,7 @@
       }
     },
     "condition": {
-      "urlFilter": "themes.googleusercontent.com",
+      "urlFilter": "|http*://themes.googleusercontent.com",
       "requestDomains": ["themes.googleusercontent.com"],
       "resourceTypes": [
         "main_frame",

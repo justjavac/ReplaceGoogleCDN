@@ -27,7 +27,7 @@
 
         "other"
       ],
-      "urlFilter": "source.android.com"
+      "urlFilter": "|http*://source.android.com"
     },
     "id": 13,
     "priority": 1

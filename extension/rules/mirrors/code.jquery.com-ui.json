@@ -5,11 +5,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
+        "regexSubstitution": "https://ajax.aspnetcdn.com/ajax/jquery.ui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -36,11 +36,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lib.baomitu.com/jqueryui/\\1/\\2"
+        "regexSubstitution": "https://lib.baomitu.com/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -67,11 +67,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdn.staticfile.org/jqueryui/\\1/\\2"
+        "regexSubstitution": "https://cdn.staticfile.org/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -98,11 +98,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "cdnjs.cloudflare.com/ajax/libs/jqueryui/\\1/\\2"
+        "regexSubstitution": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -128,11 +128,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "fastly.jsdelivr.net/npm/jquery-ui@\\1/dist/\\2"
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/jquery-ui@\\1/dist/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",
@@ -158,11 +158,11 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/jqueryui/\\1/\\2"
+        "regexSubstitution": "https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/jqueryui/\\1/\\2"
       }
     },
     "condition": {
-      "regexFilter": "code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
+      "regexFilter": "^https?://code\\.jquery\\.com/ui/(\\d{1,4}\\.\\d{1,4}\\.\\d{1,4})/(.*?)",
       "requestDomains": ["code.jquery.com"],
       "resourceTypes": [
         "main_frame",

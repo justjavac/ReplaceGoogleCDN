@@ -61,26 +61,5 @@
         "xmlhttprequest"
       ]
     }
-  },
-  {
-    "id": 5,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "regexSubstitution": "https://search.pstatic.net/common?src=\\1"
-      }
-    },
-    "condition": {
-      "regexFilter": "(.*?)",
-      "requestDomains": ["imgur.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "image",
-        "object",
-        "xmlhttprequest"
-      ]
-    }
   }
 ]

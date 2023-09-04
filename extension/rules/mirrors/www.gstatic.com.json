@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "www.gstatic.com",
+      "urlFilter": "|http*://www.gstatic.com",
       "requestDomains": ["www.gstatic.com"],
       "resourceTypes": [
         "main_frame",

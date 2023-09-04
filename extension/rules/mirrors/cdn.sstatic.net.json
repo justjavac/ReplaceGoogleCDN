@@ -27,7 +27,7 @@
 
         "other"
       ],
-      "urlFilter": "cdn.sstatic.net"
+      "urlFilter": "|http*://cdn.sstatic.net"
     },
     "id": 20019,
     "priority": 2

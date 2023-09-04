@@ -12,7 +12,7 @@
       }
     },
     "condition": {
-      "urlFilter": "gravatar.com",
+      "urlFilter": "|http*://*.gravatar.com",
       "requestDomains": [
         "secure.gravatar.com",
         "www.gravatar.com",
@@ -51,7 +51,7 @@
       }
     },
     "condition": {
-      "urlFilter": "gravatar.com",
+      "urlFilter": "|http*://*.gravatar.com",
       "requestDomains": [
         "secure.gravatar.com",
         "www.gravatar.com",
@@ -90,7 +90,7 @@
       }
     },
     "condition": {
-      "urlFilter": "gravatar.com",
+      "urlFilter": "|http*://*.gravatar.com",
       "requestDomains": [
         "secure.gravatar.com",
         "www.gravatar.com",
@@ -128,7 +128,7 @@
       }
     },
     "condition": {
-      "urlFilter": "gravatar.com",
+      "urlFilter": "|http*://*.gravatar.com",
       "requestDomains": [
         "secure.gravatar.com",
         "www.gravatar.com",
