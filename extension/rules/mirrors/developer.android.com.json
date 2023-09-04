@@ -28,7 +28,7 @@
         "webbundle",
         "other"
       ],
-      "urlFilter": "developer.android.com"
+      "urlFilter": "|http*://developer.android.com"
     },
     "id": 20019,
     "priority": 2
