@@ -24,8 +24,7 @@
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
+
         "other"
       ],
       "urlFilter": "|http*://cdn.sstatic.net"
