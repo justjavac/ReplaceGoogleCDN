@@ -26,12 +26,12 @@
 1. `www.google.com/recaptcha` - Google 图像验证库，替换为 `www.recaptcha.net/recaptcha`
 1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
 1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为 `lib.baomitu.com/twitter-bootstrap/`
-1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为 `lib.baomitu.com/jquery/$verson/$suffix`
-1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 需要请自行打开
-1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net` 默认未启用, 需要请自行打开
-1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用, 需要请自行打开
-1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 需要请自行打开
-1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 需要请自行打开
+1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为 `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
+1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 需要请到扩展选项页自行打开
+1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net` 
+1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用, 需要请到扩展选项页自行打开
+1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 需要请到扩展选项页自行打开
+1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 需要请到扩展选项页自行打开
 1. `www.gstatic.com` - 替换为 `www.gstatic.cn`
 
 ## 扩展选项页使用简述
