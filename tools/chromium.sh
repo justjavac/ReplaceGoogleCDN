@@ -84,7 +84,7 @@ $chromium \
 
 :<<\EOF
 
-MACOS  硬解 HEVC
+MACOS  chrome 硬解 HEVC
 添加下面这个启动参数就可以了 open /Applications/Google\ Chrome.app --args --enable-features=PlatformHEVCDecoderSupport
 
 EOF
@@ -106,3 +106,5 @@ EOF
 # mac 上启动chromium
 # "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --flag-switches-begin --flag-switches-end -enable-logging=stderr --v=1
 
+# chromium自定义启动参数 和 启用远程调试
+# https://www.cnblogs.com/jingjingxyk/p/16577987.html
