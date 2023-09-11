@@ -2,6 +2,11 @@
 
 ## [测试用例](/test/README.md)
 
+## [拨测工具](/tools/net-detect.md)
+
+## [公共 CDN 静态资源库](public-cdn.md)
+
+
 ## CHANGELOG for v2 0.10.16 [2023-02-09 13:01:00 +0800]
 
 > 1. v2 版本 修改 高级用法分离出去,精简默认代码

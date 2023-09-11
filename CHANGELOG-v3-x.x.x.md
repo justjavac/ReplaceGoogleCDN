@@ -6,7 +6,7 @@
 
 ## [公共 CDN 静态资源库](public-cdn.md)
 
-## [一个完整的 测试环境例子 可用于查看优秀 chromium 的源码 ](https://github.com/jingjingxyk/extension-v3-test)
+## [一个完整的 测试环境例子 可用于查看 chromium 的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
 ## CHANGELOG for v3 0.10.30 [2023-09-02 11:01:00 +0800]
 
