@@ -35,6 +35,8 @@
 1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `lh3.googleusercontent.com` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用, 如需启用请到扩展选项页自行打开
 
 ## 扩展选项页使用简述
 
