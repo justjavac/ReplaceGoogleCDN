@@ -34,14 +34,6 @@
 1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用, 如需启用请到扩展选项页自行打开
 
-## [可用 公共 CDN 静态资源库 和 网络拨测工具](extension/rules/README.md)
-
-## [测试用例](test/README.md)
-
-## [公共 CDN 静态资源库](public-cdn.md)
-
-## [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)
-
 ## 扩展选项页使用简述
 
 1. <strong>点击扩展图标-自动打开扩展选项页</strong>
@@ -147,3 +139,11 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip
 https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ```
+
+## [实现原理](extension/rules/README.md)
+
+## [测试用例](test/README.md)
+
+## [公共 CDN 静态资源库](public-cdn.md)
+
+## [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)
