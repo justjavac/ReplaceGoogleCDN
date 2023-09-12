@@ -11,7 +11,7 @@
 1. [cloudflare ](https://cdnjs.com/)
 1. [google libraries cn](https://developers.google.cn/speed/libraries)
 1. [七牛静态库 Staticfile CDN](http://staticfile.org/)
-1. [极客族公共加速服务](https://cdn.geekzu.org/cached.html)
+1. [~极客族公共加速服务~](https://cdn.geekzu.org/cached.html)
 1. [CDNJS 南方科技大学](https://mirrors.sustech.edu.cn/help/cdnjs.html)
 1. [CDNJS mirror list ](https://mirrorz.org/list/cdnjs)
 1. [公共 CDN 静态资源加速服务 7ED Services ](https://www.7ed.net/start/public-cdn.html)
