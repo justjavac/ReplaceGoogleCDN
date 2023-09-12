@@ -118,10 +118,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       /code\.jquery\.com\/ui\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
       "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
     );
-    url = url.replace("developers.google.com", "developers.google.cn");
-    url = url.replace("developer.android.com", "developer.android.google.cn");
-    url = url.replace("source.android.com", "source.android.google.cn");
-    url = url.replace("www.gstatic.com", "www.gstatic.cn");
     return { redirectUrl: url };
   },
   {
@@ -139,10 +135,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://cdn.jsdelivr.net/*",
       "*://code.jquery.com/jquery-*",
       "*://code.jquery.com/ui/*",
-      "*://developers.google.com/*",
-      "*://developer.android.com/*",
-      "*://source.android.com/*",
-      "*://www.gstatic.com/*",
     ],
   },
   ["blocking"]

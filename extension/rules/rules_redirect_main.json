@@ -238,7 +238,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://cdn.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/jquery@\\1/dist/jquery\\2"
       }
     },
     "condition": {

@@ -17,6 +17,8 @@
 
 ## 原理
 
+> 默认未启用的规则, 如需启用请到扩展选项页自行打开
+
 此插件/扩展可以将以下的 cdn 资源替换为国内的：
 
 1. `ajax.googleapis.com` - 前端公共库，替换为 `ajax.loli.net`
@@ -26,13 +28,15 @@
 1. `www.google.com/recaptcha` - Google 图像验证库，替换为 `www.recaptcha.net/recaptcha`
 1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
 1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为 `lib.baomitu.com/twitter-bootstrap/`
-1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为 `lib.baomitu.com/jquery/$verson/$suffix`
-1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 需要请自行打开
+1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为 `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
+1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
-1. `developers.google.com` - 替换为 `developers.google.cn`
-1. `developer.android.com` - 替换为 `developer.android.google.cn`
-1. `source.android.com` - 替换为 `source.android.google.cn`
-1. `www.gstatic.com` - 替换为 `www.gstatic.cn`
+1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `lh3.googleusercontent.com` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用, 如需启用请到扩展选项页自行打开
 
 ## 扩展选项页使用简述
 
@@ -42,8 +46,6 @@
 ## v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
 
 ## v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
-
-## [可用 公共 CDN 静态资源库 和 网络拨测工具](extension/rules/README.md)
 
 ## 效果
 
@@ -141,3 +143,11 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v2.zip
 https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ```
+
+## [declarative_net_reques 配置示例](extension/rules/README.md)
+
+## [测试用例](test/README.md)
+
+## [公共 CDN 静态资源库](public-cdn.md)
+
+## [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)

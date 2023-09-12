@@ -1,6 +1,10 @@
 # CHANGELOG for v2
 
-## [测试用例](/extension-v2/test/README.md)
+## [测试用例](/test/README.md)
+
+## [拨测工具](/tools/net-detect.md)
+
+## [公共 CDN 静态资源库](public-cdn.md)
 
 ## CHANGELOG for v2 0.10.16 [2023-02-09 13:01:00 +0800]
 

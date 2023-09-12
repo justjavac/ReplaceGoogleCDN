@@ -1,17 +1,23 @@
 #!/bin/bash
 
-set -exu
-
+set -ex
 __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
+__PROJECT__=$(
+  cd ${__DIR__}/../
+  pwd
+)
+
+mkdir -p ${__PROJECT__}/var/
+
+cd ${__PROJECT__}/var/
 
 # download firefox
 # https://www.mozilla.org/en-US/firefox/all/#product-desktop-release
 
-# downloaf firefox
+# download firefox
 # https://archive.mozilla.org/pub/firefox/releases/
 
 # firefox manifest-v3-migration-guide
@@ -29,8 +35,9 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
-FIREFOX_VERSION=114.0b9
-if  test -n "$1" ; then
+FIREFOX_VERSION=118.0b3
+
+if [ -n "$1" ]; then
   FIREFOX_VERSION="$1"
 fi
 

@@ -5,33 +5,22 @@ __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
-
-. venv/bin/activate
-
 __PROJECT__=$(
-  cd ${__DIR__}/../../
+  cd ${__DIR__}/../
   pwd
 )
 
-cd ${__DIR__}
+mkdir -p ${__PROJECT__}/var/
+
+cd ${__PROJECT__}/var/
 
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "$OS"
 
 # 默认来源于 https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/
-case $OS in
-"Linux")
-  DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py linux)
-  ;;
-"Darwin")
-  DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py darwin)
-  ;;
-*)
-  DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py win)
-  ;;
-esac
+
+DOWNLOAD_CHROMIUM_URL=''
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -71,11 +60,34 @@ while [ $# -gt 0 ]; do
       ;;
     esac
     ;;
-  *) ;;
+  *)
+    ;;
 
   esac
   shift $(($# > 0 ? 1 : 0))
 done
+
+
+
+if [ -z $DOWNLOAD_CHROMIUM_URL ] ;then
+      test -d ${__PROJECT__}/var/venv || bash ${__PROJECT__}/tools/python3-env-init.sh
+      . venv/bin/activate
+      cd ${__DIR__}
+      case $OS in
+      "Linux")
+        DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py linux)
+        ;;
+      "Darwin")
+        DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py darwin)
+        ;;
+      *)
+        DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py win)
+        ;;
+      esac
+fi
+
+cd ${__PROJECT__}/var/
+
 
 case $OS in
 "Linux")

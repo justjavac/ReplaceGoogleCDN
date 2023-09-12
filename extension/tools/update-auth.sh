@@ -13,7 +13,7 @@ __ROOT__=$(
 echo ${__ROOT__}
 
 
-cd ${__ROOT__}/rules/advance/
+cd ${__ROOT__}/rules/advance-no-use/
 
 if test -f auth.json; then
   des_line_number=$(grep -n 'x-auth-token' auth.json | awk -F ":" '{print $1}')

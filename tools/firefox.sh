@@ -9,7 +9,7 @@ __DIR__=$(
 cd ${__DIR__}
 
 __PROJECT__=$(
-  cd ${__DIR__}/../../
+  cd ${__DIR__}/../
   pwd
 )
 
@@ -18,9 +18,12 @@ profile_folder="/tmp/${uuid}"
 
 mkdir -p $profile_folder
 
-cd ${__PROJECT__}
 
-python3 extension/tools/update-manifest.py  firefox
+mkdir -p ${__PROJECT__}/var/
+cd ${__PROJECT__}/var/
+
+
+python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
@@ -39,24 +42,27 @@ python3 extension/tools/update-manifest.py  firefox
 # 支持 ResourceType
 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType
 
-cd ${__PROJECT__}/extension/tools/
-# 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
-cp -f prefs.js $profile_folder
 
-# cd ${__PROJECT__}/extension-v2
-cd ${__PROJECT__}/extension
+# 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
+cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
+
+
+cd ${__PROJECT__}/extension/
+
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
 npx web-ext run \
   --verbose \
-  --devtools \
-  --firefox=${__PROJECT__}/extension/tools/firefox/firefox \
+  --firefox=${__PROJECT__}/var/firefox/firefox \
   --firefox-profile=$profile_folder \
   --profile-create-if-missing \
   --arg="--new-tab=https://stackoverflow.com/tags/socat/hot?filter=all" \
   --start-url https://m3.material.io/
 
+#   --devtools \
 #   --browser-console \
+
+
 exit 0
 
 # export MOZ_ENABLE_WAYLAND=1
