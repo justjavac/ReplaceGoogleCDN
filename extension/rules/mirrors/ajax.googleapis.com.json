@@ -130,36 +130,6 @@
   },
 
   {
-    "id": 5,
-    "priority": 100,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "regexSubstitution": "https://gapis.geekzu.org/ajax/ajax/libs/\\1"
-      }
-    },
-    "condition": {
-      "regexFilter": "^https?://ajax\\.googleapis\\.com/ajax/libs/(.*?)",
-      "requestDomains": ["ajax.googleapis.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
-  },
-  {
     "id": 7,
     "priority": 90,
     "action": {
