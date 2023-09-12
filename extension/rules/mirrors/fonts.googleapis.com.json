@@ -68,40 +68,6 @@
   },
 
   {
-    "id": 3,
-    "priority": 100,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "fonts.geekzu.org"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "|http*://fonts.googleapis.com",
-      "requestDomains": ["fonts.googleapis.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
-  },
-
-  {
     "id": 4,
     "priority": 100,
     "action": {
