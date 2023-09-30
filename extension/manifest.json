@@ -7,15 +7,16 @@
   },
   "description": "将 Google CDN 替换为国内镜像 v3 更新日期：2023-09-02",
   "background": {
-    "service_worker": "js/background.js",
-    "type": "module"
+    "page": "background-page.html"
   },
   "permissions": [
     "declarativeNetRequest",
     "declarativeNetRequestWithHostAccess",
     "declarativeNetRequestFeedback"
   ],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "declarative_net_request": {
     "rule_resources": [
       {
@@ -41,8 +42,7 @@
     ]
   },
   "content_security_policy": {
-    "extension_pages": "default-src 'self';script-src 'self'  'wasm-unsafe-eval'  ;object-src 'self'; style-src 'self' 'unsafe-inline' ; connect-src   https://justjavac.com https://justjavac.github.io https://*.justjavac.com/ https://*.jingjingxyk.com https://jingjingxyk.github.io  http://localhost https://raw.githubusercontent.com https://github.com https://gitee.com https://gitcode.net;",
-    "sandbox": "sandbox allow-scripts allow-popups; script-src 'unsafe-inline' 'unsafe-eval'  "
+    "extension_pages": "default-src 'self';script-src 'self'  'wasm-unsafe-eval'  ;object-src 'self'; style-src 'self' 'unsafe-inline' ; connect-src   https://justjavac.com https://justjavac.github.io https://*.justjavac.com/ https://*.jingjingxyk.com https://jingjingxyk.github.io  http://localhost https://raw.githubusercontent.com https://github.com https://gitee.com https://gitcode.net;"
   },
   "options_ui": {
     "page": "options_ui/index.html",
@@ -53,7 +53,10 @@
   },
   "author": "https://github.com/justjavac",
   "homepage_url": "https://github.com/justjavac/ReplaceGoogleCDN",
-  "sandbox": {
-    "pages": ["sandbox/index.html"]
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "zonghengbaihe521@qq.com",
+      "strict_min_version": "113.0"
+    }
   }
 }

@@ -17,13 +17,16 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 echo "$OS"
 
+FIREFOX=''
 uuid=''
     case $OS in
     "Linux")
       uuid=$(cat /proc/sys/kernel/random/uuid)
+      FIREFOX=${__PROJECT__}/var/firefox/firefox
       ;;
     "Darwin")
       uuid=$(uuidgen)
+      FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
      ;;
     'MINGW64_NT'* | 'MSYS_NT'*)
       ;;
@@ -69,7 +72,7 @@ cd ${__PROJECT__}/extension/
 
 npx web-ext run \
   --verbose \
-  --firefox=${__PROJECT__}/var/firefox/firefox \
+  --firefox=${FIREFOX} \
   --firefox-profile=$profile_folder \
   --profile-create-if-missing \
   --arg="--new-tab=https://stackoverflow.com/tags/socat/hot?filter=all" \
