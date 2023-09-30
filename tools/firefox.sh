@@ -13,7 +13,23 @@ __PROJECT__=$(
   pwd
 )
 
-uuid=$(cat /proc/sys/kernel/random/uuid)
+OS=$(uname -s)
+ARCH=$(uname -m)
+echo "$OS"
+
+uuid=''
+    case $OS in
+    "Linux")
+      uuid=$(cat /proc/sys/kernel/random/uuid)
+      ;;
+    "Darwin")
+      uuid=$(uuidgen)
+     ;;
+    'MINGW64_NT'* | 'MSYS_NT'*)
+      ;;
+    esac
+
+
 profile_folder="/tmp/${uuid}"
 
 mkdir -p $profile_folder
