@@ -86,7 +86,7 @@ ${CHROMIUM} \
 
 
 
-:<<\EOF
+:<<'EOF'
 
 MACOS  chrome 硬解 HEVC
 添加下面这个启动参数就可以了 open /Applications/Google\ Chrome.app --args --enable-features=PlatformHEVCDecoderSupport
