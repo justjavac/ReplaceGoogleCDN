@@ -42,7 +42,7 @@ mkdir -p ${__PROJECT__}/var/
 cd ${__PROJECT__}/var/
 
 
-python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
+# python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
