@@ -18,14 +18,14 @@ ARCH=$(uname -m)
 echo "$OS"
 
 FIREFOX=''
-uuid=''
+UUID=''
     case $OS in
     "Linux")
-      uuid=$(cat /proc/sys/kernel/random/uuid)
+      UUID=$(cat /proc/sys/kernel/random/uuid)
       FIREFOX=${__PROJECT__}/var/firefox/firefox
       ;;
     "Darwin")
-      uuid=$(uuidgen)
+      UUID=$(uuidgen)
       FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
      ;;
     'MINGW64_NT'* | 'MSYS_NT'*)
@@ -33,7 +33,7 @@ uuid=''
     esac
 
 
-profile_folder="/tmp/${uuid}"
+profile_folder="/tmp/${UUID}"
 
 mkdir -p $profile_folder
 
