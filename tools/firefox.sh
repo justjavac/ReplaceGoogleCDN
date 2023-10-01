@@ -27,6 +27,7 @@ UUID=''
     "Darwin")
       UUID=$(uuidgen)
       FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
+      FIREFOX="${__PROJECT__}/var/Firefox.app/Contents/MacOS/firefox"
      ;;
     'MINGW64_NT'* | 'MSYS_NT'*)
       ;;

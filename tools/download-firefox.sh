@@ -57,6 +57,10 @@ case $OS in
   test -f Firefox%20${FIREFOX_VERSION}.dmg && rm -rf Firefox%20${FIREFOX_VERSION}.dmg
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
   curl -Lo Firefox%20${FIREFOX_VERSION}.dmg ${DOWNLOAD_FIREFOX_URL}
+  # # brew install p7zip
+  # 使用 7-zip 解压
+  7z x Firefox%20${FIREFOX_VERSION}.dmg
+  chmod a+x ${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox
   ;;
 
 "MINGW64_NT")
@@ -65,3 +69,6 @@ case $OS in
   curl -Lo Firefox%20Setup%20${FIREFOX_VERSION}.msi ${DOWNLOAD_FIREFOX_URL}
   ;;
 esac
+
+
+
