@@ -11,7 +11,7 @@ let id_ranges = {
 };
 //区间段名称
 let id_range_name_map = {
-  single_rule: "默认侯选项规则",
+  single_rule: "默认候选项规则",
   self_define_special_rule: "自定义特制规则",
   self_define_rule: "自定义普通规则",
   sync_remote_static_rule: "同步远端静态规则",
