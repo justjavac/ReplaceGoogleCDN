@@ -17,7 +17,7 @@ cd ${__PROJECT__}/var/
 # download firefox
 # https://www.mozilla.org/en-US/firefox/all/#product-desktop-release
 
-# download firefox
+# show download firefox
 # https://archive.mozilla.org/pub/firefox/releases/
 
 # firefox manifest-v3-migration-guide
@@ -64,14 +64,18 @@ case $OS in
   # 7z x ${FIREFOX_DMG_FILE}
   # chmod a+x ${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox
 
-  # 使用 hdiutil 挂载
+  # 使用 hdiutil 挂载 DMG格式 文件
   UUID=$(uuidgen)
   TMP_MOUNT_POINT=/tmp/${UUID}
   mkdir -p ${TMP_MOUNT_POINT}
   hdiutil attach -mountpoint ${TMP_MOUNT_POINT} ${FIREFOX_DMG_FILE}
   # hdiutil attach Firefox%20${FIREFOX_VERSION}.dmg
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/
-  ls -lh ${__PROJECT__}/var/
+
+  # 将应用程序拷贝到指定目录
+  mkdir -p ${__PROJECT__}/var/Firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/Firefox
+  ls -lh ${__PROJECT__}/var/Firefox/
+
   ;;
 
 "MINGW64_NT")

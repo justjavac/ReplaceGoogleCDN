@@ -29,7 +29,7 @@ UUID=''
       # macos firefox 默认启动目录
       FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
       # 自定义 启动目录
-      FIREFOX="${__PROJECT__}/var/Firefox.app/Contents/MacOS/firefox-bin"
+      FIREFOX="${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox-bin"
      ;;
     'MINGW64_NT'* | 'MSYS_NT'*)
       ;;
