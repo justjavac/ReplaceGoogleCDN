@@ -35,7 +35,7 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
-FIREFOX_VERSION=118.0b3
+FIREFOX_VERSION=119.0b7
 
 if [ -n "$1" ]; then
   FIREFOX_VERSION="$1"
@@ -54,13 +54,24 @@ case $OS in
   tar -jxvf firefox-${FIREFOX_VERSION}.tar.bz2
   ;;
 "Darwin")
-  test -f Firefox%20${FIREFOX_VERSION}.dmg && rm -rf Firefox%20${FIREFOX_VERSION}.dmg
+  FIREFOX_DMG_FILE=Firefox%20${FIREFOX_VERSION}.dmg
+  test -f ${FIREFOX_DMG_FILE} && rm -rf ${FIREFOX_DMG_FILE}
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
-  curl -Lo Firefox%20${FIREFOX_VERSION}.dmg ${DOWNLOAD_FIREFOX_URL}
-  # # brew install p7zip
+  curl -Lo ${FIREFOX_DMG_FILE} ${DOWNLOAD_FIREFOX_URL}
+
+  # brew install p7zip
   # 使用 7-zip 解压
-  7z x Firefox%20${FIREFOX_VERSION}.dmg
-  chmod a+x ${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox
+  # 7z x ${FIREFOX_DMG_FILE}
+  # chmod a+x ${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox
+
+  # 使用 hdiutil 挂载
+  UUID=$(uuidgen)
+  TMP_MOUNT_POINT=/tmp/${UUID}
+  mkdir -p ${TMP_MOUNT_POINT}
+  hdiutil attach -mountpoint ${TMP_MOUNT_POINT} ${FIREFOX_DMG_FILE}
+  # hdiutil attach Firefox%20${FIREFOX_VERSION}.dmg
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/
+  ls -lh ${__PROJECT__}/var/
   ;;
 
 "MINGW64_NT")

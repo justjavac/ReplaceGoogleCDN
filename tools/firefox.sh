@@ -26,8 +26,10 @@ UUID=''
       ;;
     "Darwin")
       UUID=$(uuidgen)
+      # macos firefox 默认启动目录
       FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
-      FIREFOX="${__PROJECT__}/var/Firefox.app/Contents/MacOS/firefox"
+      # 自定义 启动目录
+      FIREFOX="${__PROJECT__}/var/Firefox.app/Contents/MacOS/firefox-bin"
      ;;
     'MINGW64_NT'* | 'MSYS_NT'*)
       ;;
@@ -66,8 +68,8 @@ cd ${__PROJECT__}/var/
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
-
-cd ${__PROJECT__}/extension/
+# 进入扩展所在目录
+cd ${__PROJECT__}/extension-v2/
 
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
@@ -87,7 +89,7 @@ exit 0
 
 # export MOZ_ENABLE_WAYLAND=1
 
-./firefox/firefox \
+${FIREFOX} \
   -profile "$profile_folder" \
   -start-debugger-server 9221 \
   --remote-debugging-port 9222 \
