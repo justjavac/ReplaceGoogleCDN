@@ -37,6 +37,9 @@ case $OS in
   # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
   CHROMIUM='chrome-win\\chrome.exe'
   ;;
+  *)
+    echo 'current script no support !'
+    ;;
 esac
 
 test -d /tmp/${UUID} || mkdir -p /tmp/${UUID}

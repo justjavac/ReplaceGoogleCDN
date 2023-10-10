@@ -33,6 +33,9 @@ UUID=''
      ;;
     'MINGW64_NT'* | 'MSYS_NT'*)
       ;;
+    *)
+        echo 'current script no support !'
+    ;;
     esac
 
 
