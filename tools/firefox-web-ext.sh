@@ -71,26 +71,21 @@ cd ${__PROJECT__}/var/
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
-# 启动firefox 实例
+# 进入扩展所在目录
+cd ${__PROJECT__}/extension-v2/
 
-${FIREFOX} \
-  -profile "$profile_folder" \
-  -start-debugger-server 9221 \
-  --remote-debugging-port 9222 \
-  about:debugging#/runtime/this-firefox
+# reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
-# Firefox supports several remote protocols   https://firefox-source-docs.mozilla.org/remote/index.html
-# -start-debugger-server  vs  --remote-debugging-port
-# -start-debugger-server 9221 \
-# -devtools \
-# -jsconsole \
-#  about:blank
+npx web-ext run \
+  --verbose \
+  --firefox=${FIREFOX} \
+  --firefox-profile=$profile_folder \
+  --profile-create-if-missing \
+  --arg="--new-tab=https://stackoverflow.com/tags/socat/hot?filter=all" \
+  --start-url https://m3.material.io/
 
-# 此命令已不可用
-# -install-global-extension  ${__ROOT__}/extension-v2 \
-# -install-global-extension ${__DIR__}/traduzir_paginas_web-9.8.1.0.xpi \
+#   --devtools \
+#   --browser-console \
 
-# 新版Firefox 允许通过 RDP（远程调试协议）安装插件
-# gecko-dev
-# https://github.com/mozilla/gecko-dev.git
 
+exit 0

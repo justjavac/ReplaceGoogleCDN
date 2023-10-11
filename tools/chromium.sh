@@ -20,32 +20,39 @@ export GOOGLE_API_KEY="no"
 export GOOGLE_DEFAULT_CLIENT_ID="no"
 export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 
-uuid=$(cat /proc/sys/kernel/random/uuid)
-test -d /tmp/$uuid || mkdir -p /tmp/$uuid
-USER_DATA=/tmp/$uuid
+UUID=''
+CHROMIUM=''
 
 case $OS in
 "Linux")
-  chromium='chrome-linux/chrome'
+  UUID=$(cat /proc/sys/kernel/random/uuid)
+  CHROMIUM='chrome-linux/chrome'
   ;;
 "Darwin")
-  chromium='chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+  UUID=$(uuidgen)
+  CHROMIUM='chrome-mac/Chromium.app/Contents/MacOS/Chromium'
   ;;
 "MINGW64_NT")
   # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
   # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
-  chromium='chrome-win\\chrome.exe'
+  CHROMIUM='chrome-win\\chrome.exe'
   ;;
+  *)
+    echo 'current script no support !'
+    ;;
 esac
 
-echo $chromium
+test -d /tmp/${UUID} || mkdir -p /tmp/${UUID}
+USER_DATA=/tmp/${UUID}
+
+echo ${CHROMIUM}
 
 cd ${__PROJECT__}/var
 
 #扩展所在目录
 extensions=${__PROJECT__}/extension
 
-$chromium \
+${CHROMIUM} \
   --user-data-dir=$USER_DATA \
   --enable-remote-extensions \
   --enable-extensions \
@@ -82,7 +89,7 @@ $chromium \
 
 
 
-:<<\EOF
+:<<'EOF'
 
 MACOS  chrome 硬解 HEVC
 添加下面这个启动参数就可以了 open /Applications/Google\ Chrome.app --args --enable-features=PlatformHEVCDecoderSupport

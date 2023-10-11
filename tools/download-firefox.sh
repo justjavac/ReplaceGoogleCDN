@@ -17,7 +17,7 @@ cd ${__PROJECT__}/var/
 # download firefox
 # https://www.mozilla.org/en-US/firefox/all/#product-desktop-release
 
-# download firefox
+# show download firefox
 # https://archive.mozilla.org/pub/firefox/releases/
 
 # firefox manifest-v3-migration-guide
@@ -35,7 +35,7 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
-FIREFOX_VERSION=118.0b3
+FIREFOX_VERSION=119.0b7
 
 if [ -n "$1" ]; then
   FIREFOX_VERSION="$1"
@@ -54,9 +54,28 @@ case $OS in
   tar -jxvf firefox-${FIREFOX_VERSION}.tar.bz2
   ;;
 "Darwin")
-  test -f Firefox%20${FIREFOX_VERSION}.dmg && rm -rf Firefox%20${FIREFOX_VERSION}.dmg
+  FIREFOX_DMG_FILE=Firefox%20${FIREFOX_VERSION}.dmg
+  test -f ${FIREFOX_DMG_FILE} && rm -rf ${FIREFOX_DMG_FILE}
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
-  curl -Lo Firefox%20${FIREFOX_VERSION}.dmg ${DOWNLOAD_FIREFOX_URL}
+  curl -Lo ${FIREFOX_DMG_FILE} ${DOWNLOAD_FIREFOX_URL}
+
+  # brew install p7zip
+  # 使用 7-zip 解压
+  # 7z x ${FIREFOX_DMG_FILE}
+  # chmod a+x ${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox
+
+  # 使用 hdiutil 挂载 DMG格式 文件
+  UUID=$(uuidgen)
+  TMP_MOUNT_POINT=/tmp/${UUID}
+  mkdir -p ${TMP_MOUNT_POINT}
+  hdiutil attach -mountpoint ${TMP_MOUNT_POINT} ${FIREFOX_DMG_FILE}
+  # hdiutil attach Firefox%20${FIREFOX_VERSION}.dmg
+
+  # 将应用程序拷贝到指定目录
+  mkdir -p ${__PROJECT__}/var/Firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/Firefox
+  ls -lh ${__PROJECT__}/var/Firefox/
+
   ;;
 
 "MINGW64_NT")
@@ -65,3 +84,6 @@ case $OS in
   curl -Lo Firefox%20Setup%20${FIREFOX_VERSION}.msi ${DOWNLOAD_FIREFOX_URL}
   ;;
 esac
+
+
+
