@@ -19,25 +19,25 @@ echo "$OS"
 
 FIREFOX=''
 UUID=''
-    case $OS in
-    "Linux")
-      UUID=$(cat /proc/sys/kernel/random/uuid)
-      FIREFOX=${__PROJECT__}/var/firefox/firefox
-      ;;
-    "Darwin")
-      UUID=$(uuidgen)
-      # macos firefox 默认启动目录
-      FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
-      # 自定义 启动目录
-      FIREFOX="${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox-bin"
-     ;;
-    'MINGW64_NT'* | 'MSYS_NT'*)
-      ;;
-    *)
-        echo 'current script no support !'
-        exit 0
-    ;;
-    esac
+case $OS in
+"Linux")
+  UUID=$(cat /proc/sys/kernel/random/uuid)
+  FIREFOX=${__PROJECT__}/var/firefox/firefox
+  ;;
+"Darwin")
+  UUID=$(uuidgen)
+  # macos firefox 默认启动目录
+  FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
+  # 自定义 启动目录
+  FIREFOX="${__PROJECT__}/var/Firefox/Firefox.app/Contents/MacOS/firefox-bin"
+ ;;
+'MINGW64_NT'* | 'MSYS_NT'*)
+  ;;
+*)
+    echo 'current script no support !'
+    exit 0
+;;
+esac
 
 
 profile_folder="/tmp/${UUID}"
