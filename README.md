@@ -107,7 +107,7 @@ Chrome 安装方法（Google 被墙了上不去）：
 ### 扩展下载方式三：(来自国内镜像) 克隆源代码以后， 步骤如上： :point_up_2: :point_up_2: :point_up_2:
 
 1. [ReplaceGoogleCDN gitee 镜像](https://gitee.com/mirrors/replacegooglecdn)
-1. [ReplaceGoogleCDN gitcode 镜像](https://gitcode.net/mirrors/justjavac/replacegooglecdn.git)
+1. [ReplaceGoogleCDN gitcode 镜像](https://gitcode.com/mirrors/justjavac/replacegooglecdn.git)
 
 ```shell
 # 克隆源代码
