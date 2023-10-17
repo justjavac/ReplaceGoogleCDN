@@ -113,7 +113,7 @@ Chrome 安装方法（Google 被墙了上不去）：
 # 克隆源代码
 git clone -b master https://gitee.com/mirrors/replacegooglecdn.git --depth=1 --progress
 # 或者
-git clone -b master https://gitcode.net/mirrors/justjavac/replacegooglecdn.git --depth=1 --progress
+git clone -b master https://gitcode.com/mirrors/justjavac/replacegooglecdn.git --depth=1 --progress
 
 # 更新源代码
 
