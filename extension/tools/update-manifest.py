@@ -92,7 +92,7 @@ if __name__ == '__main__':
     {
         "gecko": {
             "id": "zonghengbaihe521@qq.com",
-            "strict_min_version": "113.0"
+            "strict_min_version": "117.0"
         }
     }
     '''

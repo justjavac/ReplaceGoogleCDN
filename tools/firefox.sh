@@ -95,3 +95,6 @@ ${FIREFOX} \
 # gecko-dev
 # https://github.com/mozilla/gecko-dev.git
 
+
+# CommandLineOptions
+# https://wiki.mozilla.org/Firefox/CommandLineOptions
