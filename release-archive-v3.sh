@@ -8,7 +8,6 @@ __DIR__=$(
 cd ${__DIR__}
 
 mkdir -p ${__DIR__}/var/
-test -d ${__DIR__}/dist/ && rm -rf ${__DIR__}/dist/
 mkdir -p ${__DIR__}/dist/
 
 
@@ -48,7 +47,6 @@ zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./Privacy.md
 zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./LICENSE
 
 
-cd ${__DIR__}/
 
 
 ## 打包 firefox 扩展
@@ -78,9 +76,9 @@ zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-firefox.zip ./Privacy.md
 zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-firefox.zip ./LICENSE
 
 
-cd ${__DIR__}/
-cd ${__DIR__}/dist
+
 # 查看打包结果
+cd ${__DIR__}/dist
 
 test -d ReplaceGoogleCDN-v3-chromium && rm -rf ReplaceGoogleCDN-v3-chromium
 test -d ReplaceGoogleCDN-v3-firefox && rm -rf ReplaceGoogleCDN-v3-firefox
