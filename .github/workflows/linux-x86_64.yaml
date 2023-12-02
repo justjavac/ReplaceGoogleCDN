@@ -58,3 +58,10 @@ jobs:
           sudo python3 install-build-deps.py
           
           
+      - name: Download Chromium
+        run: |
+          set -x
+          bash tools/download-chromium.sh
+          
+          
+          

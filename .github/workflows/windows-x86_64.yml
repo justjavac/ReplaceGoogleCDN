@@ -23,3 +23,9 @@ jobs:
       - name: Prepare Chromium Run Environment
         run: |
           ipconfig /all
+
+      - name: Download Chromium
+        run: |
+          set -x
+          bash tools/download-chromium.sh
+          
