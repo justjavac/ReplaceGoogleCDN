@@ -79,7 +79,7 @@ jobs:
           set -x
           # bash tools/chromium.sh -xvfb
 
-      - name: Firefox setup
+      - name: Firefox Load Extension
         run: |
           set -x
           # bash tools/firefox.sh -xvfb
