@@ -56,7 +56,6 @@ test -f ${__DIR__}/dist/ReplaceGoogleCDN-v3-firefox.zip && rm -f ${__DIR__}/dist
 mkdir -p ${__DIR__}/var/extension-tmp/rules/
 
 cp -rf ${__DIR__}/extension/rules/*.json  ${__DIR__}/var/extension-tmp/rules/
-cp -rf ${__DIR__}/extension/manifest.json  ${__DIR__}/var/extension-tmp/
 cp -rf ${__DIR__}/extension/icons  ${__DIR__}/var/extension-tmp/
 
 rm -f ${__DIR__}/var/extension-tmp/rules/rules_remove_content_security_policy_header_test.json
