@@ -50,14 +50,14 @@ jobs:
           echo ${{ github.head_ref }}
           echo ${{ github.ref_name }}
 
-      - name: Prepare Chromium Run Environment
-        run: |
-          set -x
-          
           # sudo sed -i "s@security.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
           # sudo sed -i "s@archive.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
           
           sudo apt install -y xvfb supervisor socat
+
+      - name: Prepare Chromium Run Environment
+        run: |
+          set -x
           
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
