@@ -19,7 +19,7 @@ const remove_csp_item = [
   "cross-origin-embedder-policy",
   "cross-origin-opener-policy",
   "cross-origin-opener-policy-report-only",
-  "cross-origin-embedder-policy-report-only",
+  "cross-origin-embedder-policy-report-only"
 ];
 
 /**
@@ -42,7 +42,7 @@ const remove_csp_urls = [
   "*://developers.redhat.com/*",
   "*://*.githubusercontent.com/*",
   "*://pub.dev/*",
-  "*://stackoverflow.com/*",
+  "*://stackoverflow.com/*"
 ];
 
 /**
@@ -54,7 +54,7 @@ chrome.webRequest.onHeadersReceived.addListener(
     //移除响应头 Content-Security-Policy
     details.responseHeaders = details.responseHeaders.filter(
       (response_header) =>
-        !remove_csp_item.includes(response_header.name.toLowerCase()),
+        !remove_csp_item.includes(response_header.name.toLowerCase())
     );
     return {
       responseHeaders: details.responseHeaders,
@@ -78,7 +78,7 @@ chrome.webRequest.onHeadersReceived.addListener(
       "other",
     ],
   },
-  ["blocking", "responseHeaders"],
+  ["blocking", "responseHeaders"]
 );
 
 /*
@@ -96,7 +96,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     url = url.replace("fonts.gstatic.com", "fonts.gstatic.cn");
     url = url.replace(
       "www.google.com/recaptcha/",
-      "www.recaptcha.net/recaptcha/",
+      "www.recaptcha.net/recaptcha/"
     );
     url = url.replace("secure.gravatar.com", "gravatar.loli.net");
     url = url.replace("www.gravatar.com", "gravatar.loli.net");
@@ -108,15 +108,15 @@ chrome.webRequest.onBeforeRequest.addListener(
     //"cdn.jsdelivr.net/npm/bootstrap@$1/dist/$2"
     url = url.replace(
       /maxcdn\.bootstrapcdn\.com\/bootstrap\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
-      "lib.baomitu.com/twitter-bootstrap/$1/$2",
+      "lib.baomitu.com/twitter-bootstrap/$1/$2"
     );
     url = url.replace(
       /code\.jquery\.com\/jquery-(\d{1,4}\.\d{1,4}\.\d{1,4})(.*?)/g,
-      "lib.baomitu.com/jquery/$1/jquery$2",
+      "lib.baomitu.com/jquery/$1/jquery$2"
     );
     url = url.replace(
       /code\.jquery\.com\/ui\/(\d{1,4}\.\d{1,4}\.\d{1,4})\/(.*?)/g,
-      "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2",
+      "ajax.aspnetcdn.com/ajax/jquery.ui/$1/$2"
     );
     return { redirectUrl: url };
   },
@@ -137,5 +137,5 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://code.jquery.com/ui/*",
     ],
   },
-  ["blocking"],
+  ["blocking"]
 );

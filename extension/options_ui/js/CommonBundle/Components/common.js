@@ -39,7 +39,7 @@ let updateDynamicRules = (
     },
     () => {
       callback(args);
-    },
+    }
   );
 };
 let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
@@ -82,7 +82,7 @@ let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
         },
         () => {
           callback(args);
-        },
+        }
       );
     }
   });
@@ -128,7 +128,7 @@ let enableStaticRules = (callback, ...args) => {
       deleteDynamicRules("sync_remote_static_rule", 0, () => {
         callback();
       });
-    },
+    }
   );
 };
 

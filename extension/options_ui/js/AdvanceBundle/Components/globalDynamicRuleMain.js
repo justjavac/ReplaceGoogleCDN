@@ -96,7 +96,7 @@ let bindSyncRemoteStaticRuleEventListener = () => {
             UpdateRulesetOptions,
             (callback) => {
               showRuleList();
-            },
+            }
           );
         });
       }

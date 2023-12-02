@@ -137,7 +137,7 @@ let bindButtonUploadRuleFromFile = () => {
       e.stopPropagation();
       e.preventDefault();
     },
-    false,
+    false
   );
   dropbox.addEventListener(
     "dragover",
@@ -145,7 +145,7 @@ let bindButtonUploadRuleFromFile = () => {
       e.stopPropagation();
       e.preventDefault();
     },
-    false,
+    false
   );
 
   dropbox.addEventListener(
@@ -166,7 +166,7 @@ let bindButtonUploadRuleFromFile = () => {
         showUploadFileContent(file);
       }
     },
-    false,
+    false
   );
 };
 
