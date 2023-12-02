@@ -8,9 +8,9 @@
 
 ```shell
 
-python3 tools/download-chromium-extension.sh
+bash  tools/download-chromium-extension.sh
 # 通过代理下载
-python3 tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
+bash  tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
 
 ```
 
@@ -21,11 +21,12 @@ python3 tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
 > 查看 chromium 版本 https://commondatastorage.googleapis.com/chromium-browser-snapshots/
 
 ```shell
-# 下载 npmmirror.com 提供的 chromium 镜像
+
 bash tools/download-chromium.sh
 
 # 通过代理下载  chromium
-bash tools/download-chromium.sh --proxy http://127.0.0.1:1080 --official
+bash tools/download-chromium.sh --proxy http://127.0.0.1:1080 
+
 ```
 
 ## 运行 chromium 浏览器
@@ -39,10 +40,13 @@ bash extension/tools/chromium.sh
 > 查看 firefox 版本 https://archive.mozilla.org/pub/firefox/releases/
 
 ```shell
-bash tools/download-firefox.sh
+
+# 下载最新版 firefox
+bash tools/download-firefox-latest.sh
 
 # 下载指定版本firefox
-bash tools/download-firefox.sh 118.0b3
+bash tools/download-firefox.sh 121.0b6
+
 ```
 
 ## 运行 firefox 浏览器
@@ -59,6 +63,7 @@ bash tools/firefox.sh
 bash tools/web-server.sh
 
 # 使用 pac 文件
-# chromium  --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"  --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+
+chromium  --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"  --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
 
 ```

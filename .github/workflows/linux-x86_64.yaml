@@ -57,6 +57,8 @@ jobs:
           # sudo sed -i "s@security.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
           # sudo sed -i "s@archive.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
           
+          sudo apt install -y xvfb supervisor socat
+          
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
           sudo python3 install-build-deps.py
@@ -72,4 +74,12 @@ jobs:
           set -x
           bash tools/download-firefox-latest.sh
           
-          
+      - name: Chromium Load Extension
+        run: |
+          set -x
+          bash tools/chromium.sh -xvfb
+
+      - name: Firefox setup
+        run: |
+          set -x
+          bash tools/firefox.sh -xvfb

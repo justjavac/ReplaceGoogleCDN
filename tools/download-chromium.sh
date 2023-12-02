@@ -117,5 +117,5 @@ if [ -n "$DOWNLOAD_CHROMIUM_URL" ] ;then
       ;;
     esac
 else
-    echo ' please check download url !'
+    echo ' please check DOWNLOAD_CHROMIUM_URL !'
 fi

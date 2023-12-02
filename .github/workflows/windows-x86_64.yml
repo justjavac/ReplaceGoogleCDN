@@ -38,19 +38,29 @@ jobs:
           bash tools/download-firefox-latest.sh
 
         # https://www.msys2.org/docs/ci/
+        # https://github.com/marketplace/actions/setup-msys2
       - uses: msys2/setup-msys2@v2
         with:
           msystem: UCRT64
           update: true
           install: git mingw-w64-ucrt-x86_64-gcc
 
-
       - name: CI-Build
+        shell: msys2 {0}
         run: |
           echo 'Running in MSYS2!'
+          
           echo "C:\\msys64\\usr\\bin" >> $GITHUB_PATH
           echo "C:\\msys64\\mingw64\\bin" >> $GITHUB_PATH
           echo "PKG_CONFIG_PATH=/mingw64/lib/pkgconfig" >> $GITHUB_ENV
+
+      - name: test powershell use msys2
+        shell: powershell
+        run: msys2 -c 'uname -a'
+
+      - name: test cmd use msys2
+        shell: cmd
+        run: msys2 -c 'uname -a'
 
       - name: Test
         shell: cmd

@@ -12,6 +12,19 @@ __PROJECT__=$(
 
 cd ${__DIR__}
 
+XVFB_COMMAND=''
+while [ $# -gt 0 ]; do
+  case "$1" in
+  -xvfb)
+      XVFB_COMMAND='xvfb-run  -s "-terminate -screen 0 1920x1080x24" '
+    ;;
+  *)
+    ;;
+  esac
+  shift $(($# > 0 ? 1 : 0))
+done
+
+
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "$OS"
@@ -53,7 +66,8 @@ cd ${__PROJECT__}/var
 #扩展所在目录
 extensions=${__PROJECT__}/extension
 
-${CHROMIUM} \
+
+${XVFB_COMMAND} ${CHROMIUM} \
   --user-data-dir=$USER_DATA \
   --enable-remote-extensions \
   --enable-extensions \

@@ -13,6 +13,18 @@ __PROJECT__=$(
   pwd
 )
 
+XVFB_COMMAND=''
+while [ $# -gt 0 ]; do
+  case "$1" in
+  -xvfb)
+      XVFB_COMMAND='xvfb-run  -s "-terminate -screen 0 1920x1080x24" '
+    ;;
+  *)
+    ;;
+  esac
+  shift $(($# > 0 ? 1 : 0))
+done
+
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "$OS"
@@ -74,7 +86,7 @@ cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 启动firefox 实例
 
-${FIREFOX} \
+${XVFB_COMMAND} ${FIREFOX} \
   -profile "$profile_folder" \
   -start-debugger-server 9221 \
   --remote-debugging-port 9222 \
