@@ -25,6 +25,7 @@ jobs:
           ipconfig /all
 
       - name: Download Chromium
+        shell: bash
         run: |
           set -x
           bash tools/download-chromium.sh
