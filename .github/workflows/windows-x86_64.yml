@@ -1,0 +1,25 @@
+name: windows-x86_64
+
+on: [ push, pull_request ]
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+jobs:
+  windows:
+    if:
+    runs-on: windows-latest
+    steps:
+      - name: Prepare git
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+          env
+          ipconfig
+          uname -a
+          pwd
+
+      - uses: actions/checkout@v3
+      - name: Prepare Chromium Run Environment
+        run: |
+          ipconfig /all
