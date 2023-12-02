@@ -31,11 +31,13 @@ cd ${__PROJECT__}/var/
 # firefox 114 支持 DNS over HTTPS ；WebTransport默认启用
 # https://www.mozilla.org/en-US/firefox/113.0/releasenotes/
 
+
+
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
-FIREFOX_VERSION=121.0b3
+FIREFOX_VERSION=121.0b6
 
 if [ -n "$1" ]; then
   FIREFOX_VERSION="$1"

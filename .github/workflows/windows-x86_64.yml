@@ -29,9 +29,16 @@ jobs:
         run: |
           set -x
           bash tools/download-chromium.sh
+
+      - name: Download Firefox
+        shell: bash
+        run: |
+          set -x
+          bash tools/download-firefox-latest.sh
           
       - name: Test
         shell: cmd
         run: |
           @chcp 65001>nul
           echo foo=bar >> %GITHUB_OUTPUT%
+          @ firefox -v | more

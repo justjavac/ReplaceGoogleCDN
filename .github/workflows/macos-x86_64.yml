@@ -74,3 +74,8 @@ jobs:
           set -x
           bash tools/download-chromium.sh
           
+      - name: Download Firefox
+        shell: bash
+        run: |
+          set -x
+          bash tools/download-firefox-latest.sh
