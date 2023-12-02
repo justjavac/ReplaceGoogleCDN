@@ -7,7 +7,7 @@ env:
 
 jobs:
   windows:
-    if: 1
+    if: github.ref == 'refs/heads/dev' || github.ref_name == 'dev'
     runs-on: windows-latest
     steps:
       - name: Prepare git
