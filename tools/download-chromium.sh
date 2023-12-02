@@ -89,7 +89,7 @@ fi
 
 cd ${__PROJECT__}/var/
 
-if [ -z "$DOWNLOAD_CHROMIUM_URL" ] ;then
+if [ -n "$DOWNLOAD_CHROMIUM_URL" ] ;then
     case $OS in
     "Linux")
       test -f chrome-linux.zip && rm -rf chrome-linux.zip
