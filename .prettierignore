@@ -16,6 +16,7 @@ extension/third_party/
 extension/web-backup
 extension/manifest-backup.json
 tools/web/proxy.pac
+tools/tools/prefs-latest.js
 
 dist
 var
