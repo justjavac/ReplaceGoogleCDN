@@ -16,7 +16,7 @@ __PROJECT__=$(
 XVFB_COMMAND=''
 while [ $# -gt 0 ]; do
   case "$1" in
-  -xvfb)
+  --xvfb)
       XVFB_COMMAND='xvfb-run  -s "-terminate -screen 0 1920x1080x24" '
       XVFB_COMMAND=''
     ;;
