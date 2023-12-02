@@ -12,6 +12,7 @@ __PROJECT__=$(
   cd ${__DIR__}/../
   pwd
 )
+cd ${__PROJECT__}
 
 OS=$(uname -s)
 ARCH=$(uname -m)
@@ -45,11 +46,19 @@ profile_folder="/tmp/${UUID}"
 mkdir -p $profile_folder
 
 
-mkdir -p ${__PROJECT__}/var/
-cd ${__PROJECT__}/var/
+mkdir -p ${__PROJECT__}/var/extension-tmp/rules/
 
+cp -rf ${__PROJECT__}/extension/rules/*.json  ${__PROJECT__}/var/extension-tmp/rules/
+cp -rf ${__PROJECT__}/extension/manifest.json  ${__PROJECT__}/var/extension-tmp/
+cp -rf ${__PROJECT__}/extension/icons  ${__PROJECT__}/var/extension-tmp/
 
-python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
+rm -f ${__PROJECT__}/var/extension-tmp/rules/rules_remove_content_security_policy_header_test.json
+rm -f ${__PROJECT__}/var/extension-tmp/rules/rules-default-domains-helper.json
+
+python3 tools/update-v3-manifest.py firefox
+
+cd ${__PROJECT__}/var/extension-tmp/
+
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
@@ -73,7 +82,7 @@ python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 进入扩展所在目录
-cd ${__PROJECT__}/extension/
+cd ${__PROJECT__}/var/extension-tmp/
 
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
