@@ -7,6 +7,10 @@
 ## 打包工具 v3 mainifest 兼容 firefox
 
 ```shell
+# 临时生成 uuid : 
+uuid | sed 's/-//g'
+
+# gecko id 
 
 # 查看帮助
 python3 tools/update-v3-manifest.py  --help
