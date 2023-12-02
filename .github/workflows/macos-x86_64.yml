@@ -1,0 +1,73 @@
+name: build-php-cli-macos-x86_64
+
+on: [ push, pull_request ]
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+jobs:
+  macos-x86_64:
+    if: 0
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare build environment
+        run: |
+          env
+          echo $HOME
+
+          brew config
+
+          brew install  wget curl  libtool automake  re2c llvm flex
+          brew install  gettext coreutils binutils libunistring
+
+          brew install  jq
+          brew install  bison
+
+          which glibtool
+          ln -sf /usr/local/bin/glibtool /usr/local/bin/libtool
+          ln -sf /usr/local/bin/glibtoolize /usr/local/bin/libtoolize
+
+          # sudo rm -rf /Library/Developer/CommandLineTools
+          # xcode-select --install
+
+          # sudo xcode-select --reset
+          # sudo xcode-select -switch /Library/Developer/CommandLineTools
+
+          # softwareupdate --list --verbose
+          # softwareupdate --install -a
+          # xcode-select --install
+
+          # export SDKROOT=$(xcrun --show-sdk-path)
+          ls -lh $(xcrun --show-sdk-path)
+          # sudo  xcode-select --switch /Applications/Xcode.app
+          # export MACOSX_DEPLOYMENT_TARGET=12.6
+
+          echo 'export PATH="/usr/local/opt/binutils/bin:$PATH"' >> /Users/runner/.bash_profile
+
+          ifconfig
+          export IPV6=$(ifconfig en0  | grep "inet6 " | grep -v "inet6 fe80:" | awk '{print $2}' | cut -d'/' -f1 | sed -n '2p')
+          export IPV4=$(ifconfig en0 | grep "inet " | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1 | sed -n '1p')
+          echo $IPV4
+          echo $IPV6
+          echo "X_IPV6=${IPV6}" >> $GITHUB_ENV
+          echo "X_IPV4=${IPV4}" >> $GITHUB_ENV
+
+          export PATH=/usr/local/opt/bison/bin:/usr/local/opt/llvm/bin:$PATH
+          # brew bison --debug
+
+          echo ${{ env.BRANCH_NAME }}
+          echo ${{ github.actor }}
+          echo ${{ github.repository }}
+          echo ${{ github.repository_owner }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.ref_name }}
+
+      - name: Prepare Chromium Run Environment
+        run: |
+          set -x
+          curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
+          curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
+          
+          
+

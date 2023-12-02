@@ -1,0 +1,60 @@
+name: linux-x86_64
+
+on:
+  push:
+  pull_request:
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+
+jobs:
+  linux-x86_64:
+    if: 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare Source Code
+        run: |
+          echo $PATH
+          env
+          docker info
+          id -u
+          id -g
+          who
+          cat /etc/os-release
+          hostnamectl
+          uname -s
+          uname -m
+          uname -r
+
+          cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+          cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+          cat /proc/cpuinfo | grep "cpu cores" | uniq
+          cat /proc/cpuinfo| grep "processor"| wc -l
+          lscpu
+
+          export IPV6=$(ip -6 address show  | grep inet6 | awk '{print $2}' | cut -d'/' -f1 | sed -n '2p')
+          export IPV4=$(ip -4 address show  | grep inet | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1 | sed -n '1p')
+          echo $IPV4
+          echo $IPV6
+          echo "X_IPV6=${IPV6}" >> $GITHUB_ENV
+          echo "X_IPV4=${IPV4}" >> $GITHUB_ENV
+
+          sudo apt install -y jq curl
+
+          echo ${{ env.BRANCH_NAME }}
+          echo ${{ github.actor }}
+          echo ${{ github.repository }}
+          echo ${{ github.repository_owner }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.ref_name }}
+
+      - name: Prepare Chromium Run Environment
+        run: |
+          set -x
+          curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
+          curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
+          sudo install-build-deps.sh
+          
+          

@@ -3,7 +3,6 @@ name: build-replace-google-cdn
 on:
   push:
   pull_request:
-  workflow_dispatch:
 
 jobs:
   linux:
@@ -26,10 +25,12 @@ jobs:
           uname -m 
           uname -r
           node -v
+
       - name: Build v2
         run: |
           bash  release-archive-v2.sh
           ls -lah dist
+
       - name: production artifacts v2
         uses: actions/upload-artifact@v3
         with:
@@ -42,6 +43,7 @@ jobs:
         run: |
           bash  release-archive-v3.sh
           ls -lah dist
+
       - name: production artifacts v3 chromium
         uses: actions/upload-artifact@v3
         with:
@@ -49,6 +51,7 @@ jobs:
           retention-days: 7
           path: |
             dist/ReplaceGoogleCDN-v3-chromium.zip
+
       - name: production artifacts v3 firefox
         uses: actions/upload-artifact@v3
         with:
@@ -63,6 +66,7 @@ jobs:
         with:
           artifact: "dist/ReplaceGoogleCDN-v2.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
+
       - name: Browser Plugin Publish v3
         if: 0
         uses: PlasmoHQ/bpp@v3
