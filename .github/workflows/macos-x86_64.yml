@@ -66,8 +66,6 @@ jobs:
       - name: Prepare Chromium Run Environment
         run: |
           set -x
-          curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
-          curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
 
       - name: Download Chromium
         run: |

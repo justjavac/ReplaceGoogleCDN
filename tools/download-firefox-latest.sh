@@ -45,7 +45,7 @@ case $OS in
   ;;
 
 'MINGW64_NT'* | 'MSYS_NT'*)
-  wget -O firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+  curl -Lo firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
   ;;
 esac
 
