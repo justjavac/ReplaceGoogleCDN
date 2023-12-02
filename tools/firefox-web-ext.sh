@@ -45,19 +45,8 @@ profile_folder="/tmp/${UUID}"
 
 mkdir -p $profile_folder
 
-
-mkdir -p ${__PROJECT__}/var/extension-tmp/rules/
-
-cp -rf ${__PROJECT__}/extension/rules/*.json  ${__PROJECT__}/var/extension-tmp/rules/
-cp -rf ${__PROJECT__}/extension/manifest.json  ${__PROJECT__}/var/extension-tmp/
-cp -rf ${__PROJECT__}/extension/icons  ${__PROJECT__}/var/extension-tmp/
-
-rm -f ${__PROJECT__}/var/extension-tmp/rules/rules_remove_content_security_policy_header_test.json
-rm -f ${__PROJECT__}/var/extension-tmp/rules/rules-default-domains-helper.json
-
-python3 tools/update-v3-manifest.py firefox
-
-cd ${__PROJECT__}/var/extension-tmp/
+## 生成支持firefox 的扩展
+bash release-archive-v3.sh
 
 
 # firefox web extension
