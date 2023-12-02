@@ -67,7 +67,7 @@ if [ -z "$WITH_MIRROR" ] ; then
       ;;
     esac
 else
-  if [ "$WITH_MIRROR" = 'china' ] ;then
+    if [ "$WITH_MIRROR" = 'china' ] ;then
         # 默认来源于 https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/
         test -d ${__PROJECT__}/var/venv || bash ${__PROJECT__}/tools/python3-env-init.sh
         . venv/bin/activate

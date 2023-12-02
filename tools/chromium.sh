@@ -67,7 +67,7 @@ cd ${__PROJECT__}/var
 extensions=${__PROJECT__}/extension
 
 
-${XVFB_COMMAND} ${CHROMIUM} \
+${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --user-data-dir=$USER_DATA \
   --enable-remote-extensions \
   --enable-extensions \
