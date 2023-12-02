@@ -7,7 +7,7 @@ env:
 
 jobs:
   windows:
-    if: 1 && ${{ github.head_ref || github.ref_name }} == 'dev'
+    if: 1
     runs-on: windows-latest
     steps:
       - name: Prepare git

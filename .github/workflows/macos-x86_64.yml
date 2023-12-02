@@ -7,7 +7,7 @@ env:
 
 jobs:
   macos-x86_64:
-    if: 1 && ${{ github.head_ref || github.ref_name }} == 'dev'
+    if: 1
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
