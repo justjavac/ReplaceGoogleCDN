@@ -41,4 +41,3 @@ jobs:
         run: |
           @chcp 65001>nul
           echo foo=bar >> %GITHUB_OUTPUT%
-          @ firefox -v | more
