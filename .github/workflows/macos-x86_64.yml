@@ -1,6 +1,6 @@
 name: macos-x86_64
 
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
@@ -71,7 +71,7 @@ jobs:
         run: |
           set -x
           bash tools/download-chromium.sh
-          
+
       - name: Download Firefox
         shell: bash
         run: |

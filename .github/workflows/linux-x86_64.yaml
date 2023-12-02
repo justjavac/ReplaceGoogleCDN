@@ -7,7 +7,6 @@ on:
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
-
 jobs:
   linux-x86_64:
     if: 1
@@ -52,13 +51,13 @@ jobs:
 
           # sudo sed -i "s@security.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
           # sudo sed -i "s@archive.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
-          
+
           sudo apt install -y supervisor socat
 
       - name: Prepare Chromium Run Environment
         run: |
           set -x
-          
+
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
           sudo python3 install-build-deps.py
@@ -66,14 +65,14 @@ jobs:
       - name: Download Chromium
         run: |
           set -x
-          bash tools/download-chromium.sh 
+          bash tools/download-chromium.sh
 
       - name: Download Firefox
         shell: bash
         run: |
           set -x
           bash tools/download-firefox-latest-stable.sh
-          
+
       - name: Chromium Load Extension
         run: |
           set -x

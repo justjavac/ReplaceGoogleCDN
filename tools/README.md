@@ -4,6 +4,22 @@
 1. [html5test](https://html5test.com/)
 1. [Features Detection](https://browserleaks.com/features)
 
+## 打包 v3 mainifest 兼容 firefox 工具
+
+```shell
+
+
+# 查看帮助
+python3 extension/tools/update-manifest.py  --help
+
+# 切换mainfest.json 支持 chromium 系浏览器
+python3 extension/tools/update-manifest.py  chromium
+
+# 切换mainfest.json 支持 firefix  系浏览器
+python3 extension/tools/update-manifest.py  firefox
+
+```
+
 ## 下载 chrome 应用商店里扩展,并解压出源码
 
 ```shell
@@ -25,7 +41,7 @@ bash  tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
 bash tools/download-chromium.sh
 
 # 通过代理下载  chromium
-bash tools/download-chromium.sh --proxy http://127.0.0.1:1080 
+bash tools/download-chromium.sh --proxy http://127.0.0.1:1080
 
 ```
 

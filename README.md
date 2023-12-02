@@ -79,7 +79,7 @@
 
 ```shell
 
-bash   release-archive-v2.sh
+bash   release-archive.sh
 
 bash   release-archive-v3.sh
 

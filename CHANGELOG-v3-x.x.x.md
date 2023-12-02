@@ -8,6 +8,12 @@
 
 ## [一个完整的 测试环境例子 可用于查看 chromium 的源码 ](https://github.com/jingjingxyk/extension-v3-test)
 
+## CHANGELOG for v3 0.10.31 [2023-12-02 22:01:00 +0800]
+
+> 1. 变更: firefox v3 版本 只提供基础功能，不提供高级功能，因为 [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
+> 1. 变更： 打包运行 firefox 版的扩展
+> 1. 变更： 使用 prettier 格式化代码
+
 ## CHANGELOG for v3 0.10.30 [2023-09-02 11:01:00 +0800]
 
 > 1. 新增： URL 匹配规则添加 `scheme` 匹配,收缩匹配范围
