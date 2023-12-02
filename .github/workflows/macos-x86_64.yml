@@ -1,4 +1,4 @@
-name: build-php-cli-macos-x86_64
+name: macos-x86_64
 
 on: [ push, pull_request ]
 
