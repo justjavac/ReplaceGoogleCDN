@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           set -x
-          bash tools/download-firefox-latest.sh
+          bash tools/download-firefox-latest-stable.sh
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2

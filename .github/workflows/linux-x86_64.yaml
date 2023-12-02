@@ -72,7 +72,7 @@ jobs:
         shell: bash
         run: |
           set -x
-          bash tools/download-firefox-latest.sh
+          bash tools/download-firefox-latest-stable.sh
           
       - name: Chromium Load Extension
         run: |
