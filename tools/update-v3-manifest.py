@@ -38,7 +38,6 @@ if __name__ == '__main__':
       
       例子：( 默认为 firefox mainifest 配置)
 
-      python3 tools/update-v3-manifest.py  chromium
       python3 tools/update-v3-manifest.py  firefox
       
      '''
