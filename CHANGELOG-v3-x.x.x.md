@@ -2,12 +2,6 @@
 
 ## [测试用例](/test/README.md)
 
-## [拨测工具](/tools/net-detect.md)
-
-## [公共 CDN 静态资源库](public-cdn.md)
-
-## [一个完整的 测试环境例子 可用于查看 chromium 的源码 ](https://github.com/jingjingxyk/extension-v3-test)
-
 ## CHANGELOG for v3 0.10.31 [2023-12-02 22:01:00 +0800]
 
 > 1. 变更: firefox v3 版本 只提供基础功能，不提供高级功能，因为 [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)

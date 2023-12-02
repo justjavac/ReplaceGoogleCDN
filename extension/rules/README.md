@@ -49,6 +49,8 @@
 
 > 阻止请求 `rules_block_request.json`
 
+> [例子：用于查看 chromium 的源码 ](https://github.com/jingjingxyk/extension-v3-test)
+
 ### 指定匹配域名
 
 > https://github.com -> https://github-com.proxy.domain.com
