@@ -7,7 +7,7 @@ env:
 
 jobs:
   windows:
-    if:
+    if: 1
     runs-on: windows-latest
     steps:
       - name: Prepare git
