@@ -17,6 +17,7 @@ while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
       XVFB_COMMAND='xvfb-run  -s -terminate -screen 0 1920x1080x24  -e /dev/stdout --auto-servernum '
+      XVFB_COMMAND=''
     ;;
   --xwfb)
       XVFB_COMMAND='xwfb-run  '
