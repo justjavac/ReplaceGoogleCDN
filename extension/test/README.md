@@ -87,7 +87,7 @@ https://fonts.gstatic.cn/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
 
 ```
 
-## 测试地址
+## chromium 下载地址
 
 - [download-chromium](https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/1086244/chrome-mac.zip)
 - [download-chromium mirror](https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac/1086244/chrome-mac.zip)
