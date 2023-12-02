@@ -77,6 +77,8 @@
 
 ## 打包命令
 
+> 构建结果位于 dist 目录
+
 ```shell
 
 bash   release-archive.sh

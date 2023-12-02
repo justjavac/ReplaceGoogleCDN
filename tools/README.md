@@ -4,19 +4,15 @@
 1. [html5test](https://html5test.com/)
 1. [Features Detection](https://browserleaks.com/features)
 
-## 打包 v3 mainifest 兼容 firefox 工具
+## 打包工具 v3 mainifest 兼容 firefox
 
 ```shell
 
-
 # 查看帮助
-python3 extension/tools/update-manifest.py  --help
+python3 tools/update-v3-manifest.py  --help
 
-# 切换mainfest.json 支持 chromium 系浏览器
-python3 extension/tools/update-manifest.py  chromium
-
-# 切换mainfest.json 支持 firefix  系浏览器
-python3 extension/tools/update-manifest.py  firefox
+# 修改 mainfest.json 支持 firefix  系浏览器
+python3 tools/update-v3-manifest.py  firefox
 
 ```
 
