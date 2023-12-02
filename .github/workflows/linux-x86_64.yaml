@@ -53,6 +53,10 @@ jobs:
       - name: Prepare Chromium Run Environment
         run: |
           set -x
+          
+          # sudo sed -i "s@security.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
+          # sudo sed -i "s@archive.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
+          
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
           sudo python3 install-build-deps.py
