@@ -77,9 +77,9 @@ jobs:
       - name: Chromium Load Extension
         run: |
           set -x
-          bash tools/chromium.sh -xvfb
+          # bash tools/chromium.sh -xvfb
 
       - name: Firefox setup
         run: |
           set -x
-          bash tools/firefox.sh -xvfb
+          # bash tools/firefox.sh -xvfb

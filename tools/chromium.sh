@@ -15,8 +15,11 @@ cd ${__DIR__}
 XVFB_COMMAND=''
 while [ $# -gt 0 ]; do
   case "$1" in
-  -xvfb)
-      XVFB_COMMAND='xvfb-run  -s -terminate -screen 0 1920x1080x24  '
+  --xvfb)
+      XVFB_COMMAND='xvfb-run  -s -terminate -screen 0 1920x1080x24  -e /dev/stdout --auto-servernum '
+    ;;
+  --xwfb)
+      XVFB_COMMAND='xwfb-run  '
     ;;
   *)
     ;;
