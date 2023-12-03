@@ -3,6 +3,7 @@ name: build-replace-google-cdn
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   linux:
