@@ -77,8 +77,10 @@ jobs:
         run: |
           set -x
           # bash tools/chromium.sh --xvfb
+          bash tools/chromium.sh --headless
 
       - name: Firefox Load Extension
         run: |
           set -x
           # bash tools/firefox.sh --xvfb
+          bash tools/firefox.sh --headless

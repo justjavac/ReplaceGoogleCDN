@@ -14,11 +14,19 @@ __PROJECT__=$(
 )
 
 XVFB_COMMAND=''
+HEADLESS_MODE=''
+
 while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
       XVFB_COMMAND='xvfb-run  -s "-terminate -screen 0 1920x1080x24" '
       XVFB_COMMAND=''
+    ;;
+  --xwfb)
+      XVFB_COMMAND='xwfb-run  '
+    ;;
+  --headless)
+      HEADLESS_MODE='-headless '
     ;;
   *)
     ;;
@@ -86,7 +94,7 @@ cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 # 启动firefox 实例
 
 ${XVFB_COMMAND} ${FIREFOX} \
-  -profile "$profile_folder" \
+  -profile "$profile_folder" ${HEADLESS_MODE} \
   -start-debugger-server 9221 \
   --remote-debugging-port 9222 \
   about:debugging#/runtime/this-firefox

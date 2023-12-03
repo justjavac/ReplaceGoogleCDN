@@ -13,6 +13,8 @@ __PROJECT__=$(
 cd ${__DIR__}
 
 XVFB_COMMAND=''
+HEADLESS_MODE=''
+
 while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
@@ -21,6 +23,9 @@ while [ $# -gt 0 ]; do
     ;;
   --xwfb)
       XVFB_COMMAND='xwfb-run  '
+    ;;
+  --headless)
+      HEADLESS_MODE='--headless --disable-gpu '
     ;;
   *)
     ;;
@@ -78,7 +83,7 @@ ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --load-extension="$extensions" \
   --auto-open-devtools-for-tabs \
   --enable-logging=stderr --v=1 \
-  --remote-debugging-port=9222 \
+  --remote-debugging-port=9222 ${HEADLESS_MODE} \
   --disable-encryption --disable-machine-id \
   --start-maximized \
   about:blank
