@@ -46,7 +46,6 @@ jobs:
 
       - name: Cache Chromium
         uses: actions/cache@v3
-        id: chromium-cache
         with:
           path: |
             ${{ github.workspace }}/var/chrome-mac.zip
@@ -62,7 +61,6 @@ jobs:
 
       - name: Cache Firefox
         uses: actions/cache@v3
-        id: chromium-cache
         with:
           path: |
             ${{ github.workspace }}/var/firefox.dmg
