@@ -56,7 +56,7 @@ jobs:
             bash tools/download-firefox.sh
           fi
 
-      - name: test install firefox
+      - name: install firefox
         shell: cmd
         run:  |
             DIR
