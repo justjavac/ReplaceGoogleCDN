@@ -97,6 +97,8 @@ jobs:
         shell: bash
         run: |
           ls -lha var/
+          var/chrome-linux/chome --version 
+          ls -lha var/firefox/firefox --version
 
       - name: Chromium Load Extension
         run: |
