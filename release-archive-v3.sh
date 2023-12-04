@@ -30,7 +30,8 @@ zip -r ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip . \
   -x "tools/*" \
   -x "_metadata/*" \
   -x "rules/advance-no-use/*" \
-  -x "rules/example-no-use/backup/*" \
+  -x "rules/example-no-use/*" \
+  -x "background-page.html" \
   -x "screenshot/*" \
   -x "test/*" \
   -x "web/*" \
