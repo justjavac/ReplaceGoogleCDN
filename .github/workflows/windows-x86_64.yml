@@ -41,7 +41,8 @@ jobs:
         shell: cmd
         run:  |
             dir
-            msiexec /package  "var\FirefoxSetup.msi"
+            echo %cd%
+            msiexec /package  "%cd%\var\FirefoxSetup.msi"
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2
