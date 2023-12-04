@@ -15,11 +15,9 @@ __PROJECT__=$(
 cd ${__DIR__}
 
 
-
-
 # 自动测试
 #  浏览器日志位于 nohup.out 文件
-nohup  sh ${__PROJECT__}/tools/chromium.sh  &
+
 
 sleep 10
 

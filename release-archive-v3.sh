@@ -29,8 +29,8 @@ zip -r ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip . \
   -x "node_modules/*" \
   -x "tools/*" \
   -x "_metadata/*" \
-  -x "rules/advance-no-use/*" \
-  -x "rules/example-no-use/*" \
+  -x "rules/example-advance/*" \
+  -x "rules/example/*" \
   -x "background-page.html" \
   -x "screenshot/*" \
   -x "test/*" \
