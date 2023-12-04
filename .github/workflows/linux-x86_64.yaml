@@ -105,6 +105,8 @@ jobs:
           set -x
           # bash tools/chromium.sh --xvfb
           # bash tools/chromium.sh --headless
+          nohup  bash tools/chromium.sh --xvfb  &
+          bash tools/chromium-auto-test.sh
 
       - name: Firefox Load Extension
         run: |
