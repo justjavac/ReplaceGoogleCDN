@@ -75,6 +75,10 @@ jobs:
             :: show firefox version
             "C:\Program Files\Mozilla Firefox\firefox.exe" --version
             
+      - name: show var folder
+        shell: bash
+        run: |
+          ls -lha var/
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2

@@ -73,4 +73,8 @@ jobs:
           set -x
           if [ ! -f ${{ github.workspace }}/var/firefox.dmg ] ; then
             bash tools/download-firefox.sh
-          fi
+
+      - name: show var folder
+        shell: bash
+        run: |
+          ls -lha var/
