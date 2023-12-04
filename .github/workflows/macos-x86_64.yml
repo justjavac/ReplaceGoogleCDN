@@ -50,7 +50,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/chrome-mac.zip
             ${{ github.workspace }}/var/chrome-mac
-          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('${{ github.workspace }}/var/chrome-mac.zip') }}
+          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('var/chrome-mac.zip') }}
 
       - name: Download Chromium
         run: |
@@ -65,7 +65,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/firefox.dmg
             ${{ github.workspace }}/var/firefox/
-          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('${{ github.workspace }}/var/firefox.dmg') }}
+          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('var/firefox.dmg') }}
 
       - name: Download Firefox
         shell: bash
