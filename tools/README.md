@@ -3,6 +3,8 @@
 1. [轻松测试 Web API 与浏览器的兼容情况](https://caniuse.com/)
 1. [html5test](https://html5test.com/)
 1. [Features Detection](https://browserleaks.com/features)
+1. [浏览器请求重定向 V2 API ](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)
+1. [浏览器请求重定向 V3 API ](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 
 ## 打包工具 v3 mainifest 兼容 firefox
 
