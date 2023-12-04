@@ -63,7 +63,7 @@ jobs:
             ECHO %CD%
             :: msiexec /package /qn  "%CD%\var\firefox.msi"
             :: var\firefox.exe
-            var\firefox.exe /?
+            :: var\firefox.exe /?
             :: start var\firefox.exe /S
             var\firefox.exe /A /S
             
