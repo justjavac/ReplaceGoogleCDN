@@ -13,6 +13,8 @@ cd ${__DIR__}/dist
 test -f ReplaceGoogleCDN-v2.zip && rm -f ReplaceGoogleCDN-v2.zip
 test -f ReplaceGoogleCDN-v3.zip && rm -f ReplaceGoogleCDN-v3.zip
 
+test -d extension/_metadata/ && rm -rf extension/_metadata/
+
 cd ${__DIR__}/extension
 
 # 打包 manifest v3 支持chromium 内核系列

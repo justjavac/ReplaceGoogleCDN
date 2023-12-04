@@ -4,7 +4,7 @@ The following privacy notice shall provide you with a general overview about the
 
 ## What kind of personal data do we process?
 
-While using our products: Library Sniffer (automatically, except for Issue Reporter)
+While using our products: ReplaceGoogleCDN (automatically, except for Issue Reporter)
 
 1. Extension updates, subscription downloads, emergency notifications: Browser versionExtension versionOperating systemDate of last updateIP addressAdditionally, you may manually submit the following information about a webpage using the Issue Reporter: Browser build, if anyURLURL of referred webpage, if any, and webpage that opened the given pageBlockable itemsMatching filtersActive filter listsAccess to browser settings and installed plug-insEnabled extensions (voluntary)
 
@@ -14,7 +14,8 @@ While using our products: Library Sniffer (automatically, except for Issue Repor
 
 1. Event tracking: App and/or extension versionDemographic data (gender, age)Device typeWhich platforms you are usingLocation data based on your IP address (country)Button clicks and/or navigation patternsScreens shown
 
-## How do we collect data?
+## How do we collect data? (We Do not collect data)
+
 
 List of techniques and tools we use for data collection.
 
