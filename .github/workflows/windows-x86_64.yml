@@ -66,16 +66,17 @@ jobs:
             :: var\firefox.exe /?
             :: start var\firefox.exe /S
           
+            ::  静默安装
             var\firefox.exe /A /S
             timeout /T 30 /NOBREAK
           
-            :: show firefox install folder
+            :: show firefox install directory
             DIR "C:\Program Files\Mozilla Firefox"
-            :: DIR "C:\Program Files (x86)\Mozilla Firefox"
+  
             :: show firefox version
             "C:\Program Files\Mozilla Firefox\firefox.exe" --version
             
-      - name: show var folder
+      - name: show browser version
         shell: cmd
         run: |
           DIR var

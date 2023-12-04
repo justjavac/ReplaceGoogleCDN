@@ -93,7 +93,7 @@ jobs:
             bash tools/download-firefox.sh
           fi
 
-      - name: show var folder
+      - name: show browser version
         shell: bash
         run: |
           ls -lha var/
