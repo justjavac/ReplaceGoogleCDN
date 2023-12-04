@@ -7,13 +7,14 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
+test -d extension/_metadata/ && rm -rf extension/_metadata/
+
 mkdir -p dist/
 cd ${__DIR__}/dist
 
 test -f ReplaceGoogleCDN-v2.zip && rm -f ReplaceGoogleCDN-v2.zip
 test -f ReplaceGoogleCDN-v3.zip && rm -f ReplaceGoogleCDN-v3.zip
 
-test -d extension/_metadata/ && rm -rf extension/_metadata/
 
 cd ${__DIR__}/extension
 
