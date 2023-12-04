@@ -5,8 +5,8 @@ import os
 
 def get_auth_data():
     auth = dict()
-    print(project_dir+'/rules/advance-no-use/auth.json')
-    with open(project_dir+'/rules/advance-no-use/auth.json', mode='r', encoding='utf-8') as f:
+    print(project_dir+'/rules/example-advance/auth.json')
+    with open(project_dir+'/rules/example-advance/auth.json', mode='r', encoding='utf-8') as f:
         content = f.read()
         res = json.loads(content)
         print(res)
@@ -17,7 +17,7 @@ def get_auth_data():
 
 
 def set_auth(all_auth, latest_auth):
-    with(open(project_dir+'/rules/advance-no-use/auth-latest.json', mode='w')) as f:
+    with(open(project_dir+'/rules/example-advance/auth-latest.json', mode='w')) as f:
         # f.writelines(json.dumps(all_auth))
         print(all_auth[0]['action']['requestHeaders'])
         for item in enumerate(all_auth[0]['action']['requestHeaders']):

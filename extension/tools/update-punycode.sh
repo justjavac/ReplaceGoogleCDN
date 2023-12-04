@@ -27,7 +27,7 @@ old_punycode='_xn--3px_'
 new_punycode='_xn--fiq_'
 
 
-nums=$(grep -rl "$old_punycode" ${__ROOT__}/rules/advance/*.json | wc -l)
+nums=$(grep -rl "$old_punycode" ${__ROOT__}/rules/example-advance/*.json | wc -l)
 
 if test $nums -gt 0; then
 

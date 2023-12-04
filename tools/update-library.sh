@@ -5,16 +5,18 @@ __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
+__PROJECT__=$(
+  cd "${__DIR__}/../"
+  pwd
+)
+cd ${__PROJECT__}
 
 if [ ! "$BASH_VERSION" ]; then
   echo "Please do not use sh to run this script ($0), just execute it directly" 1>&2
   exit 1
 fi
 
-# test -d temp && rm -rf temp
 
-# example use proxy download source code
 # 使用代理下载源码
 # bash  update-library.sh --proxy http://127.0.0.1:1080
 
@@ -33,17 +35,17 @@ while [ $# -gt 0 ]; do
   shift $(($# > 0 ? 1 : 0))
 done
 
-mkdir -p temp
-cd ${__DIR__}/temp
+mkdir -p ${__PROJECT__}/var/tmp/
+cd ${__PROJECT__}/var/tmp/
 
-VENDOR=${__DIR__}/../third_party/
+VENDOR=${__PROJECT__}/extension/third_party/
 
 test -d frontend-utils/.git || git clone -b main https://github.com/jingjingxyk/frontend-utils.git --depth=1 --progress
 
 mkdir -p ${VENDOR}/jingjingxyk/frontend-utils
 cp -f frontend-utils/utils.js ${VENDOR}/jingjingxyk/frontend-utils/utils.js
 
-cd ${__DIR__}/temp
+cd ${__PROJECT__}/var/tmp/
 JSON_VERSION=v0.17.8
 test -d svelte-jsoneditor/.git || git clone -b ${JSON_VERSION} https://github.com/josdejong/svelte-jsoneditor.git --depth=1 --progress
 
@@ -56,6 +58,4 @@ mkdir -p ${VENDOR}/josdejong/svelte-jsoneditor/main
 
 cp -rf package-vanilla/* ${VENDOR}/josdejong/svelte-jsoneditor/main
 
-cd ${__DIR__}/
-
-test -d temp && rm -rf temp
+cd ${__PROJECT__}/var/tmp/
