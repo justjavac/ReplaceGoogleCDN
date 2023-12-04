@@ -40,9 +40,10 @@ jobs:
       - name: test install firefox
         shell: cmd
         run:  |
-            dir
-            echo %cd%
-            msiexec /package  "%cd%\var\FirefoxSetup.msi"
+            DIR
+            ECHO %CD%
+            msiexec /package  /q /i "%CD%\var\FirefoxSetup.msi"
+            
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2
