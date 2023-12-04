@@ -30,7 +30,7 @@ case $OS in
   # macos firefox 默认启动目录
   FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
   # 自定义 启动目录
-  FIREFOX="${__PROJECT__}/var/firefox/Firefox.app/Contents/MacOS/firefox-bin"
+  FIREFOX="${__PROJECT__}/var/firefox/Firefox.app/Contents/MacOS/firefox"
  ;;
 'MINGW64_NT'* | 'MSYS_NT'*)
   # FIREFOX="C:\Program Files\Mozilla Firefox\firefox.exe"
