@@ -52,7 +52,8 @@ case $OS in
   FIREFOX="${__PROJECT__}/var/firefox/Firefox.app/Contents/MacOS/firefox-bin"
  ;;
 'MINGW64_NT'* | 'MSYS_NT'*)
-  # FIREFOX="C:\Program Files\Mozilla Firefox\firefox.exe" --version
+  # FIREFOX="C:\Program Files\Mozilla Firefox\firefox.exe"
+  exit 0
   ;;
 *)
     echo 'current script no support !'

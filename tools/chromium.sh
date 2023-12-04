@@ -56,7 +56,7 @@ case $OS in
 "MINGW64_NT")
     # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
     # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
-    CHROMIUM='chrome-win\chrome.exe'
+    CHROMIUM='chrome-win/chrome.exe'
   ;;
   *)
     echo 'current script no support !'
