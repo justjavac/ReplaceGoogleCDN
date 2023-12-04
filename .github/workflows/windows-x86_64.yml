@@ -65,6 +65,7 @@ jobs:
             :: var\firefox.exe
             var\firefox.exe /?
             :: start var\firefox.exe /S
+            var\firefox.exe /A /S
             
 
         # https://www.msys2.org/docs/ci/
