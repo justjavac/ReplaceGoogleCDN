@@ -95,9 +95,9 @@ case $OS in
   ;;
 
 'MINGW64_NT'* | 'MSYS_NT'*)
-  test -f Firefox%20Setup%20${FIREFOX_VERSION}.msi && rm -rf Firefox%20Setup%20${FIREFOX_VERSION}.msi
+  test -f FirefoxSetup.msi && rm -rf FirefoxSetup.msi
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/win64/en-US/Firefox%20Setup%20${FIREFOX_VERSION}.msi
-  curl -Lo Firefox%20Setup%20${FIREFOX_VERSION}.msi ${DOWNLOAD_FIREFOX_URL}
+  curl -Lo FirefoxSetup.msi ${DOWNLOAD_FIREFOX_URL}
   ;;
 esac
 

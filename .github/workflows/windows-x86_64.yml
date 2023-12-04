@@ -39,7 +39,7 @@ jobs:
 
       - name: test install firefox
         shell: cmd
-        run: var\\Firefox%20Setup%20121.0b6.msi
+        run: var\\FirefoxSetup.msi
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2
