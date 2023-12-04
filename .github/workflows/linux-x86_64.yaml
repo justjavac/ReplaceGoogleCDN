@@ -70,7 +70,7 @@ jobs:
           test -f install-build-deps.py || curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
           sudo python3 install-build-deps.py
 
-      - name: Download Chromium and Prepare Chromium Run Environment
+      - name: Download Chromium
         run: |
           set -x
           if [ ! -f ${{ github.workspace }}/var/chrome-linux.zip ] ; then
