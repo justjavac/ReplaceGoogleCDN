@@ -80,4 +80,4 @@ jobs:
         run: |
           ls -lha var/
           var/chrome-mac/Chromium.app/Contents/MacOS/Chromium --version
-          var/firefox/Firefox.app/Contents/MacOS/firefox-bin --version
+          var/firefox/Firefox.app/Contents/MacOS/firefox --version
