@@ -62,16 +62,38 @@ jobs:
           curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
           sudo python3 install-build-deps.py
 
+      - name: Cache Chromium
+        uses: actions/cache@v3
+        id: chromium-cache
+        with:
+          path: |
+            ${{ github.workspace }}/var/chrome-linux.zip
+            ${{ github.workspace }}/var/chrome-linux
+          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('${{ github.workspace }}/var/chrome-linux.zip') }}
+
       - name: Download Chromium
         run: |
           set -x
-          bash tools/download-chromium.sh
+          if [ ! -f ${{ github.workspace }}/var/chrome-linux.zip ] ; then
+            bash tools/download-chromium.sh
+          fi
+
+      - name: Cache Firefox
+        uses: actions/cache@v3
+        id: chromium-cache
+        with:
+          path: |
+            ${{ github.workspace }}/var/firefox.tar.bz2
+            ${{ github.workspace }}/var/firefox/
+          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('${{ github.workspace }}/var/firefox.tar.bz2') }}
 
       - name: Download Firefox
         shell: bash
         run: |
           set -x
-          bash tools/download-firefox.sh
+          if [ ! -f ${{ github.workspace }}/var/firefox.tar.bz2 ] ; then
+            bash tools/download-firefox.sh
+          fi
 
       - name: Chromium Load Extension
         run: |

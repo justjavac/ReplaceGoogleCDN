@@ -44,13 +44,35 @@ jobs:
         run: |
           set -x
 
+      - name: Cache Chromium
+        uses: actions/cache@v3
+        id: chromium-cache
+        with:
+          path: |
+            ${{ github.workspace }}/var/chrome-mac.zip
+            ${{ github.workspace }}/var/chrome-mac
+          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('${{ github.workspace }}/var/chrome-mac.zip') }}
+
       - name: Download Chromium
         run: |
           set -x
-          bash tools/download-chromium.sh
+          if [ ! -f ${{ github.workspace }}/var/chrome-mac.zip ] ; then
+            bash tools/download-chromium.sh
+          fi
+
+      - name: Cache Firefox
+        uses: actions/cache@v3
+        id: chromium-cache
+        with:
+          path: |
+            ${{ github.workspace }}/var/firefox.dmg
+            ${{ github.workspace }}/var/firefox/
+          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('${{ github.workspace }}/var/firefox.dmg') }}
 
       - name: Download Firefox
         shell: bash
         run: |
           set -x
-          bash tools/download-firefox.sh
+          if [ ! -f ${{ github.workspace }}/var/firefox.dmg ] ; then
+            bash tools/download-firefox.sh
+          fi

@@ -63,14 +63,14 @@ DOWNLOAD_FIREFOX_URL_PREFIX=https://archive.mozilla.org/pub/firefox/releases
 
 case $OS in
 "Linux")
-  test -f firefox-${FIREFOX_VERSION}.tar.bz2 && rm -rf firefox-${FIREFOX_VERSION}.tar.bz2
+  test -f firefox.tar.bz2 && rm -rf firefox.tar.bz2
   test -d firefox && rm -rf firefox
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/linux-${ARCH}/en-US/firefox-${FIREFOX_VERSION}.tar.bz2
-  curl -Lo firefox-${FIREFOX_VERSION}.tar.bz2 ${DOWNLOAD_FIREFOX_URL}
-  tar -jxvf firefox-${FIREFOX_VERSION}.tar.bz2
+  curl -Lo firefox.tar.bz2 ${DOWNLOAD_FIREFOX_URL}
+  tar -jxvf firefox.tar.bz2
   ;;
 "Darwin")
-  FIREFOX_DMG_FILE=Firefox%20${FIREFOX_VERSION}.dmg
+  FIREFOX_DMG_FILE=firefox.dmg
   test -f ${FIREFOX_DMG_FILE} && rm -rf ${FIREFOX_DMG_FILE}
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
   curl -Lo ${FIREFOX_DMG_FILE} ${DOWNLOAD_FIREFOX_URL}
@@ -88,16 +88,16 @@ case $OS in
   # hdiutil attach Firefox%20${FIREFOX_VERSION}.dmg
 
   # 将应用程序拷贝到指定目录
-  mkdir -p ${__PROJECT__}/var/Firefox
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/Firefox
-  ls -lh ${__PROJECT__}/var/Firefox/
+  mkdir -p ${__PROJECT__}/var/firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/firefox
+  ls -lh ${__PROJECT__}/var/firefox/
 
   ;;
 
 'MINGW64_NT'* | 'MSYS_NT'*)
-  test -f FirefoxSetup.msi && rm -rf FirefoxSetup.msi
-  DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/win64/en-US/Firefox%20Setup%20${FIREFOX_VERSION}.msi
-  curl -Lo FirefoxSetup.msi ${DOWNLOAD_FIREFOX_URL}
+  test -f firefox.exe && rm -rf firefox.exe
+  DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/win64/en-US/Firefox%20Setup%20${FIREFOX_VERSION}.exe
+  curl -Lo firefox.exe ${DOWNLOAD_FIREFOX_URL}
   ;;
 esac
 

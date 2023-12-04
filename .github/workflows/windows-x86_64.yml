@@ -25,24 +25,46 @@ jobs:
         run: |
           ipconfig /all
 
+      - name: Cache Chromium
+        uses: actions/cache@v3
+        id: chromium-cache
+        with:
+          path: |
+            ${{ github.workspace }}/var/chrome-win.zip
+            ${{ github.workspace }}/var/chrome-win
+          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('${{ github.workspace }}/var/chrome-win.zip') }}
+
       - name: Download Chromium
         shell: bash
         run: |
           set -x
-          bash tools/download-chromium.sh
+          if [ ! -f ${{ github.workspace }}/var/chrome-win.zip ] ; then
+            bash tools/download-chromium.sh
+          fi
+
+      - name: Cache Firefox
+        uses: actions/cache@v3
+        id: chromium-cache
+        with:
+          path: |
+            ${{ github.workspace }}/var/firefox.exe
+          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('${{ github.workspace }}/var/firefox.exe') }}
 
       - name: Download Firefox
         shell: bash
         run: |
           set -x
-          bash tools/download-firefox.sh
+          if [ ! -f ${{ github.workspace }}/var/firefox.exe ] ; then
+            bash tools/download-firefox.sh
+          fi
 
       - name: test install firefox
         shell: cmd
         run:  |
             DIR
             ECHO %CD%
-            msiexec /package  /q /i "%CD%\var\FirefoxSetup.msi"
+            :: msiexec /package  /q /i "%CD%\var\firefox.msi"
+            var\firefox.exe
             
 
         # https://www.msys2.org/docs/ci/
