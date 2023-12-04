@@ -68,7 +68,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/chrome-linux.zip
             ${{ github.workspace }}/var/chrome-linux
-          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('var/chrome-linux.zip') }}
+          key: ${{ runner.os }}-x86_64-chromium
 
       - name: Download Chromium
         run: |
@@ -83,7 +83,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/firefox.tar.bz2
             ${{ github.workspace }}/var/firefox/
-          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('var/firefox.tar.bz2') }}
+          key: ${{ runner.os }}-x86_64-firefox
 
       - name: Download Firefox
         shell: bash

@@ -31,7 +31,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/chrome-win.zip
             ${{ github.workspace }}/var/chrome-win
-          key: ${{ runner.os }}-x86_64-chromium-${{ hashFiles('var/chrome-win.zip') }}
+          key: ${{ runner.os }}-x86_64-chromium
 
       - name: Download Chromium
         shell: bash
@@ -46,7 +46,7 @@ jobs:
         with:
           path: |
             ${{ github.workspace }}/var/firefox.exe
-          key: ${{ runner.os }}-x86_64-firefox-${{ hashFiles('var/firefox.exe') }}
+          key: ${{ runner.os }}-x86_64-firefox
 
       - name: Download Firefox
         shell: bash
@@ -62,7 +62,7 @@ jobs:
             DIR
             ECHO %CD%
             :: msiexec /package  /q /i "%CD%\var\firefox.msi"
-            var\firefox.exe
+            :: var\firefox.exe
             
 
         # https://www.msys2.org/docs/ci/
@@ -70,7 +70,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
         with:
           msystem: UCRT64
-          update: true
+          update: false
           install: git mingw-w64-ucrt-x86_64-gcc
 
       - name: CI-Build
