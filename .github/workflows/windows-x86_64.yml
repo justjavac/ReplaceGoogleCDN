@@ -76,10 +76,10 @@ jobs:
             "C:\Program Files\Mozilla Firefox\firefox.exe" --version
             
       - name: show var folder
-        shell: bash
+        shell: cmd
         run: |
-          ls -lha var/
-          var/chrome-win/chrome.exe --version
+          DIR var
+          var\chrome-win\chrome.exe --version
           "C:\Program Files\Mozilla Firefox\firefox.exe" --version
 
         # https://www.msys2.org/docs/ci/
