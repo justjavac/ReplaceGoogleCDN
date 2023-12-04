@@ -29,15 +29,15 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ github.workspace }}/var/chrome-win.zip
-            ${{ github.workspace }}/var/chrome-win
+            ${{ github.workspace }}\var\chrome-win.zip
+            ${{ github.workspace }}\var\chrome-win
           key: ${{ runner.os }}-x86_64-chromium
 
       - name: Download Chromium
         shell: bash
         run: |
           set -x
-          if [ ! -f ${{ github.workspace }}/var/chrome-win.zip ] ; then
+          if [ ! -f var/chrome-win.zip ] ; then
             bash tools/download-chromium.sh
           fi
 
@@ -45,14 +45,14 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ github.workspace }}/var/firefox.exe
+            ${{ github.workspace }}\var\firefox.exe
           key: ${{ runner.os }}-x86_64-firefox
 
       - name: Download Firefox
         shell: bash
         run: |
           set -x
-          if [ ! -f ${{ github.workspace }}/var/firefox.exe ] ; then
+          if [ ! -f var/firefox.exe ] ; then
             bash tools/download-firefox.sh
           fi
 
