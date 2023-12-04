@@ -1,0 +1,56 @@
+name: macos-x86_64
+
+on: [push, pull_request]
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+jobs:
+  macos-x86_64:
+    if: github.ref == 'refs/heads/dev' || github.ref_name == 'dev'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare build environment
+        run: |
+          env
+          echo $HOME
+
+          brew config
+
+          brew install  wget curl   
+
+          softwareupdate --list --verbose
+
+          ls -lh $(xcrun --show-sdk-path)
+
+          ifconfig
+
+          export IPV6=$(ifconfig en0  | grep "inet6 " | grep -v "inet6 fe80:" | awk '{print $2}' | cut -d'/' -f1 | sed -n '2p')
+          export IPV4=$(ifconfig en0 | grep "inet " | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1 | sed -n '1p')
+          echo $IPV4
+          echo $IPV6
+          echo "X_IPV6=${IPV6}" >> $GITHUB_ENV
+          echo "X_IPV4=${IPV4}" >> $GITHUB_ENV
+
+          echo ${{ env.BRANCH_NAME }}
+          echo ${{ github.actor }}
+          echo ${{ github.repository }}
+          echo ${{ github.repository_owner }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.ref_name }}
+
+      - name: Prepare Chromium Run Environment
+        run: |
+          set -x
+
+      - name: Download Chromium
+        run: |
+          set -x
+          bash tools/download-chromium.sh
+
+      - name: Download Firefox
+        shell: bash
+        run: |
+          set -x
+          bash tools/download-firefox.sh

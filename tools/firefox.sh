@@ -13,6 +13,27 @@ __PROJECT__=$(
   pwd
 )
 
+XVFB_COMMAND=''
+HEADLESS_MODE=''
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+  --xvfb)
+      XVFB_COMMAND='xvfb-run  -s "-terminate -screen 0 1920x1080x24" '
+      XVFB_COMMAND=''
+    ;;
+  --xwfb)
+      XVFB_COMMAND='xwfb-run  '
+    ;;
+  --headless)
+      HEADLESS_MODE='-headless '
+    ;;
+  *)
+    ;;
+  esac
+  shift $(($# > 0 ? 1 : 0))
+done
+
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "$OS"
@@ -49,8 +70,6 @@ mkdir -p ${__PROJECT__}/var/
 cd ${__PROJECT__}/var/
 
 
-# python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
-
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
 
@@ -74,8 +93,8 @@ cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 启动firefox 实例
 
-${FIREFOX} \
-  -profile "$profile_folder" \
+${XVFB_COMMAND} ${FIREFOX} \
+  -profile "$profile_folder" ${HEADLESS_MODE} \
   -start-debugger-server 9221 \
   --remote-debugging-port 9222 \
   about:debugging#/runtime/this-firefox
@@ -95,3 +114,6 @@ ${FIREFOX} \
 # gecko-dev
 # https://github.com/mozilla/gecko-dev.git
 
+
+# CommandLineOptions
+# https://wiki.mozilla.org/Firefox/CommandLineOptions

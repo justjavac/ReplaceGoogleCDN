@@ -1,3 +1,7 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
 node_modules
 extension.zip
 .idea/
@@ -16,6 +20,7 @@ extension/third_party/
 extension/web-backup
 extension/manifest-backup.json
 tools/web/proxy.pac
+tools/tools/prefs-latest.js
 
 dist
 var

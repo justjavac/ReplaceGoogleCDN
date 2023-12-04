@@ -28,31 +28,34 @@ def set_manifest_data(manifest, key, value):
 
 
 def override_manifest(manifest):
-    with open(manifest_file, mode='w') as f:
+    with open(manifest_file_tmp, mode='w') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == '__main__':
     comment = '''
-      用法：python3 extension/tools/update-manifest.py [ chromium | firefox ] 
+      用法：python3 tools/update-v3-manifest.py [ chromium | firefox ]
       
-      例子：( 默认为 chromium mainifest 配置) 
-      python3 update-manifest.py  chromium 
-      python3 update-manifest.py  firefox
+      例子：( 默认为 firefox mainifest 配置)
+
+      python3 tools/update-v3-manifest.py  firefox
       
      '''
 
     project_dir = os.path.abspath(os.path.dirname(__file__) + '/../')
-    manifest_file = project_dir + '/manifest.json'
+    manifest_file = project_dir + '/extension/manifest.json'
+    manifest_file_tmp = project_dir + '/var/extension-tmp/manifest.json'
     manifest_data = get_manifest_data()
 
-    browser = 'chromium'
+    browser = 'firefox'
     if len(sys.argv) > 1 and sys.argv[1] is not None:
         browser = sys.argv[1]
 
     if browser == '--help' or browser == '-h':
         print(comment)
         exit(0)
+    else:
+        browser = 'firefox'
 
     # chromium config
     chromium_background_content = '''
@@ -92,7 +95,7 @@ if __name__ == '__main__':
     {
         "gecko": {
             "id": "zonghengbaihe521@qq.com",
-            "strict_min_version": "113.0"
+            "strict_min_version": "120.0"
         }
     }
     '''
@@ -111,4 +114,5 @@ if __name__ == '__main__':
     manifest_data = set_manifest_data(manifest_data, 'sandbox', sandbox_content)
     manifest_data = set_manifest_data(manifest_data, 'content_security_policy', content_security_policy_sandbox_content)
     manifest_data = set_manifest_data(manifest_data, 'browser_specific_settings', browser_specific_settings)
+    manifest_data = set_manifest_data(manifest_data, 'options_ui', '')
     override_manifest(manifest_data)

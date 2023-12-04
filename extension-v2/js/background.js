@@ -19,7 +19,7 @@ const remove_csp_item = [
   "cross-origin-embedder-policy",
   "cross-origin-opener-policy",
   "cross-origin-opener-policy-report-only",
-  "cross-origin-embedder-policy-report-only",
+  "cross-origin-embedder-policy-report-only"
 ];
 
 /**
@@ -42,7 +42,7 @@ const remove_csp_urls = [
   "*://developers.redhat.com/*",
   "*://*.githubusercontent.com/*",
   "*://pub.dev/*",
-  "*://stackoverflow.com/*",
+  "*://stackoverflow.com/*"
 ];
 
 /**

@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.139",
-    "prettier": "^2.3.0",
+    "prettier": "*",
     "typescript": "^4.2.4",
-    "web-ext": "^7.6.2"
+    "web-ext": "*"
   }
 }

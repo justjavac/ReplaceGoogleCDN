@@ -7,7 +7,6 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
-test -d dist && rm -rf dist
 mkdir -p dist/
 cd ${__DIR__}/dist
 
@@ -38,7 +37,7 @@ cd ${__DIR__}
 zip -u dist/ReplaceGoogleCDN-v3.zip ./README.md
 zip -u dist/ReplaceGoogleCDN-v3.zip ./Privacy.md
 zip -u dist/ReplaceGoogleCDN-v3.zip ./LICENSE
-zip -u dist/ReplaceGoogleCDN-v3.zip ./CHANGELOG-v3-x.x.x.md
+
 
 # 打包 manifest v2  支持chromium 内核系列 和 firefox
 cd ${__DIR__}/extension-v2/
@@ -58,10 +57,14 @@ cd ${__DIR__}
 zip -u dist/ReplaceGoogleCDN-v2.zip ./README.md
 zip -u dist/ReplaceGoogleCDN-v2.zip ./Privacy.md
 zip -u dist/ReplaceGoogleCDN-v2.zip ./LICENSE
-zip -u dist/ReplaceGoogleCDN-v2.zip ./CHANGELOG-v2-x.x.x.md
+
 
 cd ${__DIR__}/dist
 # 查看打包结果
+
+test -d ReplaceGoogleCDN-v2 && rm -rf ReplaceGoogleCDN-v2
+test -d ReplaceGoogleCDN-v3 && rm -rf ReplaceGoogleCDN-v3
+
 unzip ReplaceGoogleCDN-v2.zip -d ReplaceGoogleCDN-v2
 unzip ReplaceGoogleCDN-v3.zip -d ReplaceGoogleCDN-v3
 

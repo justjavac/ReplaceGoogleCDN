@@ -193,7 +193,7 @@ let need_replace_cdn_urls = [
   "www.gravatar.com",
   "maxcdn.bootstrapcdn.com",
   "github.com",
-  "www.google.com",
+  "www.google.com"
 ];
 
 let cdn_urls = need_replace_cdn_urls.map((currentValue, index, arr) => {
@@ -218,7 +218,7 @@ let opensource_google_urls = [
   "*://summerofcode.withgoogle.com/*",
   "*://cs.opensource.google/*", //Google Open Source
   "*://opensource.googleblog.com/*",
-  "*://opensource.google/*",
+  "*://opensource.google/*"
 ];
 
 // 高级玩法测试域名组

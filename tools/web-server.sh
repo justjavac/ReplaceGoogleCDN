@@ -12,7 +12,7 @@ echo ${__PROJECT__}
 
 
 
-# 用于 解决google 翻译不能用的
+# 用于 解决 google 翻译不能用的
 
 # 原理： https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file
 

@@ -12,6 +12,7 @@ __PROJECT__=$(
   cd ${__DIR__}/../
   pwd
 )
+cd ${__PROJECT__}
 
 OS=$(uname -s)
 ARCH=$(uname -m)
@@ -44,12 +45,9 @@ profile_folder="/tmp/${UUID}"
 
 mkdir -p $profile_folder
 
+## 生成支持firefox 的扩展
+bash release-archive-v3.sh
 
-mkdir -p ${__PROJECT__}/var/
-cd ${__PROJECT__}/var/
-
-
-# python3 ${__PROJECT__}/extension/tools/update-manifest.py  firefox
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
@@ -73,7 +71,7 @@ cd ${__PROJECT__}/var/
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 进入扩展所在目录
-cd ${__PROJECT__}/extension-v2/
+cd ${__PROJECT__}/var/extension-tmp/
 
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 
