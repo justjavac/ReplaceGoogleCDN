@@ -19,8 +19,7 @@ HEADLESS_MODE=''
 while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
-      XVFB_COMMAND='xvfb-run  -s "-terminate -screen 0 1920x1080x24" '
-      XVFB_COMMAND=''
+      XVFB_COMMAND='xvfb-run --auto-servernum  -e /dev/stdout  -s "-terminate -screen 0 1920x1080x24" '
     ;;
   --xwfb)
       XVFB_COMMAND='xwfb-run  '
@@ -94,18 +93,25 @@ cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 启动firefox 实例
 
+cat > run-firefox.sh <<EOF
+#!/usr/bin/env bash
+set -x
 ${XVFB_COMMAND} ${FIREFOX} \
-  -profile "$profile_folder" ${HEADLESS_MODE} \
-  -start-debugger-server 9221 \
-  --remote-debugging-port 9222 \
+  -profile "$profile_folder"  \
+  --start-debugger-server 9221 \
+  --remote-debugging-port 9222 ${HEADLESS_MODE} \
   about:debugging#/runtime/this-firefox
+EOF
+
+bash run-firefox.sh
+
+
 
 # Firefox supports several remote protocols   https://firefox-source-docs.mozilla.org/remote/index.html
-# -start-debugger-server  vs  --remote-debugging-port
-# -start-debugger-server 9221 \
+# firefox 支持多种调试协议
 # -devtools \
 # -jsconsole \
-#  about:blank
+
 
 # 此命令已不可用
 # -install-global-extension  ${__ROOT__}/extension-v2 \
