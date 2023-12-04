@@ -76,7 +76,6 @@ jobs:
           if [ ! -f ${{ github.workspace }}/var/chrome-linux.zip ] ; then
             bash tools/download-chromium.sh
           fi
-          ${{ github.workspace }}/var/chrome-linux/chrome --help
 
       - name: Cache Firefox
         uses: actions/cache@v3
