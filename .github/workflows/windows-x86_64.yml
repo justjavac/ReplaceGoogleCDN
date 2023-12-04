@@ -79,7 +79,7 @@ jobs:
         shell: cmd
         run: |
           DIR var
-          :: var\chrome-win\chrome.exe --version
+          var\chrome-win\chrome.exe get Version /value
           "C:\Program Files\Mozilla Firefox\firefox.exe" --version
 
         # https://www.msys2.org/docs/ci/
