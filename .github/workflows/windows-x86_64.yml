@@ -61,14 +61,19 @@ jobs:
         run:  |
             DIR
             ECHO %CD%
+          
             :: msiexec /package /qn  "%CD%\var\firefox.msi"
-            :: var\firefox.exe
             :: var\firefox.exe /?
             :: start var\firefox.exe /S
+          
             var\firefox.exe /A /S
             timeout /T 30 /NOBREAK
+          
+            :: show firefox install folder
             DIR "C:\Program Files\Mozilla Firefox"
-            DIR "C:\Program Files (x86)\Mozilla Firefox"
+            :: DIR "C:\Program Files (x86)\Mozilla Firefox"
+            :: show firefox version
+            "C:\Program Files\Mozilla Firefox\firefox.exe" --version
             
 
         # https://www.msys2.org/docs/ci/
