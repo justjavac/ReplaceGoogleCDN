@@ -148,7 +148,7 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ```
 
-## [declarative_net_reques 配置示例](extension/rules/README.md)
+## [declarative_net_reques 规则配置示例](extension/rules/README.md)
 
 ## [测试用例](test/README.md)
 
