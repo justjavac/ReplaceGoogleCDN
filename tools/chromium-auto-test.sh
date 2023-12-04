@@ -18,12 +18,11 @@ cd ${__DIR__}
 # 自动测试
 #  浏览器日志位于 nohup.out 文件
 
-
-sleep 11
-
 # 参考： https://chromedevtools.github.io/devtools-protocol/
 
+# 显示CDP 可用参数
 curl http://localhost:9222/json/protocol
+
 curl http://localhost:9222/json/version
 
 exit 0
