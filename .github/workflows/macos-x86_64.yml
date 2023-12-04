@@ -79,5 +79,5 @@ jobs:
         shell: bash
         run: |
           ls -lha var/
-          ls -lha var/chrome-mac/chome 
-          ls -lha var/firefox/firefox/
+          ls -lha var/chrome-mac/
+          ls -lha var/firefox/
