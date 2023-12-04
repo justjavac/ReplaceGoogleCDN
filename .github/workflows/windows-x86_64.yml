@@ -37,6 +37,10 @@ jobs:
           set -x
           bash tools/download-firefox.sh
 
+      - name: test install firefox
+        shell: cmd
+        run: var\\Firefox%20Setup%20121.0b6.msi
+
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2
       - uses: msys2/setup-msys2@v2
