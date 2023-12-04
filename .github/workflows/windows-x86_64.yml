@@ -79,6 +79,8 @@ jobs:
         shell: bash
         run: |
           ls -lha var/
+          var/chrome-win/chrome.exe --version
+          "C:\Program Files\Mozilla Firefox\firefox.exe" --version
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2
