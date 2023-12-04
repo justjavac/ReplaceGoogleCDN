@@ -111,5 +111,6 @@ jobs:
       - name: Test
         shell: cmd
         run: |
+          REM change CHCP to UTF-8
           @chcp 65001>nul
           echo foo=bar >> %GITHUB_OUTPUT%
