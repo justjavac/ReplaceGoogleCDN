@@ -61,10 +61,10 @@ jobs:
         run:  |
             DIR
             ECHO %CD%
-            :: msiexec /package  /q /i /qb  "%CD%\var\firefox.msi"
+            :: msiexec /package /qn  "%CD%\var\firefox.msi"
             :: var\firefox.exe
             var\firefox.exe /?
-            start var\firefox.exe /S
+            :: start var\firefox.exe /S
             
 
         # https://www.msys2.org/docs/ci/
