@@ -21,7 +21,10 @@ cd ${__DIR__}
 
 sleep 11
 
+# 参考： https://chromedevtools.github.io/devtools-protocol/
+
 curl http://localhost:9222/json/protocol
+curl http://localhost:9222/json/version
 
 exit 0
 curl  http://127.0.0.1:9222/json/new?https://stackoverflow.com/tags/socat/hot?filter=all
