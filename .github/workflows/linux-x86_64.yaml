@@ -54,11 +54,6 @@ jobs:
 
           sudo apt install -y supervisor socat
 
-      - name: Prepare Chromium Run Environment
-        run: |
-          set -x
-          # curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
-
       - name: Cache Chromium
         uses: actions/cache@v3
         with:
@@ -68,12 +63,16 @@ jobs:
             ${{ github.workspace }}/var/chrome-linux
           key: ${{ runner.os }}-x86_64-chromium
 
+      - name: Prepare Chromium Run Environment
+        run: |
+          set -x
+          # curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
+          test -f install-build-deps.py || curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
+          sudo python3 install-build-deps.py
+
       - name: Download Chromium and Prepare Chromium Run Environment
         run: |
           set -x
-          test -f install-build-deps.py || curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
-          sudo python3 install-build-deps.py
-          
           if [ ! -f ${{ github.workspace }}/var/chrome-linux.zip ] ; then
             bash tools/download-chromium.sh
           fi
