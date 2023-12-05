@@ -14,7 +14,6 @@ extension/_metadata/
 
 package-lock.json
 
-*.js
 
 extension/third_party/
 extension/manifest-backup.json
