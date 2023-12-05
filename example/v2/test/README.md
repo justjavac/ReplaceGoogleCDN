@@ -1,10 +1,5 @@
 # 测试说明
 
-## V2 为什么要升级到 V3
-
-> Chrome 网上应用店将不再接受新的 Manifest V2 扩展。 开发者仍可推送现有 Manifest V2 扩展的更新
-> https://developer.chrome.com/blog/mv2-transition/
-> Manifest version 2 is deprecated, and support will be removed in 2023. See https://developer.chrome.com/blog/mv2-transition/ for more details.
 
 ## [firefox 支持 V3 情况](https://www.mozilla.org/en-US/firefox/109.0/releasenotes/)
 
