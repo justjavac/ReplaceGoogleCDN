@@ -16,7 +16,7 @@ extension/_metadata/
 extension/tools/git-clean-file-history.sh
 extension/tools/local-deploy.sh
 
-extension/web-backup/
+web-backup/
 experimental-features/v3/rules/example/backup/
 
 
