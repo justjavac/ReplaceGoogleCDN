@@ -16,7 +16,6 @@ While using our products: ReplaceGoogleCDN (automatically, except for Issue Repo
 
 ## How do we collect data? (We Do not collect data)
 
-
 List of techniques and tools we use for data collection.
 
 1. In our products: Update checksSubscription downloadsSending issue reportsSending crash reportsIn our mobile products and Adblock Plus for Safari on macOS: via Firebase AnalyticsEmergency notification checksReferring to an uninstall or donation webpageData in connection with receiving donations

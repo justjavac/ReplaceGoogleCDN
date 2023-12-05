@@ -71,7 +71,8 @@ chrome.declarativeNetRequest.updateDynamicRules(
   (parameter) => {
     console.log(parameter);
   }
-);
+)
+
 ```
 
 ## 选项页做了什么事？

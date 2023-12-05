@@ -31,6 +31,6 @@ nums=$(grep -rl "$old_punycode" ${__ROOT__}/rules/example-advance/*.json | wc -l
 
 if test $nums -gt 0; then
 
-  sed -i "s/${old_punycode}/${new_punycode}/g" $(grep -rl "$old_punycode" ${__ROOT__}/rules/advance/*.json)
+  sed -i "s/${old_punycode}/${new_punycode}/g" $(grep -rl "$old_punycode" ${__ROOT__}/rules/example-advance/*.json)
 
 fi

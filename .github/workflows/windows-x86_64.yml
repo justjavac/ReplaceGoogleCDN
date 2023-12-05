@@ -58,24 +58,24 @@ jobs:
 
       - name: install firefox
         shell: cmd
-        run:  |
-            DIR
-            ECHO %CD%
-          
-            :: msiexec /package /qn  "%CD%\var\firefox.msi"
-            :: var\firefox.exe /?
-            :: start var\firefox.exe /S
-          
-            ::  静默安装 firefox
-            var\firefox.exe /A /S
-            timeout /T 30 /NOBREAK
-          
-            :: show firefox install directory
-            DIR "C:\Program Files\Mozilla Firefox"
-  
-            :: show firefox version
-            "C:\Program Files\Mozilla Firefox\firefox.exe" --version
-            
+        run: |
+          DIR
+          ECHO %CD%
+
+          :: msiexec /package /qn  "%CD%\var\firefox.msi"
+          :: var\firefox.exe /?
+          :: start var\firefox.exe /S
+
+          ::  静默安装 firefox
+          var\firefox.exe /A /S
+          timeout /T 30 /NOBREAK
+
+          :: show firefox install directory
+          DIR "C:\Program Files\Mozilla Firefox"
+
+          :: show firefox version
+          "C:\Program Files\Mozilla Firefox\firefox.exe" --version
+
       - name: show browser version
         shell: cmd
         run: |
@@ -85,28 +85,28 @@ jobs:
 
         # https://www.msys2.org/docs/ci/
         # https://github.com/marketplace/actions/setup-msys2
-#      - uses: msys2/setup-msys2@v2
-#        with:
-#          msystem: UCRT64
-#          update: false
-#          install: git mingw-w64-ucrt-x86_64-gcc
-#
-#      - name: CI-Build
-#        shell: msys2 {0}
-#        run: |
-#          echo 'Running in MSYS2!'
-#
-#          echo "C:\\msys64\\usr\\bin" >> $GITHUB_PATH
-#          echo "C:\\msys64\\mingw64\\bin" >> $GITHUB_PATH
-#          echo "PKG_CONFIG_PATH=/mingw64/lib/pkgconfig" >> $GITHUB_ENV
-#
-#      - name: test powershell use msys2
-#        shell: powershell
-#        run: msys2 -c 'uname -a'
-#
-#      - name: test cmd use msys2
-#        shell: cmd
-#        run: msys2 -c 'uname -a'
+      #      - uses: msys2/setup-msys2@v2
+      #        with:
+      #          msystem: UCRT64
+      #          update: false
+      #          install: git mingw-w64-ucrt-x86_64-gcc
+      #
+      #      - name: CI-Build
+      #        shell: msys2 {0}
+      #        run: |
+      #          echo 'Running in MSYS2!'
+      #
+      #          echo "C:\\msys64\\usr\\bin" >> $GITHUB_PATH
+      #          echo "C:\\msys64\\mingw64\\bin" >> $GITHUB_PATH
+      #          echo "PKG_CONFIG_PATH=/mingw64/lib/pkgconfig" >> $GITHUB_ENV
+      #
+      #      - name: test powershell use msys2
+      #        shell: powershell
+      #        run: msys2 -c 'uname -a'
+      #
+      #      - name: test cmd use msys2
+      #        shell: cmd
+      #        run: msys2 -c 'uname -a'
 
       - name: Test
         shell: cmd

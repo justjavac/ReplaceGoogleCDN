@@ -11,13 +11,11 @@ Thumbs.db
 server/
 server/*
 extension/_metadata/
-extension/test/extension-v3-test/
-extension/test/chromium-tools/
+
 package-lock.json
 
 
 extension/third_party/
-extension/web-backup
 extension/manifest-backup.json
 tools/web/proxy.pac
 tools/tools/prefs-latest.js

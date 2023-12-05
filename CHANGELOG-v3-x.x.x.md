@@ -1,13 +1,17 @@
 # CHANGELOG for v3
 
-## [测试用例](/test/README.md)
+## CHANGELOG for v3 0.10.32 [2023-12-05 15:01:00 +0800]
+
+> 1. 新增: 创建 文档目录 `docs`
+> 1. 变更： 将辅助工具到扩展目录外
+> 1. 变更： 将高级功能脚本、规则移动到 `experimental-features` 目录 , 部分实验脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
 
 ## CHANGELOG for v3 0.10.31 [2023-12-02 22:01:00 +0800]
 
-> 1. 新增:  对 firefox 提供基础版功能，暂不提供高级功能。详情： [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
+> 1. 新增： 对 firefox 提供基础版功能，暂不提供高级功能。详情： [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
 > 1. 变更： 精简打包命令
 > 1. 变更： 使用 prettier 格式化代码
-> 1. 新增： github action workflows 实现命令行下载浏览器 并加载扩展，运行无界面加载扩展 （非headless 模式） 
+> 1. 新增： github action workflows 实现命令行下载浏览器 并加载扩展，运行无界面加载扩展 （非headless 模式）
 
 ## CHANGELOG for v3 0.10.30 [2023-09-02 11:01:00 +0800]
 

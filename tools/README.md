@@ -38,6 +38,12 @@ bash  tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
 
 > 查看 chromium 版本 https://commondatastorage.googleapis.com/chromium-browser-snapshots/
 
+> https://download-chromium.appspot.com/
+
+> https://download-chromium.appspot.com/?platform=Win_x64&type=snapshots
+
+> ChromiumOS https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_ChromiumOS_Full/1101351/chrome-chromeos.zip
+
 ```shell
 
 bash tools/download-chromium.sh
@@ -83,5 +89,15 @@ bash tools/web-server.sh
 # 使用 pac 文件
 
 chromium  --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"  --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+
+```
+
+## 拨测工具测试地址
+
+```text
+
+https://fonts.googleapis.cn/css?family=Google+Sans
+
+https://fonts.gstatic.cn/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
 
 ```
