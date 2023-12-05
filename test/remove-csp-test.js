@@ -25,7 +25,7 @@
     document.body.appendChild(script);
 })();
 
-//保存为书签使用
+//保存为书签使用 (代码格式化为一行即可）
 
 javascript: (() => {
   let script = document.createElement("script");
