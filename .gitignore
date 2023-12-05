@@ -13,13 +13,12 @@ extension/third_party/
 !extension/third_party/josdejong/svelte-jsoneditor
 
 extension/_metadata/
-extension/tools/git-clean-file-history.sh
-extension/tools/local-deploy.sh
 
 web-backup/
 experimental-features/v3/rules/example/backup/
 
-
+tools/git-clean-file-history.sh
+tools/local-deploy.sh
 tools/download-chromium-extension-backup.sh
 tools/blocked-domain.py
 tools/web/proxy.pac
