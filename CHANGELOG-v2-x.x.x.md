@@ -1,11 +1,5 @@
 # CHANGELOG for v2
 
-## [测试用例](/test/README.md)
-
-## [拨测工具](/tools/net-detect.md)
-
-## [公共 CDN 静态资源库](public-cdn.md)
-
 ## CHANGELOG for v2 0.10.17 [2023-12-05 00:49:00 +0800]
 
 > 1. 格式化代码

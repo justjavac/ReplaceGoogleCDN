@@ -15,6 +15,7 @@ extension/test/extension-v3-test/
 extension/test/chromium-tools/
 package-lock.json
 
+*.js
 
 extension/third_party/
 extension/web-backup

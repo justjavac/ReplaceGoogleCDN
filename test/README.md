@@ -43,9 +43,9 @@
 
 ```
 
-## 静态默认规则候选项载入地址
+## 扩展选项页，同步服务器端规则例子三 （覆盖静态默认规则候选项）
 
-> 修改优先级以后载入规则，优先级高的规则生效
+> 载入规则，优先级高的规则生效
 
 ```text
 
@@ -76,27 +76,6 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/co
 https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/gravatar.com.json?raw=true
 https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/www.gstatic.com.json?raw=true
 
-```
-
-## 拨测工具测试地址
-
-```text
-
-https://fonts.googleapis.cn/css?family=Google+Sans
-
-https://fonts.gstatic.cn/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
-
-```
-
-## chromium 下载地址
-
-- [download-chromium](https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/1086244/chrome-mac.zip)
-- [download-chromium mirror](https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac/1086244/chrome-mac.zip)
-
-```text
-https://download-chromium.appspot.com/
-https://download-chromium.appspot.com/?platform=Win_x64&type=snapshots
-https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_ChromiumOS_Full/1101351/chrome-chromeos.zip
 ```
 
 

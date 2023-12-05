@@ -1,11 +1,10 @@
 # CHANGELOG for v3
 
-## [测试用例](/test/README.md)
 
 ## CHANGELOG for v3 0.10.32 [2023-12-05 15:01:00 +0800]
 
-> 1. 变更： 清理扩展目录，将辅助工具到扩展目录外
-> 1. 变更:  高级功能脚本、规则移动到  `experimental-features` 目录 , 部分验证脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
+> 1. 变更： 将辅助工具到扩展目录外
+> 1. 变更:  将高级功能脚本、规则移动到  `experimental-features` 目录 , 部分实验脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
 
 ## CHANGELOG for v3 0.10.31 [2023-12-02 22:01:00 +0800]
 
