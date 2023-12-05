@@ -1,20 +1,6 @@
 # 测试说明
 
 
-## [firefox 支持 V3 情况](https://www.mozilla.org/en-US/firefox/109.0/releasenotes/)
-
-## 测试用例
-
-1. [stackoverflow](https://stackoverflow.com/tags/socat/hot?filter=all)
-1. [www.google.com/recaptcha/api.js](https://patrickhlauke.github.io/recaptcha/)
-1. [修改 content-security-policy ](https://pub.dev/)
-1. [cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js)
-1. [developers.google.com](https://developers.google.com/)
-1. [developer.android.com](https://developer.android.com/?hl=zh-cn)
-1. [source.android.com](https://source.android.com)
-1. [jquery](https://releases.jquery.com/)
-1. [material](https://m3.material.io/)
-
 ## 高级玩法测试例子
 
 - https://gerrit.googlesource.com/gerrit

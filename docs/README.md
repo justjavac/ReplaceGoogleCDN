@@ -5,3 +5,6 @@
 > V3 版本不允许使用 javascript 脚本 动态修改 HTTP请求的 请求头 和 响应头
 
 > V3 使用声明式规则
+
+
+> ## [firefox 支持 V3 情况](https://www.mozilla.org/en-US/firefox/109.0/releasenotes/)
