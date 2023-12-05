@@ -17,7 +17,7 @@ extension/tools/git-clean-file-history.sh
 extension/tools/local-deploy.sh
 
 extension/web-backup/
-extension/rules/example-no-use/backup/
+extension/rules/example/backup/
 
 
 tools/download-chromium-extension-backup.sh

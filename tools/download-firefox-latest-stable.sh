@@ -31,7 +31,10 @@ cd ${__PROJECT__}/var/
 # http://download.cdn.mozilla.net/pub/firefox/releases/latest/README.txt
 # https://download.mozilla.org/?product=firefox-latest&os=win&lang=en-US
 
-#wget -O FirefoxSetup.exe "https://download.mozilla.org/?product=firefox-latest&os=win&lang=en-US"
+# wget -O FirefoxSetup.exe "https://download.mozilla.org/?product=firefox-latest&os=win&lang=en-US"
+
+# show latest version
+# curl -fI 'https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US' | grep -o 'firefox-[0-9.]\+[0-9]'  | sed 's/firefox-//'
 
 OS=$(uname -s)
 ARCH=$(uname -m)

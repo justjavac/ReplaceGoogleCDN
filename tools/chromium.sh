@@ -18,8 +18,7 @@ HEADLESS_MODE=''
 while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
-      XVFB_COMMAND='xvfb-run  -s -terminate -screen 0 1920x1080x24  -e /dev/stdout --auto-servernum '
-      XVFB_COMMAND=''
+      XVFB_COMMAND='xvfb-run --auto-servernum  -e /dev/stdout  -s "-terminate -screen 0 1920x1080x24" '
     ;;
   --xwfb)
       XVFB_COMMAND='xwfb-run  '
@@ -57,7 +56,7 @@ case $OS in
 "MINGW64_NT")
     # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
     # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
-    CHROMIUM='chrome-win\\chrome.exe'
+    CHROMIUM='chrome-win/chrome.exe'
   ;;
   *)
     echo 'current script no support !'
@@ -76,6 +75,9 @@ cd ${__PROJECT__}/var
 extensions=${__PROJECT__}/extension
 
 
+cat > run-chromium.sh <<EOF
+#!/usr/bin/env bash
+set -x
 ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --user-data-dir=$USER_DATA \
   --enable-remote-extensions \
@@ -87,6 +89,12 @@ ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --disable-encryption --disable-machine-id \
   --start-maximized \
   about:blank
+EOF
+
+
+bash run-chromium.sh
+
+
 
 # chrome://version
 # 全屏

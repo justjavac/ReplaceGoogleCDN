@@ -7,11 +7,14 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
+test -d extension/_metadata/ && rm -rf extension/_metadata/
+
 mkdir -p dist/
 cd ${__DIR__}/dist
 
 test -f ReplaceGoogleCDN-v2.zip && rm -f ReplaceGoogleCDN-v2.zip
 test -f ReplaceGoogleCDN-v3.zip && rm -f ReplaceGoogleCDN-v3.zip
+
 
 cd ${__DIR__}/extension
 
@@ -23,8 +26,9 @@ zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
   -x "node_modules/*" \
   -x "tools/*" \
   -x "_metadata/*" \
-  -x "rules/advance-no-use/*" \
-  -x "rules/example-no-use/backup/*" \
+  -x "rules/example-advance/*" \
+  -x "rules/example/*" \
+  -x "background-page.html" \
   -x "screenshot/*" \
   -x "test/*" \
   -x "web/*" \

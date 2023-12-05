@@ -17,7 +17,9 @@
 
 ## 原理
 
-> 默认未启用的规则, 如需启用请到扩展选项页自行打开
+> 借助浏览器提供的API，实现请求地址重定向 。[浏览器 V2 API ](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)， [浏览器 V3 API ](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
+
+> > 默认未启用的规则, 如需启用请到扩展选项页自行打开
 
 此插件/扩展可以将以下的 cdn 资源替换为国内的：
 
@@ -146,7 +148,7 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ```
 
-## [declarative_net_reques 配置示例](extension/rules/README.md)
+## [declarative_net_reques 规则配置示例](extension/rules/README.md)
 
 ## [测试用例](test/README.md)
 

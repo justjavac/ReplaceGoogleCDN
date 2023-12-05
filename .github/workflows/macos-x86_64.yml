@@ -7,7 +7,7 @@ env:
 
 jobs:
   macos-x86_64:
-    if: github.ref == 'refs/heads/dev' || github.ref_name == 'dev'
+    if: 1
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -44,13 +44,40 @@ jobs:
         run: |
           set -x
 
+      - name: Cache Chromium
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/var/chrome-mac.zip
+            ${{ github.workspace }}/var/chrome-mac
+          key: ${{ runner.os }}-x86_64-chromium
+
       - name: Download Chromium
         run: |
           set -x
-          bash tools/download-chromium.sh
+          if [ ! -f ${{ github.workspace }}/var/chrome-mac.zip ] ; then
+            bash tools/download-chromium.sh
+          fi
+
+      - name: Cache Firefox
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/var/firefox.dmg
+            ${{ github.workspace }}/var/firefox/
+          key: ${{ runner.os }}-x86_64-firefox
 
       - name: Download Firefox
         shell: bash
         run: |
           set -x
-          bash tools/download-firefox.sh
+          if [ ! -f ${{ github.workspace }}/var/firefox.dmg ] ; then
+            bash tools/download-firefox.sh
+          fi
+
+      - name: show browser version
+        shell: bash
+        run: |
+          ls -lha var/
+          var/chrome-mac/Chromium.app/Contents/MacOS/Chromium --version
+          var/firefox/Firefox.app/Contents/MacOS/firefox --version
