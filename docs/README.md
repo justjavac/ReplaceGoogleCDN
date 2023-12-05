@@ -16,5 +16,4 @@
 
 ## [firefox 支持 V3 情况](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 
-> firefox 113 版本开始支持 v3 
-
+> firefox 113 版本开始支持 v3

@@ -44,7 +44,6 @@ bash  tools/download-chromium-extension.sh --proxy http://127.0.0.1:1080
 
 > ChromiumOS https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_ChromiumOS_Full/1101351/chrome-chromeos.zip
 
-
 ```shell
 
 bash tools/download-chromium.sh
@@ -102,6 +101,3 @@ https://fonts.googleapis.cn/css?family=Google+Sans
 https://fonts.gstatic.cn/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
 
 ```
-
-
-

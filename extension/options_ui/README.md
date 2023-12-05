@@ -70,7 +70,7 @@ chrome.declarativeNetRequest.updateDynamicRules(
   },
   (parameter) => {
     console.log(parameter);
-  }
+  },
 );
 ```
 

@@ -10,4 +10,3 @@
 
 > Manifest version 2 is deprecated, and support will be removed in 2023.
 > See [mv2-transition](https://developer.chrome.com/blog/mv2-transition/) for more details.
-

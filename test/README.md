@@ -16,7 +16,6 @@
 1. [jquery](https://releases.jquery.com/)
 1. [material](https://m3.material.io/)
 
-
 ## 扩展选项页，同步服务器端规则例子一
 
 > [规则文件源地址](https://github.com/jingjingxyk/extension-v3-test/tree/main/rules/)
@@ -77,5 +76,3 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/gr
 https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/www.gstatic.com.json?raw=true
 
 ```
-
-

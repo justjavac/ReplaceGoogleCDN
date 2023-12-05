@@ -1,6 +1,5 @@
 # 测试说明
 
-
 ## 高级玩法测试例子
 
 - https://gerrit.googlesource.com/gerrit
