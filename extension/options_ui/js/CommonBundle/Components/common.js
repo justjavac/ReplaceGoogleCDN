@@ -9,6 +9,7 @@ let id_ranges = {
   sync_remote_rule: [40000, 320000],
   all_dynamic_rule: [0, Infinity]
 };
+
 //区间段名称
 let id_range_name_map = {
   single_rule: "默认候选项规则",
@@ -42,6 +43,7 @@ let updateDynamicRules = (
     }
   );
 };
+
 let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
   let del_ids = [];
   let id_range = [0, 0];
@@ -88,6 +90,41 @@ let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
   });
 };
 
+let backupSelfDefinedDynamicRules = () => {
+  chrome.declarativeNetRequest.getDynamicRules((rules) => {
+    if (1 || rules.length > 0) {
+      let time = new Date().toISOString();
+      console.log(time);
+      //time=parseInt(new Date().getTime() / 1000).toString()
+      let filename =
+        "replace-google-cdn-backup-self-defined-dynamic-rule-" + time + ".json";
+
+      let need_rules = [];
+      rules.map((rule, index, array) => {
+        if (
+          id_ranges["self_define_rule"][0] <= rule.id &&
+          rule.id <= id_ranges["self_define_rule"][1]
+        ) {
+          need_rules.push(rule);
+        }
+
+        if (
+          id_ranges["self_define_special_rule"][0] <= rule.id &&
+          rule.id <= id_ranges["self_define_special_rule"][1]
+        ) {
+          need_rules.push(rule);
+        }
+      });
+
+      //console.log(id_ranges["self_define_rule"]);
+      //console.log(id_ranges["self_define_special_rule"]);
+      //console.log(need_rules);
+
+      utils.createJSONFile(need_rules, filename);
+    }
+  });
+};
+
 let backupAllDynamicRules = () => {
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     if (rules.length > 0) {
@@ -95,12 +132,13 @@ let backupAllDynamicRules = () => {
       console.log(time);
       //time=parseInt(new Date().getTime() / 1000).toString()
       let filename =
-        "ReplaceGoogleCDN-backup-all-dynamic-rule-" + time + ".json";
+        "replace-google-cdn-backup-all-dynamic-rule-" + time + ".json";
       console.log(filename);
       utils.createJSONFile(rules, filename);
     }
   });
 };
+
 /**
  * 启用本地默认静态规则
  */
@@ -137,6 +175,7 @@ export {
   updateDynamicRules,
   deleteDynamicRules,
   backupAllDynamicRules,
+  backupSelfDefinedDynamicRules,
   id_ranges,
   id_range_name_map,
   rule_action_type_map,

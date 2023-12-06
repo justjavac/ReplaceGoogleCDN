@@ -2,6 +2,7 @@ import {
   deleteDynamicRules,
   updateDynamicRules,
   backupAllDynamicRules,
+  backupSelfDefinedDynamicRules,
   utils,
   enableStaticRules,
   id_ranges
@@ -18,6 +19,16 @@ let bindBackupAllDynamicRuleEventListener = () => {
       event.stopPropagation();
       event.preventDefault();
       backupAllDynamicRules();
+    });
+};
+
+let bindBackupSelfDefinedDynamicRuleEventListener = () => {
+  document
+    .querySelector(".backup-self-defined-dynamic-rule")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      backupSelfDefinedDynamicRules();
     });
 };
 
@@ -201,6 +212,8 @@ let get_remote_repository_static_rule = async () => {
 export default () => {
   //备份所有动态规则
   bindBackupAllDynamicRuleEventListener();
+  //备份自定义规则
+  bindBackupSelfDefinedDynamicRuleEventListener();
   //删除所有动态规则
   bindDeleteAllDynamicRuleEventListener();
 
