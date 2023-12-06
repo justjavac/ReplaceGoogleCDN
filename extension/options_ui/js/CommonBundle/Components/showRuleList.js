@@ -28,7 +28,7 @@ let bindButtonEventListener = () => {
         if (rule_str) {
           utils.createJSONFile(
             rule_str,
-            "ReplaceGoogleCDN-backup-rule-" + time + ".json"
+            "ReplaceGoogleCDN-backup-rule-" + time + ".json",
           );
         }
       }
@@ -88,7 +88,7 @@ let bindButtonEventListener = () => {
       let content = content_box.value;
       if (content) {
         let button = document.querySelector(
-          "#jsoneditor .jse-button.jse-format"
+          "#jsoneditor .jse-button.jse-format",
         );
         if (button) {
           button.click();

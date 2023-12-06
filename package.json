@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
+    "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
     "build": "bash extension/tools/release-archive.sh",
     "release": "bash release-archive.sh",
     "firefox-test": "npx web-ext run "
