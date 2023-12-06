@@ -95,7 +95,7 @@ let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
  */
 let backupSelfDefinedDynamicRules = () => {
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
-    if (1 || rules.length > 0) {
+    if (rules.length > 0) {
       let time = new Date().toISOString();
       console.log(time);
       //time=parseInt(new Date().getTime() / 1000).toString()
