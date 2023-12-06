@@ -4,7 +4,7 @@ import { showDynamicRules } from "../../CommonBundle/Components/showDynamicRules
 
 let defaultDomainList = document.querySelector(".default-redirect-domains");
 let defaultDomainOptions = document.querySelector(
-  ".default-redirect-domians-options"
+  ".default-redirect-domians-options",
 );
 let showDefaultDomainList = () => {
   let list = "";
@@ -61,7 +61,7 @@ let bindSetDefaultDomainOptionEventListener = () => {
 
     let rule_info =
       event.target.options[event.target.selectedIndex].getAttribute(
-        "data-rule-info"
+        "data-rule-info",
       );
     let rule = JSON.parse(rule_info);
 
@@ -91,7 +91,7 @@ let bindResetDefaultDomanOptions = () => {
       event.preventDefault();
       let addRules = [];
       let removeRuleIds = [
-        9999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+        9999, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
       ];
       updateDynamicRules(addRules, removeRuleIds, () => {
         location.reload();

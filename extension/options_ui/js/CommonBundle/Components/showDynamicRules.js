@@ -2,7 +2,7 @@ import {
   deleteDynamicRules,
   id_ranges,
   id_range_name_map,
-  rule_action_type_map
+  rule_action_type_map,
 } from "./common.js";
 
 let getRuleRangeType = (rule_id) => {
@@ -39,7 +39,7 @@ let showDynamicRules = (type = "all_dynamic_rule") => {
       list += `<li class="${rule_id_range_type}" data-rule-id="${
         value.id
       }" data-origin="${encodeURIComponent(
-        JSON.stringify(value)
+        JSON.stringify(value),
       )}" title="规则来源：${show_rule_id_range_name}">规则来源：${show_rule_id_range_name}；编号为:&nbsp;&nbsp;${
         value.id
       }&nbsp;&nbsp;；规则作用：${rule_action_name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="del-flag" data-rule-id="${
@@ -62,28 +62,28 @@ let bindDynamicRuleEventListener = () => {
       if (event.target.nodeName === "LI") {
         let content_box = document.querySelector("#rule-content-container");
         let content = decodeURIComponent(
-          event.target.getAttribute("data-origin")
+          event.target.getAttribute("data-origin"),
         );
         //console.log(content);
 
         editor.set({
           json: JSON.parse(content),
-          text: undefined
+          text: undefined,
         });
         content_box.value = decodeURIComponent(
-          event.target.getAttribute("data-origin")
+          event.target.getAttribute("data-origin"),
         );
         content_box.setAttribute("rule-type", "dynamic");
         content_box.setAttribute(
           "rule-id",
-          event.target.getAttribute("data-rule-id")
+          event.target.getAttribute("data-rule-id"),
         );
       }
       if (event.target.nodeName === "SPAN") {
         event.target.parentNode.remove();
         deleteDynamicRules(
           "single_rule",
-          event.target.getAttribute("data-rule-id")
+          event.target.getAttribute("data-rule-id"),
         );
       }
     });

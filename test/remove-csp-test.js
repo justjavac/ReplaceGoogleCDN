@@ -17,7 +17,7 @@
   let script = document.createElement("script");
   script.setAttribute(
     "src",
-    "https://frontend-inject.xiaoshuogeng.com/main.js"
+    "https://frontend-inject.xiaoshuogeng.com/main.js",
   ),
     script.setAttribute("type", "module"),
     //script.setAttribute("type", "application/javascript"),
@@ -31,7 +31,7 @@ javascript: (() => {
   let script = document.createElement("script");
   script.setAttribute(
     "src",
-    "https://www.jingjingxyk.com/frontend-experimental-features/main.js"
+    "https://www.jingjingxyk.com/frontend-experimental-features/main.js",
   ),
     script.setAttribute("type", "application/javascript"),
     script.setAttribute("charset", "utf-8"),

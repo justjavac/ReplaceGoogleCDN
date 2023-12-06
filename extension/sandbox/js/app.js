@@ -32,7 +32,7 @@ let preview_url = [
   "https://chromium.googlesource.com/chromium/src/+/main/",
   "https://github.com/webrtc/samples.git",
   "https://www.mozilla.org/zh-CN/firefox/features/",
-  "https://pptr.dev/"
+  "https://pptr.dev/",
 ];
 
 let is_iframe = self !== top;
@@ -59,9 +59,9 @@ list_box.addEventListener("click", (event) => {
     let url = event.target.innerText;
     window.parent.postMessage(
       JSON.stringify({
-        url: url
+        url: url,
       }),
-      location.origin + "/options_ui/index.html"
+      location.origin + "/options_ui/index.html",
     );
     return;
 

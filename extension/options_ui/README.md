@@ -14,7 +14,7 @@
 // chromium 内核版本 87 以上开始支持
 chrome.declarativeNetRequest.updateDynamicRules({
     addRules: [{ 新增规则1 }, { 新增规则2 }, { 新增规则3 }, { 新增规则4 }],
-    removeRuleIds: [待删除规则的id1, 待删除规则的id2, 待删除规则的id3]
+    removeRuleIds: [待删除规则的id1, 待删除规则的id2, 待删除规则的id3],
 });
 ```
 
@@ -35,9 +35,9 @@ chrome.declarativeNetRequest.updateDynamicRules(
                     redirect: {
                         transform: {
                             scheme: "https",
-                            host: "developers.google.cn"
-                        }
-                    }
+                            host: "developers.google.cn",
+                        },
+                    },
                 },
                 condition: {
                     urlFilter: "developers.google.com",
@@ -57,16 +57,16 @@ chrome.declarativeNetRequest.updateDynamicRules(
                         "websocket",
                         "webtransport",
                         "webbundle",
-                        "other"
-                    ]
-                }
-            }
+                        "other",
+                    ],
+                },
+            },
         ],
-        removeRuleIds: [123]
+        removeRuleIds: [123],
     },
     (parameter) => {
         console.log(parameter);
-    }
+    },
 );
 ```
 

@@ -33,7 +33,7 @@ let showManifestRuleJSON = (rule) => {
         //console.log(JSON.stringify(x));
         editor.set({
           json: x,
-          text: undefined
+          text: undefined,
         });
         let content_box = document.querySelector("#rule-content-container");
         content_box.value = JSON.stringify(x);

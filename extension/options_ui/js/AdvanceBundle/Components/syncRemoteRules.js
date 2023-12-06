@@ -1,7 +1,7 @@
 import {
   id_ranges,
   updateDynamicRules,
-  utils
+  utils,
 } from "../../CommonBundle/Components/common.js";
 import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 import { rule_example_mirror_urls } from "../Config/rule_example_conf.js";
