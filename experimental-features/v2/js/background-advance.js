@@ -47,7 +47,7 @@ const remove_csp_item = [
   "cross-origin-embedder-policy",
   "cross-origin-opener-policy",
   "cross-origin-opener-policy-report-only",
-  "cross-origin-embedder-policy-report-only",
+  "cross-origin-embedder-policy-report-only"
 ];
 
 /**
@@ -70,7 +70,7 @@ const remove_csp_urls = [
   "*://developers.redhat.com/*",
   "*://*.githubusercontent.com/*",
   "*://pub.dev/*",
-  "*://stackoverflow.com/*",
+  "*://stackoverflow.com/*"
 ];
 
 //console.log(chrome.app.getDetails().version);
@@ -94,7 +94,7 @@ let web_request_resource_types = [
   "other",
   "csp_report",
   "media",
-  "websocket",
+  "websocket"
 ];
 
 if (chrome_ersion < 58) {
@@ -109,7 +109,7 @@ if (chrome_ersion < 58) {
     "object",
     "xmlhttprequest",
     "ping",
-    "other",
+    "other"
   ];
 }
 
@@ -144,15 +144,15 @@ chrome.webRequest.onHeadersReceived.addListener(
     */
 
     return {
-      responseHeaders: details.responseHeaders,
+      responseHeaders: details.responseHeaders
     };
   },
   {
     //    urls: ["<all_urls>"],
     urls: [
-      ...remove_csp_urls, //需要移除CSP自己添加url
+      ...remove_csp_urls //需要移除CSP自己添加url
     ],
-    types: web_request_resource_types,
+    types: web_request_resource_types
   },
   ["blocking", "responseHeaders"]
 );
@@ -225,7 +225,7 @@ let opensource_google_urls = [
 let test_urls = [
   ...opensource_google_urls,
   "*://*.google.com/*",
-  "*://github.com/*",
+  "*://github.com/*"
 ];
 
 /**
@@ -257,7 +257,7 @@ let block_domains = [
   "example-example.com",
   "test1-example.com",
   "test2-example.com",
-  "test3-example.com",
+  "test3-example.com"
 ];
 let block_domain_urls = [];
 block_domains.forEach((value, index, array) => {
@@ -364,8 +364,8 @@ chrome.webRequest.onBeforeRequest.addListener(
       "*://source.android.com/*",
       "*://www.gstatic.com/*",
       //...test_urls, // 高级玩法的测试用例
-      ...block_domain_urls, //阻止域名请求
-    ],
+      ...block_domain_urls //阻止域名请求
+    ]
   },
   ["blocking"]
 );
@@ -449,15 +449,15 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     if (urlObj.host.indexOf("proxy.xiaoshuogeng.com") !== -1) {
       details.requestHeaders.push({
         name: "x-user-id",
-        value: "8feed7c8-fe26-11ec-acc8-d34ecdbd4e54",
+        value: "8feed7c8-fe26-11ec-acc8-d34ecdbd4e54"
       });
       details.requestHeaders.push({
         name: "x-auth-token",
-        value: "89b71a78-fe26-11ec-a410-9f2dc97caf21",
+        value: "89b71a78-fe26-11ec-a410-9f2dc97caf21"
       });
       details.requestHeaders.push({
         name: "x-permissions-id",
-        value: "b5c7d018-fe2a-11ec-9cc1-ab39db39504a",
+        value: "b5c7d018-fe2a-11ec-9cc1-ab39db39504a"
       });
     }
     //console.log(details.requestHeaders)
@@ -467,8 +467,8 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     urls: [
       //"*://*.baidu.com/*", //例子 移除请求头携带的cookie和修改User-Agent
       //"*://*.proxy.xiaoshuogeng.com/*", // 高级玩法的测试用例
-      "*://example-example.com/*",
-    ],
+      "*://example-example.com/*"
+    ]
   },
   ["blocking", "requestHeaders"]
   //["blocking", "requestHeaders", "extraHeaders"]

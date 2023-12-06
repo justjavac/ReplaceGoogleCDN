@@ -10,3 +10,4 @@ extension/third_party/
 extension/manifest-backup.json
 tools/web/proxy.pac
 dist
+var

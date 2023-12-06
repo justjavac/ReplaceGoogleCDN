@@ -2,11 +2,11 @@
 
 ## 高级玩法测试例子
 
-- https://gerrit.googlesource.com/gerrit
-- https://www.chromium.org
-- https://chromium.googlesource.com/
-- https://source.chromium.org/chromium
-- https://cs.opensource.google/
+-   https://gerrit.googlesource.com/gerrit
+-   https://www.chromium.org
+-   https://chromium.googlesource.com/
+-   https://source.chromium.org/chromium
+-   https://cs.opensource.google/
 
 ### 让 XP 系统下的 chrome 49 能使用本扩展
 

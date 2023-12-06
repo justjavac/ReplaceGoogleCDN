@@ -12,12 +12,10 @@
 
 ```js
 // chromium 内核版本 87 以上开始支持
-chrome.declarativeNetRequest.updateDynamicRules(
-  {
+chrome.declarativeNetRequest.updateDynamicRules({
     addRules: [{ 新增规则1 }, { 新增规则2 }, { 新增规则3 }, { 新增规则4 }],
-    removeRuleIds: [待删除规则的id1, 待删除规则的id2, 待删除规则的id3],
-  },
-);
+    removeRuleIds: [待删除规则的id1, 待删除规则的id2, 待删除规则的id3]
+});
 ```
 
 ## 来个演示例子
@@ -27,48 +25,48 @@ chrome.declarativeNetRequest.updateDynamicRules(
 // 123 是被删除的规则 ID (和添加规则的例子 id=10 同一个属性)
 
 chrome.declarativeNetRequest.updateDynamicRules(
-  {
-    addRules: [
-      {
-        id: 10,
-        priority: 1,
-        action: {
-          type: "redirect",
-          redirect: {
-            transform: {
-              scheme: "https",
-              host: "developers.google.cn",
-            },
-          },
-        },
-        condition: {
-          urlFilter: "developers.google.com",
-          requestDomains: ["developers.google.com"],
-          resourceTypes: [
-            "main_frame",
-            "sub_frame",
-            "stylesheet",
-            "script",
-            "image",
-            "font",
-            "object",
-            "xmlhttprequest",
-            "ping",
-            "csp_report",
-            "media",
-            "websocket",
-            "webtransport",
-            "webbundle",
-            "other",
-          ],
-        },
-      },
-    ],
-    removeRuleIds: [123],
-  },
-  (parameter) => {
-    console.log(parameter);
-  },
+    {
+        addRules: [
+            {
+                id: 10,
+                priority: 1,
+                action: {
+                    type: "redirect",
+                    redirect: {
+                        transform: {
+                            scheme: "https",
+                            host: "developers.google.cn"
+                        }
+                    }
+                },
+                condition: {
+                    urlFilter: "developers.google.com",
+                    requestDomains: ["developers.google.com"],
+                    resourceTypes: [
+                        "main_frame",
+                        "sub_frame",
+                        "stylesheet",
+                        "script",
+                        "image",
+                        "font",
+                        "object",
+                        "xmlhttprequest",
+                        "ping",
+                        "csp_report",
+                        "media",
+                        "websocket",
+                        "webtransport",
+                        "webbundle",
+                        "other"
+                    ]
+                }
+            }
+        ],
+        removeRuleIds: [123]
+    },
+    (parameter) => {
+        console.log(parameter);
+    }
 );
 ```
 
