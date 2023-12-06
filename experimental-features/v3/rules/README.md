@@ -6,11 +6,12 @@
 
 > 动态地址替换 `rules_advance_redirect_2.json`
 
-> 移除 content-security-policy `rules_remove_content_security_policy_header.json`
+> 移除 content-security-policy
+> `rules_remove_content_security_policy_header.json`
 
 > 阻止请求 `rules_block_request.json`
 
-> [应用例子：用于查看 chromium 的源码 ](https://github.com/jingjingxyk/extension-v3-test)
+> [应用例子：用于查看 chromium 的源码](https://github.com/jingjingxyk/extension-v3-test)
 
 ### 指定匹配域名
 
@@ -26,7 +27,8 @@
 
 ### 动态匹配域名
 
-> https://www.chromium.org/ -> https://2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com/
+> https://www.chromium.org/ ->
+> https://2_www_xn--3px_chromium_xn--3px_org.proxy.domain.com/
 
 ```json
 {
