@@ -17,3 +17,4 @@ tools/download-chromium-extension-backup.sh
 tools/blocked-domain.py
 tools/web/proxy.pac
 dist
+var
