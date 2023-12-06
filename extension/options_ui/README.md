@@ -55,8 +55,6 @@ chrome.declarativeNetRequest.updateDynamicRules(
                         "csp_report",
                         "media",
                         "websocket",
-                        "webtransport",
-                        "webbundle",
                         "other"
                     ]
                 }

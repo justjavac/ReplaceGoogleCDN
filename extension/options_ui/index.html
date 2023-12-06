@@ -1,134 +1,139 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <meta name="format-detection" content="telephone=no, email=no" />
-    <meta name="renderer" content="webkit" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-    />
-    <title>扩展默认选项设置</title>
-    <link href="/options_ui/css/app.css" type="text/css" rel="stylesheet" />
-    <link
-      href="/third_party/josdejong/svelte-jsoneditor/main/themes/jse-theme-dark.css"
-      type="text/css"
-      rel="stylesheet"
-    />
-    <style>
-      .nav-bar-index {
-        margin-left: 800px;
-      }
-      .nav-bar-link {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
-        text-decoration: none;
-        color: #0d6efd;
-      }
-      .nav-bar-link:focus,
-      .nav-bar-link:hover {
-        color: #0d6efd;
-      }
-      .nav-bar-test {
-        margin-left: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>扩展默认选项设置</h1>
-    <a
-      target="_blank"
-      href="/options_ui/advance.html"
-      class="nav-bar-link nav-bar-index"
-      >扩展高级选项设置</a
-    >
-    <a
-      target="_blank"
-      href="/sandbox/index.html"
-      class="nav-bar-link nav-bar-test"
-      >测试例子</a
-    >
-    <div class="wrap">
-      <div class="container">
-        <section class="box">
-          <h2>默认候选项切换 ：</h2>
-          <button class="reset_default_domain">重置默认选项</button
-          ><span class="placeholder-box"></span>
-          <span class="warning">备注：选中候选项 即 自动完成选项切换</span>
-          <span class="default-notice"
-            >默认配置信息和原理：
-            https://github.com/justjavac/ReplaceGoogleCDN/tree/master/extension/options_ui</span
-          >
-          <ul class="default-redirect-domains"></ul>
-          <select
-            class="default-redirect-domians-options form-select"
-            size="10"
-          >
-            <option>请选择</option>
-          </select>
-        </section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta name="renderer" content="webkit" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="viewport"
+            content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+        />
+        <title>扩展默认选项设置</title>
+        <link href="/options_ui/css/app.css" type="text/css" rel="stylesheet" />
+        <link
+            href="/third_party/josdejong/svelte-jsoneditor/main/themes/jse-theme-dark.css"
+            type="text/css"
+            rel="stylesheet"
+        />
+        <style>
+            .nav-bar-index {
+                margin-left: 800px;
+            }
+            .nav-bar-link {
+                font-size: 1.2rem;
+                line-height: 1.2rem;
+                text-decoration: none;
+                color: #0d6efd;
+            }
+            .nav-bar-link:focus,
+            .nav-bar-link:hover {
+                color: #0d6efd;
+            }
+            .nav-bar-test {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>扩展默认选项设置</h1>
+        <a
+            target="_blank"
+            href="/options_ui/advance.html"
+            class="nav-bar-link nav-bar-index"
+            >扩展高级选项设置</a
+        >
+        <a
+            target="_blank"
+            href="/sandbox/index.html"
+            class="nav-bar-link nav-bar-test"
+            >测试例子</a
+        >
+        <div class="wrap">
+            <div class="container">
+                <section class="box">
+                    <h2>默认候选项切换 ：</h2>
+                    <button class="reset_default_domain">重置默认选项</button
+                    ><span class="placeholder-box"></span>
+                    <span class="warning"
+                        >备注：选中候选项 即 自动完成选项切换</span
+                    >
+                    <span class="default-notice"
+                        >默认配置信息和原理：
+                        https://github.com/justjavac/ReplaceGoogleCDN/tree/master/extension/options_ui</span
+                    >
+                    <ul class="default-redirect-domains"></ul>
+                    <select
+                        class="default-redirect-domians-options form-select"
+                        size="10"
+                    >
+                        <option>请选择</option>
+                    </select>
+                </section>
 
-        <section class="box">
-          <h2>选项四：已启用规则列表：</h2>
-          <h3>1）静态规则列表：</h3>
-          <div class="list-group">
-            <ul class="rule_static_set_list">
-              <li></li>
-            </ul>
-          </div>
-          <h3>2）动态规则列表：🔃</h3>
-          <div class="dynamic-rule-list-note">
-            <span>
-              默认选项切换规则编号（固定编号）： 编号<10000
-              <br />
-              自定义特制规则编号： 10000>=编号<=19999
-              <br />
-              自定义规则编号： 20000>=编号<=29999
-              <br />
-              同步远端静态规则编号：30000<=编号<=39999
-              <br />
-              同步远端动态规则编号：40000<=编号<=320000
-              <br />
-              其他编号： 未定义
-            </span>
-          </div>
+                <section class="box">
+                    <h2>选项四：已启用规则列表：</h2>
+                    <h3>1）静态规则列表：</h3>
+                    <div class="list-group">
+                        <ul class="rule_static_set_list">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <h3>2）动态规则列表：🔃</h3>
+                    <div class="dynamic-rule-list-note">
+                        <span>
+                            默认选项切换规则编号（固定编号）： 编号<10000
+                            <br />
+                            自定义特制规则编号： 10000>=编号<=19999
+                            <br />
+                            自定义规则编号： 20000>=编号<=29999
+                            <br />
+                            同步远端静态规则编号：30000<=编号<=39999
+                            <br />
+                            同步远端动态规则编号：40000<=编号<=320000
+                            <br />
+                            其他编号： 未定义
+                        </span>
+                    </div>
 
-          <div class="list-group">
-            <ul class="rule_dynamic_set_list">
-              <li></li>
-            </ul>
-          </div>
-          <div class="show-rule-info-box">
-            <div class="show-rule-info-box-content">
-              <h3>3）规则详情展示：</h3>
-              <div>
-                <textarea
-                  cols="100"
-                  rows="20"
-                  id="rule-content-container"
-                ></textarea>
-                <h5></h5>
-                <button type="button" class="update-rule">
-                  保存已修改的规则
-                </button>
-                <span class="placeholder-box"></span>
-                <button type="button" class="back-new-rule-to-json">
-                  备份当前规则到JSON文件
-                </button>
-                <span class="placeholder-box"></span>
-                <button type="button" class="format-rule-code">
-                  格式化当前规则
-                </button>
-              </div>
-              <div><span class="notice"></span></div>
-              <div id="jsoneditor" class="jse-theme-dark"></div>
+                    <div class="list-group">
+                        <ul class="rule_dynamic_set_list">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="show-rule-info-box">
+                        <div class="show-rule-info-box-content">
+                            <h3>3）规则详情展示：</h3>
+                            <div>
+                                <textarea
+                                    cols="100"
+                                    rows="20"
+                                    id="rule-content-container"
+                                ></textarea>
+                                <h5></h5>
+                                <button type="button" class="update-rule">
+                                    保存已修改的规则
+                                </button>
+                                <span class="placeholder-box"></span>
+                                <button
+                                    type="button"
+                                    class="back-new-rule-to-json"
+                                >
+                                    备份当前规则到JSON文件
+                                </button>
+                                <span class="placeholder-box"></span>
+                                <button type="button" class="format-rule-code">
+                                    格式化当前规则
+                                </button>
+                            </div>
+                            <div><span class="notice"></span></div>
+                            <div id="jsoneditor" class="jse-theme-dark"></div>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </div>
-        </section>
-      </div>
-    </div>
-    <script src="/options_ui/js/main.js"></script>
-  </body>
+        </div>
+        <script src="/options_ui/js/main.js"></script>
+    </body>
 </html>
