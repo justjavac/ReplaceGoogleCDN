@@ -27,7 +27,7 @@ let messageReciver = () => {
         }
       }
     },
-    false,
+    false
   );
 };
 

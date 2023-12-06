@@ -37,4 +37,3 @@ javascript: (() => {
     script.setAttribute("charset", "utf-8"),
     document.body.appendChild(script);
 })();
-

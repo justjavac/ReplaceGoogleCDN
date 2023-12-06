@@ -3,9 +3,9 @@
   "scripts": {
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
     "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
-    "build": "bash extension/tools/release-archive.sh",
     "release": "bash release-archive.sh",
-    "firefox-test": "npx web-ext run "
+    "firefox-test": "bash tools/firefox-web-ext.sh",
+    "chromium-test": "bash tools/chromium.sh"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.253",

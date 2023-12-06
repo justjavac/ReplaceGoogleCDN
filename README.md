@@ -20,8 +20,8 @@
 
 > 借助浏览器提供的API，实现请求地址重定向。
 >
-> - [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
-> - [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
+> -   [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
+> -   [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 >
 > 默认未启用的规则, 如需启用请到扩展选项页自行打开
 
@@ -29,30 +29,20 @@
 
 1. `ajax.googleapis.com` - 前端公共库，替换为 `ajax.loli.net`
 1. `fonts.googleapis.com` - 免费字体库，替换为 `fonts.googleapis.cn`
-1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源，替换为
-   `themes.loli.net`
+1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源，替换为`themes.loli.net`
 1. `fonts.gstatic.com` - 免费字体库，替换为 `fonts.gstatic.cn`
-1. `www.google.com/recaptcha` - Google 图像验证库，替换为
-   `www.recaptcha.net/recaptcha`
+1. `www.google.com/recaptcha` - Google 图像验证库，替换为`www.recaptcha.net/recaptcha`
 1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
-1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为
-   `lib.baomitu.com/twitter-bootstrap/`
-1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为
-   `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
-1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用,
-   如需启用请到扩展选项页自行打开
+1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为`lib.baomitu.com/twitter-bootstrap/`
+1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为`https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
+1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
-1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
-1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
-1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
-1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
+1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `lh3.googleusercontent.com` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用,
-   如需启用请到扩展选项页自行打开
+1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用,如需启用请到扩展选项页自行打开
 
 ## 扩展选项页使用简述
 
@@ -61,8 +51,8 @@
 
 ## 功能变更记录
 
-- v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
-- v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
+-   v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
+-   v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
 
 ## 效果
 
@@ -81,7 +71,7 @@
 | ------------------------ | ------------------------------ | -------: | -------: | ---------: | -------: |
 | jquery.min.js            | ajax.googleapis.com            |        0 |       26 |          - |        - |
 | stub.en.js               | cdn.sstatic.net                |     18.0 |      293 |       61.4 |      18% |
-| **jquery.min.js**        | **ajax.loli.net** ⚡️           | **33.1** |   **95** |  **348.4** | **100%** |
+| **jquery.min.js**        | **ajax.loli.net** ⚡️          | **33.1** |   **95** |  **348.4** | **100%** |
 | clc.min.js               | cdn.sstatic.net                |      4.2 |      399 |       10.5 |      30% |
 | full.en.js               | cdn.sstatic.net                |     99.6 |      534 |      186.5 |      54% |
 | gpt.js                   | securepubads.g.doubleclick.net |     21.3 |       85 |      250.6 |      72% |
@@ -114,9 +104,9 @@ bash release-archive-v3.sh
 
 ### 在线安装
 
-- [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
-- [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
-- [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
+-   [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
+-   [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
+-   [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
 
 ### 手动安装：
 
@@ -175,7 +165,7 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ## 文档
 
-- [declarative_net_reques 规则配置示例](extension/rules/README.md)
-- [测试用例](test/README.md)
-- [公共 CDN 静态资源库](public-cdn.md)
-- [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)
+-   [declarative_net_reques 规则配置示例](extension/rules/README.md)
+-   [测试用例](test/README.md)
+-   [公共 CDN 静态资源库](public-cdn.md)
+-   [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)

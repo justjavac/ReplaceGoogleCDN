@@ -5,6 +5,7 @@
 1. [Features Detection](https://browserleaks.com/features)
 1. [浏览器请求重定向 V2 API ](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)
 1. [浏览器请求重定向 V3 API ](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
+1. [chromium浏览器请求重定向 V3 API ](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#method-updateDynamicRules)
 
 ## 打包工具 v3 mainifest 兼容 firefox
 

@@ -7,7 +7,7 @@ let id_ranges = {
   self_define_rule: [20000, 29999],
   sync_remote_static_rule: [30000, 39999],
   sync_remote_rule: [40000, 320000],
-  all_dynamic_rule: [0, Infinity],
+  all_dynamic_rule: [0, Infinity]
 };
 //区间段名称
 let id_range_name_map = {
@@ -16,14 +16,14 @@ let id_range_name_map = {
   self_define_rule: "自定义普通规则",
   sync_remote_static_rule: "同步远端静态规则",
   sync_remote_rule: "同步远端动态规则",
-  all_dynamic_rule: "所有动态规则",
+  all_dynamic_rule: "所有动态规则"
 };
 
 //规则作用
 let rule_action_type_map = {
   redirect: "URI重定向",
   modifyHeaders: "修改请求头或者响应头",
-  block: "阻止请求",
+  block: "阻止请求"
 };
 
 let updateDynamicRules = (
@@ -35,11 +35,11 @@ let updateDynamicRules = (
   chrome.declarativeNetRequest.updateDynamicRules(
     {
       addRules: addRules,
-      removeRuleIds: removeRuleIds,
+      removeRuleIds: removeRuleIds
     },
     () => {
       callback(args);
-    },
+    }
   );
 };
 let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
@@ -78,11 +78,11 @@ let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
       chrome.declarativeNetRequest.updateDynamicRules(
         {
           addRules: [],
-          removeRuleIds: del_ids,
+          removeRuleIds: del_ids
         },
         () => {
           callback(args);
-        },
+        }
       );
     }
   });
@@ -112,7 +112,7 @@ let enableStaticRules = (callback, ...args) => {
 
   let updateRulesetOptions = {
     disableRulesetIds: [],
-    enableRulesetIds: [],
+    enableRulesetIds: []
   };
 
   local_declarative_net_request.forEach((value) => {
@@ -128,7 +128,7 @@ let enableStaticRules = (callback, ...args) => {
       deleteDynamicRules("sync_remote_static_rule", 0, () => {
         callback();
       });
-    },
+    }
   );
 };
 
@@ -140,5 +140,5 @@ export {
   id_ranges,
   id_range_name_map,
   rule_action_type_map,
-  enableStaticRules,
+  enableStaticRules
 };

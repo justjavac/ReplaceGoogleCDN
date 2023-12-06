@@ -4,7 +4,7 @@ import {
   backupAllDynamicRules,
   utils,
   enableStaticRules,
-  id_ranges,
+  id_ranges
 } from "../../CommonBundle/Components/common.js";
 import { remote_repository_static_urls } from "../Config/rule_example_conf.js";
 import showRuleList from "../../CommonBundle/Components/showRuleList.js";
@@ -82,7 +82,7 @@ let bindSyncRemoteStaticRuleEventListener = () => {
 
           let UpdateRulesetOptions = {
             disableRulesetIds: [],
-            enableRulesetIds: [],
+            enableRulesetIds: []
           };
           local_declarative_net_request.forEach((value) => {
             console.log(value);
@@ -96,7 +96,7 @@ let bindSyncRemoteStaticRuleEventListener = () => {
             UpdateRulesetOptions,
             (callback) => {
               showRuleList();
-            },
+            }
           );
         });
       }

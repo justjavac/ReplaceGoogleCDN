@@ -19,9 +19,9 @@
 
 ```json
 {
-  "id": "ruleset_advance_redirect_1",
-  "enabled": true,
-  "path": "rules/advance/rules_advance_redirect_1.json"
+    "id": "ruleset_advance_redirect_1",
+    "enabled": true,
+    "path": "rules/advance/rules_advance_redirect_1.json"
 }
 ```
 
@@ -32,9 +32,9 @@
 
 ```json
 {
-  "id": "ruleset_advance_redirect_2",
-  "enabled": true,
-  "path": "rules/advance/rules_advance_redirect_2.json"
+    "id": "ruleset_advance_redirect_2",
+    "enabled": true,
+    "path": "rules/advance/rules_advance_redirect_2.json"
 }
 ```
 
@@ -42,9 +42,9 @@
 
 ```json
 {
-  "id": "ruleset_block_header_1",
-  "enabled": true,
-  "path": "rules/rules_block_request.json"
+    "id": "ruleset_block_header_1",
+    "enabled": true,
+    "path": "rules/rules_block_request.json"
 }
 ```
 
@@ -52,8 +52,8 @@
 
 ```json
 {
-  "id": "ruleset_remove_header_1",
-  "enabled": true,
-  "path": "rules/rules_append_header_1.json"
+    "id": "ruleset_remove_header_1",
+    "enabled": true,
+    "path": "rules/rules_append_header_1.json"
 }
 ```
