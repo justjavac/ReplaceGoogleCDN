@@ -10,7 +10,7 @@ let editor = {
         onChange: (
           updatedContent,
           previousContent,
-          { contentErrors, patchResult }
+          { contentErrors, patchResult },
         ) => {
           // content is an object { json: JSONData } | { text: string }
           /*

@@ -1,0 +1,27 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig
+
+root = true
+
+[*]
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+end_of_line = lf
+
+[*.{js,json,ts,tsx,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+
+[*.{md,markdown,txt}]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 4
