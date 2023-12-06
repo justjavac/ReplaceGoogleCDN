@@ -2,9 +2,8 @@
 
 ## 选项页原理
 
-> 选项页一直都是围绕 `chrome.declarativeNetRequest.updateDynamicRules`
-> 函数的使用，而展开开发工作
->
+> 选项页一直都是围绕 `chrome.declarativeNetRequest.updateDynamicRules` 函数的使用，而展开开发工作
+
 > 函数使用文档：
 > https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#method-updateDynamicRules
 
@@ -130,8 +129,7 @@ chrome.declarativeNetRequest.updateDynamicRules(
 
 > 默认未启用的规则，如何启用？
 >
-> 答：扩展默认选项设置 =》 默认候选项切换 =》 选中规则候选项=》启用
-> 默认未启用的规则
+> 答：扩展默认选项设置 =》 默认候选项切换 =》 选中规则候选项=》启用默认未启用的规则
 >
 > 规则 id=9999，priority=9999。规则拥有最高优先级，作用：
 >

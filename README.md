@@ -29,30 +29,20 @@
 
 1. `ajax.googleapis.com` - 前端公共库，替换为 `ajax.loli.net`
 1. `fonts.googleapis.com` - 免费字体库，替换为 `fonts.googleapis.cn`
-1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源，替换为
-   `themes.loli.net`
+1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源，替换为`themes.loli.net`
 1. `fonts.gstatic.com` - 免费字体库，替换为 `fonts.gstatic.cn`
-1. `www.google.com/recaptcha` - Google 图像验证库，替换为
-   `www.recaptcha.net/recaptcha`
+1. `www.google.com/recaptcha` - Google 图像验证库，替换为`www.recaptcha.net/recaptcha`
 1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
-1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为
-   `lib.baomitu.com/twitter-bootstrap/`
-1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为
-   `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
-1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用,
-   如需启用请到扩展选项页自行打开
+1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为`lib.baomitu.com/twitter-bootstrap/`
+1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为`https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
+1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
-1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
-1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
-1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
-1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用,
-   如需启用请到扩展选项页自行打开
+1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
+1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用, 如需启用请到扩展选项页自行打开
 1. `lh3.googleusercontent.com` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用,
-   如需启用请到扩展选项页自行打开
+1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用,如需启用请到扩展选项页自行打开
 
 ## 扩展选项页使用简述
 
