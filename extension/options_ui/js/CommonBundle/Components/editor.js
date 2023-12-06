@@ -10,7 +10,7 @@ let editor = {
         onChange: (
           updatedContent,
           previousContent,
-          { contentErrors, patchResult },
+          { contentErrors, patchResult }
         ) => {
           // content is an object { json: JSONData } | { text: string }
           /*
@@ -25,10 +25,10 @@ let editor = {
           //console.log(updatedContent);
           let content_box = document.querySelector("#rule-content-container");
           content_box.value = updatedContent.text;
-        },
-      },
+        }
+      }
     });
-  },
+  }
 };
 
 export default editor;

@@ -2,43 +2,43 @@
 let defaultDomains = {
   "ajax.googleapis.com": {
     id: 1,
-    domain: "ajax.googleapis.com",
+    domain: "ajax.googleapis.com"
   },
   "fonts.googleapis.com": {
     id: 2,
-    domain: "fonts.googleapis.com",
+    domain: "fonts.googleapis.com"
   },
   "themes.googleusercontent.com": {
     id: 3,
-    domain: "themes.googleusercontent.com",
+    domain: "themes.googleusercontent.com"
   },
   "fonts.gstatic.com": {
     id: 4,
-    domain: "fonts.gstatic.com",
+    domain: "fonts.gstatic.com"
   },
   "gravatar.com": {
     id: 5,
-    domain: "gravatar.com",
+    domain: "gravatar.com"
   },
   "maxcdn.bootstrapcdn.com/bootstrap": {
     id: 6,
-    domain: "maxcdn.bootstrapcdn.com",
+    domain: "maxcdn.bootstrapcdn.com"
   },
   "code.jquery.com/jquery-(version)(suffix)": {
     id: 7,
-    domain: "code.jquery.com",
+    domain: "code.jquery.com"
   },
   "code.jquery.com/ui/(prefix)(version)(suffix)": {
     id: 8,
-    domain: "code.jquery.com-ui",
+    domain: "code.jquery.com-ui"
   },
   "cdnjs.cloudflare.com": {
     id: 9,
-    domain: "cdnjs.cloudflare.com",
+    domain: "cdnjs.cloudflare.com"
   },
   "cdn.jsdelivr.net": {
     id: 10,
-    domain: "cdn.jsdelivr.net",
+    domain: "cdn.jsdelivr.net"
   },
   /*
     "translate.googleapis.com": {
@@ -48,32 +48,32 @@ let defaultDomains = {
      */
   "www.gstatic.com": {
     id: 12,
-    domain: "www.gstatic.com",
+    domain: "www.gstatic.com"
   },
   "developer.android.com": {
     id: 13,
-    domain: "developer.android.com",
+    domain: "developer.android.com"
   },
   "developers.google.com": {
     id: 17,
-    domain: "developers.google.com",
+    domain: "developers.google.com"
   },
   "source.android.com": {
     id: 18,
-    domain: "source.android.com",
+    domain: "source.android.com"
   },
   "lh3.googleusercontent.com": {
     id: 14,
-    domain: "lh3.googleusercontent.com",
+    domain: "lh3.googleusercontent.com"
   },
   "cdn.sstatic.net": {
     id: 15,
-    domain: "cdn.sstatic.net",
+    domain: "cdn.sstatic.net"
   },
   "imgur.com": {
     id: 16,
-    domain: "imgur.com",
-  },
+    domain: "imgur.com"
+  }
   /*
     "supper-priority-override-rule": {
       id: 9999,
