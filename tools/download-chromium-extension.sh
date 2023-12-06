@@ -15,11 +15,6 @@ __PROJECT__=$(
   pwd
 )
 
-mkdir -p ${__PROJECT__}/var/
-
-cd ${__PROJECT__}/var/
-
-
 # 本脚本存在的意义：从扩展应用商店下载扩展
 
 # 下载chromium 扩展，并解压
@@ -34,7 +29,7 @@ cd ${__PROJECT__}/var/
 ## 下载命令例子：
 # bash  tools/download-chromium-extension.sh  --proxy http://127.0.0.1:8015
 
-mirror=''
+
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
@@ -44,7 +39,6 @@ while [ $# -gt 0 ]; do
     export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com,.aliyuncs.com,.taobao.org,.tsinghua.edu.cn,.ustc.edu.cn,.aliyun.com"
     ;;
   *) ;;
-
   esac
   shift $(($# > 0 ? 1 : 0))
 done
