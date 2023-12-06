@@ -61,7 +61,7 @@ list_box.addEventListener("click", (event) => {
       JSON.stringify({
         url: url,
       }),
-      location.origin + "/options_ui/index.html"
+      location.origin + "/options_ui/index.html",
     );
     return;
 
