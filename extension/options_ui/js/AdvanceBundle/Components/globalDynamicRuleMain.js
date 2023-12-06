@@ -200,8 +200,6 @@ let get_remote_repository_static_rule = async () => {
 };
 
 export default () => {
-  //备份所有动态规则
-  bindBackupAllDynamicRuleEventListener();
   //备份自定义规则
   bindBackupSelfDefinedDynamicRuleEventListener();
   //删除所有动态规则
