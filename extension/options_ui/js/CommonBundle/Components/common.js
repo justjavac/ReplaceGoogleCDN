@@ -90,6 +90,9 @@ let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
   });
 };
 
+/**
+ * 备份自定义规则
+ */
 let backupSelfDefinedDynamicRules = () => {
   chrome.declarativeNetRequest.getDynamicRules((rules) => {
     if (1 || rules.length > 0) {
@@ -102,39 +105,20 @@ let backupSelfDefinedDynamicRules = () => {
       let need_rules = [];
       rules.map((rule, index, array) => {
         if (
-          id_ranges["self_define_rule"][0] <= rule.id &&
+          rule.id >= id_ranges["self_define_rule"][0] &&
           rule.id <= id_ranges["self_define_rule"][1]
         ) {
           need_rules.push(rule);
         }
 
         if (
-          id_ranges["self_define_special_rule"][0] <= rule.id &&
+          rule.id >= id_ranges["self_define_special_rule"][0] &&
           rule.id <= id_ranges["self_define_special_rule"][1]
         ) {
           need_rules.push(rule);
         }
       });
-
-      //console.log(id_ranges["self_define_rule"]);
-      //console.log(id_ranges["self_define_special_rule"]);
-      //console.log(need_rules);
-
       utils.createJSONFile(need_rules, filename);
-    }
-  });
-};
-
-let backupAllDynamicRules = () => {
-  chrome.declarativeNetRequest.getDynamicRules((rules) => {
-    if (rules.length > 0) {
-      let time = new Date().toISOString();
-      console.log(time);
-      //time=parseInt(new Date().getTime() / 1000).toString()
-      let filename =
-        "replace-google-cdn-backup-all-dynamic-rule-" + time + ".json";
-      console.log(filename);
-      utils.createJSONFile(rules, filename);
     }
   });
 };
@@ -174,7 +158,6 @@ export {
   utils,
   updateDynamicRules,
   deleteDynamicRules,
-  backupAllDynamicRules,
   backupSelfDefinedDynamicRules,
   id_ranges,
   id_range_name_map,

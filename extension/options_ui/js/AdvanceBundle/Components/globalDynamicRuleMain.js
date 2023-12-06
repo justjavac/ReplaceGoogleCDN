@@ -1,7 +1,6 @@
 import {
   deleteDynamicRules,
   updateDynamicRules,
-  backupAllDynamicRules,
   backupSelfDefinedDynamicRules,
   utils,
   enableStaticRules,
@@ -11,16 +10,7 @@ import { remote_repository_static_urls } from "../Config/rule_example_conf.js";
 import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 import { showDynamicRules } from "../../CommonBundle/Components/showDynamicRules.js";
 
-//备份所有动态规则
-let bindBackupAllDynamicRuleEventListener = () => {
-  document
-    .querySelector(".backup-all-dynamic-rule")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      event.preventDefault();
-      backupAllDynamicRules();
-    });
-};
+//绑定备份自定义动态规则事件
 
 let bindBackupSelfDefinedDynamicRuleEventListener = () => {
   document
