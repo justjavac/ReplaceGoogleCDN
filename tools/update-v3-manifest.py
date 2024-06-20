@@ -35,16 +35,16 @@ def override_manifest(manifest):
 if __name__ == '__main__':
     comment = '''
       用法：python3 tools/update-v3-manifest.py [ chromium | firefox ]
-      
+
       例子：( 默认为 firefox mainifest 配置)
 
       python3 tools/update-v3-manifest.py  firefox
-      
+
      '''
 
     project_dir = os.path.abspath(os.path.dirname(__file__) + '/../')
     manifest_file = project_dir + '/extension/manifest.json'
-    manifest_file_tmp = project_dir + '/var/extension-tmp/manifest.json'
+    manifest_file_tmp = project_dir + '/var//manifest.json.tmp'
     manifest_data = get_manifest_data()
 
     browser = 'firefox'
