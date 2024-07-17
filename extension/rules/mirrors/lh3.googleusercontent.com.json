@@ -40,26 +40,5 @@
         "xmlhttprequest"
       ]
     }
-  },
-  {
-    "id": 3,
-    "priority": 1,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "regexSubstitution": "https://pic1.xuehuaimg.com/proxy/\\1"
-      }
-    },
-    "condition": {
-      "regexFilter": "^https?://(.*?)",
-      "requestDomains": ["lh3.googleusercontent.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "image",
-        "object",
-        "xmlhttprequest"
-      ]
-    }
   }
 ]

@@ -1,5 +1,9 @@
 # CHANGELOG for v3
 
+## CHANGELOG for v3 0.11.0 [2024-07-17 14:49:00 +0800]
+
+> 1. 移除无效、不可用的候选项地址
+
 ## CHANGELOG for v3 0.11.0 [2023-12-06 21:01:00 +0800]
 
 > 1. 新增: 新增备份自定义规则功能
@@ -9,11 +13,16 @@
 
 > 1. 新增: 创建 文档目录 `docs`
 > 1. 变更： 将辅助工具迁移到扩展目录外
-> 1. 变更： 将高级功能脚本、规则移动到 `experimental-features` 目录 , 部分实验脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
+> 1. 变更： 将高级功能脚本、规则移动到 `experimental-features` 目录 ,
+
+     部分实验脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
 
 ## CHANGELOG for v3 0.10.31 [2023-12-02 22:01:00 +0800]
 
-> 1. 新增： 对 firefox 提供基础版功能，暂不提供高级功能。详情： [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
+> 1. 新增： 对 firefox
+
+     提供基础版功能，暂不提供高级功能。详情： [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
+
 > 1. 变更： 精简打包命令
 > 1. 变更： 使用 prettier 格式化代码
 > 1. 新增： github action workflows 实现命令行下载浏览器 并加载扩展，运行无界面加载扩展 （非headless 模式）
@@ -23,7 +32,11 @@
 > 1. 新增： URL 匹配规则添加 `scheme` 匹配,收缩匹配范围
 > 1. 新增： 默认规则实现兼容 firefox
 > 1. 新增： 准备发布 v3 1.0.0 版本
-> 1. 变更： 修改规则`developer.android.com`,`developers.google.com`,`source.android.com`,`developers.google.com`,`source.android.com` 默认不启用
+> 1. 变更：
+
+     修改规则`developer.android.com`,`developers.google.com`,`source.android.com`,`developers.google.com`,`source.android.com`
+     默认不启用
+
 > 1. 变更： 准备归档不属于扩展的目录和文件（进行中）
 > 1. 变更： 移除 2 种不支持的规则类型 `"webtransport"`,`"webbundle"` ,实现兼容 firefox
 > 1. 修复: [修复匹配规则宽泛 bug](https://github.com/justjavac/ReplaceGoogleCDN/issues/182)
@@ -193,10 +206,16 @@
 ### 变更
 
 > 1. 新增 公共 CDN 静态资源库 中科大 `rules/README.md`
-> 2. 修改屏蔽 `content-security-policy`功能，新增 4 个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
+> 2. 修改屏蔽 `content-security-policy`功能，新增 4
+
+     个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
+
 > 3. 新增 移除`CSP`的请求地址 `githubusercontent.com`
 > 4. 新增 `cdnjs.cloudflare.com` 替换规则 `rules-cdnjs-cloudflare-com-redirect.json`,默认未启用
-> 5. test 环境 修改功能： github.com 地址替换后 PAJX 报错,添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
+> 5. test 环境 修改功能： github.com 地址替换后 PAJX
+
+     报错,添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
+
 > 6. test 环境 新增功能： 自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
 
 ## CHANGELOG for 0.10.2
@@ -204,12 +223,24 @@
 ### 变更
 
 > 1. test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
-> 2. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
-> 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 开启"上帝"模式，可编辑网页
-> 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js` 查看网页引入的所有域名
+> 2. test 环境 新增功能： service-worker `sw.js`
+
+     小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
+
+> 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`
+
+     开启"上帝"模式，可编辑网页
+
+> 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`
+
+     查看网页引入的所有域名
+
 > 5. 新增 `code.query.com` jquery 地址替换
 > 6. 解决 0.10.1 版本中 `第9 , 10条不能共用问题`
-> 7. 删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains` 错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
+> 7. 删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains`
+
+     错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
+
 > 8. maxcdn.bootstrapcdn.com 替换为 lib.baomitu.com
 
 ## CHANGELOG for 0.10.1 新增适配 chromium manifest v3 版本
