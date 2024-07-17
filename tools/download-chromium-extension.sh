@@ -56,9 +56,6 @@ done
 mkdir -p chromium-extensions
 cd ${__PROJECT__}/var/chromium-extensions
 
-# google translate
-extension_id=aapbdbdomjkkjkaonfhkkikfgjllcleb
-file_name='google-translate'
 
 # Clear Site Data
 extension_id=aihgofjefdlhpnmeakpnjjeajofpcbhj

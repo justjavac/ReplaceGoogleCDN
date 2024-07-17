@@ -75,44 +75,5 @@
         "other"
       ]
     }
-  },
-
-  {
-    "id": 5,
-    "priority": 100,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "avatar.sourcegcdn.com"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "|http*://*.gravatar.com",
-      "requestDomains": [
-        "secure.gravatar.com",
-        "www.gravatar.com",
-        "cn.gravatar.com",
-        "en.gravatar.com"
-      ],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
   }
 ]
