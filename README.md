@@ -23,26 +23,28 @@
 > -   [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
 > -   [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 >
-> 默认未启用的规则, 如需启用请到扩展选项页自行打开
+> 默认未启用的规则, 如需启用请到扩展选项页自行打开 （双击扩展图标，即打开扩展选项页面）
 
 此插件/扩展可以将以下的 CDN 资源替换为国内的：
 
-1. `ajax.googleapis.com` - 前端公共库，替换为 `ajax.loli.net`
-1. `fonts.googleapis.com` - 免费字体库，替换为 `fonts.googleapis.cn`
-1. `themes.googleusercontent.com` - fonts 有时会使用到这个里面的资源，替换为`themes.loli.net`
-1. `fonts.gstatic.com` - 免费字体库，替换为 `fonts.gstatic.cn`
-1. `www.google.com/recaptcha` - Google 图像验证库，替换为`www.recaptcha.net/recaptcha`
-1. `secure.gravatar.com` - gravatar 头像，替换为 `gravatar.loli.net`
-1. `maxcdn.bootstrapcdn.com/bootstrap` - bootstrap 框架使用的 CDN，替换为`lib.baomitu.com/twitter-bootstrap/`
-1. `code.jquery.com/jquery-(version)(suffix)` - jquery 框架使用的 CDN，替换为`https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix`
-1. `cdnjs.cloudflare.com` - 替换为 `cdnjs.loli.net` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `cdn.jsdelivr.net` - 替换为 `fastly.jsdelivr.net`
-1. `developers.google.com` - 替换为 `developers.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `developer.android.com` - 替换为 `developer.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `source.android.com` - 替换为 `source.android.google.cn` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `www.gstatic.com` - 替换为 `www.gstatic.cn` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `lh3.googleusercontent.com` 默认未启用, 如需启用请到扩展选项页自行打开
-1. `cdn.sstatic.net`- 替换为 `sstatic.net` 默认未启用,如需启用请到扩展选项页自行打开
+| 序号 | 原地址                                        | 重定向后的地址                                                             | 是否启用 |
+|----|--------------------------------------------|---------------------------------------------------------------------|------|
+| 1  | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅    |
+| 2  | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅    |
+| 3  | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅    |
+| 4  | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅    |
+| 5  | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅    |
+| 6  | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅    |
+| 7  | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅    |
+| 8  | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅    |
+| 9  | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | ✅    |
+| 10 | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | ✅    |
+| 11 | `developers.google.com`                    | `developers.google.cn`                                              | -    |
+| 12 | `developer.android.com`                    | `developer.android.google.cn`                                       | -    |
+| 13 | `source.android.com`                       | `source.android.google.cn`                                          | -    |
+| 14 | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -    |
+| 15 | `lh3.googleusercontent.com`                | `source.android.google.cn`                                          | -    |
+| 16 | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -    |
 
 ## 扩展选项页使用简述
 
