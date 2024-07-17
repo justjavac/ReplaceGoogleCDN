@@ -5,8 +5,7 @@
 
 ## 拨测例子
 
-打开拨测站点： https://zijian.aliyun.com/detect/http
-例子： 查看谷歌在大陆还有多少IP
+打开拨测站点： https://zijian.aliyun.com/detect/http 输入如下任意地址
 
 ```text
 
@@ -20,7 +19,7 @@ dig fonts.gstatic.cn
 
 ```
 
-### 拨测完毕,打来浏览器 执行如下代码，提取 IP 地址
+### 拨测完毕,打来浏览器控制台 执行如下代码，即可提取到 IP 地址
 
 ```javascript
 {
