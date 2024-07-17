@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "priority": 100,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "referer",
+          "operation": "remove"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*.sinaimg.cn",
+      "initiatorDomains": ["blog.csdn.net", "www.cnblogs.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 100,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "referer",
+          "operation": "remove"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "mmbiz.qpic.cn",
+      "requestDomains": ["mmbiz.qpic.cn"],
+      "initiatorDomains": ["blog.csdn.net", "www.cnblogs.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 100,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "referer",
+          "operation": "set",
+          "value": "https://weibo.com/"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "tva1.sinaimg.cn",
+      "requestDomains": ["tva1.sinaimg.cn"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 999,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "tvax1.sinaimg.cn"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "*",
+      "requestDomains": ["tva1.sinaimg.cn"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+
+        "other"
+      ]
+    }
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "priority": 999,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "fonts.googleapis.com"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "*",
+      "requestDomains": ["fonts.googleapis.com"],
+      "excludedRequestDomains": ["fonts.gstatic.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 999,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "scheme": "https",
+          "host": "fonts.gstatic.com"
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "fonts.gstatic.com",
+      "requestDomains": ["fonts.gstatic.com"],
+      "excludedRequestDomains": ["fonts.gstatic.com"],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+
+        "other"
+      ]
+    }
+  }
+]
