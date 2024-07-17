@@ -27,24 +27,24 @@
 
 此插件/扩展可以将以下的 CDN 资源替换为国内的：
 
-| 序号 | 原地址                                        | 重定向后的地址                                                             | 是否启用 |
-|----|--------------------------------------------|---------------------------------------------------------------------|------|
-| 1  | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅    |
-| 2  | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅    |
-| 3  | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅    |
-| 4  | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅    |
-| 5  | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅    |
-| 6  | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅    |
-| 7  | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅    |
-| 8  | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅    |
-| 9  | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | ✅    |
-| 10 | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | ✅    |
-| 11 | `developers.google.com`                    | `developers.google.cn`                                              | -    |
-| 12 | `developer.android.com`                    | `developer.android.google.cn`                                       | -    |
-| 13 | `source.android.com`                       | `source.android.google.cn`                                          | -    |
-| 14 | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -    |
-| 15 | `lh3.googleusercontent.com`                | `source.android.google.cn`                                          | -    |
-| 16 | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -    |
+| 序号 | 原地址                                        | 替换后的地址                                                              | 是否启用 | 键鼠                  |
+|----|--------------------------------------------|---------------------------------------------------------------------|------|---------------------|
+| 1  | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅    | 前端公共库               |
+| 2  | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅    | 免费字体库               |
+| 3  | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅    | fonts 资源引用          |
+| 4  | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅    | 免费字体库               |
+| 5  | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅    | Google 图像验证库        |
+| 6  | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅    | gravatar 头像         |
+| 7  | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅    | bootstrap 框架使用的 CDN |
+| 8  | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅    | jquery 框架使用的 CDN    |
+| 9  | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | -    | -                   |
+| 10 | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | -    | -                   |
+| 11 | `developers.google.com`                    | `developers.google.cn`                                              | -    | -                   |
+| 12 | `developer.android.com`                    | `developer.android.google.cn`                                       | -    | -                   |
+| 13 | `source.android.com`                       | `source.android.google.cn`                                          | -    | -                   |
+| 14 | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -    | -                   |
+| 15 | `lh3.googleusercontent.com`                | `source.android.google.cn`                                          | -    | -                   |
+| 16 | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -    | -                   |
 
 ## 扩展选项页使用简述
 
