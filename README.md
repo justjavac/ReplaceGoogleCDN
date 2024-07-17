@@ -23,7 +23,7 @@
 > -   [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
 > -   [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 >
-> 默认未启用的规则, 如需启用请到扩展选项页自行打开 （双击扩展图标，即打开扩展选项页面，可调整替换地址）
+> 默认未启用的规则, （双击扩展图标，进入扩展选项页面，可调整替换地址）
 
 此插件/扩展可以将以下的 CDN 资源替换为国内的：
 
