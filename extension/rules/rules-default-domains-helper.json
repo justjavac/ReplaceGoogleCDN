@@ -1,29 +1,5 @@
 [
   {
-    "action": {
-      "requestHeaders": [
-        {
-          "header": "referer",
-          "operation": "remove"
-        }
-      ],
-      "type": "modifyHeaders"
-    },
-    "condition": {
-      "requestDomains": ["pic1.xuehuaimg.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "image",
-        "object",
-        "xmlhttprequest"
-      ],
-      "urlFilter": "https://pic1.xuehuaimg.com/proxy/"
-    },
-    "id": 1,
-    "priority": 1
-  },
-  {
     "id": 2,
     "priority": 1,
     "action": {

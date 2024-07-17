@@ -70,7 +70,7 @@ bash extension/tools/chromium.sh
 bash tools/download-firefox-latest.sh
 
 # 下载指定版本firefox
-bash tools/download-firefox.sh 121.0b6
+bash tools/download-firefox.sh 129.0b4
 
 ```
 
@@ -93,12 +93,22 @@ chromium  --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"  --host-resolver-rul
 
 ```
 
-## 拨测工具测试地址
+## 格式化代码
 
-```text
+```shell
 
-https://fonts.googleapis.cn/css?family=Google+Sans
+bash tools/format-code.sh
 
-https://fonts.gstatic.cn/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
+
+```
+
+## npm install 指定源
+
+```bash
+
+npm install --registry=https://registry.npmjs.org/
+
+npm install --registry=https://registry.npmmirror.com
+
 
 ```

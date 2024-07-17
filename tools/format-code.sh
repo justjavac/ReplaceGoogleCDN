@@ -10,6 +10,8 @@ __PROJECT__=$(readlink -f ${__DIR__}/../)
 
 cd ${__PROJECT__}
 
+npm install --registry=https://registry.npmmirror.com
+
 npx prettier --write .
 
 cd ${__DIR__}

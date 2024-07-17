@@ -92,40 +92,6 @@
     }
   },
   {
-    "id": 5,
-    "priority": 100,
-    "action": {
-      "type": "redirect",
-      "redirect": {
-        "transform": {
-          "scheme": "https",
-          "host": "cdnjs.sourcegcdn.com"
-        }
-      }
-    },
-    "condition": {
-      "urlFilter": "|http*://cdnjs.cloudflare.com",
-      "requestDomains": ["cdnjs.cloudflare.com"],
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-
-        "other"
-      ]
-    }
-  },
-
-  {
     "id": 6,
     "priority": 90,
     "action": {
