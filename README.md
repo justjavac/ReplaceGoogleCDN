@@ -43,7 +43,7 @@
 | 12 | `developer.android.com`                    | `developer.android.google.cn`                                       | -    | -                   |
 | 13 | `source.android.com`                       | `source.android.google.cn`                                          | -    | -                   |
 | 14 | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -    | -                   |
-| 15 | `lh3.googleusercontent.com`                | `source.android.google.cn`                                          | -    | -                   |
+| 15 | `lh3.googleusercontent.com`                | -                                                                   | -    | -                   |
 | 16 | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -    | -                   |
 
 ## 扩展选项页使用简述
