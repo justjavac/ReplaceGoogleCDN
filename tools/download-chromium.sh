@@ -28,7 +28,7 @@ while [ $# -gt 0 ]; do
       export HTTPS_PROXY="$2"
       NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
       NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
-      export NO_PROXY="${NO_PROXY},localhost"
+      export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com"
     ;;
   --mirror)
     WITH_MIRROR="$2"
