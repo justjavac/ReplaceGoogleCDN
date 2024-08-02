@@ -66,9 +66,13 @@ profile_folder="/tmp/${UUID}"
 mkdir -p $profile_folder
 
 mkdir -p ${__PROJECT__}/var/
-cd ${__PROJECT__}/var/
 
+cd ${__PROJECT__}/
 # python3 ${__PROJECT__}/tools/update-manifest.py  firefox
+
+bash release-archive-v3.sh
+
+cd ${__PROJECT__}/var/
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
