@@ -47,7 +47,8 @@ profile_folder="/tmp/${UUID}"
 mkdir -p $profile_folder
 
 mkdir -p ${__PROJECT__}/var/
-cd ${__PROJECT__}/var/
+
+cd ${__PROJECT__}
 
 # python3 ${__PROJECT__}/tools/update-manifest.py  firefox
 
