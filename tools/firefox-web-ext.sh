@@ -72,7 +72,7 @@ bash release-archive-v3.sh
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 进入扩展所在目录
-cd ${__PROJECT__}/var/extension-tmp/
+cd ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox/
 
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run
 

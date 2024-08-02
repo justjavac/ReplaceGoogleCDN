@@ -1,4 +1,10 @@
-let proxy_domains = ["translate.googleapis.com"];
+let proxy_domains = [
+  "translate.googleapis.com",
+  "chrome.google.com",
+  "lh3.googleusercontent.com",
+  "commondatastorage.googleapis.com",
+  "chromewebstore.google.com"
+];
 
 function encodeBase64(str) {
   return btoa(encodeURIComponent(str));
@@ -31,7 +37,8 @@ function FindProxyForURL(url, host) {
   }
 
   if (go_proxy(url, host)) {
-    return "PROXY 127.0.0.1:8015; SOCKS5 127.0.0.1:2000; DIRECT";
+    return "SOCKS5 127.0.0.1:2000";
+    //return "PROXY 127.0.0.1:8015";
   }
 
   return "DIRECT";

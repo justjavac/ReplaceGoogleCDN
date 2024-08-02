@@ -5,24 +5,26 @@ __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
+__PROJECT__=${__DIR__}
 
-mkdir -p ${__DIR__}/var/
-mkdir -p ${__DIR__}/dist/
+cd ${__PROJECT__}
+
+mkdir -p ${__PROJECT__}/var/
+mkdir -p ${__PROJECT__}/dist/
 
 
 
 ## 打包 chromium 扩展
 
-test -f ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip && rm -f ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip
+test -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip && rm -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip
 
-cd ${__DIR__}/
+cd ${__PROJECT__}
 
-test -d ${__DIR__}/extension/_metadata && rm -rf ${__DIR__}/extension/_metadata
+test -d ${__PROJECT__}/extension/_metadata && rm -rf ${__PROJECT__}/extension/_metadata
 
-cd ${__DIR__}/extension
+cd ${__PROJECT__}/extension
 # 打包 manifest v3 支持chromium 内核系列
-zip -r ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip . \
+zip -r ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip . \
   -x ".git/*" \
   -x ".idea/*" \
   -x "_metadata/*" \
@@ -40,34 +42,40 @@ zip -r ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip . \
   -x "third_party/highlightjs/*" \
   -x "third_party/webrtc/*"
 
-cd ${__DIR__}/
+cd ${__PROJECT__}
 
 
-zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./README.md
-zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./Privacy.md
-zip -u ${__DIR__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./LICENSE
+zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./README.md
+zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./Privacy.md
+zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./LICENSE
 
 
 
 
 ## 打包 firefox 扩展
 
-test -f ${__DIR__}/dist/ReplaceGoogleCDN-v3-firefox.zip && rm -f ${__DIR__}/dist/ReplaceGoogleCDN-v3-firefox.zip
+test -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip && rm -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip
 
-mkdir -p ${__DIR__}/var/extension-tmp/rules/
+test -d ${__PROJECT__}/var/extension-tmp/ && rm -rf ${__PROJECT__}/var/extension-tmp/
 
-cp -rf ${__DIR__}/extension/rules/*.json  ${__DIR__}/var/extension-tmp/rules/
-cp -rf ${__DIR__}/extension/icons  ${__DIR__}/var/extension-tmp/
+mkdir -p ${__PROJECT__}/var/extension-tmp/rules/
 
-rm -f ${__DIR__}/var/extension-tmp/rules/rules_remove_content_security_policy_header_test.json
-rm -f ${__DIR__}/var/extension-tmp/rules/rules-default-domains-helper.json
+cp -rf ${__PROJECT__}/extension/rules/*.json  ${__PROJECT__}/var/extension-tmp/rules/
+cp -rf ${__PROJECT__}/extension/icons  ${__PROJECT__}/var/extension-tmp/
+cp -rf ${__PROJECT__}/extension/background-page.html  ${__PROJECT__}/var/extension-tmp/
+cp -rf ${__PROJECT__}/extension/js/  ${__PROJECT__}/var/extension-tmp/
+
+
+
+rm -f ${__PROJECT__}/var/extension-tmp/rules/rules_remove_content_security_policy_header_test.json
+rm -f ${__PROJECT__}/var/extension-tmp/rules/rules-default-domains-helper.json
 
 python3 tools/update-v3-manifest.py firefox
 
 
 
-cd ${__DIR__}/var/extension-tmp/
-zip -r ${__DIR__}/dist/ReplaceGoogleCDN-v3-firefox.zip .
+cd ${__PROJECT__}/var/extension-tmp/
+zip -r ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip .
 
 cd ${__DIR__}/
 

@@ -23,6 +23,9 @@ test -d ${__PROJECT__}/../ReplaceGoogleCDN-v3 && rm -rf ${__PROJECT__}/../Replac
 mv  ${__PROJECT__}/dist/ReplaceGoogleCDN-v3 ${__PROJECT__}/../
 
 
+
+
+
 exit 0
 
 cd ${__PROJECT__}

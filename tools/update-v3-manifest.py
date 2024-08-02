@@ -28,7 +28,8 @@ def set_manifest_data(manifest, key, value):
 
 
 def override_manifest(manifest):
-    with open(manifest_file, mode='w') as f:
+    os.makedirs(extension_tmp_dir, exist_ok=True)
+    with open(manifest_tmp_file, mode='w') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
@@ -44,7 +45,8 @@ if __name__ == '__main__':
 
     project_dir = os.path.abspath(os.path.dirname(__file__) + '/../')
     manifest_file = project_dir + '/extension/manifest.json'
-    manifest_file_tmp = project_dir + '/var/manifest.json.tmp'
+    extension_tmp_dir = project_dir + '/var/extension-tmp'
+    manifest_tmp_file = extension_tmp_dir + '/manifest.json'
     manifest_data = get_manifest_data()
 
     browser = 'firefox'
