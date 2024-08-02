@@ -1,42 +1,47 @@
 # v3
 
-## v3 0.12.0 [2024-07-17 14:49:00 +0800]
+## 0.12.1 [2024-08-02 16:14:00 +0800]
+
+1. 修复打包扩展bug
+2. 调整打包规则
+
+## 0.12.0 [2024-07-17 14:49:00 +0800]
 
 1. 移除无效、不可用的候选项地址 [不可用的 资源库 详情](public-cdn.md)
 2. 更新 README.md
 
-## v3 0.11.0 [2023-12-06 21:01:00 +0800]
+## 0.11.0 [2023-12-06 21:01:00 +0800]
 
 1. 新增: 新增备份自定义规则功能
 2. 变更： 移除备份所有动态规则功能
 
-## v3 0.10.32 [2023-12-05 15:01:00 +0800]
+## 0.10.32 [2023-12-05 15:01:00 +0800]
 
 1. 新增: 创建 文档目录 `docs`
 2. 变更： 将辅助工具迁移到扩展目录外
 3. 变更： 将高级功能脚本、规则移动到 `experimental-features` 目录 ,
 
-    部分实验脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
+   部分实验脚本迁移到 [extension-v3-test](https://github.com/jingjingxyk/extension-v3-test.git) 仓库
 
-## v3 0.10.31 [2023-12-02 22:01:00 +0800]
+## 0.10.31 [2023-12-02 22:01:00 +0800]
 
 1. 新增： 对 firefox
 
-    提供基础版功能，暂不提供高级功能。详情： [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
+   提供基础版功能，暂不提供高级功能。详情： [NDR 正则表达式 未定版 ](https://github.com/w3c/webextensions/issues/344)
 
 1. 变更： 精简打包命令
 1. 变更： 使用 prettier 格式化代码
 1. 新增： github action workflows 实现命令行下载浏览器 并加载扩展，运行无界面加载扩展 （非headless 模式）
 
-## v3 0.10.30 [2023-09-02 11:01:00 +0800]
+## 0.10.30 [2023-09-02 11:01:00 +0800]
 
 1. 新增： URL 匹配规则添加 `scheme` 匹配,收缩匹配范围
 2. 新增： 默认规则实现兼容 firefox
 3. 新增： 准备发布 v3 1.0.0 版本
 4. 变更：
 
-    修改规则`developer.android.com`,`developers.google.com`,`source.android.com`,`developers.google.com`,`source.android.com`
-    默认不启用
+   修改规则`developer.android.com`,`developers.google.com`,`source.android.com`,`developers.google.com`,`source.android.com`
+   默认不启用
 
 5. 变更： 准备归档不属于扩展的目录和文件（进行中）
 6. 变更： 移除 2 种不支持的规则类型 `"webtransport"`,`"webbundle"` ,实现兼容 firefox
@@ -44,45 +49,45 @@
 8. 变更： `imgur.com` 的候选项规则 删除无效的候选项 `search.pstatic.net`
 9. 变更： `lh3.googleusercontent.com` 的候选项规则 删除无效的候选项 `search.pstatic.net`
 
-## v3 0.10.29 [2023-07-06 14:20:00 +0800]
+## 0.10.29 [2023-07-06 14:20:00 +0800]
 
 1. 升级 josdejong/svelte-jsoneditor 并确定其版本为 v0.17.8
 2. 支持 firefox 浏览器，firefox 版本需要 >= v113
 3. 添加 python 脚本 便捷修改 manifest.json 文件，打包时构建支持 firefox 版本
 
-## v3 0.10.28 [2023-04-12 15:38:00 +0800]
+## 0.10.28 [2023-04-12 15:38:00 +0800]
 
 1. 域名`lh3.googleusercontent.com` 和 `imgur.com` 添加辅助规则。 删除请求头中 `referer` 键值对
 2. 域名`lh3.googleusercontent.com` 和 `imgur.com` 重定向规则 资源类型，仅限图片
 3. 域名`fonts.googleapis.com` 和 `fonts.googleapis.com` 修改重定向规则,修改重定向到的目标地址
 
-## v3 0.10.27 [2023-04-02 21:50:00 +0800]
+## 0.10.27 [2023-04-02 21:50:00 +0800]
 
 1. v3 版本 修复 通过重新组织代码，解决删除单条规则时,重复渲染动态规则列表的 bug
 
-## v3 0.10.26 [2023-03-31 13:27:00 +0800]
+## 0.10.26 [2023-03-31 13:27:00 +0800]
 
 1. v3 版本 修复 修复打包 bug (打包补上 josdejong/svelte-jsoneditor)
 
-## v3 0.10.25 [2023-03-05 23:25:00 +0800]
+## 0.10.25 [2023-03-05 23:25:00 +0800]
 
 1. v3 版本 添加 格式化规则功能
 2. v3 版本 修改 规则条块颜色调整
 
-## v3 0.10.24 [2023-02-19 21:25:00 +0800]
+## 0.10.24 [2023-02-19 21:25:00 +0800]
 
 1. v3 版本 添加 默认候选规则，规则 id=9999，priority=9999（暂不启用)
 2. v3 版本 备注信息： 规则 id=9999，用于覆盖其他地址重定向规则
 3. v3 版本 添加 JSON [(josdejong/svelte-jsoneditor)](https://github.com/josdejong/svelte-jsoneditor)格式化工具
 
-## v3 0.10.23 [2023-02-07 11:21:00 +0800]
+## 0.10.23 [2023-02-07 11:21:00 +0800]
 
 1. v3 版本 修改 静态规则和默认候选项规则 规则编号统一一致
 1. v3 版本 修改 默认启用`developer.android.com` 地址重定向
 1. v3 版本 修改 默认启用`source.android.com` 地址重定向
 1. v3 版本 升级 到 0.10.23
 
-## v3 0.10.22 [2023-02-06 23:49:00 +0800]
+## 0.10.22 [2023-02-06 23:49:00 +0800]
 
 1. v3 版本 修改 扩展选项页面拆分为 2 个页面,分别是默认配置页面和高级配置页面
 1. v3 版本 新增 默认候选项新增域名`developer.android.com`
@@ -209,13 +214,13 @@
 1. 新增 公共 CDN 静态资源库 中科大 `rules/README.md`
 2. 修改屏蔽 `content-security-policy`功能，新增 4
 
-    个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
+   个屏蔽选项 ` ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-opener-policy-report-only","cross-origin-embedder-policy-report-only"]`
 
 3. 新增 移除`CSP`的请求地址 `githubusercontent.com`
 4. 新增 `cdnjs.cloudflare.com` 替换规则 `rules-cdnjs-cloudflare-com-redirect.json`,默认未启用
 5. test 环境 修改功能： github.com 地址替换后 PAJX
 
-    报错,添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
+   报错,添加解决方案 `extension/test/extension-v3-test/js/content-scripts/github.js`
 
 6. test 环境 新增功能： 自定义规则第一版雏形 `extension/test/extension-v3-test/index.html`
 
@@ -226,21 +231,21 @@
 1. test 环境 新增功能： service-worker `sw.js` 小工具，解决因域名地址替换导致出现的问题；比如 github PJAX 错误
 2. test 环境 新增功能： service-worker `sw.js`
 
-    小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
+   小工具中 `extension/test/extension-v3-test/js/tools/self-define-browser-editor.js` 浏览器当作记事本使用
 
 3. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`
 
-    开启"上帝"模式，可编辑网页
+   开启"上帝"模式，可编辑网页
 
 4. test 环境 新增功能： service-worker `sw.js` 小工具中 `extension/test/extension-v3-test/js/tools/myscript-tools.js`
 
-    查看网页引入的所有域名
+   查看网页引入的所有域名
 
 5. 新增 `code.query.com` jquery 地址替换
 6. 解决 0.10.1 版本中 `第9 , 10条不能共用问题`
 7. 删除 0.10.1 版本中 高级玩法 `excludedInitiatorDomains`
 
-    错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
+   错误配置位于 `rules/rules_advance_redirect_2.json : "excludedInitiatorDomains":[] `
 
 8. maxcdn.bootstrapcdn.com 替换为 lib.baomitu.com
 

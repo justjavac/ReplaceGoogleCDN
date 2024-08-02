@@ -101,5 +101,5 @@ cd ${__PROJECT__}
 cp -f ${__PROJECT__}/dist/v3/ReplaceGoogleCDN-chromium.zip ${__PROJECT__}/dist/ReplaceGoogleCDN-v3.zip
 
 cd ${__PROJECT__}/dist/
-test -d ReplaceGoogleCDN-v2 && rm -rf ReplaceGoogleCDN-v2
-unzip ReplaceGoogleCDN-v2.zip -d ReplaceGoogleCDN-v2
+test -d ReplaceGoogleCDN-v3 && rm -rf ReplaceGoogleCDN-v3
+unzip ReplaceGoogleCDN-v3.zip -d ReplaceGoogleCDN-v3
