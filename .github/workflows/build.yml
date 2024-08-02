@@ -65,6 +65,16 @@ jobs:
           path: |
             dist/v3/ReplaceGoogleCDN-firefox.zip
 
+      - name: Release
+        uses: softprops/action-gh-release@v2.0.8
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            dist/ReplaceGoogleCDN-v2.zip
+            dist/ReplaceGoogleCDN-v3.zip
+            dist/v3/ReplaceGoogleCDN-chromium.zip
+            dist/v3/ReplaceGoogleCDN-firefox.zip
+
       - name: Browser Plugin Publish v2
         if: 0
         uses: PlasmoHQ/bpp@v2
@@ -80,12 +90,4 @@ jobs:
           keys: ${{ secrets.SUBMIT_KEYS }}
         # 使用参考 https://github.com/PlasmoHQ/bpp.git
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: |
-            dist/ReplaceGoogleCDN-v2.zip
-            dist/ReplaceGoogleCDN-v3.zip
-            dist/v3/ReplaceGoogleCDN-v3-chromium.zip
-            dist/v3/ReplaceGoogleCDN-v3-firefox.zip
+
