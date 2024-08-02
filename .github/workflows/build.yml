@@ -55,7 +55,7 @@ jobs:
           name: replace-google-cdn-v3-chromium
           retention-days: 7
           path: |
-            dist/v3/ReplaceGoogleCDN-chromium.zip
+            dist/ReplaceGoogleCDN-v3-chromium.zip
 
       - name: production artifacts v3 firefox
         uses: actions/upload-artifact@v4
@@ -63,7 +63,7 @@ jobs:
           name: replace-google-cdn-v3-firefox
           retention-days: 7
           path: |
-            dist/v3/ReplaceGoogleCDN-firefox.zip
+            dist/ReplaceGoogleCDN-v3-firefox.zip
 
       - name: Release
         uses: softprops/action-gh-release@v2.0.8
@@ -72,8 +72,8 @@ jobs:
           files: |
             dist/ReplaceGoogleCDN-v2.zip
             dist/ReplaceGoogleCDN-v3.zip
-            dist/v3/ReplaceGoogleCDN-chromium.zip
-            dist/v3/ReplaceGoogleCDN-firefox.zip
+            dist/ReplaceGoogleCDN-v3-chromium.zip
+            dist/ReplaceGoogleCDN-v3-firefox.zip
 
       - name: Browser Plugin Publish v2
         if: 0

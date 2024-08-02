@@ -55,7 +55,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/chrome-mac.zip
             ${{ github.workspace }}/var/chrome-mac
-          key: ${{ runner.os }}-x86_64-chromium
+          key: ${{ runner.os }}-aarch64-chromium
 
       - name: Download Chromium
         run: |
