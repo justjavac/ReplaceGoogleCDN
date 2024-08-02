@@ -1,52 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 __DIR__=$(
   cd "$(dirname "$0")"
   pwd
 )
-cd ${__DIR__}
+__PROJECT__=${__DIR__}
+cd ${__PROJECT__}
 
-test -d extension/_metadata/ && rm -rf extension/_metadata/
+mkdir -p ${__PROJECT__}/var/
+mkdir -p ${__PROJECT__}/dist/v2/
 
-mkdir -p dist/
-cd ${__DIR__}/dist
-
-test -f ReplaceGoogleCDN-v2.zip && rm -f ReplaceGoogleCDN-v2.zip
-test -f ReplaceGoogleCDN-v3.zip && rm -f ReplaceGoogleCDN-v3.zip
-
-
-cd ${__DIR__}/extension
-
-# 打包 manifest v3 支持chromium 内核系列
-zip -r ../dist/ReplaceGoogleCDN-v3.zip . \
-  -x ".git/*" \
-  -x ".idea/*" \
-  -x "_metadata/*" \
-  -x "node_modules/*" \
-  -x "tools/*" \
-  -x "_metadata/*" \
-  -x "rules/example-advance/*" \
-  -x "rules/example/*" \
-  -x "background-page.html" \
-  -x "screenshot/*" \
-  -x "test/*" \
-  -x "web/*" \
-  -x "web-backup/*" \
-  -x "manifest-backup.json" \
-  -x "third_party/highlightjs/*" \
-  -x "third_party/webrtc/*"
-
-cd ${__DIR__}
-zip -u dist/ReplaceGoogleCDN-v3.zip ./README.md
-zip -u dist/ReplaceGoogleCDN-v3.zip ./Privacy.md
-zip -u dist/ReplaceGoogleCDN-v3.zip ./LICENSE
-
+test -f ${__PROJECT__}/dist/v2/ReplaceGoogleCDN.zip && rm -f ${__PROJECT__}/dist/v2/ReplaceGoogleCDN.zip
 
 # 打包 manifest v2  支持chromium 内核系列 和 firefox
-cd ${__DIR__}/extension-v2/
+cd ${__PROJECT__}/extension-v2/
 
-zip -r ../dist/ReplaceGoogleCDN-v2.zip . \
+zip -r ${__PROJECT__}/dist/v2/ReplaceGoogleCDN.zip . \
   -x ".git/*" \
   -x ".idea/*" \
   -x "_metadata/*" \
@@ -57,19 +27,26 @@ zip -r ../dist/ReplaceGoogleCDN-v2.zip . \
   -x "./README.md" \
   -x "./test/*"
 
-cd ${__DIR__}
-zip -u dist/ReplaceGoogleCDN-v2.zip ./README.md
-zip -u dist/ReplaceGoogleCDN-v2.zip ./Privacy.md
-zip -u dist/ReplaceGoogleCDN-v2.zip ./LICENSE
+cd ${__PROJECT__}
+zip -u dist/v2/ReplaceGoogleCDN.zip ./README.md
+zip -u dist/v2/ReplaceGoogleCDN.zip ./Privacy.md
+zip -u dist/v2/ReplaceGoogleCDN.zip ./LICENSE
 
-
-cd ${__DIR__}/dist
+cd ${__PROJECT__}/dist/v2/
 # 查看打包结果
 
+test -d ReplaceGoogleCDN && rm -rf ReplaceGoogleCDN
+
+unzip ReplaceGoogleCDN.zip -d ReplaceGoogleCDN
+
+cd ${__PROJECT__}
+
+
+
+
+# 为了兼容 上一版的打包结果
+cp -f ${__PROJECT__}/dist/v2/ReplaceGoogleCDN.zip ${__PROJECT__}/dist/ReplaceGoogleCDN-v2.zip
+
+cd ${__PROJECT__}/dist/
 test -d ReplaceGoogleCDN-v2 && rm -rf ReplaceGoogleCDN-v2
-test -d ReplaceGoogleCDN-v3 && rm -rf ReplaceGoogleCDN-v3
-
 unzip ReplaceGoogleCDN-v2.zip -d ReplaceGoogleCDN-v2
-unzip ReplaceGoogleCDN-v3.zip -d ReplaceGoogleCDN-v3
-
-cd ${__DIR__}

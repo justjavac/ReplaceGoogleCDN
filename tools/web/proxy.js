@@ -3,7 +3,8 @@ let proxy_domains = [
   "chrome.google.com",
   "lh3.googleusercontent.com",
   "commondatastorage.googleapis.com",
-  "chromewebstore.google.com"
+  "chromewebstore.google.com",
+  "clients2.google.com"
 ];
 
 function encodeBase64(str) {

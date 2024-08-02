@@ -27,24 +27,24 @@
 
 此插件/扩展可以将以下的 CDN 资源替换为国内的：
 
-| 序号 | 原地址                                        | 替换后的地址                                                              | 是否启用 | 简述                  |
-|----|--------------------------------------------|---------------------------------------------------------------------|------|---------------------|
-| 1  | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅    | 前端公共库               |
-| 2  | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅    | 免费字体库               |
-| 3  | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅    | fonts 资源引用          |
-| 4  | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅    | 免费字体库               |
-| 5  | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅    | Google 图像验证库        |
-| 6  | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅    | gravatar 头像         |
-| 7  | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅    | bootstrap 框架使用的 CDN |
-| 8  | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅    | jquery 框架使用的 CDN    |
-| 9  | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | -    | -                   |
-| 10 | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | -    | -                   |
-| 11 | `developers.google.com`                    | `developers.google.cn`                                              | -    | -                   |
-| 12 | `developer.android.com`                    | `developer.android.google.cn`                                       | -    | -                   |
-| 13 | `source.android.com`                       | `source.android.google.cn`                                          | -    | -                   |
-| 14 | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -    | -                   |
-| 15 | `lh3.googleusercontent.com`                | -                                                                   | -    | -                   |
-| 16 | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -    | -                   |
+| 序号 | 原地址                                     | 替换后的地址                                                        | 是否启用 | 简述                     |
+| ---- | ------------------------------------------ | ------------------------------------------------------------------- | -------- | ------------------------ |
+| 1    | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅       | 前端公共库               |
+| 2    | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅       | 免费字体库               |
+| 3    | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅       | fonts 资源引用           |
+| 4    | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅       | 免费字体库               |
+| 5    | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅       | Google 图像验证库        |
+| 6    | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅       | gravatar 头像            |
+| 7    | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅       | bootstrap 框架使用的 CDN |
+| 8    | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅       | jquery 框架使用的 CDN    |
+| 9    | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | -        | -                        |
+| 10   | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | -        | -                        |
+| 11   | `developers.google.com`                    | `developers.google.cn`                                              | -        | -                        |
+| 12   | `developer.android.com`                    | `developer.android.google.cn`                                       | -        | -                        |
+| 13   | `source.android.com`                       | `source.android.google.cn`                                          | -        | -                        |
+| 14   | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -        | -                        |
+| 15   | `lh3.googleusercontent.com`                | -                                                                   | -        | -                        |
+| 16   | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -        | -                        |
 
 ## 扩展选项页使用简述
 
@@ -69,22 +69,22 @@
 
 下表是各种资源的网络请求对比（以替换后的速度为基准 100%）：
 
-| 资源                     | 来源                           | 尺寸(kB) | 时间(ms) | 速度(B/ms) |   百分比 |
-| ------------------------ | ------------------------------ | -------: | -------: | ---------: | -------: |
-| jquery.min.js            | ajax.googleapis.com            |        0 |       26 |          - |        - |
-| stub.en.js               | cdn.sstatic.net                |     18.0 |      293 |       61.4 |      18% |
-| **jquery.min.js**        | **ajax.loli.net** ⚡️          | **33.1** |   **95** |  **348.4** | **100%** |
-| clc.min.js               | cdn.sstatic.net                |      4.2 |      399 |       10.5 |      30% |
-| full.en.js               | cdn.sstatic.net                |     99.6 |      534 |      186.5 |      54% |
-| gpt.js                   | securepubads.g.doubleclick.net |     21.3 |       85 |      250.6 |      72% |
-| analytics.js             | google-analytics.com           |     19.6 |       79 |      248.1 |      71% |
-| quant.js                 | secure.quantserve.com          |      9.1 |      420 |       21.7 |      62% |
-| beacon.js                | sb.scorecardresearch.com       |      1.8 |       73 |       24.7 |      71% |
-| integrator.js            | adservice.google.com 🐌        |      0.3 |       87 |        3.4 |       1% |
-| markup.js                | clc.stackoverflow.com 🐌       |      9.2 |      252 |       36.5 |      10% |
-| osd.js                   | googletagservices.com          |     28.1 |       90 |      312.2 |      89% |
-| rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |       96 |        4.2 |       1% |
-| keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |       75 |       97.3 |    27.9% |
+| 资源                       | 来源                             |   尺寸(kB) | 时间(ms) |  速度(B/ms) |      百分比 |
+|--------------------------|--------------------------------|---------:|-------:|----------:|---------:|
+| jquery.min.js            | ajax.googleapis.com            |        0 |     26 |         - |        - |
+| stub.en.js               | cdn.sstatic.net                |     18.0 |    293 |      61.4 |      18% |
+| **jquery.min.js**        | **ajax.loli.net** ⚡️           | **33.1** | **95** | **348.4** | **100%** |
+| clc.min.js               | cdn.sstatic.net                |      4.2 |    399 |      10.5 |      30% |
+| full.en.js               | cdn.sstatic.net                |     99.6 |    534 |     186.5 |      54% |
+| gpt.js                   | securepubads.g.doubleclick.net |     21.3 |     85 |     250.6 |      72% |
+| analytics.js             | google-analytics.com           |     19.6 |     79 |     248.1 |      71% |
+| quant.js                 | secure.quantserve.com          |      9.1 |    420 |      21.7 |      62% |
+| beacon.js                | sb.scorecardresearch.com       |      1.8 |     73 |      24.7 |      71% |
+| integrator.js            | adservice.google.com 🐌        |      0.3 |     87 |       3.4 |       1% |
+| markup.js                | clc.stackoverflow.com 🐌       |      9.2 |    252 |      36.5 |      10% |
+| osd.js                   | googletagservices.com          |     28.1 |     90 |     312.2 |      89% |
+| rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |     96 |       4.2 |       1% |
+| keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |     75 |      97.3 |    27.9% |
 
 ## 打包命令
 
