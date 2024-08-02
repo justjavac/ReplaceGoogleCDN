@@ -1,4 +1,4 @@
-name: build-replace-google-cdn
+name: build
 
 on:
   push:
