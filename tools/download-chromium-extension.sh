@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! "$BASH_VERSION" ]; then
   echo "Please do not use BASH  to run this script ($0), just execute it directly" 1>&2

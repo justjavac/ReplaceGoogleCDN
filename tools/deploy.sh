@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 __DIR__=$(
@@ -13,6 +13,7 @@ __PROJECT__=$(
 cd ${__PROJECT__}
 
 bash release-archive.sh
+bash release-archive-v3.sh
 
 cd ${__PROJECT__}
 

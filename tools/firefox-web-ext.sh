@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 
@@ -42,13 +42,21 @@ case $OS in
 ;;
 esac
 
+
 profile_folder="/tmp/${UUID}"
 
 mkdir -p $profile_folder
 
+
+
+mkdir -p ${__PROJECT__}/var/
+cd ${__PROJECT__}/var/
+
+
+# python3 ${__PROJECT__}/tools/update-manifest.py  firefox
+
 ## 生成支持firefox 的扩展
 bash release-archive-v3.sh
-
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
@@ -72,6 +80,7 @@ bash release-archive-v3.sh
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 进入扩展所在目录
+
 cd ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox/
 
 # reference https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#web-ext-run

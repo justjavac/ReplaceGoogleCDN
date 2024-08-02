@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 __DIR__=$(
@@ -61,7 +61,7 @@ case $OS in
   *)
     echo 'current script no support !'
     exit 0
-  ;;
+    ;;
 esac
 
 test -d /tmp/${UUID} || mkdir -p /tmp/${UUID}

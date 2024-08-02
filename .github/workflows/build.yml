@@ -89,5 +89,3 @@ jobs:
           artifact: "dist/ReplaceGoogleCDN-v3.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
         # 使用参考 https://github.com/PlasmoHQ/bpp.git
-
-
