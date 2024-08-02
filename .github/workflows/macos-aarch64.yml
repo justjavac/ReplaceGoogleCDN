@@ -1,6 +1,6 @@
-name: macos-x86_64
+name: macos-aarch64
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
@@ -8,13 +8,12 @@ env:
 jobs:
   macos-x86_64:
     if: 1
-    runs-on: macos-13
+    runs-on: macos-latest
     # macos-latest (macos-14)  变更了 CPU 架构，由 x86_64 变更为 arm64
     # macos-14 CPU 架构 arm64
     # macos-13 CPU 架构 x86_64
     # macos-12 CPU 架构 x86_64
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
-
     steps:
       - uses: actions/checkout@v3
       - name: Prepare build environment
