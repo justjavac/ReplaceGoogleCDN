@@ -15,7 +15,7 @@ jobs:
     # macos-12 CPU 架构 x86_64
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare build environment
         run: |
           env
@@ -50,7 +50,7 @@ jobs:
           set -x
 
       - name: Cache Chromium
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/var/chrome-mac.zip
@@ -65,7 +65,7 @@ jobs:
           fi
 
       - name: Cache Firefox
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/var/firefox.dmg
