@@ -13,14 +13,14 @@ __PROJECT__=$(
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
-      export HTTP_PROXY="$2"
-      export HTTPS_PROXY="$2"
-      NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
-      NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
-      export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com"
+    export HTTP_PROXY="$2"
+    export HTTPS_PROXY="$2"
+    NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
+    NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
+    export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com"
     ;;
-  *)
-    ;;
+  *) ;;
+
   esac
   shift $(($# > 0 ? 1 : 0))
 done
@@ -45,8 +45,6 @@ cd ${__PROJECT__}/var/
 
 # firefox 114 支持 DNS over HTTPS ；WebTransport默认启用
 # https://www.mozilla.org/en-US/firefox/113.0/releasenotes/
-
-
 
 OS=$(uname -s)
 ARCH=$(uname -m)
@@ -90,7 +88,7 @@ case $OS in
 
   # 将应用程序拷贝到指定目录
   mkdir -p ${__PROJECT__}/var/firefox
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app ${__PROJECT__}/var/firefox
   ls -lh ${__PROJECT__}/var/firefox/
 
   ;;
@@ -101,6 +99,3 @@ case $OS in
   curl -Lo firefox.exe ${DOWNLOAD_FIREFOX_URL}
   ;;
 esac
-
-
-

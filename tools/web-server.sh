@@ -6,7 +6,6 @@ __DIR__=$(
   pwd
 )
 
-
 __PROJECT__=$(readlink -f ${__DIR__}/../)
 echo ${__PROJECT__}
 

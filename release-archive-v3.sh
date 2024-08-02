@@ -12,8 +12,6 @@ cd ${__PROJECT__}
 mkdir -p ${__PROJECT__}/var/
 mkdir -p ${__PROJECT__}/dist/
 
-
-
 ## 打包 chromium 扩展
 
 test -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip && rm -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip
@@ -44,13 +42,9 @@ zip -r ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip . \
 
 cd ${__PROJECT__}
 
-
 zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./README.md
 zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./Privacy.md
 zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ./LICENSE
-
-
-
 
 ## 打包 firefox 扩展
 
@@ -60,19 +54,15 @@ test -d ${__PROJECT__}/var/extension-tmp/ && rm -rf ${__PROJECT__}/var/extension
 
 mkdir -p ${__PROJECT__}/var/extension-tmp/rules/
 
-cp -rf ${__PROJECT__}/extension/rules/*.json  ${__PROJECT__}/var/extension-tmp/rules/
-cp -rf ${__PROJECT__}/extension/icons  ${__PROJECT__}/var/extension-tmp/
-cp -rf ${__PROJECT__}/extension/background-page.html  ${__PROJECT__}/var/extension-tmp/
-cp -rf ${__PROJECT__}/extension/js/  ${__PROJECT__}/var/extension-tmp/js/
-
-
+cp -rf ${__PROJECT__}/extension/rules/*.json ${__PROJECT__}/var/extension-tmp/rules/
+cp -rf ${__PROJECT__}/extension/icons ${__PROJECT__}/var/extension-tmp/
+cp -rf ${__PROJECT__}/extension/background-page.html ${__PROJECT__}/var/extension-tmp/
+cp -rf ${__PROJECT__}/extension/js/ ${__PROJECT__}/var/extension-tmp/js/
 
 rm -f ${__PROJECT__}/var/extension-tmp/rules/rules_remove_content_security_policy_header_test.json
 rm -f ${__PROJECT__}/var/extension-tmp/rules/rules-default-domains-helper.json
 
 python3 tools/update-v3-manifest.py firefox
-
-
 
 cd ${__PROJECT__}/var/extension-tmp/
 zip -r ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip .
@@ -83,10 +73,8 @@ zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip ./README.md
 zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip ./Privacy.md
 zip -u ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-firefox.zip ./LICENSE
 
-
 # 为了兼容 上一版的打包结果
 cp -f ${__PROJECT__}/dist/ReplaceGoogleCDN-v3-chromium.zip ${__PROJECT__}/dist/ReplaceGoogleCDN-v3.zip
-
 
 # 查看打包结果
 cd ${__PROJECT__}/dist/

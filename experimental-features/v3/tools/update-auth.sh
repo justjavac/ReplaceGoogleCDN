@@ -12,7 +12,6 @@ __ROOT__=$(
 )
 echo ${__ROOT__}
 
-
 cd ${__ROOT__}/rules/example-advance/
 
 if test -f auth.json; then

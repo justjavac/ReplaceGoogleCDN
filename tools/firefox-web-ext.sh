@@ -31,27 +31,23 @@ case $OS in
   FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
   # 自定义 启动目录
   FIREFOX="${__PROJECT__}/var/firefox/Firefox.app/Contents/MacOS/firefox"
- ;;
+  ;;
 'MINGW64_NT'* | 'MSYS_NT'*)
   # FIREFOX="C:\Program Files\Mozilla Firefox\firefox.exe"
   exit 0
   ;;
 *)
-    echo 'current script no support !'
-    exit 0
-;;
+  echo 'current script no support !'
+  exit 0
+  ;;
 esac
-
 
 profile_folder="/tmp/${UUID}"
 
 mkdir -p $profile_folder
 
-
-
 mkdir -p ${__PROJECT__}/var/
 cd ${__PROJECT__}/var/
-
 
 # python3 ${__PROJECT__}/tools/update-manifest.py  firefox
 
@@ -75,7 +71,6 @@ bash release-archive-v3.sh
 # 支持 ResourceType
 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType
 
-
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
@@ -95,6 +90,5 @@ npx web-ext run \
 
 #   --devtools \
 #   --browser-console \
-
 
 exit 0

@@ -29,7 +29,6 @@ __PROJECT__=$(
 ## 下载命令例子：
 # bash  tools/download-chromium-extension.sh  --proxy http://127.0.0.1:8015
 
-
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
@@ -46,7 +45,6 @@ done
 
 mkdir -p chromium-extensions
 cd ${__PROJECT__}/var/chromium-extensions
-
 
 # Clear Site Data
 extension_id=aihgofjefdlhpnmeakpnjjeajofpcbhj
@@ -75,4 +73,3 @@ unzip -d ${file_name} "${file_name}.crx"
 set -e
 
 cd ${__PROJECT__}/var/chromium-extensions
-

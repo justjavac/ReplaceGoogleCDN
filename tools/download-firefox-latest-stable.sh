@@ -13,14 +13,14 @@ __PROJECT__=$(
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
-      export HTTP_PROXY="$2"
-      export HTTPS_PROXY="$2"
-      NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
-      NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
-      export NO_PROXY="${NO_PROXY},localhost"
+    export HTTP_PROXY="$2"
+    export HTTPS_PROXY="$2"
+    NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
+    NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
+    export NO_PROXY="${NO_PROXY},localhost"
     ;;
-  *)
-    ;;
+  *) ;;
+
   esac
   shift $(($# > 0 ? 1 : 0))
 done
@@ -41,7 +41,6 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}-${ARCH}"
 
-
 case $OS in
 "Linux")
   curl -Lo firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
@@ -57,7 +56,7 @@ case $OS in
 
   # 将应用程序拷贝到指定目录
   mkdir -p ${__PROJECT__}/var/Firefox
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/Firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app ${__PROJECT__}/var/Firefox
   ls -lh ${__PROJECT__}/var/Firefox/
 
   ;;
@@ -66,6 +65,3 @@ case $OS in
   curl -Lo firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
   ;;
 esac
-
-
-

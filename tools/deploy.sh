@@ -21,11 +21,7 @@ cd ${__PROJECT__}
 
 test -d ${__PROJECT__}/../ReplaceGoogleCDN-v3 && rm -rf ${__PROJECT__}/../ReplaceGoogleCDN-v3
 
-mv  ${__PROJECT__}/dist/ReplaceGoogleCDN-v3 ${__PROJECT__}/../
-
-
-
-
+mv ${__PROJECT__}/dist/ReplaceGoogleCDN-v3 ${__PROJECT__}/../
 
 exit 0
 
@@ -36,11 +32,10 @@ cd ${__PROJECT__}
 key=/home/username/key.pem
 domain=chromium-extensions.jingjingxyk.com
 
-rsync -az -r -z -v -e "ssh -p 22 -i $key" --delete ${__ROOT__}/dist/ReplaceGoogleCDN-v2.zip  root@${domain}:/data/webspace/chromium-extensions/ReplaceGoogleCDN-v2.zip
-rsync -az -r -z -v -e "ssh -p 22 -i $key" --delete ${__ROOT__}/dist/ReplaceGoogleCDN-v3.zip  root@${domain}:/data/webspace/chromium-extensions/ReplaceGoogleCDN-v3.zip
+rsync -az -r -z -v -e "ssh -p 22 -i $key" --delete ${__ROOT__}/dist/ReplaceGoogleCDN-v2.zip root@${domain}:/data/webspace/chromium-extensions/ReplaceGoogleCDN-v2.zip
+rsync -az -r -z -v -e "ssh -p 22 -i $key" --delete ${__ROOT__}/dist/ReplaceGoogleCDN-v3.zip root@${domain}:/data/webspace/chromium-extensions/ReplaceGoogleCDN-v3.zip
 
-
-:<<'EOF'
+: <<'EOF'
 
 scp  -P 22 -i $key -v -C  \
 -o StrictHostKeyChecking=no  \
