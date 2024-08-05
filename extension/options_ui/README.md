@@ -104,28 +104,28 @@ chrome.declarativeNetRequest.updateDynamicRules(
 
 ## 固定规则编号
 
-| 规则 ID |                     URI                      |    备注    |
-| :-----: | :------------------------------------------: | :--------: |
-|    1    |             ajax.googleapis.com              |    启用    |
-|    2    |             fonts.googleapis.com             |    启用    |
-|    3    |         themes.googleusercontent.com         |    启用    |
-|    4    |              fonts.gstatic.com               |    启用    |
-|    5    |             secure.gravatar.com              |    启用    |
-|    6    |      maxcdn.bootstrapcdn.com/bootstrap       |    启用    |
-|    7    |   code.jquery.com/jquery-(version)(suffix)   |    启用    |
-|    8    | code.jquery.com/ui/(prefix)(version)(suffix) |    启用    |
-|    9    |             cdnjs.cloudflare.com             | 默认未启用 |
-|   10    |               cdn.jsdelivr.net               |    启用    |
-|   11    |           translate.googleapis.com           | 默认未启用 |
-|   12    |               www.gstatic.com                | 默认未启用 |
-|   13    |            developer.android.com             | 默认未启用 |
-|   14    |          lh3.googleusercontent.com           | 默认未启用 |
-|   15    |               cdn.sstatic.net                | 默认未启用 |
-|   16    |                  imgur.com                   | 默认未启用 |
-|   17    |            developers.google.com             | 默认未启用 |
-|   18    |              source.android.com              | 默认未启用 |
-|   19    |       www.google.com/recaptcha/api.js        |    启用    |
-|  9999   |        supper-priority-override-rule         | 默认未启用 |
+| 规则 ID |                     URI                      |  备注   |
+|:-----:|:--------------------------------------------:|:-----:|
+|   1   |             ajax.googleapis.com              |  启用   |
+|   2   |             fonts.googleapis.com             |  启用   |
+|   3   |         themes.googleusercontent.com         |  启用   |
+|   4   |              fonts.gstatic.com               |  启用   |
+|   5   |             secure.gravatar.com              |  启用   |
+|   6   |      maxcdn.bootstrapcdn.com/bootstrap       |  启用   |
+|   7   |   code.jquery.com/jquery-(version)(suffix)   |  启用   |
+|   8   | code.jquery.com/ui/(prefix)(version)(suffix) |  启用   |
+|   9   |             cdnjs.cloudflare.com             | 默认未启用 |
+|  10   |               cdn.jsdelivr.net               |  启用   |
+|  11   |           translate.googleapis.com           | 默认未启用 |
+|  12   |               www.gstatic.com                | 默认未启用 |
+|  13   |            developer.android.com             | 默认未启用 |
+|  14   |          lh3.googleusercontent.com           | 默认未启用 |
+|  15   |               cdn.sstatic.net                | 默认未启用 |
+|  16   |                  imgur.com                   | 默认未启用 |
+|  17   |            developers.google.com             | 默认未启用 |
+|  18   |              source.android.com              | 默认未启用 |
+|  19   |       www.google.com/recaptcha/api.js        |  启用   |
+| 9999  |        supper-priority-override-rule         | 默认未启用 |
 
 > 默认未启用的规则，如何启用？
 >

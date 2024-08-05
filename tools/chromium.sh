@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 __DIR__=$(
@@ -18,20 +18,19 @@ HEADLESS_MODE=''
 while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
-      XVFB_COMMAND='xvfb-run --auto-servernum  -e /dev/stdout  -s "-terminate -screen 0 1920x1080x24" '
+    XVFB_COMMAND='xvfb-run --auto-servernum  -e /dev/stdout  -s "-terminate -screen 0 1920x1080x24" '
     ;;
   --xwfb)
-      XVFB_COMMAND='xwfb-run  '
+    XVFB_COMMAND='xwfb-run  '
     ;;
   --headless)
-      HEADLESS_MODE='--headless --disable-gpu '
+    HEADLESS_MODE='--headless --disable-gpu '
     ;;
-  *)
-    ;;
+  *) ;;
+
   esac
   shift $(($# > 0 ? 1 : 0))
 done
-
 
 OS=$(uname -s)
 ARCH=$(uname -m)
@@ -46,21 +45,21 @@ CHROMIUM=''
 
 case $OS in
 "Linux")
-    UUID=$(cat /proc/sys/kernel/random/uuid)
-    CHROMIUM='chrome-linux/chrome'
+  UUID=$(cat /proc/sys/kernel/random/uuid)
+  CHROMIUM='chrome-linux/chrome'
   ;;
 "Darwin")
-    UUID=$(uuidgen)
-    CHROMIUM='chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+  UUID=$(uuidgen)
+  CHROMIUM='chrome-mac/Chromium.app/Contents/MacOS/Chromium'
   ;;
 "MINGW64_NT")
-    # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
-    # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
-    CHROMIUM='chrome-win/chrome.exe'
+  # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
+  # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
+  CHROMIUM='chrome-win/chrome.exe'
   ;;
-  *)
-    echo 'current script no support !'
-    exit 0
+*)
+  echo 'current script no support !'
+  exit 0
   ;;
 esac
 
@@ -74,16 +73,15 @@ cd ${__PROJECT__}/var
 #扩展所在目录
 extensions=${__PROJECT__}/extension
 
-
-cat > run-chromium.sh <<EOF
+cat >run-chromium.sh <<EOF
 #!/usr/bin/env bash
 set -x
 ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --user-data-dir=$USER_DATA \
+  --proxy-pac-url="http://127.0.0.1:65530/proxy.pac" \
   --enable-remote-extensions \
   --enable-extensions \
   --load-extension="$extensions" \
-  --auto-open-devtools-for-tabs \
   --enable-logging=stderr --v=1 \
   --remote-debugging-port=9222 ${HEADLESS_MODE} \
   --disable-encryption --disable-machine-id \
@@ -91,10 +89,9 @@ ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   about:blank
 EOF
 
-
 bash run-chromium.sh
 
-
+exit 0
 
 # chrome://version
 # 全屏
@@ -110,18 +107,17 @@ bash run-chromium.sh
 # 使用 代理 方式三
 #--proxy-server="SOCKS5://127.0.0.1:2000"
 
-# --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+#  --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
 
 #  --flag-switches-begin \
 #  --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure,ProcessPerSiteUpToMainFrameThreshold \
 #  --enable-features=VaapiVideoDecodeLinuxGL \
 #  --enable-features=PlatformHEVCDecoderSupport \
 #  --flag-switches-end \
-# --disable-extensions-except=
+#  --disable-extensions-except=
+#  --auto-open-devtools-for-tabs
 
-
-
-:<<'EOF'
+: <<'EOF'
 
 MACOS  chrome 硬解 HEVC
 添加下面这个启动参数就可以了 open /Applications/Google\ Chrome.app --args --enable-features=PlatformHEVCDecoderSupport
@@ -131,7 +127,6 @@ EOF
 # webrtc 监测
 # chrome://webrtc-internals/
 
-
 # 浏览器使用pac代理
 # chromium  --proxy-pac-url="http://localhost:8000/proxy.pac"
 
@@ -140,7 +135,6 @@ EOF
 
 # 浏览器使用socks5代理
 # chromium --proxy-server="socks5://127.0.0.1:1080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
-
 
 # mac 上启动chromium
 # "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --flag-switches-begin --flag-switches-end -enable-logging=stderr --v=1

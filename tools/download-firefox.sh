@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -ex
 __DIR__=$(
@@ -13,13 +13,14 @@ __PROJECT__=$(
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
-      export HTTP_PROXY="$2"
-      export HTTPS_PROXY="$2"
-      export NO_PROXY="127.0.0.1,localhost,127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16,198.18.0.0/15,169.254.0.0/16"
-      export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com,.aliyuncs.com,.taobao.org,.tsinghua.edu.cn,.ustc.edu.cn,.aliyun.com"
+    export HTTP_PROXY="$2"
+    export HTTPS_PROXY="$2"
+    NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
+    NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
+    export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com"
     ;;
-  *)
-    ;;
+  *) ;;
+
   esac
   shift $(($# > 0 ? 1 : 0))
 done
@@ -45,13 +46,11 @@ cd ${__PROJECT__}/var/
 # firefox 114 支持 DNS over HTTPS ；WebTransport默认启用
 # https://www.mozilla.org/en-US/firefox/113.0/releasenotes/
 
-
-
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
-FIREFOX_VERSION=129.0b4
+FIREFOX_VERSION=129.0b9
 
 if [ -n "$1" ]; then
   FIREFOX_VERSION="$1"
@@ -89,7 +88,7 @@ case $OS in
 
   # 将应用程序拷贝到指定目录
   mkdir -p ${__PROJECT__}/var/firefox
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app  ${__PROJECT__}/var/firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app ${__PROJECT__}/var/firefox
   ls -lh ${__PROJECT__}/var/firefox/
 
   ;;
@@ -100,6 +99,3 @@ case $OS in
   curl -Lo firefox.exe ${DOWNLOAD_FIREFOX_URL}
   ;;
 esac
-
-
-

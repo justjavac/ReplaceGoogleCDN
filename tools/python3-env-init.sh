@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 __DIR__=$(
@@ -20,5 +20,4 @@ python3 -m venv venv
 
 cd ${__PROJECT__}/tools/
 
-pip3 install --upgrade -r  requirements.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple
-
+pip3 install --upgrade -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple

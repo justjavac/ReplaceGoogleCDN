@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! "$BASH_VERSION" ]; then
   echo "Please do not use BASH  to run this script ($0), just execute it directly" 1>&2
@@ -29,14 +29,14 @@ __PROJECT__=$(
 ## 下载命令例子：
 # bash  tools/download-chromium-extension.sh  --proxy http://127.0.0.1:8015
 
-
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
     export HTTP_PROXY="$2"
     export HTTPS_PROXY="$2"
-    export NO_PROXY="127.0.0.1,localhost,127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16,198.18.0.0/15,169.254.0.0/16"
-    export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com,.aliyuncs.com,.taobao.org,.tsinghua.edu.cn,.ustc.edu.cn,.aliyun.com"
+    NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
+    NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
+    export NO_PROXY="${NO_PROXY},localhost"
     ;;
   *) ;;
   esac
@@ -45,7 +45,6 @@ done
 
 mkdir -p chromium-extensions
 cd ${__PROJECT__}/var/chromium-extensions
-
 
 # Clear Site Data
 extension_id=aihgofjefdlhpnmeakpnjjeajofpcbhj
@@ -74,4 +73,3 @@ unzip -d ${file_name} "${file_name}.crx"
 set -e
 
 cd ${__PROJECT__}/var/chromium-extensions
-

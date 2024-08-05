@@ -21,11 +21,9 @@ echo ${__ROOT__}
 # 交互式
 # CHARSET=UTF-8 idn --punycode-encode
 
-
 old_punycode='_xn--3px_'
 
 new_punycode='_xn--fiq_'
-
 
 nums=$(grep -rl "$old_punycode" ${__ROOT__}/rules/example-advance/*.json | wc -l)
 

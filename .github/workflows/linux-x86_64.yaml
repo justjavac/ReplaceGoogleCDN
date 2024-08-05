@@ -12,7 +12,7 @@ jobs:
     if: 1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare Source Code
         run: |
           echo $PATH
@@ -55,7 +55,7 @@ jobs:
           sudo apt install -y supervisor socat
 
       - name: Cache Chromium
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             install-build-deps.py
@@ -78,7 +78,7 @@ jobs:
           fi
 
       - name: Cache Firefox
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/var/firefox.tar.bz2
@@ -97,7 +97,7 @@ jobs:
         shell: bash
         run: |
           ls -lha var/
-          var/chrome-linux/chrome --version 
+          var/chrome-linux/chrome --version
           var/firefox/firefox --version
 
       - name: Chromium Load Extension
@@ -106,7 +106,7 @@ jobs:
           # bash tools/chromium.sh --xvfb
           # bash tools/chromium.sh --headless
           nohup  bash tools/chromium.sh --xvfb  &
-          sleep 15 
+          sleep 15
           bash tools/chromium-auto-test.sh
 
       - name: Firefox Load Extension

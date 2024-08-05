@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -exu
 
 __DIR__=$(
@@ -16,7 +16,6 @@ if [ ! "$BASH_VERSION" ]; then
   exit 1
 fi
 
-
 # 使用代理下载源码
 # bash  update-library.sh --proxy http://127.0.0.1:1080
 
@@ -25,9 +24,9 @@ while [ $# -gt 0 ]; do
   --proxy)
     export HTTP_PROXY="$2"
     export HTTPS_PROXY="$2"
-    export NO_PROXY="127.0.0.1,localhost,127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16,198.18.0.0/15,169.254.0.0/16"
-    export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com,.aliyuncs.com,.taobao.org,.tsinghua.edu.cn,.ustc.edu.cn,.aliyun.com"
-    shift
+    NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
+    NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
+    export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com"
     ;;
   *) ;;
 

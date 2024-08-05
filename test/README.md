@@ -39,36 +39,3 @@ https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_block_req
 https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_redirect_extra.json?raw=true
 https://github.com/jingjingxyk/extension-v3-test/blob/main/rules/rules_remove_content_security_policy_header.json?raw=true
 ```
-
-## 扩展选项页，同步服务器端规则例子三 （覆盖静态默认规则候选项）
-
-> 载入规则，优先级高的规则生效
-
-```text
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/ajax.googleapis.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/cdn.jsdelivr.net.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/fonts.googleapis.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/themes.googleusercontent.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/code.jquery.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/fonts.gstatic.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/translate.googleapis.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/cdnjs.cloudflare.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/code.jquery.com-ui.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/gravatar.com.json?raw=true
-https://github.com/justjavac/ReplaceGoogleCDN/blob/master/extension/rules/mirrors/www.gstatic.com.json?raw=true
-
-
-# 镜像地址
-
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/ajax.googleapis.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/cdn.jsdelivr.net.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/fonts.googleapis.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/themes.googleusercontent.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/code.jquery.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/fonts.gstatic.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/translate.googleapis.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/cdnjs.cloudflare.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/code.jquery.com-ui.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/gravatar.com.json?raw=true
-https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN/rules/mirrors/www.gstatic.com.json?raw=true
-```

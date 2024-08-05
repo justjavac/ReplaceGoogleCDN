@@ -28,23 +28,25 @@ def set_manifest_data(manifest, key, value):
 
 
 def override_manifest(manifest):
-    with open(manifest_file_tmp, mode='w') as f:
+    os.makedirs(extension_tmp_dir, exist_ok=True)
+    with open(manifest_tmp_file, mode='w') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == '__main__':
     comment = '''
       用法：python3 tools/update-v3-manifest.py [ chromium | firefox ]
-      
+
       例子：( 默认为 firefox mainifest 配置)
 
       python3 tools/update-v3-manifest.py  firefox
-      
+
      '''
 
     project_dir = os.path.abspath(os.path.dirname(__file__) + '/../')
     manifest_file = project_dir + '/extension/manifest.json'
-    manifest_file_tmp = project_dir + '/var/extension-tmp/manifest.json'
+    extension_tmp_dir = project_dir + '/var/extension-tmp'
+    manifest_tmp_file = extension_tmp_dir + '/manifest.json'
     manifest_data = get_manifest_data()
 
     browser = 'firefox'
@@ -94,7 +96,7 @@ if __name__ == '__main__':
     firefox_specific_settings = '''
     {
         "gecko": {
-            "id": "zonghengbaihe521@qq.com",
+            "id": "{068d15a1-6080-4fa0-a616-2e6050c68bc7}",
             "strict_min_version": "120.0"
         }
     }

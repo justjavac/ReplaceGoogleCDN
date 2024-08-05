@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -exu
 
@@ -19,16 +19,16 @@ HEADLESS_MODE=''
 while [ $# -gt 0 ]; do
   case "$1" in
   --xvfb)
-      XVFB_COMMAND='xvfb-run --auto-servernum  -e /dev/stdout  -s "-terminate -screen 0 1920x1080x24" '
+    XVFB_COMMAND='xvfb-run --auto-servernum  -e /dev/stdout  -s "-terminate -screen 0 1920x1080x24" '
     ;;
   --xwfb)
-      XVFB_COMMAND='xwfb-run  '
+    XVFB_COMMAND='xwfb-run  '
     ;;
   --headless)
-      HEADLESS_MODE='-headless '
+    HEADLESS_MODE='-headless '
     ;;
-  *)
-    ;;
+  *) ;;
+
   esac
   shift $(($# > 0 ? 1 : 0))
 done
@@ -50,26 +50,29 @@ case $OS in
   FIREFOX='/Applications/Firefox.app/Contents/MacOS/firefox'
   # 自定义 启动目录
   FIREFOX="${__PROJECT__}/var/firefox/Firefox.app/Contents/MacOS/firefox"
- ;;
+  ;;
 'MINGW64_NT'* | 'MSYS_NT'*)
   # FIREFOX="C:\Program Files\Mozilla Firefox\firefox.exe"
   exit 0
   ;;
 *)
-    echo 'current script no support !'
-    exit 0
-;;
+  echo 'current script no support !'
+  exit 0
+  ;;
 esac
-
 
 profile_folder="/tmp/${UUID}"
 
 mkdir -p $profile_folder
 
-
 mkdir -p ${__PROJECT__}/var/
-cd ${__PROJECT__}/var/
 
+cd ${__PROJECT__}/
+# python3 ${__PROJECT__}/tools/update-manifest.py  firefox
+
+bash release-archive-v3.sh
+
+cd ${__PROJECT__}/var/
 
 # firefox web extension
 # https://github.com/mdn/webextensions-examples.git
@@ -88,13 +91,12 @@ cd ${__PROJECT__}/var/
 # 支持 ResourceType
 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType
 
-
 # 它使用 user.js 中的相应设置覆盖 prefs.js 中的任何设置。
 cp -f ${__PROJECT__}/tools/prefs.js $profile_folder
 
 # 启动firefox 实例
 
-cat > run-firefox.sh <<EOF
+cat >run-firefox.sh <<EOF
 #!/usr/bin/env bash
 set -x
 ${XVFB_COMMAND} ${FIREFOX} \
@@ -106,13 +108,10 @@ EOF
 
 bash run-firefox.sh
 
-
-
 # Firefox supports several remote protocols   https://firefox-source-docs.mozilla.org/remote/index.html
 # firefox 支持多种调试协议
 # -devtools \
 # -jsconsole \
-
 
 # 此命令已不可用
 # -install-global-extension  ${__ROOT__}/extension-v2 \
@@ -121,7 +120,6 @@ bash run-firefox.sh
 # 新版Firefox 允许通过 RDP（远程调试协议）安装插件
 # gecko-dev
 # https://github.com/mozilla/gecko-dev.git
-
 
 # CommandLineOptions
 # https://wiki.mozilla.org/Firefox/CommandLineOptions
