@@ -42,6 +42,7 @@ done
 # Download Chromium
 ## https://www.chromium.org/getting-involved/download-chromium/#downloading-old-builds-of-chrome-chromium
 ## https://commondatastorage.googleapis.com/chromium-browser-snapshots/
+## https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html
 
 ## LAST_CHANGE xml format
 LASTCHANGE_URL=https://commondatastorage.googleapis.com/chromium-browser-snapshots/

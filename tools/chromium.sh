@@ -78,7 +78,7 @@ cat >run-chromium.sh <<EOF
 set -x
 ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --user-data-dir=$USER_DATA \
-  --proxy-pac-url="http://127.0.0.1:65530/proxy.pac" \
+  --no-sandbox \
   --enable-remote-extensions \
   --enable-extensions \
   --load-extension="$extensions" \
@@ -87,8 +87,10 @@ ${XVFB_COMMAND} ${__PROJECT__}/var/${CHROMIUM} \
   --disable-encryption --disable-machine-id \
   --start-maximized \
   about:blank
+
 EOF
 
+#   --proxy-pac-url="http://127.0.0.1:65530/proxy.pac" \
 bash run-chromium.sh
 
 exit 0

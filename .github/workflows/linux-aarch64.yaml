@@ -1,4 +1,4 @@
-name: linux-x86_64
+name: linux-aarch64
 
 on:
   push:
@@ -8,9 +8,9 @@ env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
-  linux-x86_64:
-    if: 1
-    runs-on: ubuntu-latest
+  linux-aarch64:
+    if: 0
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
       - name: Prepare Source Code
