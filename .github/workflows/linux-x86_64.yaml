@@ -70,6 +70,9 @@ jobs:
           test -f install-build-deps.py || curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
           sudo python3 install-build-deps.py
           sudo apt install -y xserver-xorg-input-mouse  xserver-xorg-input-kbd
+          # 解决中文显示问题
+          sudo apt-get install -y locales fonts-wqy-zenhei
+          sudo localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
 
       - name: Download Chromium
         run: |
