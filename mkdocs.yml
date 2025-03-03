@@ -1,0 +1,7 @@
+theme:
+  name: material
+site_name: DOCS
+site_url: ""
+
+plugins:
+  - search
