@@ -8,9 +8,11 @@
     "chromium-test": "bash tools/chromium.sh"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.253",
-    "prettier": "^3.1.0",
-    "typescript": "^5.3.2",
-    "web-ext": "^7.9.0"
+    "@types/chrome": "^0.0.307",
+    "npm-check": "^6.0.1",
+    "pnpm": "^10.5.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "web-ext": "^8.4.0"
   }
 }

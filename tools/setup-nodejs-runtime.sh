@@ -51,9 +51,9 @@ case $ARCH in
   ;;
 esac
 
-APP_VERSION='v20.15.1'
+APP_VERSION='v22.14.0'
 APP_NAME='node'
-VERSION='v20.15.1'
+VERSION='v22.14.0'
 
 mkdir -p bin/runtime
 mkdir -p var/runtime
