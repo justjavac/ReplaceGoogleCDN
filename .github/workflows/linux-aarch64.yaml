@@ -1,0 +1,119 @@
+name: linux-aarch64
+
+on:
+  push:
+  pull_request:
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+jobs:
+  linux-aarch64:
+    if: 0
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Source Code
+        run: |
+          echo $PATH
+          env
+          docker info
+          id -u
+          id -g
+          who
+          cat /etc/os-release
+          hostnamectl
+          uname -s
+          uname -m
+          uname -r
+
+          cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+          cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+          cat /proc/cpuinfo | grep "cpu cores" | uniq
+          cat /proc/cpuinfo| grep "processor"| wc -l
+          lscpu
+
+          export IPV6=$(ip -6 address show  | grep inet6 | awk '{print $2}' | cut -d'/' -f1 | sed -n '2p')
+          export IPV4=$(ip -4 address show  | grep inet | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1 | sed -n '1p')
+          echo $IPV4
+          echo $IPV6
+          echo "X_IPV6=${IPV6}" >> $GITHUB_ENV
+          echo "X_IPV4=${IPV4}" >> $GITHUB_ENV
+
+          sudo apt install -y jq curl
+
+          echo ${{ env.BRANCH_NAME }}
+          echo ${{ github.actor }}
+          echo ${{ github.repository }}
+          echo ${{ github.repository_owner }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.ref_name }}
+
+          # sudo sed -i "s@security.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
+          # sudo sed -i "s@archive.ubuntu.com@azure.archive.ubuntu.com@g" /etc/apt/sources.list
+
+          sudo apt install -y supervisor socat
+
+      - name: Cache Chromium
+        uses: actions/cache@v4
+        with:
+          path: |
+            install-build-deps.py
+            ${{ github.workspace }}/var/chrome-linux.zip
+            ${{ github.workspace }}/var/chrome-linux
+          key: ${{ runner.os }}-x86_64-chromium
+
+      - name: Prepare Chromium Run Environment
+        run: |
+          set -x
+          # curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.sh?format=TEXT | base64 --decode > install-build-deps.sh
+          test -f install-build-deps.py || curl  https://chromium.googlesource.com/chromium/src/+/refs/heads/main/build/install-build-deps.py?format=TEXT | base64 --decode > install-build-deps.py
+          sudo python3 install-build-deps.py
+          # 解决中文显示问题
+          sudo apt-get install -y locales fonts-wqy-zenhei
+          sudo localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
+
+      - name: Download Chromium
+        run: |
+          set -x
+          if [ ! -f ${{ github.workspace }}/var/chrome-linux.zip ] ; then
+            bash tools/download-chromium.sh
+          fi
+
+      - name: Cache Firefox
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/var/firefox.tar.bz2
+            ${{ github.workspace }}/var/firefox/
+          key: ${{ runner.os }}-x86_64-firefox
+
+      - name: Download Firefox
+        shell: bash
+        run: |
+          set -x
+          if [ ! -f ${{ github.workspace }}/var/firefox.tar.bz2 ] ; then
+            bash tools/download-firefox.sh
+          fi
+
+      - name: show browser version
+        shell: bash
+        run: |
+          ls -lha var/
+          var/chrome-linux/chrome --version
+          var/firefox/firefox --version
+
+      - name: Chromium Load Extension
+        run: |
+          set -x
+          # bash tools/chromium.sh --xvfb
+          # bash tools/chromium.sh --headless
+          nohup  bash tools/chromium.sh --xvfb  &
+          sleep 15
+          bash tools/chromium-auto-test.sh
+
+      - name: Firefox Load Extension
+        run: |
+          set -x
+          # bash tools/firefox.sh --xvfb
+          # bash tools/firefox.sh --headless
