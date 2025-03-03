@@ -1,0 +1,15 @@
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+site_name: DOCS
+site_url: ""
+
+plugins:
+  - search

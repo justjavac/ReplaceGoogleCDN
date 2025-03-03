@@ -50,7 +50,7 @@ OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
 
-FIREFOX_VERSION=129.0b9
+FIREFOX_VERSION=136.0b9
 
 if [ -n "$1" ]; then
   FIREFOX_VERSION="$1"
