@@ -10,7 +10,7 @@ env:
 jobs:
   linux-aarch64:
     if: 0
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
       - name: Prepare Source Code
