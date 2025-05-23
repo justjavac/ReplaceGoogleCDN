@@ -17,7 +17,7 @@ if [ ! "$BASH_VERSION" ]; then
 fi
 
 # 使用代理下载源码
-# bash  update-library.sh --proxy http://127.0.0.1:1080
+# bash  upgrade-thirdparty-library.sh --proxy http://127.0.0.1:1080
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -45,10 +45,11 @@ mkdir -p ${VENDOR}/jingjingxyk/frontend-utils
 cp -f frontend-utils/utils.js ${VENDOR}/jingjingxyk/frontend-utils/utils.js
 
 cd ${__PROJECT__}/var/tmp/
-JSON_VERSION=v0.17.8
+JSON_VERSION=v3.3.1
 test -d svelte-jsoneditor/.git || git clone -b ${JSON_VERSION} https://github.com/josdejong/svelte-jsoneditor.git --depth=1 --progress
 
 cd svelte-jsoneditor
+export PATH=${__PROJECT__}/runtime/node/bin:$PATH
 npm install
 npm run build
 

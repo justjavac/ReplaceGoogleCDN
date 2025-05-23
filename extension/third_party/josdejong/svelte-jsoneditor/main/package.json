@@ -1,14 +1,13 @@
 {
   "name": "vanilla-jsoneditor",
   "description": "A web-based tool to view, edit, format, transform, and validate JSON",
-  "version": "0.17.8",
-  "homepage": "https://jsoneditoronline.org",
+  "version": "3.2.0",
+  "homepage": "https://github.com/josdejong/svelte-jsoneditor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/josdejong/svelte-jsoneditor.git"
+    "url": "git+https://github.com/josdejong/svelte-jsoneditor.git"
   },
   "type": "module",
-  "svelte": "./index.js",
   "module": "./index.js",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -16,21 +15,52 @@
   "license": "ISC",
   "exports": {
     ".": "./index.js",
+    "./index.d.ts": "./index.d.ts",
+    "./index.js": "./index.js",
+    "./themes/jse-theme-dark.css": "./themes/jse-theme-dark.css",
+    "./themes/jse-theme-default.css": "./themes/jse-theme-default.css",
     "./CHANGELOG.md": "./CHANGELOG.md",
     "./LICENSE.md": "./LICENSE.md",
     "./README.md": "./README.md",
     "./SECURITY.md": "./SECURITY.md",
-    "./index.d.ts": "./index.d.ts",
-    "./index.js": "./index.js",
     "./index.js.map": "./index.js.map",
-    "./themes/jse-theme-dark.css": "./themes/jse-theme-dark.css",
-    "./themes/jse-theme-default.css": "./themes/jse-theme-default.css",
-    "./package.json": "./package.json"
+    "./standalone.js": "./standalone.js",
+    "./standalone.js.map": "./standalone.js.map",
+    "./standalone.d.ts": "./standalone.d.ts"
   },
   "files": [
     "*"
   ],
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.18.1",
+    "@codemirror/commands": "^6.7.1",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/language": "^6.10.3",
+    "@codemirror/lint": "^6.8.2",
+    "@codemirror/search": "^6.5.6",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.34.1",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@jsonquerylang/jsonquery": "^3.1.1 || ^4.0.0",
+    "@lezer/highlight": "^1.2.1",
+    "@replit/codemirror-indentation-markers": "^6.5.3",
+    "ajv": "^8.17.1",
+    "codemirror-wrapped-line-indent": "^1.0.8",
+    "diff-sequences": "^29.6.3",
+    "immutable-json-patch": "^6.0.1",
+    "jmespath": "^0.16.0",
+    "json-source-map": "^0.6.1",
+    "jsonpath-plus": "^10.3.0",
+    "jsonrepair": "^3.0.0",
+    "lodash-es": "^4.17.21",
+    "memoize-one": "^6.0.0",
+    "natural-compare-lite": "^1.4.0",
+    "svelte": "^5.0.0",
+    "vanilla-picker": "^2.12.3"
+  },
+  "peerDependencies": {},
+  "devDependencies": {},
+  "browser": "./standalone.js"
 }

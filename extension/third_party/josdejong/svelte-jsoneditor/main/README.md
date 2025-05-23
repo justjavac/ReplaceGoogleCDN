@@ -2,7 +2,7 @@
 
 A web-based tool to view, edit, format, transform, and validate JSON.
 
-Try it out: https://jsoneditoronline.org
+Try it out: <https://jsoneditoronline.org>
 
 This is the vanilla variant of `svelte-jsoneditor`, which can be used in vanilla JavaScript or frameworks like SolidJS, React, Vue, Angular.
 
@@ -30,12 +30,30 @@ Install using npm:
 npm install vanilla-jsoneditor
 ```
 
-Remark: for usage in a Svelte project, install `svelte-jsoneditor` instead.
+Remark: for usage in a Svelte project, install and use `svelte-jsoneditor` instead of `vanilla-jsoneditor`.
 
-## Use (Browser example loading the ES module):
+## Use
+
+If you have a setup for your project with a bundler (like Vite, Rollup, or Webpack), it is best to use the default ES import:
+
+```ts
+// for use in a React, Vue, or Angular project
+import { createJSONEditor } from 'vanilla-jsoneditor'
+```
+
+If you want to use the library straight in the browser, use the provided standalone ES bundle:
+
+```ts
+// for use directly in the browser
+import { createJSONEditor } from 'vanilla-jsoneditor/standalone.js'
+```
+
+The standalone bundle contains all dependencies of `vanilla-jsoneditor`, for example `lodash-es` and `Ajv`. If you use some of these dependencies in your project too, it means that they will be bundled twice in your web application, leading to a needlessly large application size. In general, it is preferable to use the default `import { createJSONEditor } from 'vanilla-jsoneditor'` so dependencies can be reused.
+
+## Use (Browser example loading the ES module)
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>JSONEditor</title>
@@ -44,11 +62,11 @@ Remark: for usage in a Svelte project, install `svelte-jsoneditor` instead.
     <div id="jsoneditor"></div>
 
     <script type="module">
-      import { JSONEditor } from 'vanilla-jsoneditor'
+      import { createJSONEditor } from 'vanilla-jsoneditor/standalone.js'
 
       // Or use it through a CDN (not recommended for use in production):
-      // import { JSONEditor } from 'https://unpkg.com/vanilla-jsoneditor/index.js'
-      // import { JSONEditor } from 'https://cdn.jsdelivr.net/npm/vanilla-jsoneditor/index.js'
+      // import { createJSONEditor } from 'https://unpkg.com/vanilla-jsoneditor/index.js'
+      // import { createJSONEditor } from 'https://cdn.jsdelivr.net/npm/vanilla-jsoneditor/index.js'
 
       let content = {
         text: undefined,
@@ -57,7 +75,7 @@ Remark: for usage in a Svelte project, install `svelte-jsoneditor` instead.
         }
       }
 
-      const editor = new JSONEditor({
+      const editor = createJSONEditor({
         target: document.getElementById('jsoneditor'),
         props: {
           content,
@@ -82,14 +100,14 @@ Remark: for usage in a Svelte project, install `svelte-jsoneditor` instead.
 
 Depending on whether you are using JavaScript of TypeScript, create either a JSX or TSX file:
 
-### TypeScript:
+### TypeScript
 
-```typescript
+```tsx
 //
 // JSONEditorReact.tsx
 //
 import { useEffect, useRef } from 'react'
-import { JSONEditor, JSONEditorPropsOptional } from 'vanilla-jsoneditor'
+import { createJSONEditor, JSONEditorPropsOptional } from 'vanilla-jsoneditor'
 
 const JSONEditorReact: React.FC<JSONEditorPropsOptional> = (props) => {
   const refContainer = useRef<HTMLDivElement>(null)
@@ -97,7 +115,7 @@ const JSONEditorReact: React.FC<JSONEditorPropsOptional> = (props) => {
 
   useEffect(() => {
     // create editor
-    refEditor.current = new JSONEditor({
+    refEditor.current = createJSONEditor({
       target: refContainer.current!,
       props: {}
     })
@@ -118,7 +136,7 @@ const JSONEditorReact: React.FC<JSONEditorPropsOptional> = (props) => {
     }
   }, [props])
 
-  return <div ref={refContainer} />
+  return <div ref={refContainer}></div>
 }
 
 export default JSONEditorReact
@@ -126,7 +144,7 @@ export default JSONEditorReact
 
 ### JavaScript
 
-```javascript
+```jsx
 //
 // JSONEditorReact.jsx
 //
@@ -139,7 +157,7 @@ const JSONEditorReact = (props) => {
 
   useEffect(() => {
     // create editor
-    refEditor.current = new JSONEditor({
+    refEditor.current = createJSONEditor({
       target: refContainer.current,
       props: {}
     })
@@ -160,7 +178,7 @@ const JSONEditorReact = (props) => {
     }
   }, [props])
 
-  return <div ref={refContainer} />
+  return <div ref={refContainer}></div>
 }
 
 export default JSONEditorReact
@@ -172,7 +190,7 @@ If you are using NextJS, you will need to use a dynamic import to only render th
 
 If you are using React in an conventional non-NextJS browser app, you can import the component using a standard import statement like `import JSONEditorReact from '../JSONEditorReact'`
 
-```typescript
+```tsx
 //
 // demo.tsx for use with NextJS
 //
@@ -228,7 +246,7 @@ export default function Demo() {
 }
 ```
 
-```typescript
+```tsx
 //
 // TextContent.tsx
 //
