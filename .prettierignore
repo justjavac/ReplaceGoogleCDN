@@ -11,3 +11,4 @@ extension/manifest-backup.json
 tools/web/proxy.pac
 dist
 var
+.venv

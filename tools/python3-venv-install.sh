@@ -14,10 +14,10 @@ __PROJECT__=$(
 mkdir -p ${__PROJECT__}/var/
 cd ${__PROJECT__}/var/
 
-python3 -m venv venv
-
-. venv/bin/activate
+pip3 install uv -i https://pypi.tuna.tsinghua.edu.cn/simple
+uv venv --python 3.13
+. .venv/bin/activate
 
 cd ${__PROJECT__}/tools/
 
-pip3 install --upgrade -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+uv pip install --upgrade -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple

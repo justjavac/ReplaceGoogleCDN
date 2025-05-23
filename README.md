@@ -20,8 +20,8 @@
 
 > 借助浏览器提供的API，实现请求地址重定向。
 >
-> -   [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
-> -   [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
+> - [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
+> - [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 >
 > 默认未启用的规则, （双击扩展图标，进入扩展选项页面，可调整替换地址）
 
@@ -53,8 +53,8 @@
 
 ## 功能变更记录
 
--   v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
--   v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
+- v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
+- v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
 
 ## 效果
 
@@ -106,9 +106,9 @@ bash release-archive-v3.sh
 
 ### 在线安装
 
--   [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
--   [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
--   [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
+- [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
+- [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
+- [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
 
 ### 手动安装：
 
@@ -125,20 +125,16 @@ Chrome 安装方法（Google 被墙了上不去）：
 
 ### 扩展下载方式三(来自国内镜像)
 
-克隆源代码以后，步骤如上：:point_up_2: :point_up_2: :point_up_2:
+克隆源代码以后，步骤如上：🔼
 
-1. [ReplaceGoogleCDN gitee 镜像](https://gitee.com/mirrors/replacegooglecdn)
-1. [ReplaceGoogleCDN gitcode 镜像](https://gitcode.com/mirrors/justjavac/replacegooglecdn.git)
+1. [ReplaceGoogleCDN gitee 镜像](https://gitee.com/jingjingxyk/ReplaceGoogleCDN.git)
 
 ```bash
 # 克隆源代码
-git clone -b master https://gitee.com/mirrors/replacegooglecdn.git --depth=1 --progress
-
-# 或者
-git clone -b master https://gitcode.com/mirrors/justjavac/replacegooglecdn.git --depth=1 --progress
+git clone -b master https://gitee.com/jingjingxyk/ReplaceGoogleCDN.git --depth=1 --progress
 
 # 更新源代码
-git -C replacegooglecdn pull --depth=1 --progress --rebase
+git -C replacegooglecdn pull --depth=1 --progress 
 ```
 
 ### 扩展下载方式四
@@ -167,7 +163,7 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ## 文档
 
--   [declarative_net_reques 规则配置示例](extension/rules/README.md)
--   [测试用例](test/README.md)
--   [公共 CDN 静态资源库](public-cdn.md)
--   [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)
+- [declarative_net_reques 规则配置示例](extension/rules/README.md)
+- [测试用例](test/README.md)
+- [公共 CDN 静态资源库](public-cdn.md)
+- [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)

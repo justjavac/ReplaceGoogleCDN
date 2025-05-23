@@ -18,4 +18,4 @@ tools/blocked-domain.py
 tools/web/proxy.pac
 dist
 var
-bin
+runtime

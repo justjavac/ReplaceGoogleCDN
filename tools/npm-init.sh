@@ -12,18 +12,43 @@ __PROJECT__=$(readlink -f ${__DIR__}/../)
 
 cd ${__PROJECT__}
 
-if [[ ! -f ${__PROJECT__}/bin/runtime/node/bin/node ]]; then
-  bash tools/setup-nodejs-runtime.sh --mirror china
+MIRROR=''
+UPGRADE=0
+while [ $# -gt 0 ]; do
+  case "$1" in
+  --mirror)
+    MIRROR="$2"
+    ;;
+  --upgrade)
+    UPGRADE=1
+    ;;
+  *) ;;
+
+  esac
+  shift $(($# > 0 ? 1 : 0))
+done
+
+if [[ ! -f ${__PROJECT__}/runtime/node/bin/node ]]; then
+  if [[ "$MIRROR" == "china" ]]; then
+    bash tools/setup-nodejs-runtime.sh --mirror china
+  else
+    bash tools/setup-nodejs-runtime.sh
+  fi
+
 fi
 
-export PATH=${__PROJECT__}/bin/runtime/node/bin:$PATH
+export PATH=${__PROJECT__}/runtime/node/bin:$PATH
 
-# npm install pnpm npm-check -save-dev --registry=https://registry.npmmirror.com
+if [[ "$MIRROR" == "china" ]]; then
+  npm install -d --registry=https://registry.npmmirror.com
+else
+  npm install -d
+fi
 
-npx pnpm install --registry=https://registry.npmmirror.com
-
-exit 0
-
-# npm install pnpm npm-check --dev --registry=https://registry.npmmirror.com
-
-npx npm-check-updates -u
+if [[ $UPGRADE -eq 1 ]]; then
+  if [[ "$MIRROR" == "china" ]]; then
+    npx npm-check-updates -u
+  else
+    npx npm-check-updates -u
+  fi
+fi
