@@ -7,7 +7,6 @@ let showStaticRules = () => {
   let list_box = document.querySelector(".rule_static_set_list");
   let list = "";
   mainifest.declarative_net_request.rule_resources.map((value, index) => {
-    console.log(value)
     if (value.enabled) {
       list += `<li data-rule-id="${value.id}">${value.id}</li>`;
     }
