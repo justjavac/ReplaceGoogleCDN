@@ -4,6 +4,7 @@ import {
   showDynamicRules,
   bindDynamicRuleEventListener
 } from "./showDynamicRules.js";
+
 import {
   showStaticRules,
   bindStaticRuleEventListener

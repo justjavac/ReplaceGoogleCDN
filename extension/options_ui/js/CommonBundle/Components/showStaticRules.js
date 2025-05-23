@@ -1,18 +1,17 @@
 let showStaticRules = () => {
   //静态规则集，也就是manifest.json 配置信息
-  chrome.declarativeNetRequest.getEnabledRulesets((rulesetIds) => {
-    //console.log(rulesetIds);
-    /*
-          let mainifest=chrome.runtime.getManifest()
-          console.log(mainifest.declarative_net_request.rule_resources)
-         */
-    let list_box = document.querySelector(".rule_static_set_list");
-    let list = "";
-    rulesetIds.map((value, index) => {
-      list += `<li data-rule-id="${value}">${value}</li>`;
-    });
-    list_box.innerHTML = list;
+
+  let mainifest = chrome.runtime.getManifest()
+  //console.log(mainifest.declarative_net_request.rule_resources)
+
+  let list_box = document.querySelector(".rule_static_set_list");
+  let list = "";
+  mainifest.declarative_net_request.rule_resources.map((value, index) => {
+    console.log(value)
+    list += `<li data-rule-id="${value.id}">${value.id}</li>`;
   });
+  list_box.innerHTML = list;
+
 };
 
 let showManifestRuleJSON = (rule) => {
@@ -59,4 +58,4 @@ let bindStaticRuleEventListener = () => {
     });
 };
 
-export { showStaticRules, bindStaticRuleEventListener };
+export {showStaticRules, bindStaticRuleEventListener};
