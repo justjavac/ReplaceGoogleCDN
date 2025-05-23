@@ -1,0 +1,202 @@
+$theme: var(--jse-theme, light);
+
+/* over all fonts, sizes, and colors */
+$font-family: var(
+  --jse-font-family,
+  (
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    sans-serif
+  )
+);
+/* "consolas" for Windows, "menlo" for Mac with fallback to "monaco", 'Ubuntu Mono' for Ubuntu */
+/* (at Mac this font looks too large at 14px, but 13px is too small for the font on Windows) */
+$font-family-mono: var(
+  --jse-font-family-mono,
+  (consolas, menlo, monaco, 'Ubuntu Mono', 'source-code-pro', monospace)
+);
+
+$font-size-mono: var(--jse-font-size-mono, 14px);
+
+$black: #4d4d4d;
+$white: #fff;
+
+$font-size: var(--jse-font-size, 16px);
+$font-size-main-menu: var(--jse-font-size-main-menu, 14px);
+$font-size-text-mode-search: var(--jse-font-size-text-mode-search, 80%);
+$line-height: var(--jse-line-height, calc(1em + 4px));
+$indent-size: var(--jse-indent-size, calc(1em + 4px));
+$color-picker-button-size: var(--jse-color-picker-button-size, 1em);
+$padding: var(--jse-padding, 10px);
+$theme-color: var(--jse-theme-color, #3883fa);
+$theme-color-highlight: var(--jse-theme-color-highlight, #5f9dff);
+$background-color: var(--jse-background-color, $white);
+$text-color: var(--jse-text-color, $black);
+$text-readonly: var(--jse-text-readonly, #8d8d8d);
+$text-color-inverse: var(--jse-text-color-inverse, $white);
+$error-color: var(--jse-error-color, #ee5341);
+$warning-color: var(--jse-warning-color, #fdc539);
+$info-color: var(--jse-info-color, #4f91ff);
+
+/* main, menu, modal */
+$main-border: var(--jse-main-border, (1px solid #d7d7d7));
+$menu-color: var(--jse-menu-color, $text-color-inverse);
+$menu-button-size: var(--jse-menu-button-size, 32px);
+$modal-background: var(--jse-modal-background, #f5f5f5);
+$modal-overlay-background: var(--jse-overlay-background, rgba(0, 0, 0, 0.3));
+$modal-code-background: var(--jse-modal-code-background, rgba(0, 0, 0, 0.05));
+
+/* jsoneditor modal */
+$modal-editor-theme-color: var(--jse-modal-editor-theme-color, #707070);
+$modal-editor-theme-color-highlight: var(--jse-modal-editor-theme-color-highlight, #646464);
+
+/* tooltip in text mode */
+$tooltip-color: var(--jse-tooltip-color, $text-color);
+$tooltip-background: var(--jse-tooltip-background, $modal-background);
+$tooltip-border: var(--jse-tooltip-border, $main-border);
+$tooltip-action-button-color: var(--jse-tooltip-action-button-color, $text-color-inverse);
+$tooltip-action-button-background: var(--jse-tooltip-action-button-background, $black);
+
+/* panels: navigation bar, gutter, search box */
+$panel-background: var(--jse-panel-background, #ebebeb);
+$panel-color: var(--jse-panel-color, $text-color);
+$panel-color-readonly: var(--jse-panel-color-readonly, #b2b2b2);
+$panel-border: var(--jse-panel-border, $main-border);
+
+$panel-button-color: var(--jse-panel-button-color, inherit);
+$panel-button-background: var(--jse-panel-button-background, transparent);
+$panel-button-color-highlight: var(--panel-button-color-highlight, $text-color);
+$panel-button-background-highlight: var(--jse-panel-button-background-highlight, #e0e0e0);
+
+/* navigation-bar */
+$navigation-bar-background: var(--jse-navigation-bar-background, $background-color);
+$navigation-bar-background-highlight: var(--jse-navigation-bar-background-highlight, #e5e5e5);
+$navigation-bar-dropdown-color: var(--jse-navigation-bar-dropdown-color, #656565);
+
+/* context menu */
+$context-menu-background: var(--jse-context-menu-background, #656565);
+$context-menu-background-highlight: var(--jse-context-menu-background-highlight, #7a7a7a);
+$context-menu-color: var(--jse-context-menu-color, $text-color-inverse);
+$context-menu-color-disabled: var(--jse-context-menu-color-disabled, #9d9d9d);
+$context-menu-separator-color: var(--jse-context-menu-separator-color, #7a7a7a);
+$context-menu-pointer-hover-background: var(--jse-context-menu-pointer-hover-background, #b2b2b2);
+$context-menu-pointer-background: var(
+  --jse-context-menu-pointer-background,
+  $context-menu-background
+);
+$context-menu-pointer-background-highlight: var(
+  --jse-context-menu-pointer-background-highlight,
+  $context-menu-background-highlight
+);
+$context-menu-pointer-color: var(--jse-context-menu-pointer-color, $context-menu-color);
+$context-menu-pointer-size: var(--jse-context-menu-pointer-size, calc(1em + 4px));
+$context-menu-tip-background: var(--jse-context-menu-tip-background, rgba(255, 255, 255, 0.2));
+
+$context-menu-tip-color: var(--context-menu-tip-color, inherit);
+
+/* contents: json key and values */
+$key-color: var(--jse-key-color, #1a1a1a);
+$value-color: var(--jse-value-color, #1a1a1a);
+$value-color-number: var(--jse-value-color-number, #ee422e);
+$value-color-boolean: var(--jse-value-color-boolean, #ff8c00);
+$value-color-null: var(--jse-value-color-null, #004ed0);
+$value-color-string: var(--jse-value-color-string, #008000);
+$value-color-url: var(--jse-value-color-url, #008000);
+$delimiter-color: var(--jse-delimiter-color, rgba(0, 0, 0, 0.38));
+$edit-outline: var(--jse-edit-outline, (2px solid #656565));
+
+/* contents: selected or hovered */
+$contents-background-color: var(--jse-contents-background-color, transparent);
+$contents-cursor: var(--jse-contents-cursor, pointer);
+$contents-selected-cursor: var(--jse-contents-selected-cursor, grab);
+$selection-background-color: var(--jse-selection-background-color, #d3d3d3);
+$selection-background-inactive-color: var(--jse-selection-background-inactive-color, #e8e8e8);
+$hover-background-color: var(--jse-hover-background-color, rgba(0, 0, 0, 0.06));
+$active-line-background-color: var(--jse-active-line-background-color, rgba(0, 0, 0, 0.06));
+$search-match-background-color: var(--jse-search-match-background-color, #99ff7780);
+
+/* contents: section of collapsed items in an array */
+$collapsed-items-background-color: var(--jse-collapsed-items-background-color, #f5f5f5);
+$collapsed-items-selected-background-color: var(
+  --jse-collapsed-items-selected-background-color,
+  #c2c2c2
+);
+$collapsed-items-link-color: var(--jse-collapsed-items-link-color, rgba(0, 0, 0, 0.38));
+$collapsed-items-link-color-highlight: var(--jse-collapsed-items-link-color-highlight, #ee5341);
+
+/* contents: highlighting of search matches */
+$search-match-color: var(--jse-search-match-color, #ffe665);
+$search-match-outline: var(--jse-search-match-outline, none);
+$search-match-active-color: var(--jse-search-match-active-color, $search-match-color);
+$search-match-active-outline: var(--jse-search-match-outline, (2px solid #e0be00));
+
+/* contents: inline tags inside the JSON document */
+$tag-background: var(--jse-tag-background, rgba(0, 0, 0, 0.2));
+$tag-color: var(--jse-tag-color, $text-color-inverse);
+
+/* contents: table */
+$table-header-background: var(--jse-table-header-background, #f5f5f5);
+$table-header-background-highlight: var(--jse-table-header-background-highlight, #e8e8e8);
+$table-row-odd-background: var(--jse-table-row-odd-background, rgba(0, 0, 0, 0.05));
+
+/* controls in modals: inputs, buttons, and `a` */
+$controls-box-shadow: var(--jse-controls-box-shadow, (0 2px 6px 0 rgba(0, 0, 0, 0.24)));
+$input-background: var(--jse-input-background, $background-color);
+$input-background-readonly: var(--jse-input-background-readonly, transparent);
+$input-color: var(--jse-input-color, $text-color);
+$input-border: var(--jse-input-border, (1px solid #d8dbdf));
+$input-border-focus: var(
+  --jse-input-border-focus,
+  1px solid var(--jse-input-border-focus, $theme-color)
+);
+$input-radius: var(--jse-input-radius, 3px);
+$button-background: var(--jse-button-background, #e0e0e0);
+$button-background-highlight: var(--jse-button-background-highlight, #e7e7e7);
+$button-color: var(--jse-button-color, $text-color);
+$button-primary-background: var(--jse-button-primary-background, $theme-color);
+$button-primary-background-highlight: var(
+  --jse-button-primary-background-highlight,
+  $theme-color-highlight
+);
+$button-primary-background-disabled: var(--jse-button-primary-background-disabled, #9d9d9d);
+$button-primary-color: var(--jse-button-primary-color, $white);
+$button-secondary-background: var(--jse-button-secondary-background, #d3d3d3);
+$button-secondary-background-highlight: var(--jse-button-secondary-background-highlight, #e1e1e1);
+$button-secondary-background-disabled: var(--jse-button-secondary-background-disabled, #9d9d9d);
+$button-secondary-color: var(--jse-button-secondary-color, $text-color);
+$a-color: var(--jse-a-color, #156fc5);
+$a-color-highlight: var(--jse-a-color-highlight, #0f508d);
+
+/* messages */
+$message-error-background: var(--jse-message-error-background, $error-color);
+$message-error-color: var(--jse-message-error-color, $white);
+$message-warning-background: var(--jse-message-warning-background, #ffde5c);
+$message-warning-color: var(--jse-message-warning-color, $black);
+$message-success-background: var(--message-success-background, #9ac45d);
+$message-success-color: var(--jse-message-success-color, $white);
+$message-info-background: var(--jse-message-info-background, #4f91ff);
+$message-info-color: var(--jse-message-info-color, $white);
+$message-action-background: var(--jse-message-action-background, rgba(255, 255, 255, 0.2));
+$message-action-background-highlight: var(
+  --jse-message-action-background-highlight,
+  rgba(255, 255, 255, 0.3)
+);
+
+/* svelte-select */
+$svelte-select-item-is-active-bg: var(--jse-item-is-active-bg, #3883fa);
+$svelte-select-border: var(--jse-svelte-select-border, (1px solid #d8dbdf));
+$svelte-select-border-radius: var(--jse-svelte-select-border-radius, 3px);
+$svelte-select-background: var(--jse-svelte-select-background, $white);
+$svelte-select-padding: var(--jse-svelte-select-padding, (0 10px));
+$svelte-select-font-size: var(--jse-svelte-select-font-size, $font-size);
+$svelte-select-multi-select-padding: var(--jse-svelte-select-multi-select-padding, (0 10px));
+
+/* color picker */
+$color-picker-background: var(--jse-color-picker-background, $panel-background);
+$color-picker-border-box-shadow: var(--jse-color-picker-border-box-shadow, (#cbcbcb 0 0 0 1px));

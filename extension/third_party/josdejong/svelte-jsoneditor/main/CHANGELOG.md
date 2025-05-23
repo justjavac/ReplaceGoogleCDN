@@ -2,6 +2,697 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+> WARNING: This changelog is no longer updated since `v3.3.0`. Please use the [GitHub Releases](https://github.com/josdejong/svelte-jsoneditor/releases) overview instead.
+
+## [3.2.0](https://github.com/josdejong/svelte-jsoneditor/compare/v3.1.1...v3.2.0) (2025-03-26)
+
+
+### Features
+
+* [#529](https://github.com/josdejong/svelte-jsoneditor/issues/529) extract nested arrays in table mode ([592c6bc](https://github.com/josdejong/svelte-jsoneditor/commit/592c6bc3617fd30f98cc411f207c3308c7bf753a))
+* [#537](https://github.com/josdejong/svelte-jsoneditor/issues/537) truncate large strings ([#538](https://github.com/josdejong/svelte-jsoneditor/issues/538)) ([160a940](https://github.com/josdejong/svelte-jsoneditor/commit/160a94079b6bea2f5697902f927cd9a4c0fa1c64))
+
+
+### Bug Fixes
+
+* show the file sizes in KB (see [#537](https://github.com/josdejong/svelte-jsoneditor/issues/537)) ([216b709](https://github.com/josdejong/svelte-jsoneditor/commit/216b7091c583bcb0209d891a395db5e53707a29f))
+
+### [3.1.1](https://github.com/josdejong/svelte-jsoneditor/compare/v3.1.0...v3.1.1) (2025-03-19)
+
+
+### Bug Fixes
+
+* document that v3 requires Svelte 5 (see [#499](https://github.com/josdejong/svelte-jsoneditor/issues/499)) ([9158dbf](https://github.com/josdejong/svelte-jsoneditor/commit/9158dbf3bc1ff8fb6aa6c02a1a54bbbeb1c6acbe))
+
+## [3.1.0](https://github.com/josdejong/svelte-jsoneditor/compare/v3.0.0...v3.1.0) (2025-03-12)
+
+
+### Features
+
+* implement `createAjvValidatorAsync` ([#522](https://github.com/josdejong/svelte-jsoneditor/issues/522)) ([24cea1a](https://github.com/josdejong/svelte-jsoneditor/commit/24cea1ad98c0943f69ba144f389235783c64397b))
+* update dependencies ([b267409](https://github.com/josdejong/svelte-jsoneditor/commit/b2674095672dda27baf00decbb785bb6aab55016))
+
+## [3.0.0](https://github.com/josdejong/svelte-jsoneditor/compare/v2.4.0...v3.0.0) (2025-02-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* Dropped support for Svelte 3 and 4, the library requires Svelte 5 now.
+* Dropped support for `jsonpath-plus` v9.
+* most public methods changed from asynchronous to synchronous.
+
+### Features
+
+* Change methods `set`, `update`, `patch`, `select`, `expand`, `collapse`, `acceptAutoRepair`, `focus`, `updateProps` from asynchronous to synchronous, fixing [#499](https://github.com/josdejong/svelte-jsoneditor/issues/499) ([#524](https://github.com/josdejong/svelte-jsoneditor/issues/524)) ([6dd69cd](https://github.com/josdejong/svelte-jsoneditor/commit/6dd69cdd5e2d7e4b6591d8cd032f50cf89e83693))
+
+
+### Bug Fixes
+
+* [#512](https://github.com/josdejong/svelte-jsoneditor/issues/512) prevent browser addons from reacting to keydown events like shift+arrow down ([eef40ad](https://github.com/josdejong/svelte-jsoneditor/commit/eef40add45f58ac30641863891a82349d07ec600))
+* [#518](https://github.com/josdejong/svelte-jsoneditor/issues/518) convert all Svelte examples to Svelte 5 ([0c3f3ae](https://github.com/josdejong/svelte-jsoneditor/commit/0c3f3ae09a7744ede3e5d999ceb36fc92d56d934))
+* upgrade to the latest version of `jsonpath-plus`, fixing a security vulnerability ([#523](https://github.com/josdejong/svelte-jsoneditor/issues/523)) ([393c76b](https://github.com/josdejong/svelte-jsoneditor/commit/393c76b1dc96cfcc801a8f470a863bed7d866d54))
+
+## [2.4.0](https://github.com/josdejong/svelte-jsoneditor/compare/v2.3.3...v2.4.0) (2025-02-13)
+
+
+### Features
+
+* enable pasting via the context menu in `tree` and `table` mode ([6c12e3b](https://github.com/josdejong/svelte-jsoneditor/commit/6c12e3beee568bf7091c1d31e024f68a17a078d6))
+
+### [2.3.3](https://github.com/josdejong/svelte-jsoneditor/compare/v2.3.2...v2.3.3) (2024-12-11)
+
+
+### Bug Fixes
+
+* esm-env warning in vanilla-jsoneditor bundle ([#507](https://github.com/josdejong/svelte-jsoneditor/issues/507)) ([11daf16](https://github.com/josdejong/svelte-jsoneditor/commit/11daf16b63715e068b7aad430f6c17a086608e06))
+* suppress `[svelte] reactive_declaration_non_reactive_property` warnings during development ([5e05768](https://github.com/josdejong/svelte-jsoneditor/commit/5e0576890fa7fd0b5b4c38e33c128a3c4a23ad8b))
+
+### [2.3.2](https://github.com/josdejong/svelte-jsoneditor/compare/v2.3.1...v2.3.2) (2024-12-05)
+
+
+### Bug Fixes
+
+* [#506](https://github.com/josdejong/svelte-jsoneditor/issues/506) modal closing when the mouse ends outside it after selecting text in Chrome ([bbb7d83](https://github.com/josdejong/svelte-jsoneditor/commit/bbb7d833e1a31dc7dbb16ea6ce33b0bc4f6439d6))
+* update dependencies ([1df771f](https://github.com/josdejong/svelte-jsoneditor/commit/1df771fddabcbdc5b68e335d1115ea00a6ad725a))
+
+### [2.3.1](https://github.com/josdejong/svelte-jsoneditor/compare/v2.3.0...v2.3.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* no history being created when clicking action buttons such as format and compact ([a8c329c](https://github.com/josdejong/svelte-jsoneditor/commit/a8c329c95e59d8be1b3847ad4d65a46d99e6422a))
+
+## [2.3.0](https://github.com/josdejong/svelte-jsoneditor/compare/v2.2.1...v2.3.0) (2024-11-27)
+
+
+### Features
+
+* update dependencies (most notably `jsonrepair`) ([d84c394](https://github.com/josdejong/svelte-jsoneditor/commit/d84c394d4851cc5ab0a6fecba4bcc502aba6b60e))
+
+### [2.2.1](https://github.com/josdejong/svelte-jsoneditor/compare/v2.2.0...v2.2.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* flush any pending changes before undo/redo ([81783f4](https://github.com/josdejong/svelte-jsoneditor/commit/81783f493f84271f8d924ec64f7e9a012c0d6ac6))
+
+## [2.2.0](https://github.com/josdejong/svelte-jsoneditor/compare/v2.1.0...v2.2.0) (2024-11-26)
+
+
+### Features
+
+* keep history when switching mode ([#504](https://github.com/josdejong/svelte-jsoneditor/issues/504)) ([b5f11ca](https://github.com/josdejong/svelte-jsoneditor/commit/b5f11ca25bd027eeda5f1147afa528f66fc41077))
+
+## [2.1.0](https://github.com/josdejong/svelte-jsoneditor/compare/v2.0.2...v2.1.0) (2024-11-20)
+
+
+### Features
+
+* implement quick key Ctrl+D to duplicate the current row in table mode ([deef105](https://github.com/josdejong/svelte-jsoneditor/commit/deef10559ccea536f8b4f0b3931d4a29b315181d))
+
+
+### Bug Fixes
+
+* exclude the `sass` dependency from the vanilla package ([e3bcddb](https://github.com/josdejong/svelte-jsoneditor/commit/e3bcddb16c6c6a16e3d0f1484f74404a41176429))
+* update dependencies (`jsonpath-plus`, `@jsonquerylang/jsonquery` and others) ([b69e9bf](https://github.com/josdejong/svelte-jsoneditor/commit/b69e9bf1c96af8473b0806f406f46dac73f975fc))
+
+### [2.0.2](https://github.com/josdejong/svelte-jsoneditor/compare/v2.0.1...v2.0.2) (2024-11-05)
+
+
+### Bug Fixes
+
+* cannot sort a nested object inside an array ([5ebe9fc](https://github.com/josdejong/svelte-jsoneditor/commit/5ebe9fc827e4d83f5694e9799bc71902f8ef0a39))
+* more efficient patch operation for the undo action of moving an item inside an object ([187e994](https://github.com/josdejong/svelte-jsoneditor/commit/187e994ba2eddf869a85b3bd2f6db70aed7e16ae))
+* only expand JSON after sort, transform and expand when isn't expanded already ([5d84af0](https://github.com/josdejong/svelte-jsoneditor/commit/5d84af035b8981cf51f1b4d7e66b5d90621f5692))
+* performance issue of sorting the keys of large objects ([3708998](https://github.com/josdejong/svelte-jsoneditor/commit/370899889b4bbf046aa765f25f428377eae36819))
+
+### [2.0.1](https://github.com/josdejong/svelte-jsoneditor/compare/v2.0.0...v2.0.1) (2024-11-01)
+
+
+### Bug Fixes
+
+* [#498](https://github.com/josdejong/svelte-jsoneditor/issues/498) pressing enter when editing a value submits form ([e8c814f](https://github.com/josdejong/svelte-jsoneditor/commit/e8c814f4f36ca15dc50004ca2927edd5723312c2))
+
+## [2.0.0](https://github.com/josdejong/svelte-jsoneditor/compare/v1.1.2...v2.0.0) (2024-10-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* The library is upgraded to Svelte 5. Everything is backward compatible and works in Svelte 3, 4, and 5. There may be subtle breaking changes in specific edge cases though, hence the release as a new major version.
+
+### Features
+
+* upgrade to Svelte 5 ([#490](https://github.com/josdejong/svelte-jsoneditor/issues/490)) ([588caa5](https://github.com/josdejong/svelte-jsoneditor/commit/588caa564e26e71a645dcec01f42e189feddd50f))
+
+### [1.1.2](https://github.com/josdejong/svelte-jsoneditor/compare/v1.1.1...v1.1.2) (2024-10-25)
+
+
+### Bug Fixes
+
+* method `patch` not working in `tree`  and table mode when the content is text ([5f1c8a5](https://github.com/josdejong/svelte-jsoneditor/commit/5f1c8a5170e8998e798f40d812a8dbcd464186f1))
+
+### [1.1.1](https://github.com/josdejong/svelte-jsoneditor/compare/v1.1.0...v1.1.1) (2024-10-22)
+
+
+### Bug Fixes
+
+* list svelte `^3.54.0` as compatible peerDependency alongside `4.0.0` ([ba2aee5](https://github.com/josdejong/svelte-jsoneditor/commit/ba2aee5d6dfe65d8e7d35e5fb69a89355e0fee67))
+* upgrade to svelte-awesome@3.3.5 ([5fe2588](https://github.com/josdejong/svelte-jsoneditor/commit/5fe2588ee1be275cc43d521c126eb78837158089))
+
+## [1.1.0](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.8...v1.1.0) (2024-10-22)
+
+
+### Features
+
+* upgrade to `jsonrepair@3.9.0` ([acb6976](https://github.com/josdejong/svelte-jsoneditor/commit/acb6976253e207f3b89e497cdae9a9ee3b1ccc29))
+
+### [1.0.8](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.7...v1.0.8) (2024-10-14)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([13e7cef](https://github.com/josdejong/svelte-jsoneditor/commit/13e7cef89701b880578c1ef57acdcd0f0698983e))
+
+### [1.0.7](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.6...v1.0.7) (2024-10-09)
+
+
+### Bug Fixes
+
+* [#488](https://github.com/josdejong/svelte-jsoneditor/issues/488) types `JsonEditor` and `CreateJSONEditorProps` not exported in `vanilla-jsoneditor` ([337c33b](https://github.com/josdejong/svelte-jsoneditor/commit/337c33b3dcf05a30b9a10815a19e49687ebb291a))
+* [#489](https://github.com/josdejong/svelte-jsoneditor/issues/489) anchor styling defined in the TransformModal affecting the global style ([a213583](https://github.com/josdejong/svelte-jsoneditor/commit/a213583c6473d70d4a2fcc1b6802762a5b11c934))
+
+### [1.0.6](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.5...v1.0.6) (2024-09-30)
+
+
+### Bug Fixes
+
+* type definition of `createJSONEditor` not exported in the `vanilla-jsoneditor` library ([e0aee3e](https://github.com/josdejong/svelte-jsoneditor/commit/e0aee3e66f06f0ff208912f11ed888aa16adcaed))
+
+### [1.0.5](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.4...v1.0.5) (2024-09-30)
+
+
+### Bug Fixes
+
+* key not rendered when the value contains search results and vice versa ([0c41c79](https://github.com/josdejong/svelte-jsoneditor/commit/0c41c7964d9cd04d147944d6d2afa84d60c85280))
+
+### [1.0.4](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.3...v1.0.4) (2024-09-27)
+
+
+### Bug Fixes
+
+* [#486](https://github.com/josdejong/svelte-jsoneditor/issues/486) naming conflict for argument `isMac` in the type definitions ([9fac7a3](https://github.com/josdejong/svelte-jsoneditor/commit/9fac7a3e021c7d96c4914211e5faa86de083d9db))
+
+### [1.0.3](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.2...v1.0.3) (2024-09-26)
+
+
+### Bug Fixes
+
+* invalid JSONPath query options could crash the Transform Modal ([c90a54c](https://github.com/josdejong/svelte-jsoneditor/commit/c90a54c07006a30a404f522592419128135a1431))
+
+### [1.0.2](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.1...v1.0.2) (2024-09-26)
+
+
+### Bug Fixes
+
+* more robust positioning of the modal by adding `margin: auto`, see [#384](https://github.com/josdejong/svelte-jsoneditor/issues/384) ([2302436](https://github.com/josdejong/svelte-jsoneditor/commit/2302436fbc8d65fe89b79646995c5e7e02bf38fe))
+
+### [1.0.1](https://github.com/josdejong/svelte-jsoneditor/compare/v1.0.0...v1.0.1) (2024-09-25)
+
+
+### Bug Fixes
+
+* handle `createQuery` throwing an exception in the TransformModal ([4b1f3f6](https://github.com/josdejong/svelte-jsoneditor/commit/4b1f3f6d08352002db62ddeaf6fc37207a7b7707))
+
+## [1.0.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.8...v1.0.0) (2024-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* The internal state is refactored. This should not give any issues except when 
+  relying on some internal or undocumented features.
+* Changed the API to consistently use `undefined` instead of `null`. This involves 
+  properties `selection`, `onChange` (properties `contentErrors and `patchResult`), 
+  `onRenderContextMenu` (property `selection`), `onSelect`, and methods `validate`,
+  and `select`.
+*  Old deprecation messages are removed. 
+*  The API of the `expand` function is changed from `expand(callback)` to 
+  `expand(path, callback)`, and can't be used anymore for collapsing nodes. Instead, 
+  se the `collapse(path)` method for that.
+* The property `edit` is removed from the types `KeySelection` and `ValueSelection`, 
+  and two new types `EditKeySelection` and `EditValueSelection` are added.
+* The helper functions  `createKeySelection` and `createValueSelection` are changed,
+  argument `edit` is removed, and two new helper functions `createEditKeySelection` 
+  and `createEditValueSelection` are added.
+* The API of the component `EditableValue` requires an additional property `selection`.
+* Some of the class names related to selection highlighting are moved/changed.
+* The default query language is changed to `jsonquery`.
+* The vanilla editor needs to be instantiated using `createJSONEditor(...)` instead
+  of `new JSONEditor(...)` in preparation for the upgrade to Svelte 5.
+
+### Features
+
+* change the constructor of the vanilla library from `new JSONEditor(...)` into `createJSONEditor(...)` in preparation 
+  for an upgrade to Svelte 5.
+* implemented a powerful API for `expand` and `collapse` ([#458](https://github.com/josdejong/svelte-jsoneditor/pull/458))
+* replace the default query language with a new query language [jsonquery](https://jsonquerylang.org/) ([#469](https://github.com/josdejong/svelte-jsoneditor/pull/469))
+* implement support for the query language JSONPath ([#470](https://github.com/josdejong/svelte-jsoneditor/pull/470))
+* export more utility functions ([#461](https://github.com/josdejong/svelte-jsoneditor/pull/461))
+* change the API to consistently use `undefined` instead of `null` ([#453](https://github.com/josdejong/svelte-jsoneditor/pull/453)).
+* replaced `svelte-simple-modal` with native HTML `<dialog />` ([#462](https://github.com/josdejong/svelte-jsoneditor/pull/462))
+* the property `edit` is removed from the types `KeySelection` and `ValueSelection`,
+  and two new types `EditKeySelection` and `EditValueSelection` are added.
+* internal refactor of the data structure holding state like expanded nodes and search results.
+
+### Bug Fixes
+
+* shortcut keys `Ctrl+F` and `Ctrl+H` not working in table mode whilst editing a value
+* the do you want to format message popped up after clicking the "Compact" button
+* define `svelte@4` as a peer dependency
+* a lot of small bugfixes.
+
+### [0.23.8](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.7...v0.23.8) (2024-07-26)
+
+
+### Bug Fixes
+
+* revert the "text mode loads partially scrolled down" fix ([#471](https://github.com/josdejong/svelte-jsoneditor/issues/471)) ([38e7dd9](https://github.com/josdejong/svelte-jsoneditor/commit/38e7dd937ef182635b4f2ecbd796e0a2784889d6))
+
+### [0.23.7](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.6...v0.23.7) (2024-06-06)
+
+
+### Bug Fixes
+
+* search and replace in table mode not working ([3f8a398](https://github.com/josdejong/svelte-jsoneditor/commit/3f8a3989108a6629cd46810e02da919c9bd1dfc5))
+
+### [0.23.6](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.5...v0.23.6) (2024-06-05)
+
+
+### Features
+
+* update dependencies `codemirror`, `codemirror-indentation-markers`, `ajv`, `sass` ([1eb5c0b](https://github.com/josdejong/svelte-jsoneditor/commit/1eb5c0bc582b2bad4a233e90e5c75d2304009a6a))
+
+
+### Bug Fixes
+
+* [#436](https://github.com/josdejong/svelte-jsoneditor/issues/436) Ctrl+Click (Cmd+Click) not working on Mac ([7142783](https://github.com/josdejong/svelte-jsoneditor/commit/714278381fde46ac5abc828c744316291babbab5))
+
+### [0.23.5](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.4...v0.23.5) (2024-05-30)
+
+
+### Features
+
+* upgrade dependencies `codemirror`, `ajv`, `jsonrepair`, and update dev dependencies ([999acfc](https://github.com/josdejong/svelte-jsoneditor/commit/999acfc28b4c3bbb3475052373925bd3432ffc52))
+
+
+### Bug Fixes
+
+* cleanup wrong classname `jse-readonly-password` attached to all values ([eabbeb2](https://github.com/josdejong/svelte-jsoneditor/commit/eabbeb299c82513c8fec141db64dc61b55083359))
+* make platform detection more robust and future proof ([#435](https://github.com/josdejong/svelte-jsoneditor/issues/435)) ([776ff70](https://github.com/josdejong/svelte-jsoneditor/commit/776ff709c3588b6705795062bcc4933fe02360e3))
+
+### [0.23.4](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.3...v0.23.4) (2024-05-09)
+
+
+### Bug Fixes
+
+* cannot use middle mouse button to scroll ([d0e7f4c](https://github.com/josdejong/svelte-jsoneditor/commit/d0e7f4cce8046c1c0101127556378aa6da770122))
+* update `jsonrepair` and other dependencies ([7b9063f](https://github.com/josdejong/svelte-jsoneditor/commit/7b9063fb65c8703e654cf6489e09f4d6d6898f4e))
+
+### [0.23.3](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.2...v0.23.3) (2024-05-06)
+
+
+### Features
+
+* update `codemirror`, `ajv`, `fontawesome`, `jsonrepair`, and dev dependencies ([7bd08e7](https://github.com/josdejong/svelte-jsoneditor/commit/7bd08e7021b2a8c5067ab346859f613457edcd44))
+
+
+### Bug Fixes
+
+* text mode loads partially scrolled down ([56e18ee](https://github.com/josdejong/svelte-jsoneditor/commit/56e18ee0573e4af7731a725133e93dc179e2857e))
+
+### [0.23.2](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.1...v0.23.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* [#423](https://github.com/josdejong/svelte-jsoneditor/issues/423) error about an invalid selection in text mode when clearing the contents ([5ed8a86](https://github.com/josdejong/svelte-jsoneditor/commit/5ed8a86a6166064d8bd27af6299db18cdf762885))
+* change text "fullscreen" to "full screen" ([a56415f](https://github.com/josdejong/svelte-jsoneditor/commit/a56415f5ed79890ec2a3ee885ac2df40cf7cef40))
+* editor not getting focus when clicking in an empty area in table mode ([0e74043](https://github.com/josdejong/svelte-jsoneditor/commit/0e740432d55faf32929cac572be7a59465466ab5))
+
+### [0.23.1](https://github.com/josdejong/svelte-jsoneditor/compare/v0.23.0...v0.23.1) (2024-03-28)
+
+
+### Features
+
+* fullscreen support for modals ([#420](https://github.com/josdejong/svelte-jsoneditor/issues/420)) ([160a739](https://github.com/josdejong/svelte-jsoneditor/commit/160a739f7deecc0544cd630e9a0a582b0403eb76))
+* pass validation severity into UI ([#416](https://github.com/josdejong/svelte-jsoneditor/issues/416)) ([6cd6af9](https://github.com/josdejong/svelte-jsoneditor/commit/6cd6af9bedbbf564f0463dbbb383a9cd2f8b84c4)), closes [#369](https://github.com/josdejong/svelte-jsoneditor/issues/369) [#148](https://github.com/josdejong/svelte-jsoneditor/issues/148) [#150](https://github.com/josdejong/svelte-jsoneditor/issues/150)
+* update dependencies (`codemirror`, `sass`, and dev dependencies) ([abf0468](https://github.com/josdejong/svelte-jsoneditor/commit/abf0468991bb7cfcbe9f81b68605e8b842ed64c6))
+
+
+### Bug Fixes
+
+* support pressing Esc to close the CopyPasteModal ([fb77efe](https://github.com/josdejong/svelte-jsoneditor/commit/fb77efef5f4a36ae4ff28694e836521fd8170101))
+* update dependency `vanilla-picker` and update devDependencies ([b0ba13f](https://github.com/josdejong/svelte-jsoneditor/commit/b0ba13fb866aa2565a4bfd135dc8305ef51cf43d))
+
+## [0.23.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.22.0...v0.23.0) (2024-03-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* The `onRenderContextMenu` callback now also triggers when the editor is `readOnly`,
+so you now have to handle that case in the callback.
+
+### Features
+
+* [#399](https://github.com/josdejong/svelte-jsoneditor/issues/399) enable onRenderContextMenu when the editor is readOnly ([#411](https://github.com/josdejong/svelte-jsoneditor/issues/411)) ([db3fb57](https://github.com/josdejong/svelte-jsoneditor/commit/db3fb57dc62210b906628cfba1287808bf5bd304))
+* extend the contexts of `onRenderMenu` and `onRenderContextMenu` with a prop `readOnly` ([#411](https://github.com/josdejong/svelte-jsoneditor/issues/411)) ([4df5548](https://github.com/josdejong/svelte-jsoneditor/commit/4df55481a17c22211538df1cd289faec3af25177))
+* search and replace in table mode ([#415](https://github.com/josdejong/svelte-jsoneditor/issues/415)) ([0860f3e](https://github.com/josdejong/svelte-jsoneditor/commit/0860f3ea422a09eb21e84a345a9bccada7866c6b))
+
+
+### Bug Fixes
+
+* cannot convert an Array into an Object ([4b3af48](https://github.com/josdejong/svelte-jsoneditor/commit/4b3af488faa29704f3e74d451b8af9d0434f1273))
+* context menu not closing when clicking a button in a dropdown menu ([e2c419a](https://github.com/josdejong/svelte-jsoneditor/commit/e2c419acb31d23257e37911117d50ae0d26697d2))
+* disable all relevant context menu buttons when readOnly (see [#411](https://github.com/josdejong/svelte-jsoneditor/issues/411)) ([c66ee09](https://github.com/josdejong/svelte-jsoneditor/commit/c66ee09165587800c3c734af6af683026ac2f8c1))
+* disable wrapped line indent when using tabs because that doesn't work well ([2a067e1](https://github.com/josdejong/svelte-jsoneditor/commit/2a067e1551d2881b2977726a1dcfb6ed6d045504))
+* editor not getting focus when clicking inside the welcome screen of table mode ([919a31e](https://github.com/josdejong/svelte-jsoneditor/commit/919a31ecd5912a43eb964197c23f0811d7c202ea))
+* insert an object or array in tree mode in an empty document not working ([5382e1c](https://github.com/josdejong/svelte-jsoneditor/commit/5382e1ce75b46b5b84fd8fc76764a7a5e9b03a62))
+* status bar not visible when caret is at the start of the document ([dca87f0](https://github.com/josdejong/svelte-jsoneditor/commit/dca87f02800f2b16c311a013581d2ba4db31518f))
+* table row actions not disabled in the table mode context menu when having an empty document ([7123249](https://github.com/josdejong/svelte-jsoneditor/commit/7123249d28eecae4e9a6875760d63fb47fabbcdd))
+
+## [0.22.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.6...v0.22.0) (2024-03-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* The `onChange` callback is no longer triggered on programmatic changes via a
+two-way binded `content` or via methods `.update()`, `.set()`, and `.patch()`.
+
+### Features
+
+* do not trigger onChange on programmatic changes ([#410](https://github.com/josdejong/svelte-jsoneditor/issues/410)) ([201f602](https://github.com/josdejong/svelte-jsoneditor/commit/201f6020c4022001b41b7c459e2d809808828543))
+* document the requirement for immutable changes in `content` (see [#318](https://github.com/josdejong/svelte-jsoneditor/issues/318)) ([0545e64](https://github.com/josdejong/svelte-jsoneditor/commit/0545e647b9c0e68edecbaf7c8f65d51d64de99a4))
+* update dependencies (a.o. fixing an issue with wrapping tab indented lines) ([1bd92e7](https://github.com/josdejong/svelte-jsoneditor/commit/1bd92e73fb95bb2cd0ded15d1fa0fd02b5959303))
+
+
+### Bug Fixes
+
+* add missing property `onSelect` to interface `JSONEditorPropsOptional` ([4087e3f](https://github.com/josdejong/svelte-jsoneditor/commit/4087e3fa9e2f9243c95e8ff6fb7c46c4c67fb61f))
+* improve the logic to determine whether a JSON document needs formatting ([bb15bd1](https://github.com/josdejong/svelte-jsoneditor/commit/bb15bd1d30998d7490a53cf58a03cfc7b95f8935))
+* onCreateMenu and onCreateContextMenu possibly applying mutated changes without returning ([da8fd60](https://github.com/josdejong/svelte-jsoneditor/commit/da8fd6093de81daff47847cb1c50992b3f23fdbd))
+
+### [0.21.6](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.5...v0.21.6) (2024-02-15)
+
+
+### Features
+
+* upgrade `codemirror`, `jsonrepair`, `svelte`, `svelte-simple-modal`, and dev dependencies ([3255741](https://github.com/josdejong/svelte-jsoneditor/commit/32557411017739e9f92a1550d2b7a75113ca9692))
+
+
+### Bug Fixes
+
+* improve the logic to determine whether a JSON document needs formatting ([0ca8a49](https://github.com/josdejong/svelte-jsoneditor/commit/0ca8a493e42a3dbaa2d9560ba772dc12c9ef50ab))
+* type definition of `JSONEditorPropsOptional.flattenColumns` ([3a28757](https://github.com/josdejong/svelte-jsoneditor/commit/3a28757a08abc4b1805c1c22e3245fce696ef31c))
+* type definition of RenderMenuContext.mode ([51a7133](https://github.com/josdejong/svelte-jsoneditor/commit/51a7133778f542a5d634165cf7772fee17332647))
+
+### [0.21.5](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.4...v0.21.5) (2024-02-05)
+
+
+### Features
+
+* implement support for vanilla JS components in `onRenderValue` using Svelte Action ([#398](https://github.com/josdejong/svelte-jsoneditor/issues/398)) ([db482ea](https://github.com/josdejong/svelte-jsoneditor/commit/db482eae3cfe3d902ee66ae1f094ae30d12f1e5b))
+
+
+### Bug Fixes
+
+* [#392](https://github.com/josdejong/svelte-jsoneditor/issues/392) property `onRenderContextMenu` missing in `JSONEditorPropsOptional` ([ee9b4c9](https://github.com/josdejong/svelte-jsoneditor/commit/ee9b4c9199c11f535b94eab145ccac4d83312afa))
+* [#401](https://github.com/josdejong/svelte-jsoneditor/issues/401) original data can be mutated by the TransformModal previews ([337f812](https://github.com/josdejong/svelte-jsoneditor/commit/337f81234b1f72bbd2ab5c89338689ddacdb825a))
+* consistently use selectedJson in the TransformModal ([ac31a79](https://github.com/josdejong/svelte-jsoneditor/commit/ac31a7980d77eae3c5ff3eef0d932f4b3362bdca))
+* use `flex-start` instead of `start` for `align-items` ([#395](https://github.com/josdejong/svelte-jsoneditor/issues/395)) ([b8be1a5](https://github.com/josdejong/svelte-jsoneditor/commit/b8be1a57f3a6e35673033e1fbb879997f5533e7c))
+
+### [0.21.4](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.3...v0.21.4) (2024-01-24)
+
+
+### Bug Fixes
+
+* [#381](https://github.com/josdejong/svelte-jsoneditor/issues/381) method `.update()` throwing an exception when calling directly after creating the editor ([75c3b5e](https://github.com/josdejong/svelte-jsoneditor/commit/75c3b5e1c19347e98d86c367bebe5e688c4f3ea1))
+* update `@codemirror/view` and dev dependencies ([3f2afef](https://github.com/josdejong/svelte-jsoneditor/commit/3f2afef38bb420bc4f21629ff5cb16e494b6d025))
+
+### [0.21.3](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.2...v0.21.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* [#381](https://github.com/josdejong/svelte-jsoneditor/issues/381) method `set()` sometimes throwing an error in `text` mode ([2dc62f0](https://github.com/josdejong/svelte-jsoneditor/commit/2dc62f04056ec352fe548323dda5819e423a25d5))
+* [#391](https://github.com/josdejong/svelte-jsoneditor/issues/391) editor not supporting `Object.create(null)` as object ([918a126](https://github.com/josdejong/svelte-jsoneditor/commit/918a126789c61b8846505072642023a179418e90))
+* update dependencies and devDependencies ([0d49b66](https://github.com/josdejong/svelte-jsoneditor/commit/0d49b66810fa76c4b2fe82021e9dc7b760150407))
+
+### [0.21.2](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.1...v0.21.2) (2024-01-10)
+
+
+### Features
+
+* provide the current `selection` in `onRenderContextMenu` ([#376](https://github.com/josdejong/svelte-jsoneditor/issues/376)) ([2068823](https://github.com/josdejong/svelte-jsoneditor/commit/2068823bc302b7be47bfdc6e977cbe65b92e2794))
+* update deps `codemirror`, `jsonrepair`, `sass`, `svelte-awesome`, `svelte-select`, and more ([63ac195](https://github.com/josdejong/svelte-jsoneditor/commit/63ac1950db57523d57446d43daecac69cb84d5a2))
+
+
+### Bug Fixes
+
+* [#379](https://github.com/josdejong/svelte-jsoneditor/issues/379) ContextMenu not closing after using a custom button via onRenderContextMenu ([2a83137](https://github.com/josdejong/svelte-jsoneditor/commit/2a8313759a9c6125369697bbe8cf335214399df5))
+* [#386](https://github.com/josdejong/svelte-jsoneditor/issues/386) add a `standalone.d.ts` file to the `vanilla-jsoneditor` package ([4f8fa55](https://github.com/josdejong/svelte-jsoneditor/commit/4f8fa55fb4ed09ef112ddee3aab03429bf0a5ca9))
+* improve performance of `isColor` detection (see [#378](https://github.com/josdejong/svelte-jsoneditor/issues/378)) ([514f6ca](https://github.com/josdejong/svelte-jsoneditor/commit/514f6cafdf4937d495670395028e0f326a585a9a))
+* improve performance of `isColor` detection for long text values (See [#378](https://github.com/josdejong/svelte-jsoneditor/issues/378)) ([b1a04fc](https://github.com/josdejong/svelte-jsoneditor/commit/b1a04fce772a0fca4c14f1e3758a8ba5c7c77ad5))
+* update dependency `jsonrepair` ([ec23521](https://github.com/josdejong/svelte-jsoneditor/commit/ec235216a1aee30fd880938dc82233a4731c2f0d))
+
+### [0.21.1](https://github.com/josdejong/svelte-jsoneditor/compare/v0.21.0...v0.21.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* add a module export again to the `svelte-jsoneditor` package ([0c695a4](https://github.com/josdejong/svelte-jsoneditor/commit/0c695a444a35b03b37c3a1981ba58c53e3be0159))
+
+## [0.21.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.20.0...v0.21.0) (2023-12-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* The type `Content` is changed from `{ json: JSONValue} | { text: string }` into 
+`{ json: unknown } | { text: string }`, and all other types having `JSONValue` changed 
+to `unknown`. The return type of `JSONParser.stringify` changed from `string` to 
+`string | undefined`.
+
+### Features
+
+* change the type of `json` from `JSONValue` to `unknown` ([#371](https://github.com/josdejong/svelte-jsoneditor/issues/371)) ([dc4671a](https://github.com/josdejong/svelte-jsoneditor/commit/dc4671abaad7b2e8171caeffdbd83df157bf0196))
+* implement `onRenderContextMenu` (fix [#82](https://github.com/josdejong/svelte-jsoneditor/issues/82)) ([e53a620](https://github.com/josdejong/svelte-jsoneditor/commit/e53a620b6babf5f0cc58a432d4ac89861e6b267f))
+* upgrade to upgrade `@sveltejs/kit@2`, `vite-plugin-svelte@3`, `vite@5`, and `vitest@1` ([#374](https://github.com/josdejong/svelte-jsoneditor/issues/374)) ([b83e321](https://github.com/josdejong/svelte-jsoneditor/commit/b83e3214f8b4873f28247e0ee58a1f0c118d29f3))
+
+## [0.20.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.19.0...v0.20.0) (2023-12-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* When using `vanilla-jsoneditor` directly in the browser, you now have to `import { JSONEditor } from 'vanilla-jsoneditor/standalone.js'` instead of `import { JSONEditor } from 'vanilla-jsoneditor'`. For projects with a build setup (React, Vue, Angular) it should be a drop-in replacement.
+* CSS variables are no longer defined globally, and the file `themes/jse-theme-default.css` is now removed (replaced by an internal `defaults.scss`). The provided dark theme still works as-is. The CSS variable `--jse-modal-theme-color` has been renamed to `--jse-modal-editor-theme-color`, and `--jse-modal-theme-color-highlight` has been renamed to `--jse-modal-editor-theme-color-highlight`.
+
+### Features
+
+* export one bundle with and one without external dependencies in `vanilla-jsoneditor` ([#353](https://github.com/josdejong/svelte-jsoneditor/issues/353)) ([9c1ad15](https://github.com/josdejong/svelte-jsoneditor/commit/9c1ad157a45f10d03fcc17f94ef0e82a66b5313e))
+* update dependencies `codemirror`, `fontawesome`, `svelte-awesome`, and dev dependencies ([75596ae](https://github.com/josdejong/svelte-jsoneditor/commit/75596ae2639df022a6fb0954ca517450e6c50f4c))
+* use SCSS variables internally ([#344](https://github.com/josdejong/svelte-jsoneditor/issues/344)) ([ec4b788](https://github.com/josdejong/svelte-jsoneditor/commit/ec4b788e493b3ea0acc787687a63b4ff4b987024))
+
+
+### Bug Fixes
+
+* allow `isEditing` property to be true when in `readOnly` mode (see [#342](https://github.com/josdejong/svelte-jsoneditor/issues/342)) ([3b0bdb7](https://github.com/josdejong/svelte-jsoneditor/commit/3b0bdb7d40a4814c2f9498c4a9607d639071745b))
+* cleanup a console.log ([005f189](https://github.com/josdejong/svelte-jsoneditor/commit/005f1896d8d05772435194c8d80bdf1244edf249))
+* make argument `element` of helper function `onEscape` optional ([6eb9b82](https://github.com/josdejong/svelte-jsoneditor/commit/6eb9b823cdace19b5d389f8fdf8fb09db21874b0))
+* styling issue with a button text color in dark mode ([4ff40f9](https://github.com/josdejong/svelte-jsoneditor/commit/4ff40f97d4726a8afbdb736601b866ab5500af61))
+
+## [0.19.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.13...v0.19.0) (2023-11-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* Changes in the package exports
+
+### Features
+
+* additional classes for improved CSS targeting ([4392f2c](https://github.com/josdejong/svelte-jsoneditor/commit/4392f2c6523bfb5913615e8d954ceb579b70b99f))
+* package exports not working in Jest ([77697b3](https://github.com/josdejong/svelte-jsoneditor/commit/77697b3962775e09cfe514ef16b51269618dc2d4))
+
+
+### Bug Fixes
+
+* [#334](https://github.com/josdejong/svelte-jsoneditor/issues/334) package exports not working in Jest ([3058c66](https://github.com/josdejong/svelte-jsoneditor/commit/3058c66c6536eaf2902f799a2e59054dbb7d4df2))
+* wrong font in table mode ([dd448c5](https://github.com/josdejong/svelte-jsoneditor/commit/dd448c5fff9283a4d8d34da9e9afd0ebd9857173))
+
+### [0.18.13](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.12...v0.18.13) (2023-11-13)
+
+
+### Features
+
+* update dependencies (`jsonrepair`, `@codemirror/autocomplete`) ([691072a](https://github.com/josdejong/svelte-jsoneditor/commit/691072af2ff76f4d3e864eaed033112814356fce))
+
+### [0.18.12](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.11...v0.18.12) (2023-11-08)
+
+
+### Features
+
+* update to `jsonrepair@3.4.0` ([9ede6ea](https://github.com/josdejong/svelte-jsoneditor/commit/9ede6ea53c91e80e542c86e24dd3d34c70415cd8))
+
+
+### Bug Fixes
+
+* [#331](https://github.com/josdejong/svelte-jsoneditor/issues/331) changing contents during the `onChange` callback throws a selection error ([6e511fa](https://github.com/josdejong/svelte-jsoneditor/commit/6e511faf3a0e0b70a316efa5fc756c79893fa027))
+* [#337](https://github.com/josdejong/svelte-jsoneditor/issues/337) some menu styling issues ([2eec4e6](https://github.com/josdejong/svelte-jsoneditor/commit/2eec4e6c4806a21a0badb32d04edd442baf6665e))
+* `onChange` event not fired after calling `editor.set(...)` (see [#318](https://github.com/josdejong/svelte-jsoneditor/issues/318)) ([afaca42](https://github.com/josdejong/svelte-jsoneditor/commit/afaca423561360f307802d2eb3ed36a6d887a35f))
+* update codemirror and a couple of devDependencies ([7173333](https://github.com/josdejong/svelte-jsoneditor/commit/71733336b6db16be61b77a4ec4301cff3b7707c7))
+* use mono font in JSON Preview ([b07d08d](https://github.com/josdejong/svelte-jsoneditor/commit/b07d08d9c6bd6a13d797ba1fb51efc6b657e8947))
+
+### [0.18.11](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.10...v0.18.11) (2023-10-31)
+
+
+### Features
+
+* update codemirror, jsonrepair, and other dependencies ([90d1b77](https://github.com/josdejong/svelte-jsoneditor/commit/90d1b774533b9a2c9716ef580eb0af045974ef56))
+
+
+### Bug Fixes
+
+* [#321](https://github.com/josdejong/svelte-jsoneditor/issues/321) editor not accepting JSON created in a different JavaScript realm like an iframe ([06fb84c](https://github.com/josdejong/svelte-jsoneditor/commit/06fb84cced17b5b603897e21f30c4c083015190d))
+* bottom margin of welcome screen in tree and table mode ([7d1eb02](https://github.com/josdejong/svelte-jsoneditor/commit/7d1eb027abf8e7776d40d48c5371dc372af409ff))
+* editor sometimes losing track on whether it has focus ([410f997](https://github.com/josdejong/svelte-jsoneditor/commit/410f997b075a274b6e8691db4c3831c71602dbe3))
+* svelte giving warnings about creating components with unknown properties ([627170a](https://github.com/josdejong/svelte-jsoneditor/commit/627170a3e621a5ddb0abc1aa016b0a4334bc3837))
+
+### [0.18.10](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.9...v0.18.10) (2023-10-17)
+
+
+### Bug Fixes
+
+* rename "whole document" to "document root" and "whole item" to "item root" to prevent confusion ([2699b71](https://github.com/josdejong/svelte-jsoneditor/commit/2699b71f2311d1670e29ccf41848bb283c52121d))
+
+### [0.18.9](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.8...v0.18.9) (2023-10-11)
+
+
+### Bug Fixes
+
+* unused CSS selector warnings in Svelte ([23b82cc](https://github.com/josdejong/svelte-jsoneditor/commit/23b82cc022e15ccbcad6ca4d51ece52ca41682b4))
+
+### [0.18.8](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.7...v0.18.8) (2023-10-02)
+
+
+### Bug Fixes
+
+* regression since v0.18.17 not allowing to put the cursor halfway the value when editing a value ([3e34e8d](https://github.com/josdejong/svelte-jsoneditor/commit/3e34e8daafe7fcd048e5bd3d75ce72ab877aaec2))
+
+### [0.18.7](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.6...v0.18.7) (2023-09-28)
+
+
+### Bug Fixes
+
+* [#315](https://github.com/josdejong/svelte-jsoneditor/issues/315) cannot paste text in the search box input field in tree mode ([a9a2dc3](https://github.com/josdejong/svelte-jsoneditor/commit/a9a2dc32e22707d636b25587426a70518dcf069c))
+
+### [0.18.6](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.5...v0.18.6) (2023-09-27)
+
+
+### Bug Fixes
+
+* broken import due to missing file extension ([0f734c5](https://github.com/josdejong/svelte-jsoneditor/commit/0f734c593e4784b3b39621c029ef614ac4350e50))
+
+### [0.18.5](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.4...v0.18.5) (2023-09-27)
+
+
+### Features
+
+* update dependencies, most notably `jsonrepair` and `codemirror` ([f6306b0](https://github.com/josdejong/svelte-jsoneditor/commit/f6306b00ef6144d75593a98e0867b5a7c185156a))
+
+
+### Bug Fixes
+
+* [#312](https://github.com/josdejong/svelte-jsoneditor/issues/312) "Show me" button throwing an error when no position was provided in the error message ([d839e95](https://github.com/josdejong/svelte-jsoneditor/commit/d839e95c59ce18ff59ac0ad338019da9dc542a18))
+* [#312](https://github.com/josdejong/svelte-jsoneditor/issues/312) the "Show me" button throwing an error when no position was provided in the error message ([36d7934](https://github.com/josdejong/svelte-jsoneditor/commit/36d79345b294e31bde53cb83b6586928c653601f))
+* minor styling issues with modals ([97d2d94](https://github.com/josdejong/svelte-jsoneditor/commit/97d2d9407d6f389962ae59a808eb3353308232f2))
+* update dependencies, most notably `codemirror` and `jsonrepair` ([439eb8a](https://github.com/josdejong/svelte-jsoneditor/commit/439eb8ae8a6a2dfe8fa8ec71f0d5c53e28b7c4a0))
+
+### [0.18.4](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.3...v0.18.4) (2023-09-19)
+
+
+### Features
+
+* add indentation on wrapped lines ([#295](https://github.com/josdejong/svelte-jsoneditor/issues/295)) ([367accf](https://github.com/josdejong/svelte-jsoneditor/commit/367accfa261dd3dad72243d2d4648f6c186048e7))
+* improve welcome screen with action buttons to create an array or object ([d4e301f](https://github.com/josdejong/svelte-jsoneditor/commit/d4e301fc9da408c700d2934719a30345522e05b9))
+
+
+### Bug Fixes
+
+* collapsed items section not removed when empty ([3d3ad45](https://github.com/josdejong/svelte-jsoneditor/commit/3d3ad456cfc436b0522de534846cb4b9da929ec3))
+* creating an array or object or pasting content in the welcome screen not working ([7def339](https://github.com/josdejong/svelte-jsoneditor/commit/7def339d916150bc12243feccd266cbb2303b178))
+* editor not getting focus in table mode when clicking inside an empty area ([609983d](https://github.com/josdejong/svelte-jsoneditor/commit/609983d3a6f9271fe26971c27424965fb9823405))
+* select active element on undo only when existing ([e5beebf](https://github.com/josdejong/svelte-jsoneditor/commit/e5beebfdc4f082888c447364b12091d2ee8ecfa5))
+* selection moving to value after renaming the last key of an object ([ac31282](https://github.com/josdejong/svelte-jsoneditor/commit/ac312821616329c5246ca50a17d607bb4d716f2e))
+* some issues with navigating in `tree` mode using arrow keys ([a3f9c92](https://github.com/josdejong/svelte-jsoneditor/commit/a3f9c9234686b9363ac9e4b66c7dbf21950bda85))
+* when inserting a new array or object in an empty editor, set selection inside the array/object ([821933e](https://github.com/josdejong/svelte-jsoneditor/commit/821933e3dfcbdde637ad78fb6d3c51e5ca6c66ee))
+* when inserting a new value by typing somewhere, it doesn't initially have the right color ([9f6ea35](https://github.com/josdejong/svelte-jsoneditor/commit/9f6ea354270d88c67e3696e7fe8497fbf6852be2))
+
+### [0.18.3](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.2...v0.18.3) (2023-08-30)
+
+
+### Bug Fixes
+
+* restore the selection when going back when having multiple JSONEditor modals ([085a9d3](https://github.com/josdejong/svelte-jsoneditor/commit/085a9d31de26f4f41ee04b5aab68f1f9164042c7))
+* sometimes multiple cells selected in Table mode ([c7705f6](https://github.com/josdejong/svelte-jsoneditor/commit/c7705f6e99e6aba525bc7d17b26dc17add56645c))
+
+### [0.18.2](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.1...v0.18.2) (2023-08-25)
+
+
+### Bug Fixes
+
+* [#304](https://github.com/josdejong/svelte-jsoneditor/issues/304) `ReadonlyValue.svelte` wrongly importing two moved types ([ed8b058](https://github.com/josdejong/svelte-jsoneditor/commit/ed8b05890fd149000ab67dc476cb5ceda59e7b7a))
+
+### [0.18.1](https://github.com/josdejong/svelte-jsoneditor/compare/v0.18.0...v0.18.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* [#300](https://github.com/josdejong/svelte-jsoneditor/issues/300) change the homepage in package.json to the Github repo ([b1977e5](https://github.com/josdejong/svelte-jsoneditor/commit/b1977e50475362278afc1e57eb2333bd69b5f69d))
+* [#304](https://github.com/josdejong/svelte-jsoneditor/issues/304) missing type `JSONPointer` internally ([e23abbc](https://github.com/josdejong/svelte-jsoneditor/commit/e23abbc3690799f5a53600c109630de31f05f953))
+
+## [0.18.0](https://github.com/josdejong/svelte-jsoneditor/compare/v0.17.10...v0.18.0) (2023-08-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* - Upgraded to Svelte 4 providing improved TypeScript types.
+- Dropped re-exporting types and utility functions from `immutable-json-patch`
+  and `svelte`. Instead, import them directly from the library itself.
+- Dropped deprecated types `FontAwesomeIcon` (use `IconDefinition` instead),
+  `DropdownButtonItem`, `MenuButtonItem`, `MenuSeparatorItem`, `MenuSpaceItem`,
+  and typeguard `isMenuSpaceItem`.
+- The `vanilla-package` does not embed types of dependencies anymore and instead,
+  imports the dependencies and use the types from there.
+- Drop official support for Node.js 16
+
+### Features
+
+* describe breaking changes ([962dbf0](https://github.com/josdejong/svelte-jsoneditor/commit/962dbf0dc31def0d77840cca48f1429bdc892a03))
+* upgrade to Svelte 4, improve TypeScript types ([4d0451e](https://github.com/josdejong/svelte-jsoneditor/commit/4d0451e981f3d6bc10ca338ed5c03b5b9a4f51fd))
+
+### [0.17.10](https://github.com/josdejong/svelte-jsoneditor/compare/v0.17.9...v0.17.10) (2023-08-16)
+
+
+### Bug Fixes
+
+* [#301](https://github.com/josdejong/svelte-jsoneditor/issues/301) TransformModal broken (regression since `v0.17.9`) ([b13a52f](https://github.com/josdejong/svelte-jsoneditor/commit/b13a52f1a128069609b087d2c533e6d2d3dd30fe))
+
+### [0.17.9](https://github.com/josdejong/svelte-jsoneditor/compare/v0.17.8...v0.17.9) (2023-08-14)
+
+
+### Bug Fixes
+
+* [#163](https://github.com/josdejong/svelte-jsoneditor/issues/163) implement method `.select()` and callback `onSelect` ([#299](https://github.com/josdejong/svelte-jsoneditor/issues/299)) ([69a9698](https://github.com/josdejong/svelte-jsoneditor/commit/69a96983a80e2fe9900739245b37c1eac622eab0))
+* export all typeguard functions like `isMenuButton` ([53e671d](https://github.com/josdejong/svelte-jsoneditor/commit/53e671d0543eeaa8dd8bcbb020aacef26214e49c))
+* resolve failed import in example "custom menu buttons" ([#287](https://github.com/josdejong/svelte-jsoneditor/issues/287)) ([8da09a4](https://github.com/josdejong/svelte-jsoneditor/commit/8da09a472efd10c052c154c56b5c5b8b68e4981e))
+
 ### [0.17.8](https://github.com/josdejong/svelte-jsoneditor/compare/v0.17.7...v0.17.8) (2023-06-21)
 
 

@@ -6,6 +6,7 @@
   --jse-theme-color-highlight: #467cd2;
   --jse-background-color: #1e1e1e;
   --jse-text-color: #d4d4d4;
+  --jse-text-color-inverse: #4d4d4d;
 
   /* main, menu, modal */
   --jse-main-border: 1px solid #4f4f4f;
@@ -97,8 +98,8 @@
   --jse-a-color-highlight: #4387c9;
 
   /* svelte-select */
-  --background: #3d3d3d;
-  --border: 1px solid #4f4f4f;
+  --jse-svelte-select-background: #3d3d3d;
+  --jse-svelte-select-border: 1px solid #4f4f4f;
   --list-background: #3d3d3d;
   --item-hover-bg: #505050;
   --multi-item-bg: #5b5b5b;

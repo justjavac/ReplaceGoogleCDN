@@ -1,16 +1,15 @@
-let { JSONEditor } = await import(
-  "/third_party/josdejong/svelte-jsoneditor/main/index.js"
-);
+import {createJSONEditor} from "/third_party/josdejong/svelte-jsoneditor/main/standalone.js"
+
 let editor = {
   init: () => {
-    window.editor = new JSONEditor({
+    window.editor = new createJSONEditor({
       target: document.getElementById("jsoneditor"),
       props: {
         mode: "text",
         onChange: (
           updatedContent,
           previousContent,
-          { contentErrors, patchResult }
+          {contentErrors, patchResult}
         ) => {
           // content is an object { json: JSONData } | { text: string }
           /*
