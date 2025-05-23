@@ -8,18 +8,18 @@ let showStaticRules = () => {
   let list = "";
   mainifest.declarative_net_request.rule_resources.map((value, index) => {
     console.log(value)
-    list += `<li data-rule-id="${value.id}">${value.id}</li>`;
+    if (value.enabled) {
+      list += `<li data-rule-id="${value.id}">${value.id}</li>`;
+    }
   });
   list_box.innerHTML = list;
 
 };
 
 let showManifestRuleJSON = (rule) => {
-  let local_manifest = chrome.runtime.getManifest();
-  let local_declarative_net_request =
-    local_manifest.declarative_net_request.rule_resources;
+  let mainifest = chrome.runtime.getManifest()
   let default_static_rules = {};
-  local_declarative_net_request.forEach((value) => {
+  mainifest.declarative_net_request.rule_resources.forEach((value) => {
     default_static_rules[value.id] = value.path;
   });
 

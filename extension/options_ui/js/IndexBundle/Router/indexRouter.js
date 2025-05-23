@@ -1,4 +1,5 @@
-import {indexController} from "../Controller/indexController.js";
-export default ()=>{
+import indexController from "../Controller/indexController.js";
+
+export default () => {
   indexController()
 }
