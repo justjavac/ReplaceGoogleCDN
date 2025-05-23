@@ -3,16 +3,17 @@
   "scripts": {
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
     "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
+    "format-cod": "npx prettier --write . ",
     "release": "bash release-archive.sh",
     "firefox-test": "bash tools/firefox-web-ext.sh",
     "chromium-test": "bash tools/chromium.sh"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.307",
+    "@types/chrome": "^0.0.323",
     "npm-check": "^6.0.1",
-    "pnpm": "^10.5.2",
+    "pnpm": "^10.11.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "web-ext": "^8.4.0"
+    "typescript": "^5.8.3",
+    "web-ext": "^8.7.0"
   }
 }
