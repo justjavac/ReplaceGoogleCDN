@@ -20,31 +20,31 @@
 
 > 借助浏览器提供的API，实现请求地址重定向。
 >
-> -   [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
-> -   [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
+> - [浏览器 V2 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest)，
+> - [浏览器 V3 API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest)
 >
 > 默认未启用的规则, （双击扩展图标，进入扩展选项页面，可调整替换地址）
 
 此插件/扩展可以将以下的 CDN 资源替换为国内的：
 
-| 序号 | 原地址                                        | 替换后的地址                                                              | 是否启用 | 简述                  |
-|----|--------------------------------------------|---------------------------------------------------------------------|------|---------------------|
-| 1  | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅    | 前端公共库               |
-| 2  | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅    | 免费字体库               |
-| 3  | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅    | fonts 资源引用          |
-| 4  | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅    | 免费字体库               |
-| 5  | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅    | Google 图像验证库        |
-| 6  | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅    | gravatar 头像         |
-| 7  | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅    | bootstrap 框架使用的 CDN |
-| 8  | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅    | jquery 框架使用的 CDN    |
-| 9  | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | -    | -                   |
-| 10 | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | -    | -                   |
-| 11 | `developers.google.com`                    | `developers.google.cn`                                              | -    | -                   |
-| 12 | `developer.android.com`                    | `developer.android.google.cn`                                       | -    | -                   |
-| 13 | `source.android.com`                       | `source.android.google.cn`                                          | -    | -                   |
-| 14 | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -    | -                   |
-| 15 | `lh3.googleusercontent.com`                | -                                                                   | -    | -                   |
-| 16 | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -    | -                   |
+| 序号 | 原地址                                     | 替换后的地址                                                        | 是否启用 | 简述                     |
+| ---- | ------------------------------------------ | ------------------------------------------------------------------- | -------- | ------------------------ |
+| 1    | `ajax.googleapis.com`                      | `ajax.loli.net`                                                     | ✅       | 前端公共库               |
+| 2    | `fonts.googleapis.com`                     | `fonts.googleapis.cn`                                               | ✅       | 免费字体库               |
+| 3    | `themes.googleusercontent.com`             | `themes.loli.net`                                                   | ✅       | fonts 资源引用           |
+| 4    | `fonts.gstatic.com`                        | `fonts.googleapis.cn`                                               | ✅       | 免费字体库               |
+| 5    | `www.google.com/recaptcha`                 | `www.recaptcha.net/recaptcha`                                       | ✅       | Google 图像验证库        |
+| 6    | `secure.gravatar.com`                      | `gravatar.loli.net`                                                 | ✅       | gravatar 头像            |
+| 7    | `maxcdn.bootstrapcdn.com/bootstrap`        | `lib.baomitu.com/twitter-bootstrap/`                                | ✅       | bootstrap 框架使用的 CDN |
+| 8    | `code.jquery.com/jquery-(version)(suffix)` | `https://fastly.jsdelivr.net/npm/jquery@$verson/dist/jquery$suffix` | ✅       | jquery 框架使用的 CDN    |
+| 9    | `cdnjs.cloudflare.com`                     | `cdnjs.loli.net`                                                    | -        | -                        |
+| 10   | `cdn.jsdelivr.net`                         | `fastly.jsdelivr.net`                                               | -        | -                        |
+| 11   | `developers.google.com`                    | `developers.google.cn`                                              | -        | -                        |
+| 12   | `developer.android.com`                    | `developer.android.google.cn`                                       | -        | -                        |
+| 13   | `source.android.com`                       | `source.android.google.cn`                                          | -        | -                        |
+| 14   | `www.gstatic.com`                          | `www.gstatic.cn`                                                    | -        | -                        |
+| 15   | `lh3.googleusercontent.com`                | -                                                                   | -        | -                        |
+| 16   | `cdn.sstatic.net`                          | `sstatic.net`                                                       | -        | -                        |
 
 ## 扩展选项页使用简述
 
@@ -53,8 +53,8 @@
 
 ## 功能变更记录
 
--   v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
--   v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
+- v3 功能变更记录[`CHANGELOG-v3-x.x.x`](CHANGELOG-v3-x.x.x.md)
+- v2 功能变更记录[`CHANGELOG-v2-x.x.x`](CHANGELOG-v2-x.x.x.md)
 
 ## 效果
 
@@ -69,22 +69,22 @@
 
 下表是各种资源的网络请求对比（以替换后的速度为基准 100%）：
 
-| 资源                       | 来源                             |   尺寸(kB) | 时间(ms) |  速度(B/ms) |      百分比 |
-|--------------------------|--------------------------------|---------:|-------:|----------:|---------:|
-| jquery.min.js            | ajax.googleapis.com            |        0 |     26 |         - |        - |
-| stub.en.js               | cdn.sstatic.net                |     18.0 |    293 |      61.4 |      18% |
-| **jquery.min.js**        | **ajax.loli.net** ⚡️           | **33.1** | **95** | **348.4** | **100%** |
-| clc.min.js               | cdn.sstatic.net                |      4.2 |    399 |      10.5 |      30% |
-| full.en.js               | cdn.sstatic.net                |     99.6 |    534 |     186.5 |      54% |
-| gpt.js                   | securepubads.g.doubleclick.net |     21.3 |     85 |     250.6 |      72% |
-| analytics.js             | google-analytics.com           |     19.6 |     79 |     248.1 |      71% |
-| quant.js                 | secure.quantserve.com          |      9.1 |    420 |      21.7 |      62% |
-| beacon.js                | sb.scorecardresearch.com       |      1.8 |     73 |      24.7 |      71% |
-| integrator.js            | adservice.google.com 🐌        |      0.3 |     87 |       3.4 |       1% |
-| markup.js                | clc.stackoverflow.com 🐌       |      9.2 |    252 |      36.5 |      10% |
-| osd.js                   | googletagservices.com          |     28.1 |     90 |     312.2 |      89% |
-| rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |     96 |       4.2 |       1% |
-| keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |     75 |      97.3 |    27.9% |
+| 资源                     | 来源                           | 尺寸(kB) | 时间(ms) | 速度(B/ms) |   百分比 |
+| ------------------------ | ------------------------------ | -------: | -------: | ---------: | -------: |
+| jquery.min.js            | ajax.googleapis.com            |        0 |       26 |          - |        - |
+| stub.en.js               | cdn.sstatic.net                |     18.0 |      293 |       61.4 |      18% |
+| **jquery.min.js**        | **ajax.loli.net** ⚡️          | **33.1** |   **95** |  **348.4** | **100%** |
+| clc.min.js               | cdn.sstatic.net                |      4.2 |      399 |       10.5 |      30% |
+| full.en.js               | cdn.sstatic.net                |     99.6 |      534 |      186.5 |      54% |
+| gpt.js                   | securepubads.g.doubleclick.net |     21.3 |       85 |      250.6 |      72% |
+| analytics.js             | google-analytics.com           |     19.6 |       79 |      248.1 |      71% |
+| quant.js                 | secure.quantserve.com          |      9.1 |      420 |       21.7 |      62% |
+| beacon.js                | sb.scorecardresearch.com       |      1.8 |       73 |       24.7 |      71% |
+| integrator.js            | adservice.google.com 🐌        |      0.3 |       87 |        3.4 |       1% |
+| markup.js                | clc.stackoverflow.com 🐌       |      9.2 |      252 |       36.5 |      10% |
+| osd.js                   | googletagservices.com          |     28.1 |       90 |      312.2 |      89% |
+| rules-p-c1rF4kxgLUzNc.js | rules.quantcount.com 🐌        |      0.4 |       96 |        4.2 |       1% |
+| keyboard-shortcuts.en.js | cdn.sstatic.net                |      7.3 |       75 |       97.3 |    27.9% |
 
 ## 打包命令
 
@@ -106,9 +106,9 @@ bash release-archive-v3.sh
 
 ### 在线安装
 
--   [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
--   [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
--   [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
+- [Chrome](https://chrome.google.com/webstore/detail/replace-google-cdn/kpampjmfiopfpkkepbllemkibefkiice)
+- [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/google-cdn-replace/)
+- [Edge](https://microsoftedge.microsoft.com/addons/detail/replace-google-cdn/cojepngjobmaiajphkijbdcdjnnjhpjc)
 
 ### 手动安装：
 
@@ -167,7 +167,7 @@ https://www.jingjingxyk.com/chromium-extension/ReplaceGoogleCDN-v3.zip
 
 ## 文档
 
--   [declarative_net_reques 规则配置示例](extension/rules/README.md)
--   [测试用例](test/README.md)
--   [公共 CDN 静态资源库](public-cdn.md)
--   [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)
+- [declarative_net_reques 规则配置示例](extension/rules/README.md)
+- [测试用例](test/README.md)
+- [公共 CDN 静态资源库](public-cdn.md)
+- [网络拨测工具 (测试 公共 CDN 静态资源库 区域可用性)](tools/net-detect.md)

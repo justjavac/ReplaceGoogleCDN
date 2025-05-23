@@ -3,7 +3,7 @@
   "scripts": {
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
     "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
-    "format-cod": "npx prettier --write . ",
+    "format-code": "npx prettier --write . ",
     "release": "bash release-archive.sh",
     "firefox-test": "bash tools/firefox-web-ext.sh",
     "chromium-test": "bash tools/chromium.sh"
