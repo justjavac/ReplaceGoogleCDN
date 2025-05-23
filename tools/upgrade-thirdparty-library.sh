@@ -58,4 +58,10 @@ mkdir -p ${VENDOR}/josdejong/svelte-jsoneditor/main
 
 cp -rf package-vanilla/* ${VENDOR}/josdejong/svelte-jsoneditor/main
 
+# 移除不需要 .ts 文件
+cd ${VENDOR}/josdejong/svelte-jsoneditor/main
+ls -h *.ts | xargs -I {} rm -f  {}
+cd ${VENDOR}/josdejong/svelte-jsoneditor/main/themes
+ls -h *.scss | xargs -I {} rm -f  {}
+
 cd ${__PROJECT__}/var/tmp/
