@@ -37,6 +37,10 @@ require("options_ui" in chromium_manifest, "chromium manifest must keep options_
 require("sandbox" in chromium_manifest, "chromium manifest must keep sandbox")
 
 firefox_manifest = generate_manifest("firefox")
+firefox_rule_paths = {
+    rule["path"]
+    for rule in firefox_manifest["declarative_net_request"]["rule_resources"]
+}
 require(
     firefox_manifest.get("background", {}).get("page") == "background-page.html",
     "firefox manifest must use background.page",
@@ -47,5 +51,9 @@ require(
 )
 require("options_ui" not in firefox_manifest, "firefox manifest must remove options_ui")
 require("sandbox" not in firefox_manifest, "firefox manifest must remove sandbox")
+require(
+    "rules/rules-default-domains-helper.json" not in firefox_rule_paths,
+    "firefox manifest must not reference rules-default-domains-helper.json",
+)
 
 print("Manifest checks passed.")
