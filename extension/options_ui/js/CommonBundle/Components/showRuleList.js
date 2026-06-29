@@ -11,6 +11,7 @@ import {
 } from "./showStaticRules.js";
 
 let timeoutHandler = null;
+let isRuleListEventBound = false;
 
 let bindButtonEventListener = () => {
   //备份单条规则
@@ -103,14 +104,18 @@ let showRuleList = (type) => {
 
   //显示静态规则
   showStaticRules();
-  bindStaticRuleEventListener();
 
   //显示动态规则
   showDynamicRules(type);
-  bindDynamicRuleEventListener();
 
-  //选项四：已启用规则列表： 绑定按钮
-  bindButtonEventListener();
+  if (!isRuleListEventBound) {
+    bindStaticRuleEventListener();
+    bindDynamicRuleEventListener();
+
+    //选项四：已启用规则列表： 绑定按钮
+    bindButtonEventListener();
+    isRuleListEventBound = true;
+  }
 };
 
 export default showRuleList;
