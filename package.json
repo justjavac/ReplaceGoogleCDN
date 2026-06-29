@@ -4,6 +4,7 @@
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
     "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
     "format-code": "npx prettier --write . ",
+    "rules:check": "node test/check-rules.js",
     "release": "bash release-archive.sh",
     "firefox-test": "bash tools/firefox-web-ext.sh",
     "chromium-test": "bash tools/chromium.sh"

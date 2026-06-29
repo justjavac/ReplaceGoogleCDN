@@ -16,12 +16,6 @@
         "developer.android.com",
         "www.google.com"
       ],
-      "excludedRequestDomains": [
-        "developers.google.com",
-        "source.android.com",
-        "developer.android.com",
-        "www.google.com"
-      ],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
