@@ -1,6 +1,7 @@
 let rule_example = {
   "redirect-domain": `redirect-domain.json`,
   "block-domain": `block-domain.json`,
+  "unsafe-cdn-redirect": `unsafe-cdn-redirect.json`,
   "modify-header-ua": `rules_modify_request_header_ua.json`,
   "modify-header-request-x": `rules_modify_request_header_x.json`,
   "modify-header-request-cookie": `rules_modify_request_header_cookie.json`,

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "priority": 1000,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://fastly.jsdelivr.net/npm/\\1@\\2/dist/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(?:cdn\\.bootcss\\.com|cdn\\.bootcdn\\.net|cdn\\.staticfile\\.net|cdn\\.staticfile\\.org)/ajax/libs/(.*?)/(.*?)/(.*?)",
+      "requestDomains": [
+        "cdn.bootcss.com",
+        "cdn.bootcdn.net",
+        "cdn.staticfile.net",
+        "cdn.staticfile.org"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  }
+]
