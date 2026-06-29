@@ -4,6 +4,7 @@
     "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
     "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
     "format-code": "npx prettier --write . ",
+    "icons:check": "python test/check-icons.py",
     "manifest:check": "python test/check-v3-manifest.py",
     "rules:check": "node test/check-rules.js",
     "release": "bash release-archive.sh",
