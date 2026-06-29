@@ -29,7 +29,7 @@ def set_manifest_data(manifest, key, value):
 
 def override_manifest(manifest):
     os.makedirs(extension_tmp_dir, exist_ok=True)
-    with open(manifest_tmp_file, mode='w') as f:
+    with open(manifest_tmp_file, mode='w', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
@@ -56,8 +56,11 @@ if __name__ == '__main__':
     if browser == '--help' or browser == '-h':
         print(comment)
         exit(0)
-    else:
-        browser = 'firefox'
+
+    if browser not in ('chromium', 'firefox'):
+        print('unsupported browser: ' + browser)
+        print(comment)
+        exit(2)
 
     # chromium config
     chromium_background_content = '''
@@ -116,5 +119,6 @@ if __name__ == '__main__':
     manifest_data = set_manifest_data(manifest_data, 'sandbox', sandbox_content)
     manifest_data = set_manifest_data(manifest_data, 'content_security_policy', content_security_policy_sandbox_content)
     manifest_data = set_manifest_data(manifest_data, 'browser_specific_settings', browser_specific_settings)
-    manifest_data = set_manifest_data(manifest_data, 'options_ui', '')
+    if browser == 'firefox':
+        manifest_data = set_manifest_data(manifest_data, 'options_ui', '')
     override_manifest(manifest_data)

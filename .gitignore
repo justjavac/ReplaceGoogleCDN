@@ -19,3 +19,4 @@ tools/web/proxy.pac
 dist
 var
 runtime
+__pycache__/
