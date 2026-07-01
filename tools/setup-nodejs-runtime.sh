@@ -33,7 +33,7 @@ case $OS in
     ;;
   *)
     echo '暂未配置的 OS '
-    exit 0
+    exit 1
     ;;
   esac
   ;;
@@ -48,7 +48,7 @@ case $ARCH in
   ;;
 *)
   echo '暂未配置的 ARCH '
-  exit 0
+  exit 1
   ;;
 esac
 
