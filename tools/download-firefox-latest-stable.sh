@@ -43,8 +43,11 @@ echo "${OS}-${ARCH}"
 
 case $OS in
 "Linux")
-  curl -Lo firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
-  tar -jxvf firefox.tar.bz2
+  test -f firefox.tar.bz2 && rm -rf firefox.tar.bz2
+  test -f firefox.tar.xz && rm -rf firefox.tar.xz
+  test -d firefox && rm -rf firefox
+  curl -Lo firefox.tar.xz "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+  tar -xJvf firefox.tar.xz
   ;;
 "Darwin")
   curl -Lo firefox.dmg "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
