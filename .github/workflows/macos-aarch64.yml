@@ -6,7 +6,7 @@ env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
-  macos-x86_64:
+  macos-aarch64:
     if: 1
     runs-on: macos-latest
     # macos-latest (macos-14)  变更了 CPU 架构，由 x86_64 变更为 arm64
@@ -70,7 +70,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/firefox.dmg
             ${{ github.workspace }}/var/firefox/
-          key: ${{ runner.os }}-x86_64-firefox
+          key: ${{ runner.os }}-aarch64-firefox
 
       - name: Download Firefox
         shell: bash
