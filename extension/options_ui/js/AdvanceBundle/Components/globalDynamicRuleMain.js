@@ -4,7 +4,8 @@ import {
   backupSelfDefinedDynamicRules,
   utils,
   enableStaticRules,
-  id_ranges
+  id_ranges,
+  logChromeRuntimeError
 } from "../../CommonBundle/Components/common.js";
 import { remote_repository_static_urls } from "../Config/rule_example_conf.js";
 import showRuleList from "../../CommonBundle/Components/showRuleList.js";
@@ -95,7 +96,11 @@ let bindSyncRemoteStaticRuleEventListener = () => {
 
           chrome.declarativeNetRequest.updateEnabledRulesets(
             UpdateRulesetOptions,
-            (callback) => {
+            () => {
+              if (logChromeRuntimeError("updateEnabledRulesets")) {
+                return;
+              }
+
               showRuleList();
             }
           );

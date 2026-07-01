@@ -27,6 +27,16 @@ let rule_action_type_map = {
   block: "阻止请求"
 };
 
+let logChromeRuntimeError = (operation) => {
+  let error = chrome.runtime.lastError;
+  if (!error) {
+    return false;
+  }
+
+  console.error(operation + " failed: " + error.message);
+  return true;
+};
+
 let updateDynamicRules = (
   addRules = [],
   removeRuleIds = [],
@@ -39,7 +49,11 @@ let updateDynamicRules = (
       removeRuleIds: removeRuleIds
     },
     () => {
-      callback(args);
+      if (logChromeRuntimeError("updateDynamicRules")) {
+        return;
+      }
+
+      callback(...args);
     }
   );
 };
@@ -83,7 +97,11 @@ let deleteDynamicRules = (type, id = 0, callback = () => {}, ...args) => {
           removeRuleIds: del_ids
         },
         () => {
-          callback(args);
+          if (logChromeRuntimeError("deleteDynamicRules")) {
+            return;
+          }
+
+          callback(...args);
         }
       );
     }
@@ -147,6 +165,10 @@ let enableStaticRules = (callback, ...args) => {
   chrome.declarativeNetRequest.updateEnabledRulesets(
     updateRulesetOptions,
     () => {
+      if (logChromeRuntimeError("updateEnabledRulesets")) {
+        return;
+      }
+
       deleteDynamicRules("sync_remote_static_rule", 0, () => {
         callback();
       });
@@ -162,5 +184,6 @@ export {
   id_ranges,
   id_range_name_map,
   rule_action_type_map,
-  enableStaticRules
+  enableStaticRules,
+  logChromeRuntimeError
 };
