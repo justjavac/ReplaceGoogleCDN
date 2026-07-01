@@ -86,7 +86,7 @@ jobs:
           path: |
             ${{ github.workspace }}/var/firefox.tar
             ${{ github.workspace }}/var/firefox/
-          key: ${{ runner.os }}-x86_64-firefox
+          key: ${{ runner.os }}-aarch64-firefox
 
       - name: Download Firefox
         shell: bash
