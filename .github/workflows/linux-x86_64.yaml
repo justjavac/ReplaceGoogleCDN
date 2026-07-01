@@ -84,7 +84,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ${{ github.workspace }}/var/firefox.tar.bz2
+            ${{ github.workspace }}/var/firefox.tar
             ${{ github.workspace }}/var/firefox/
           key: ${{ runner.os }}-x86_64-firefox
 
@@ -92,7 +92,7 @@ jobs:
         shell: bash
         run: |
           set -x
-          if [ ! -f ${{ github.workspace }}/var/firefox.tar.bz2 ] ; then
+          if [ ! -f ${{ github.workspace }}/var/firefox.tar ] ; then
             bash tools/download-firefox.sh
           fi
 
