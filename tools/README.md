@@ -57,7 +57,7 @@ bash tools/download-chromium.sh --proxy http://127.0.0.1:1080
 ## 运行 chromium 浏览器
 
 ```shell
-bash extension/tools/chromium.sh
+bash tools/chromium.sh
 ```
 
 ## 下载 firefox 浏览器
@@ -67,7 +67,7 @@ bash extension/tools/chromium.sh
 ```shell
 
 # 下载最新版 firefox
-bash tools/download-firefox-latest.sh
+bash tools/download-firefox-latest-stable.sh
 
 # 下载指定版本firefox
 bash tools/download-firefox.sh 129.0b4
@@ -97,7 +97,7 @@ chromium  --proxy-pac-url="http://127.0.0.1:8000/proxy.pac"  --host-resolver-rul
 
 ```shell
 
-bash tools/format-code.sh
+npm run format-code
 
 
 ```
