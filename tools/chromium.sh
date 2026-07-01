@@ -60,7 +60,7 @@ case $OS in
   ;;
 *)
   echo 'current script no support !'
-  exit 0
+  exit 1
   ;;
 esac
 

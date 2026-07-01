@@ -34,11 +34,11 @@ case $OS in
   ;;
 'MINGW64_NT'* | 'MSYS_NT'*)
   # FIREFOX="C:\Program Files\Mozilla Firefox\firefox.exe"
-  exit 0
+  exit 1
   ;;
 *)
   echo 'current script no support !'
-  exit 0
+  exit 1
   ;;
 esac
 
