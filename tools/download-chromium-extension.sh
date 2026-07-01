@@ -43,7 +43,7 @@ while [ $# -gt 0 ]; do
   shift $(($# > 0 ? 1 : 0))
 done
 
-mkdir -p chromium-extensions
+mkdir -p ${__PROJECT__}/var/chromium-extensions
 cd ${__PROJECT__}/var/chromium-extensions
 
 # Clear Site Data
