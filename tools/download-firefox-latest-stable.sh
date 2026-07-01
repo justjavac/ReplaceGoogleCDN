@@ -54,13 +54,22 @@ case $OS in
   # 使用 hdiutil 挂载 DMG格式 文件
   UUID=$(uuidgen)
   TMP_MOUNT_POINT=/tmp/${UUID}
-  mkdir -p ${TMP_MOUNT_POINT}
-  hdiutil attach -mountpoint ${TMP_MOUNT_POINT} firefox.dmg
+  mkdir -p "${TMP_MOUNT_POINT}"
+  cleanup_firefox_dmg_mount() {
+    local detach_status=0
+    hdiutil detach "${TMP_MOUNT_POINT}" || detach_status=$?
+    rmdir "${TMP_MOUNT_POINT}" >/dev/null 2>&1 || true
+    return "${detach_status}"
+  }
+  trap 'cleanup_firefox_dmg_mount || true' EXIT
+  hdiutil attach -mountpoint "${TMP_MOUNT_POINT}" firefox.dmg
 
   # 将应用程序拷贝到指定目录
   mkdir -p ${__PROJECT__}/var/firefox
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app ${__PROJECT__}/var/firefox
+  cp -rf "${TMP_MOUNT_POINT}/Firefox.app" "${__PROJECT__}/var/firefox"
   ls -lh ${__PROJECT__}/var/firefox/
+  cleanup_firefox_dmg_mount
+  trap - EXIT
 
   ;;
 
