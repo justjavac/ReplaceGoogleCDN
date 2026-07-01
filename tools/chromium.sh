@@ -52,7 +52,8 @@ case $OS in
   UUID=$(uuidgen)
   CHROMIUM='chrome-mac/Chromium.app/Contents/MacOS/Chromium'
   ;;
-"MINGW64_NT")
+'MINGW64_NT'* | 'MSYS_NT'*)
+  UUID=$(uuidgen)
   # set chrome_user_data_dir='C:\Users\%username%\Local" "Settings\Temp\chrome-user-data'
   # IF NOT EXIST %chrome_user_data_dir%  MD %chrome_user_data_dir%
   CHROMIUM='chrome-win/chrome.exe'
