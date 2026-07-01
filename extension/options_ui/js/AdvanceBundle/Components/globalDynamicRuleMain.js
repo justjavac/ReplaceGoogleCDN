@@ -74,36 +74,36 @@ let bindSyncRemoteStaticRuleEventListener = () => {
               need_rules.push(rule);
             });
           });
-          updateDynamicRules(need_rules, need_delete_rules);
+          updateDynamicRules(need_rules, need_delete_rules, () => {
+            //停用本地静态规则
+            let local_manifest = chrome.runtime.getManifest();
+            console.log(local_manifest);
+            let local_declarative_net_request =
+              local_manifest.declarative_net_request.rule_resources;
 
-          //停用本地静态规则
-          let local_manifest = chrome.runtime.getManifest();
-          console.log(local_manifest);
-          let local_declarative_net_request =
-            local_manifest.declarative_net_request.rule_resources;
-
-          let UpdateRulesetOptions = {
-            disableRulesetIds: [],
-            enableRulesetIds: []
-          };
-          local_declarative_net_request.forEach((value) => {
-            console.log(value);
-            if (value.enabled === true) {
+            let UpdateRulesetOptions = {
+              disableRulesetIds: [],
+              enableRulesetIds: []
+            };
+            local_declarative_net_request.forEach((value) => {
               console.log(value);
-              UpdateRulesetOptions.disableRulesetIds.push(value.id);
-            }
-          });
-
-          chrome.declarativeNetRequest.updateEnabledRulesets(
-            UpdateRulesetOptions,
-            () => {
-              if (logChromeRuntimeError("updateEnabledRulesets")) {
-                return;
+              if (value.enabled === true) {
+                console.log(value);
+                UpdateRulesetOptions.disableRulesetIds.push(value.id);
               }
+            });
 
-              showRuleList();
-            }
-          );
+            chrome.declarativeNetRequest.updateEnabledRulesets(
+              UpdateRulesetOptions,
+              () => {
+                if (logChromeRuntimeError("updateEnabledRulesets")) {
+                  return;
+                }
+
+                showRuleList();
+              }
+            );
+          });
         });
       }
     });
