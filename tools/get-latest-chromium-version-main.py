@@ -9,8 +9,9 @@ def get_latest_aliyun_mirror_chromium_version(os):
     # print(type(res))
     maxs = [];
     for i in res:
-        i["name"] = i['name'].rstrip("/")
-        maxs.append(int(i['name']))
+        name = i['name'].rstrip("/")
+        if name.isdigit():
+            maxs.append(int(name))
     maxs.sort(key=None, reverse=True)
     return maxs[0]
 
