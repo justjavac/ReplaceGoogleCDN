@@ -10,6 +10,8 @@ __PROJECT__=$(
   pwd
 )
 
+FIREFOX_VERSION=139.0b9
+
 while [ $# -gt 0 ]; do
   case "$1" in
   --proxy)
@@ -18,8 +20,11 @@ while [ $# -gt 0 ]; do
     NO_PROXY="127.0.0.0/8,10.0.0.0/8,100.64.0.0/10,172.16.0.0/12,192.168.0.0/16"
     NO_PROXY="${NO_PROXY},::1/128,fe80::/10,fd00::/8,ff00::/8"
     export NO_PROXY="${NO_PROXY},localhost,.npmmirror.com"
+    shift
     ;;
-  *) ;;
+  *)
+    FIREFOX_VERSION="$1"
+    ;;
 
   esac
   shift $(($# > 0 ? 1 : 0))
@@ -49,12 +54,6 @@ cd ${__PROJECT__}/var/
 OS=$(uname -s)
 ARCH=$(uname -m)
 echo "${OS}_${ARCH}"
-
-FIREFOX_VERSION=139.0b9
-
-if [ -n "$1" ]; then
-  FIREFOX_VERSION="$1"
-fi
 
 SHOW_DOWNLOAD_FIREFOX_URL=https://archive.mozilla.org/pub/firefox/releases/
 
