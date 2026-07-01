@@ -122,9 +122,10 @@ if [ -n "$DOWNLOAD_CHROMIUM_URL" ]; then
     ;;
   *)
     echo 'no match OS'
-    exit 0
+    exit 1
     ;;
   esac
 else
   echo ' please check DOWNLOAD_CHROMIUM_URL !'
+  exit 1
 fi
