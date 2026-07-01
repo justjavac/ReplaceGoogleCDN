@@ -6,7 +6,10 @@ __DIR__=$(
   pwd
 )
 
-__PROJECT__=$(readlink -f ${__DIR__}/../)
+__PROJECT__=$(
+  cd ${__DIR__}/../
+  pwd
+)
 echo ${__PROJECT__}
 
 cd ${__PROJECT__}/tools/web/

@@ -8,7 +8,10 @@ __DIR__=$(
 )
 cd ${__DIR__}
 
-__PROJECT__=$(readlink -f ${__DIR__}/../)
+__PROJECT__=$(
+  cd ${__DIR__}/../
+  pwd
+)
 
 cd ${__PROJECT__}
 
