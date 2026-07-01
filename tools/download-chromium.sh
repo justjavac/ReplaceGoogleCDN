@@ -56,10 +56,14 @@ if [ -z "$WITH_MIRROR" ]; then
     DOWNLOAD_CHROMIUM_URL="https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/$REVISION/chrome-linux.zip"
     ;;
   "Darwin")
-    LASTCHANGE_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Mac%2FLAST_CHANGE?alt=media"
+    CHROMIUM_SNAPSHOT_PLATFORM="Mac"
+    if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then
+      CHROMIUM_SNAPSHOT_PLATFORM="Mac_Arm"
+    fi
+    LASTCHANGE_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/${CHROMIUM_SNAPSHOT_PLATFORM}%2FLAST_CHANGE?alt=media"
     REVISION=$(curl -s -S $LASTCHANGE_URL)
     echo "latest revision is $REVISION"
-    DOWNLOAD_CHROMIUM_URL="https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/$REVISION/chrome-mac.zip"
+    DOWNLOAD_CHROMIUM_URL="https://commondatastorage.googleapis.com/chromium-browser-snapshots/${CHROMIUM_SNAPSHOT_PLATFORM}/$REVISION/chrome-mac.zip"
     ;;
   'MINGW64_NT'* | 'MSYS_NT'*)
     LASTCHANGE_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Win_x64%2FLAST_CHANGE?alt=media"
@@ -79,7 +83,11 @@ else
       DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py linux)
       ;;
     "Darwin")
-      DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py darwin)
+      if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then
+        DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py darwin-arm64)
+      else
+        DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py darwin)
+      fi
       ;;
     *)
       DOWNLOAD_CHROMIUM_URL=$(python3 get-latest-chromium-version-main.py win)

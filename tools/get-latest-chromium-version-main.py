@@ -21,7 +21,8 @@ if __name__ == '__main__':
      例子：
      python3 get-latest-chromium-version-main.py  linux
      python3 get-latest-chromium-version-main.py  win 
-     python3 get-latest-chromium-version-main.py  darwin 
+     python3 get-latest-chromium-version-main.py  darwin
+     python3 get-latest-chromium-version-main.py  darwin-arm64
     '''
 
     os = platform.system()
@@ -34,6 +35,8 @@ if __name__ == '__main__':
         os_platform = "Linux_x64"
     elif os == "darwin" or os == "Darwin":
         os_platform = "Mac"
+    elif os in ("darwin-arm64", "Darwin-arm64", "darwin-aarch64", "mac-arm64", "Mac_Arm"):
+        os_platform = "Mac_Arm"
     elif os == "win" or os == "Windows":
         os_platform = "Win_x64"
     elif os == "-h" or os == "--h":
