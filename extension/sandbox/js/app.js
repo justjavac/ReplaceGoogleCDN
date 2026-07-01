@@ -57,11 +57,17 @@ list_box.addEventListener("click", (event) => {
   //console.log(event.target.nodeName);
   if (event.target.nodeName === "PRE") {
     let url = event.target.innerText;
+    let parentOrigin = document.referrer
+      ? new URL(document.referrer).origin
+      : "*";
+    if (parentOrigin === "null") {
+      parentOrigin = "*";
+    }
     window.parent.postMessage(
       JSON.stringify({
         url: url
       }),
-      location.origin + "/options_ui/index.html"
+      parentOrigin
     );
     return;
 
