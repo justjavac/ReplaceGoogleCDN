@@ -99,4 +99,8 @@ case $OS in
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/win64/en-US/Firefox%20Setup%20${FIREFOX_VERSION}.exe
   curl -Lo firefox.exe ${DOWNLOAD_FIREFOX_URL}
   ;;
+*)
+  echo 'no match OS'
+  exit 1
+  ;;
 esac

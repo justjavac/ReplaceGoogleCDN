@@ -67,4 +67,8 @@ case $OS in
 'MINGW64_NT'* | 'MSYS_NT'*)
   curl -Lo firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
   ;;
+*)
+  echo 'no match OS'
+  exit 1
+  ;;
 esac
