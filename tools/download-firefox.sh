@@ -96,6 +96,7 @@ case $OS in
 
   # 将应用程序拷贝到指定目录
   mkdir -p ${__PROJECT__}/var/firefox
+  test -d "${__PROJECT__}/var/firefox/Firefox.app" && rm -rf "${__PROJECT__}/var/firefox/Firefox.app"
   cp -rf "${TMP_MOUNT_POINT}/Firefox.app" "${__PROJECT__}/var/firefox"
   ls -lh ${__PROJECT__}/var/firefox/
   cleanup_firefox_dmg_mount
