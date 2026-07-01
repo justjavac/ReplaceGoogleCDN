@@ -50,10 +50,25 @@ function checkUrlFilters(filePath, rule) {
   }
 }
 
+function checkDuplicateRuleIds(filePath, rules) {
+  const seenIds = new Set();
+
+  for (const rule of rules) {
+    if (seenIds.has(rule.id)) {
+      errors.push(`${filePath}: contains duplicate rule id ${rule.id}`);
+      continue;
+    }
+
+    seenIds.add(rule.id);
+  }
+}
+
 for (const directory of ruleDirectories) {
   for (const filePath of walkJsonFiles(directory)) {
     const rules = JSON.parse(fs.readFileSync(filePath, "utf8"));
     const ruleList = Array.isArray(rules) ? rules : [rules];
+
+    checkDuplicateRuleIds(filePath, ruleList);
 
     for (const rule of ruleList) {
       checkDomainCondition(
