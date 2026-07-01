@@ -55,9 +55,9 @@ case $OS in
   hdiutil attach -mountpoint ${TMP_MOUNT_POINT} firefox.dmg
 
   # 将应用程序拷贝到指定目录
-  mkdir -p ${__PROJECT__}/var/Firefox
-  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app ${__PROJECT__}/var/Firefox
-  ls -lh ${__PROJECT__}/var/Firefox/
+  mkdir -p ${__PROJECT__}/var/firefox
+  cp -rf /private/${TMP_MOUNT_POINT}/Firefox.app ${__PROJECT__}/var/firefox
+  ls -lh ${__PROJECT__}/var/firefox/
 
   ;;
 
