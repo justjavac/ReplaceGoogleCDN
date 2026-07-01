@@ -28,7 +28,7 @@ while [ $# -gt 0 ]; do
   shift $(($# > 0 ? 1 : 0))
 done
 
-if [[ ! -f ${__PROJECT__}/runtime/node/bin/node ]]; then
+if [[ ! -f ${__PROJECT__}/runtime/node/bin/node && ! -f ${__PROJECT__}/runtime/node/bin/node.exe ]]; then
   if [[ "$MIRROR" == "china" ]]; then
     bash tools/setup-nodejs-runtime.sh --mirror china
   else

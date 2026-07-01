@@ -55,6 +55,16 @@ esac
 APP_VERSION='v22.16.0'
 APP_NAME='node'
 VERSION='v22.16.0'
+APP_ARCHIVE_EXT='tar.xz'
+
+case $OS in
+'darwin')
+  APP_ARCHIVE_EXT='tar.gz'
+  ;;
+'win')
+  APP_ARCHIVE_EXT='zip'
+  ;;
+esac
 
 cd ${__PROJECT__}
 mkdir -p runtime/
@@ -76,11 +86,7 @@ https://nodejs.org/dist/v22.16.0/node-v22.16.0-win-x64.zip
 https://registry.npmmirror.com/-/binary/node/v22.16.0/node-v22.16.0-win-x64.zip
 EOF
 
-APP_DOWNLOAD_URL="https://nodejs.org/dist/${VERSION}/${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}.tar.xz"
-
-if [ $OS = 'win' ]; then
-  APP_DOWNLOAD_URL="https://nodejs.org/dist/${VERSION}/${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}.zip"
-fi
+APP_DOWNLOAD_URL="https://nodejs.org/dist/${VERSION}/${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}.${APP_ARCHIVE_EXT}"
 
 MIRROR=''
 while [ $# -gt 0 ]; do
@@ -105,21 +111,15 @@ done
 
 case "$MIRROR" in
 china)
-  APP_DOWNLOAD_URL="https://registry.npmmirror.com/-/binary/node/${APP_VERSION}/${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}.tar.xz"
-  if [ $OS = 'windows' ]; then
-    APP_DOWNLOAD_URL="https://registry.npmmirror.com/-/binary/node/${APP_VERSION}/${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}.zip"
-  fi
+  APP_DOWNLOAD_URL="https://registry.npmmirror.com/-/binary/node/${APP_VERSION}/${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}.${APP_ARCHIVE_EXT}"
   ;;
 esac
 
 APP_RUNTIME="${APP_NAME}-${APP_VERSION}-${OS}-${ARCH}"
 if [ $OS = 'win' ]; then
-  {
-    test -f ${APP_RUNTIME}.zip || curl -fSLo ${APP_RUNTIME}.zip ${APP_DOWNLOAD_URL}
-    test -d ${APP_RUNTIME} && rm -rf ${APP_RUNTIME}
-    unzip "${APP_RUNTIME}.zip"
-    exit 0
-  }
+  test -f ${APP_RUNTIME}.zip || curl -fSLo ${APP_RUNTIME}.zip ${APP_DOWNLOAD_URL}
+  test -d ${APP_RUNTIME} && rm -rf ${APP_RUNTIME}
+  unzip "${APP_RUNTIME}.zip"
 else
   if [ $OS = "darwin" ]; then
     test -f ${APP_RUNTIME}.tar.gz || curl -fSLo ${APP_RUNTIME}.tar.gz ${APP_DOWNLOAD_URL}
@@ -131,7 +131,13 @@ else
     test -f ${APP_RUNTIME}.tar || xz -d -k ${APP_RUNTIME}.tar.xz
     test -d ${APP_RUNTIME} || tar -xvf ${APP_RUNTIME}.tar
   fi
-  test -d ${APP_RUNTIME_DIR} && rm -rf ${APP_RUNTIME_DIR}
+fi
+
+test -d ${APP_RUNTIME_DIR} && rm -rf ${APP_RUNTIME_DIR}
+if [ $OS = 'win' ]; then
+  mkdir -p ${APP_RUNTIME_DIR}
+  mv ${APP_RUNTIME} ${APP_RUNTIME_DIR}/bin
+else
   mv ${APP_RUNTIME} ${APP_RUNTIME_DIR}
 fi
 
