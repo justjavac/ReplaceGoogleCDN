@@ -62,6 +62,7 @@ DOWNLOAD_FIREFOX_URL_PREFIX=https://archive.mozilla.org/pub/firefox/releases
 case $OS in
 "Linux")
   test -f firefox.tar.xz && rm -rf firefox.tar.xz
+  test -f firefox.tar && rm -rf firefox.tar
   test -d firefox && rm -rf firefox
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/linux-${ARCH}/en-US/firefox-${FIREFOX_VERSION}.tar.xz
   curl -Lo firefox.tar.xz ${DOWNLOAD_FIREFOX_URL}
