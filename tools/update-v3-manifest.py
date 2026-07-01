@@ -43,6 +43,14 @@ def remove_rule_resources(manifest, paths):
     return manifest
 
 
+def replace_rule_resource_path(manifest, old_path, new_path):
+    rule_resources = manifest.get('declarative_net_request', {}).get('rule_resources', [])
+    for rule_resource in rule_resources:
+        if rule_resource.get('path') == old_path:
+            rule_resource['path'] = new_path
+    return manifest
+
+
 if __name__ == '__main__':
     comment = '''
       用法：python3 tools/update-v3-manifest.py [ chromium | firefox ]
@@ -131,6 +139,11 @@ if __name__ == '__main__':
     manifest_data = set_manifest_data(manifest_data, 'browser_specific_settings', browser_specific_settings)
     if browser == 'firefox':
         manifest_data = set_manifest_data(manifest_data, 'options_ui', '')
+        manifest_data = replace_rule_resource_path(
+            manifest_data,
+            'rules/rules_redirect_main.json',
+            'rules/rules_redirect_main_firefox.json',
+        )
         manifest_data = remove_rule_resources(
             manifest_data,
             {

@@ -23,6 +23,14 @@ def require(condition, message):
         raise AssertionError(message)
 
 
+def load_rule_resource(rule_path):
+    return json.loads((project_dir / "extension" / rule_path).read_text(encoding="utf-8"))
+
+
+def rule_list(rules):
+    return rules if isinstance(rules, list) else [rules]
+
+
 chromium_manifest = generate_manifest("chromium")
 require(
     chromium_manifest.get("background", {}).get("service_worker")
@@ -35,6 +43,14 @@ require(
 )
 require("options_ui" in chromium_manifest, "chromium manifest must keep options_ui")
 require("sandbox" in chromium_manifest, "chromium manifest must keep sandbox")
+chromium_rule_paths = {
+    rule["path"]
+    for rule in chromium_manifest["declarative_net_request"]["rule_resources"]
+}
+require(
+    "rules/rules_redirect_main.json" in chromium_rule_paths,
+    "chromium manifest must use the full redirect ruleset",
+)
 
 firefox_manifest = generate_manifest("firefox")
 firefox_rule_paths = {
@@ -55,5 +71,19 @@ require(
     "rules/rules-default-domains-helper.json" not in firefox_rule_paths,
     "firefox manifest must not reference rules-default-domains-helper.json",
 )
+require(
+    "rules/rules_redirect_main.json" not in firefox_rule_paths,
+    "firefox manifest must not reference the chromium regex redirect ruleset",
+)
+require(
+    "rules/rules_redirect_main_firefox.json" in firefox_rule_paths,
+    "firefox manifest must use the Firefox-compatible redirect ruleset",
+)
+for rule_path in firefox_rule_paths:
+    for rule in rule_list(load_rule_resource(rule_path)):
+        require(
+            "regexFilter" not in rule.get("condition", {}),
+            f"firefox static rule {rule_path}#{rule.get('id')} must not use regexFilter",
+        )
 
 print("Manifest checks passed.")
