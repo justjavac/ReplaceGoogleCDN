@@ -20,12 +20,17 @@ cd ${__DIR__}
 # 参考： https://chromedevtools.github.io/devtools-protocol/
 
 # 显示CDP 可用参数
-curl http://localhost:9222/json/protocol
+curl -fsS http://localhost:9222/json/protocol >/dev/null
 
-curl http://localhost:9222/json/version
+curl -fsS http://localhost:9222/json/version
 
-exit 0
-curl http://127.0.0.1:9222/json/new?https://stackoverflow.com/tags/socat/hot?filter=all
-curl http://127.0.0.1:9222/json/new?https://patrickhlauke.github.io/recaptcha/
-curl http://127.0.0.1:9222/json/new?https://cdn.jsdelivr.net/
-curl http://127.0.0.1:9222/json/new?https://developers.google.com/
+test_urls=(
+  "https://stackoverflow.com/tags/socat/hot?filter=all"
+  "https://patrickhlauke.github.io/recaptcha/"
+  "https://cdn.jsdelivr.net/"
+  "https://developers.google.com/"
+)
+
+for test_url in "${test_urls[@]}"; do
+  curl -fsS -X PUT "http://127.0.0.1:9222/json/new?${test_url}" >/dev/null
+done
