@@ -24,6 +24,7 @@ cd ${__PROJECT__}/var/firefox-extensions
 
 extension_file=traduzir_paginas_web-9.8.1.0.xpi
 
+rm -f "${extension_file}"
 curl -fSLo "${extension_file}" https://addons.mozilla.org/firefox/downloads/file/4126844/traduzir_paginas_web-9.8.1.0.xpi
 test -s "${extension_file}"
 unzip -t "${extension_file}" >/dev/null
