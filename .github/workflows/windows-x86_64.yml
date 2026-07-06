@@ -65,7 +65,7 @@ jobs:
 
           $installer = Join-Path (Get-Location) "var\firefox.exe"
           $firefox = "C:\Program Files\Mozilla Firefox\firefox.exe"
-          Start-Process -FilePath $installer -ArgumentList "/S"
+          Start-Process -FilePath $installer -ArgumentList "/A /S"
 
           $deadline = (Get-Date).AddMinutes(3)
           $firefoxReady = $false
