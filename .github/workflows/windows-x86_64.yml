@@ -64,19 +64,31 @@ jobs:
           Get-Location
 
           $installer = Join-Path (Get-Location) "var\firefox.exe"
-          $process = Start-Process -FilePath $installer -ArgumentList "/S" -PassThru
-          if (-not $process.WaitForExit(120000)) {
-            Stop-Process -Id $process.Id -Force
-            throw "Firefox installer timed out"
-          }
-          if ($process.ExitCode -ne 0) {
-            throw "Firefox installer failed with exit code $($process.ExitCode)"
-          }
+          $firefox = "C:\Program Files\Mozilla Firefox\firefox.exe"
+          Start-Process -FilePath $installer -ArgumentList "/S"
 
-          Start-Sleep -Seconds 30
+          $deadline = (Get-Date).AddMinutes(3)
+          $firefoxReady = $false
+          do {
+            Start-Sleep -Seconds 5
+            if (Test-Path $firefox) {
+              & $firefox --version
+              if ($LASTEXITCODE -eq 0) {
+                $firefoxReady = $true
+                break
+              }
+            }
+          } while ((Get-Date) -lt $deadline)
+
+          if (-not $firefoxReady) {
+            throw "Firefox was not ready before timeout"
+          }
 
           Get-ChildItem "C:\Program Files\Mozilla Firefox"
-          & "C:\Program Files\Mozilla Firefox\firefox.exe" --version
+          & $firefox --version
+          if ($LASTEXITCODE -ne 0) {
+            throw "Firefox version check failed with exit code $LASTEXITCODE"
+          }
 
       - name: show browser version
         shell: cmd
