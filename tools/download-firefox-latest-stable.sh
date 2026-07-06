@@ -64,7 +64,7 @@ case $OS in
   tar -xJvf firefox.tar.xz
   ;;
 "Darwin")
-  test -f firefox.dmg && rm -rf firefox.dmg
+  rm -f firefox.dmg
   curl -fSLo firefox.dmg "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
   test -s firefox.dmg
   # 使用 hdiutil 挂载 DMG格式 文件
@@ -91,7 +91,7 @@ case $OS in
   ;;
 
 'MINGW64_NT'* | 'MSYS_NT'*)
-  test -f firefox.exe && rm -rf firefox.exe
+  rm -f firefox.exe
   curl -fSLo firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
   test -s firefox.exe
   ;;
