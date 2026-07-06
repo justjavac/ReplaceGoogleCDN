@@ -9,11 +9,23 @@ import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 import { rule_example } from "../Config/rule_example_conf.js";
 import { showDynamicRules } from "../../CommonBundle/Components/showDynamicRules.js";
 
+let noticeTimeoutHandler = null;
+
 let showNotice = (message) => {
   let notice = document.querySelector(".notice");
   if (notice) {
     notice.innerText = message;
   }
+};
+
+let clearNoticeLater = () => {
+  if (noticeTimeoutHandler) {
+    clearTimeout(noticeTimeoutHandler);
+  }
+
+  noticeTimeoutHandler = setTimeout(() => {
+    showNotice("");
+  }, 6000);
 };
 
 let parseSelfDefineRuleJSON = (rule_str) => {
@@ -22,6 +34,7 @@ let parseSelfDefineRuleJSON = (rule_str) => {
   } catch (error) {
     console.error("Invalid self-defined rule JSON", error);
     showNotice("规则 JSON 格式错误：" + error.message);
+    clearNoticeLater();
     return undefined;
   }
 };
