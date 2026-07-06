@@ -9,11 +9,34 @@ import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 import { rule_example } from "../Config/rule_example_conf.js";
 import { showDynamicRules } from "../../CommonBundle/Components/showDynamicRules.js";
 
+let showNotice = (message) => {
+  let notice = document.querySelector(".notice");
+  if (notice) {
+    notice.innerText = message;
+  }
+};
+
+let parseSelfDefineRuleJSON = (rule_str) => {
+  try {
+    return JSON.parse(rule_str);
+  } catch (error) {
+    console.error("Invalid self-defined rule JSON", error);
+    showNotice("规则 JSON 格式错误：" + error.message);
+    return undefined;
+  }
+};
+
 let addSelfDefineRule = (type = "self_define_rule") => {
   let rule_str = document.querySelector(".new-add-rule-pannel").value;
   rule_str = rule_str.trim();
   if (rule_str.length > 2) {
-    let rules_arr = JSON.parse(rule_str);
+    showNotice("");
+
+    let rules_arr = parseSelfDefineRuleJSON(rule_str);
+    if (rules_arr === undefined) {
+      return;
+    }
+
     console.log("add rule origin content", rules_arr);
 
     let need_rules = [];

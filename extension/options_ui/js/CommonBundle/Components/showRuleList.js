@@ -13,6 +13,31 @@ import {
 let timeoutHandler = null;
 let isRuleListEventBound = false;
 
+let showNotice = (message) => {
+  document.querySelector(".notice").innerText = message;
+};
+
+let clearNoticeLater = () => {
+  if (timeoutHandler) {
+    clearTimeout(timeoutHandler);
+  }
+
+  timeoutHandler = setTimeout(() => {
+    showNotice("");
+  }, 6000);
+};
+
+let parseRuleJSON = (rule_str) => {
+  try {
+    return JSON.parse(rule_str);
+  } catch (error) {
+    console.error("Invalid rule JSON", error);
+    showNotice("规则 JSON 格式错误：" + error.message);
+    clearNoticeLater();
+    return undefined;
+  }
+};
+
 let bindButtonEventListener = () => {
   //备份单条规则
   document
@@ -23,7 +48,11 @@ let bindButtonEventListener = () => {
       let rule_str = document.querySelector("#rule-content-container").value;
       rule_str = rule_str.trim();
       if (rule_str.length) {
-        rule_str = JSON.parse(rule_str);
+        rule_str = parseRuleJSON(rule_str);
+        if (rule_str === undefined) {
+          return;
+        }
+
         let time = new Date().toISOString();
         console.log(time);
         //time=parseInt(new Date().getTime() / 1000).toString()
@@ -44,12 +73,16 @@ let bindButtonEventListener = () => {
     let rule_str = content_box.value;
     let rule_type = content_box.getAttribute("rule-type");
 
-    document.querySelector(".notice").innerText = "";
+    showNotice("");
     if (rule_type === "dynamic") {
       let rule_id = content_box.getAttribute("rule-id");
       rule_str = rule_str.trim();
       if (rule_str.length) {
-        let rule = JSON.parse(rule_str);
+        let rule = parseRuleJSON(rule_str);
+        if (rule === undefined) {
+          return;
+        }
+
         /*
         let time = new Date().toISOString();
         console.log(time);
@@ -62,20 +95,15 @@ let bindButtonEventListener = () => {
           let addRules = [rule],
             removeRuleIds = [rule_id];
           updateDynamicRules(addRules, removeRuleIds, () => {
-            document.querySelector(".notice").innerText = "规则修改成功";
+            showNotice("规则修改成功");
           });
         }
       }
     } else {
-      document.querySelector(".notice").innerText = "静态规则不允许修改";
+      showNotice("静态规则不允许修改");
     }
 
-    if (timeoutHandler) {
-      clearTimeout(timeoutHandler);
-    }
-    timeoutHandler = setTimeout(() => {
-      document.querySelector(".notice").innerText = "";
-    }, 6000);
+    clearNoticeLater();
   });
 
   /*
