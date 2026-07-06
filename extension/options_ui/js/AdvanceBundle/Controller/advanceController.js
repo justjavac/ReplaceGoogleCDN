@@ -6,6 +6,8 @@ import SelfDefineRule from "../Components/selfDefineRule.js";
 
 import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 
+let sandboxOpenUrlMessageType = "replace-google-cdn:open-preview-url";
+
 let getSandboxWindow = () => {
   let iframe = document.querySelector("#external_page");
   return iframe ? iframe.contentWindow : null;
@@ -43,7 +45,12 @@ let messageReciver = () => {
       }
 
       let data = parseSandboxMessage(event.data);
-      if (!data || !data.url || !isOpenableSandboxUrl(data.url)) {
+      if (
+        !data ||
+        data.type !== sandboxOpenUrlMessageType ||
+        !data.url ||
+        !isOpenableSandboxUrl(data.url)
+      ) {
         return;
       }
 
