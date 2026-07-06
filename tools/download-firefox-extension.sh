@@ -22,7 +22,11 @@ cd ${__PROJECT__}/var/firefox-extensions
 
 # download firefox extension
 
-curl -Lo traduzir_paginas_web-9.8.1.0.xpi https://addons.mozilla.org/firefox/downloads/file/4126844/traduzir_paginas_web-9.8.1.0.xpi
+extension_file=traduzir_paginas_web-9.8.1.0.xpi
+
+curl -fSLo "${extension_file}" https://addons.mozilla.org/firefox/downloads/file/4126844/traduzir_paginas_web-9.8.1.0.xpi
+test -s "${extension_file}"
+unzip -t "${extension_file}" >/dev/null
 
 # 解压扩展到  profile 目录
 # mkdir -p "$profile_folder/extensions/{036a55b4-5e72-4d05-a06c-cba2dfcc134a}.xpi"
