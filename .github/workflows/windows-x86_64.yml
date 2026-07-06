@@ -58,24 +58,25 @@ jobs:
           fi
 
       - name: install firefox
-        shell: cmd
+        shell: powershell
         run: |
-          DIR
-          ECHO %CD%
+          Get-ChildItem
+          Get-Location
 
-          :: msiexec /package /qn  "%CD%\var\firefox.msi"
-          :: var\firefox.exe /?
-          :: start var\firefox.exe /S
+          $installer = Join-Path (Get-Location) "var\firefox.exe"
+          $process = Start-Process -FilePath $installer -ArgumentList "/S" -PassThru
+          if (-not $process.WaitForExit(120000)) {
+            Stop-Process -Id $process.Id -Force
+            throw "Firefox installer timed out"
+          }
+          if ($process.ExitCode -ne 0) {
+            throw "Firefox installer failed with exit code $($process.ExitCode)"
+          }
 
-          ::  静默安装 firefox
-          var\firefox.exe /A /S
-          timeout /T 30 /NOBREAK
+          Start-Sleep -Seconds 30
 
-          :: show firefox install directory
-          DIR "C:\Program Files\Mozilla Firefox"
-
-          :: show firefox version
-          "C:\Program Files\Mozilla Firefox\firefox.exe" --version
+          Get-ChildItem "C:\Program Files\Mozilla Firefox"
+          & "C:\Program Files\Mozilla Firefox\firefox.exe" --version
 
       - name: show browser version
         shell: cmd
