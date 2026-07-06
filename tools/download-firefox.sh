@@ -65,7 +65,8 @@ case $OS in
   test -f firefox.tar && rm -rf firefox.tar
   test -d firefox && rm -rf firefox
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/linux-${ARCH}/en-US/firefox-${FIREFOX_VERSION}.tar.xz
-  curl -Lo firefox.tar.xz ${DOWNLOAD_FIREFOX_URL}
+  curl -fSLo firefox.tar.xz "${DOWNLOAD_FIREFOX_URL}"
+  test -s firefox.tar.xz
   xz -d firefox.tar.xz
   tar -xvf firefox.tar
   ;;
@@ -73,7 +74,8 @@ case $OS in
   FIREFOX_DMG_FILE=firefox.dmg
   test -f ${FIREFOX_DMG_FILE} && rm -rf ${FIREFOX_DMG_FILE}
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/mac/en-US/Firefox%20${FIREFOX_VERSION}.dmg
-  curl -Lo ${FIREFOX_DMG_FILE} ${DOWNLOAD_FIREFOX_URL}
+  curl -fSLo "${FIREFOX_DMG_FILE}" "${DOWNLOAD_FIREFOX_URL}"
+  test -s "${FIREFOX_DMG_FILE}"
 
   # brew install p7zip
   # 使用 7-zip 解压
@@ -107,7 +109,8 @@ case $OS in
 'MINGW64_NT'* | 'MSYS_NT'*)
   test -f firefox.exe && rm -rf firefox.exe
   DOWNLOAD_FIREFOX_URL=${DOWNLOAD_FIREFOX_URL_PREFIX}/${FIREFOX_VERSION}/win64/en-US/Firefox%20Setup%20${FIREFOX_VERSION}.exe
-  curl -Lo firefox.exe ${DOWNLOAD_FIREFOX_URL}
+  curl -fSLo firefox.exe "${DOWNLOAD_FIREFOX_URL}"
+  test -s firefox.exe
   ;;
 *)
   echo 'no match OS'

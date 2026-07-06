@@ -60,10 +60,13 @@ case $OS in
   test -f firefox.tar.xz && rm -rf firefox.tar.xz
   test -d firefox && rm -rf firefox
   curl -fSLo firefox.tar.xz "https://download.mozilla.org/?product=firefox-latest&os=${FIREFOX_OS}&lang=en-US"
+  test -s firefox.tar.xz
   tar -xJvf firefox.tar.xz
   ;;
 "Darwin")
-  curl -Lo firefox.dmg "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
+  rm -f firefox.dmg
+  curl -fSLo firefox.dmg "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
+  test -s firefox.dmg
   # 使用 hdiutil 挂载 DMG格式 文件
   UUID=$(uuidgen)
   TMP_MOUNT_POINT=/tmp/${UUID}
@@ -88,7 +91,9 @@ case $OS in
   ;;
 
 'MINGW64_NT'* | 'MSYS_NT'*)
-  curl -Lo firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+  rm -f firefox.exe
+  curl -fSLo firefox.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+  test -s firefox.exe
   ;;
 *)
   echo 'no match OS'
