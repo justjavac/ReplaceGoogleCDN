@@ -6,26 +6,62 @@ import SelfDefineRule from "../Components/selfDefineRule.js";
 
 import showRuleList from "../../CommonBundle/Components/showRuleList.js";
 
+let sandboxOpenUrlMessageType = "replace-google-cdn:open-preview-url";
+
+let getSandboxWindow = () => {
+  let iframe = document.querySelector("#external_page");
+  return iframe ? iframe.contentWindow : null;
+};
+
+let parseSandboxMessage = (message) => {
+  if (typeof message !== "string") {
+    return null;
+  }
+
+  try {
+    return JSON.parse(message);
+  } catch (error) {
+    console.error("Invalid sandbox message", error);
+    return null;
+  }
+};
+
+let isOpenableSandboxUrl = (url) => {
+  try {
+    let parsedUrl = new URL(url);
+    return parsedUrl.protocol === "http:" || parsedUrl.protocol === "https:";
+  } catch (error) {
+    console.error("Invalid sandbox url", error);
+    return false;
+  }
+};
+
 let messageReciver = () => {
   window.addEventListener(
     "message",
     (event) => {
-      console.log(event, event.source);
-      event.source.postMessage("hi there yourself!  the secret response ", "*");
-      //event.source.postMessage("hi there yourself!  the secret response ",event.origin);
-      //event.source.postMessage("hi there yourself!  the secret response ",location.origin+iframe_src);
-      console.log(event.data);
-      if (event.origin === "null") {
-        let data = JSON.parse(event.data);
-        console.log(data);
-
-        if (data.url) {
-          let url = data.url;
-          chrome.tabs.create({ url }, (callback) => {
-            console.log(callback);
-          });
-        }
+      if (event.origin !== "null" || event.source !== getSandboxWindow()) {
+        return;
       }
+
+      let data = parseSandboxMessage(event.data);
+      if (
+        !data ||
+        data.type !== sandboxOpenUrlMessageType ||
+        !data.url ||
+        !isOpenableSandboxUrl(data.url)
+      ) {
+        return;
+      }
+
+      chrome.tabs.create({ url: data.url }, (callback) => {
+        if (chrome.runtime.lastError) {
+          console.error(chrome.runtime.lastError.message);
+          return;
+        }
+
+        console.log(callback);
+      });
     },
     false
   );

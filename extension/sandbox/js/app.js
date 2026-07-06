@@ -36,6 +36,7 @@ let preview_url = [
 ];
 
 let is_iframe = self !== top;
+let openUrlMessageType = "replace-google-cdn:open-preview-url";
 let list_box = document.querySelector(".box");
 let list = "";
 preview_url.map((value, index) => {
@@ -65,6 +66,7 @@ list_box.addEventListener("click", (event) => {
     }
     window.parent.postMessage(
       JSON.stringify({
+        type: openUrlMessageType,
         url: url
       }),
       parentOrigin
