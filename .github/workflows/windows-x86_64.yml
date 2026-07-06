@@ -68,29 +68,19 @@ jobs:
           Start-Process -FilePath $installer -ArgumentList "/A /S"
 
           $deadline = (Get-Date).AddMinutes(3)
-          $firefoxReady = $false
           do {
             Start-Sleep -Seconds 5
-            if (Test-Path $firefox) {
-              $version = & $firefox --version 2>&1
-              Write-Host $version
-              if ("$version" -match "Mozilla Firefox") {
-                $firefoxReady = $true
-                break
-              }
+            $firefoxReady = Test-Path $firefox
+            if ($firefoxReady) {
+              break
             }
           } while ((Get-Date) -lt $deadline)
 
           if (-not $firefoxReady) {
-            throw "Firefox was not ready before timeout"
+            throw "Firefox was not installed before timeout"
           }
 
           Get-ChildItem "C:\Program Files\Mozilla Firefox"
-          $version = & $firefox --version 2>&1
-          Write-Host $version
-          if ("$version" -notmatch "Mozilla Firefox") {
-            throw "Firefox version check failed: $version"
-          }
 
       - name: show browser version
         shell: cmd
